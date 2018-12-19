@@ -10,6 +10,7 @@ Um registrador de uso geral, também chamado de GPR \(_General Purpose Register_
 
 Existem 8 registradores de uso geral na arquitetura Intel x86. Apesar de poderem ser utilizados para qualquer coisa, como seu nome sugere, a seguinte convenção é normalmente respeitada:
 
+| Registrador | Significado | Uso sugerido |
 | :--- | :--- | :--- |
 | EAX | Accumulator | Usado em operações aritiméticas |
 | EBX | Base | Ponteiro para dados |
@@ -121,6 +122,7 @@ Os registradores EBP, ESI, EDI e ESP também podem ser utilizados como registrad
 
 Estes registradores armazenam o que chamamos de seletores, ponteiros que identificam segmentos na memória, essenciais para operação em modo real. Em modo protegido, que é o modo de operação do processador que os sistemas operacionais modernos utilizam, a função de cada registrador de segmento fica a cargo do SO. Abaixo a lista dos registradores de segmento e sua função em modo protegido:
 
+| Registrador | Significado |
 | :--- | :--- |
 | CS | Code Segment |
 | DS | Data Segment |
