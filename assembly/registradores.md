@@ -142,7 +142,7 @@ _Flag_ é um termo genérico para um dado, normalmente "verdadeiro ou falso". Di
 
 Existem 10 _flags_ de sistema, uma de controle e 6 de estado, onde as mais comuns são:
 
-| **Nome** | **Sigla** | **Descrição** |
+| Nome | Sigla | Descrição |
 | :--- | :--- | :--- |
 | Zero | ZF | Setada quando o resultado de uma operação é zero. Do contrário, é zerada. Muito usada em comparações. |
 | Sign | SF | Setada de acordo com o MSB \(_Most Significant Bit_\) do resultado, que é justamente o _bit_ que define se um inteiro com sinal é positivo \(0\) ou negativo \(1\), conforme visto na seção Números negativos. |

@@ -16,7 +16,7 @@ O primeiro _byte_ é o _opcode_. Os outros 4 _bytes_ representam o primeiro e ú
 
 Na arquitetura Intel IA-32, uma instrução \(considerando o _opcode_ e seus argumentos\) pode ter de 1 à 15 _bytes_  de tamanho.
 
-### Movendo valores
+### Copiando valores
 
 Uma instrução muito comum é a MOV, forma curta de "move" \(do Inglês, "mover"\). Apesar do nome, o que a instrução faz é copiar o segundo operando \(origem\) para o primeiro \(destino\). O operando de origem pode ser um valor literal, um registrador ou um endereço de memória. O operando de destino funciona de forma similar, com exceção de não poder ser um valor literal, pois não faria sentido mesmo. Ambos os operandos precisam ter o mesmo tamanho, que pode ser de um _byte,_ uma _word_ ou uma _doubleword_, na IA-32. Analise o exemplo a seguir:
 
@@ -34,7 +34,7 @@ BB CA B0 B0 00
 
 Naturalmente, processadores fazem muitos cálculos matemáticos.  Veremos agora algumas dessas instruções, começando pela instrução ADD, que soma valores. Analise:
 
-```text
+```assembly
 MOV ECX, 7
 ADD ECX, 1
 ```
@@ -43,7 +43,7 @@ No código acima, a instrução ADD soma 1 ao valor de ECX \(que no nosso caso �
 
 Uma outra forma de atingir este resultado seria utilizar a instrução INC, que incrementa seu operando em uma unidade, dessa forma:
 
-```text
+```assembly
 MOV ECX, 7
 INC ECX
 ```
@@ -54,7 +54,7 @@ O leitor pode se perguntar por que existe uma instrução INC se é possível in
 
 {% code-tabs %}
 {% code-tabs-item title="soma.s" %}
-```text
+```assembly
 BITS 32
 
 global start
@@ -113,7 +113,7 @@ A instrução SUB funciona de forma similar e para subtrair somente uma unidade,
 
 {% code-tabs %}
 {% code-tabs-item title="mul.s" %}
-```text
+```assembly
 BITS 32
 
 global start

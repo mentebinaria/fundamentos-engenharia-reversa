@@ -105,27 +105,49 @@ Olha como ela fica compilada no Linux em 32-bits:
 
 Removi partes do código intencionalmente, pois o objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL \(no endereço 0x804842d em nosso exemplo\) chama as funções e a instrução RET \(em 0x8048417\) retorna para a instrução imediatamente após a CALL \(0x8048432\), para que a execução continue.
 
-### A pilha de memória
+## A pilha de memória
 
 A memória RAM para um processo é dividida em áreas com diferentes propósitos. Uma delas é a pilha, ou _stack_.
 
-Essa área de memória funciona de forma com que o que é colocado lá fique no topo e o último dado colocado na pilha seja o primeiro a ser retirado, como uma pilha de pratos ou de cartas de baralho. Esse método é conhecido por LIFO \(_Last In First Out_\).
+Essa área de memória funciona de forma que o que é colocado lá fique no topo e o último dado colocado na pilha seja o primeiro a ser retirado, como uma pilha de pratos ou de cartas de baralho mesmo. Esse método é conhecido por LIFO \(_Last In First Out_\).
 
-Seu principal uso é no uso de funções, tanto para passagem de argumentos \(parâmetros da função\) quanto para alocação de variáveis locais à função \(que só existem enquanto a função executa\).
+Seu principal uso é no uso de funções, tanto para passagem de argumentos \(parâmetros da função\) quanto para alocação de variáveis locais da função \(que só existem enquanto a função executa\).
 
-Na IA-32, a pilha é alinhada em 4 _bytes_ \(32-bits\). Por consequência todos os seus endereços também o são. Logo, se novos dados são colocados na pilha \(empilhados\), o endereço do topo é **decrementado** em 4 unidades. Se um dado for desempilhado, o endereço é **incrementado** em 4 unidades. Perceba a lógica invertida, porque a pilha começa num endereço alto e vai descendo.
+Na arquitetura IA-32, a pilha é alinhada em 4 _bytes_ \(32-bits\). Por consequência, todos os seus endereços também o são. Logo, se novos dados são colocados na pilha \(empilhados\), o endereço do topo é **decrementado** em 4 unidades. Se um dado for desempilhado, o endereço do topo é **incrementado** em 4 unidades. Perceba a lógica invertida, porque a pilha começa num endereço alto e cresce em direção a endereços menores.
 
-Existem dois registradores intimamente associados com a pilha de memória alocada para um processo. São eles:
+Existem dois registradores diretamente associados com a pilha de memória alocada para um processo. São eles:
 
 * O ESP, que aponta para o topo da pilha.
 * O EBP, que aponta para a base do _stack frame_.
 
-A instrução CALL faz duas coisas:
+Veremos agora as instruções de manipulação de pilha. A primeira é a instrução PUSH (do inglês "empurrar") que, como o nome sugere, empilha um dado. Na forma abaixo, essa instrução faz com que o processador copie o conteúdo do registrador EAX para o topo da pilha:
+
+```assembly
+push eax
+```
+
+Também é possível empilhar um valor literal. Por exemplo, supondo que o programa coloque o valor um na pilha:
+
+```assembly
+push 1
+```
+
+Além de copiar o valor proposto para o topo da pilha, a instrução PUSH **decrementa** o registrador ESP em 4 unidades, conforme já explicado o motivo. Sempre.
+
+Sua instrução antagônica é a POP, que só precisa de um registrador de destino para copiar lá o valor que está no topo da pilha. Por exemplo:
+
+```assembly
+pop edx
+```
+
+Seja lá o que estiver no topo da pilha, será copiado para o registrador EDX. Além disso, o registrador ESP será **incrementado** em 4 unidades. Sempre.
+
+Temos também a instrução CALL, que faz duas coisas:
 
 1. Coloca o endereço da próxima instrução na pilha de memória \(no caso do exemplo, 0x8048432\).
 2. Coloca o seu parâmetro, ou seja, o endereço da função a ser chamada, no registrador EIP \(no exemplo é o endereço 0x804840b\).
 
-Por conta dessa atualização do EIP, o fluxo é desviado para o endereço da função chamada. A ideia de colocar o endereço da próxima instrução na pilha é para o processador saber para onde tem que voltar quando a função terminar. E falando em terminar, a estrela do fim da festa é a instrução RET \(de _RETURN_\). Ela faz uma única coisa:
+Por conta dessa atualização do EIP, o fluxo é desviado para o endereço da função chamada. A ideia de colocar o endereço da próxima instrução na pilha é para o processador saber para onde tem que voltar quando a função terminar. E, falando em terminar, a estrela do fim da festa é a instrução RET \(de _RETURN_\). Ela faz uma única coisa:
 
 1. Retira um valor do topo da pilha e coloca no EIP.
 
