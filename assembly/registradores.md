@@ -10,6 +10,7 @@ Um registrador de uso geral, também chamado de GPR \(_General Purpose Register_
 
 Existem 8 registradores de uso geral na arquitetura Intel x86. Apesar de poderem ser utilizados para qualquer coisa, como seu nome sugere, a seguinte convenção é normalmente respeitada:
 
+| :--- | :--- | :--- |
 | EAX | Accumulator | Usado em operações aritiméticas |
 | EBX | Base | Ponteiro para dados |
 | ECX | Counter | Contador em repetições |
@@ -24,8 +25,6 @@ Para fixar o assunto, é importante trabalhar um pouco. Vamos escrever o seguint
 {% code-tabs %}
 {% code-tabs-item title="ou.s" %}
 ```assembly
-BITS 32
-
 global start
 
 section .text
@@ -96,14 +95,14 @@ Agora cabe à você fazer mais alguns testes com outros registradores de uso ger
 
 Para entender, analise as seguintes instruções:
 
-```text
+```assembly
 mov eax, 0xaabbccdd
 mov ax, 0xeeff
 ```
 
 Após a execução das instruções acima, EAX conterá o valor **0xaabbeeff**, já que somente sua parte **baixa** foi modificada pela segunda instrução. Agora analise o seguinte trecho:
 
-```text
+```assembly
 mov eax, 0xaabbccdd
 mov ax, 0xeeff
 mov ah, 0xcc
@@ -122,10 +121,9 @@ Os registradores EBP, ESI, EDI e ESP também podem ser utilizados como registrad
 
 Estes registradores armazenam o que chamamos de seletores, ponteiros que identificam segmentos na memória, essenciais para operação em modo real. Em modo protegido, que é o modo de operação do processador que os sistemas operacionais modernos utilizam, a função de cada registrador de segmento fica a cargo do SO. Abaixo a lista dos registradores de segmento e sua função em modo protegido:
 
-| CS | Code Segment |
 | :--- | :--- |
+| CS | Code Segment |
 | DS | Data Segment |
-| SS | Stack Segment |
 | ES | Data Segment |
 | FS | Data Segment \(no Windows em x86, aponta para o o [TEB](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686708%28v=vs.85%29.aspx) \(_Thread Environment Block_\) da _thread_ atual do processo em execução\) |
 | GS | Data Segment |
