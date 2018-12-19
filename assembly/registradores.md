@@ -11,7 +11,6 @@ Um registrador de uso geral, também chamado de GPR \(_General Purpose Register_
 Existem 8 registradores de uso geral na arquitetura Intel x86. Apesar de poderem ser utilizados para qualquer coisa, como seu nome sugere, a seguinte convenção é normalmente respeitada:
 
 | EAX | Accumulator | Usado em operações aritiméticas |
-| :--- | :--- | :--- |
 | EBX | Base | Ponteiro para dados |
 | ECX | Counter | Contador em repetições |
 | EDX | Data | Usado em operações de E/S |
@@ -24,7 +23,7 @@ Para fixar o assunto, é importante trabalhar um pouco. Vamos escrever o seguint
 
 {% code-tabs %}
 {% code-tabs-item title="ou.s" %}
-```text
+```assembly
 BITS 32
 
 global start
