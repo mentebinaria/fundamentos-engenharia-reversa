@@ -1,0 +1,75 @@
+# Windows API
+
+Uma API \(_Application Programming Interface_\) é uma interface para programar uma aplicação. No caso do Windows, consiste num conjunto de funções expostas para serem usadas por aplicativos, inclusive em _user mode_.
+
+Para o escopo deste livro, vamos cobrir uma pequena parte da Win32 API, com foco nas funções disponíveis basicamente em duas bibliotecas diferentes: a USER32.DLL e a KERNEL32.DLL.
+
+Considere o seguinte programa:
+
+```c
+#include <windows.h>
+
+int main() {
+    MessageBox(NULL, "Cash", "Johnny", MB_OK);
+    return 0;
+}
+```
+
+A função _MessageBox\(\)_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da USER32.DLL \(além de outras bibliotecas\), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível na [MSDN](https://msdn.microsoft.com/pt-br/library/windows/desktop/ms645505%28v=vs.85%29.aspx). Copiamos seu protótipo abaixo para explicar seus parâmetros:
+
+```c
+int WINAPI MessageBox(
+    _In_opt_ HWND    hWnd,
+    _In_opt_ LPCTSTR lpText,
+    _In_opt_ LPCTSTR lpCaption,
+    _In_     UINT    uType
+);
+```
+
+A Microsoft utiliza várias convenções de nome que precisam ser explicadas para o entendimento dos protótipos das funções de sua API. Para entender o protótipo da função _MessageBox_, é preciso conhecer algumas:
+
+|  |  |
+| :--- | :--- |
+| WINAPI | Define que a convenção de chamada da função é a \_\_stdcall |
+| \_In\_ | Define que o parâmetro é de entrada |
+| \_Out\_ | Define que o parâmetro é de saída \(a função vai escrever nele\) |
+| \_opt\_ | O parâmetro é opcional \(pode ser NULL\) |
+| HANDLE | Um número identificador de um objeto na API do Windows  |
+| HWND | Um _handle_ \(identificador\) de janela |
+| LPCSTR | **L**ong **P**ointer to a **C**onst **T**CHAR **STR**ing |
+| UINT | _unsigned int_ ou DWORD \(32-bits\) |
+
+Agora vamos explicar os parâmetros:
+
+#### hWnd \[entrada, opcional\]
+
+Um _handle_ que identifica qual janela é dona da caixa de mensagem. Isso serve para atrelar uma mensagem a uma certa janela \(e impedi-la de ser fechada antes da caixa de mensagem, por exemplo\). Como é opcional, este parâmetro pode ser NULL, o que fiz a função que a caixa de mensagem não possui um dono.
+
+#### lpText \[entrada, opcional\]
+
+Um ponteiro para um texto que será exibido na caixa de mensagem. Se for NULL, a mensagem não terá um conteúdo, mas ainda assim aparecerá.
+
+#### lpCaption \[entrada, opcional\]
+
+Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL a caixa de mensagem não terá um título, mas ainda assim aparecerá.
+
+#### uType \[entrada\]
+
+Configura o tipo de caixa de mensagem. É um número inteiro que pode ser definido por macros para cada _flag_, definida na [documentação da função](https://msdn.microsoft.com/pt-br/library/windows/desktop/ms645505%28v=vs.85%29.aspx). Se passada a macro MB\_OKCANCEL \(0x00000001L\), por exemplo, faz com que a caixa de mensagem tenha dois botões: OK e Cancelar. Se passada a macro MB\_ICONEXCLAMATION \(0x00000030L\), a janela terá um ícone de exclamação. Se quiséssemos combinar as duas características, precisaríamos passar as duas _flags_ utilizando uma operação OU entre elas, assim:
+
+```c
+MessageBox(NULL, "Cash", "Johnny", MB_OKCANCEL | MB_ICONEXCLAMATION);
+```
+
+Como macros e cálculos assim são resolvidos em C numa etapa conhecida por pré-compilação, o resultado da operação OU entre 1 e 0x30 será substituído neste código, ficando assim:
+
+```c
+MessageBox(NULL, "Cash", "Johnny", 0x31);
+```
+
+{% hint style="warning" %}
+Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser NULL, ou zero, dependendo do que a documentação da função diz.
+{% endhint %}
+
+Funções importantes da Win32 incluem CreateFile, DeleteFile, RegOpenKey, RegCreateKey, dentre outras.
+
