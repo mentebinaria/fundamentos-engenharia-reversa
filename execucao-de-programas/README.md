@@ -8,6 +8,10 @@ Os programas comuns rodam em _user mode_, enquanto os serviços internos do SO e
 
 Apesar de o Windows outros sistemas operacionais modernos trabalharem com somente estes dois níveis de privilégios de execução, os processadores Intel e compatíveis suportam quatro níveis, também chamado de anéis \(_rings_\), numerados de 0 a 4. Para _kernel mode_ é utilizado o _ring_ 0 e para _user mode_, o _ring_ 3.
 
+Programas rodando em _user mode_ tampouco possuem acesso ao hardware do computador. Essencialmente, todos estes fatores combinados fazem com que os programas rodando neste privilégio de execução não gerem erros fatais como a famosa "tela azul da morte" (ou BSOD - **B**lue **S**creen **O**f **D**eath).
+
+Passa que toda a parte legal acontece _kernel mode_, sendo assim, um processo (na verdade uma _thread_) rodando em _user mode_ pode executar tarefas em _kernel mode_ através da API do Windows, que funciona como uma interface para tal.
+
 ### Dependências
 
 Quando um programador cria um programa, em muitos casos ele utiliza funções de bibliotecas \(ou _libraries_ em inglês\), também chamadas de DLL \(_Dynamic-Link Library_\). Sendo assim, analise o seguinte simples programa em C:
@@ -31,7 +35,9 @@ O fato é que a _printf\(\)_ não escreve diretamente na tela. Ao contrário, a 
 
 ### Loader
 
-Quando um programa é executado, ele é copiado para a memória e um **processo** é criado para ele. Dizemos então que um processo está rodando. Quem faz este carregamento de um processo em memória é um componente do sistema operacional chamado de _image loader_, presente na biblioteca **ntdll.dll**.
+Quando um programa é executado (por exemplo, com um duplo-clique no Windows), ele é copiado para a memória e um **processo** é criado para ele. Dizemos então que um processo está rodando, mas esta afirmação não é muito precisa: na verdade, todo processo no Windows possui pelo menos uma _thread_ e ela sim é que roda. O processo funciona como um "container" que contém várias informações sobre o programa rodando e suas _threads_.
+
+Quem cria esse processo em memória é um componente do sistema operacional chamado de _image loader_, presente na biblioteca **ntdll.dll**.
 
 {% hint style="warning" %}
 O código do _loader_  roda **antes** do código do programa a ser carregado. É um código comum a todos os processos executados no sistema operacional.
