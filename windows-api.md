@@ -34,20 +34,20 @@ A Microsoft utiliza várias convenções de nome que precisam ser explicadas par
 | \_In\_ | Define que o parâmetro é de entrada |
 | \_Out\_ | Define que o parâmetro é de saída \(a função vai escrever nele\) |
 | \_opt\_ | O parâmetro é opcional \(pode ser NULL\) |
-| HANDLE | Um número identificador de um objeto na API do Windows  |
-| HWND | Um _handle_ \(identificador\) de janela |
-| LPCSTR | **L**ong **P**ointer to a **C**onst **T**CHAR **STR**ing |
+| HANDLE | Um número identificador de um objeto no ambiente Windows  |
+| HWND | Um _handle_ \(identificador\) da janela |
+| LPCTSTR | **L**ong **P**ointer to a **C**onst **T**CHAR **STR**ing |
 | UINT | _unsigned int_ ou DWORD \(32-bits\) |
 
 Agora vamos explicar os parâmetros:
 
 #### hWnd \[entrada, opcional\]
 
-Um _handle_ que identifica qual janela é dona da caixa de mensagem. Isso serve para atrelar uma mensagem a uma certa janela \(e impedi-la de ser fechada antes da caixa de mensagem, por exemplo\). Como é opcional, este parâmetro pode ser NULL, o que fiz a função que a caixa de mensagem não possui um dono.
+Um _handle_ que identifica qual janela é dona da caixa de mensagem. Isso serve para atrelar uma mensagem a uma certa janela \(e impedi-la de ser fechada antes da caixa de mensagem, por exemplo\). Como é opcional, este parâmetro pode ser NULL, o que faz com que a caixa de mensagem não possua uma janela dona.
 
 #### lpText \[entrada, opcional\]
 
-Um ponteiro para um texto que será exibido na caixa de mensagem. Se for NULL, a mensagem não terá um conteúdo, mas ainda assim aparecerá.
+Um ponteiro para um texto (uma _string_) que será exibido na caixa de mensagem. Se for NULL, a mensagem não terá um conteúdo, mas ainda assim aparecerá.
 
 #### lpCaption \[entrada, opcional\]
 
@@ -71,5 +71,5 @@ MessageBox(NULL, "Cash", "Johnny", 0x31);
 Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser NULL, ou zero, dependendo do que a documentação da função diz.
 {% endhint %}
 
-Funções importantes da Win32 incluem CreateFile, DeleteFile, RegOpenKey, RegCreateKey, dentre outras.
+Funções importantes da Win32 incluem CreateFile, DeleteFile, RegOpenKey, RegCreateKey, dentre outras. É altamente recomendado que o leitor crie programas de exemplo utilizando-as para atestar seu funcionamento.
 
