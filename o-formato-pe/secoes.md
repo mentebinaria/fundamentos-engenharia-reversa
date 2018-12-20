@@ -64,7 +64,7 @@ O sistema operacional divide a memória RAM em páginas, normalmente de 4 _kilob
 
 Para mapear este executável em memória e rodá-lo, o SO precisa copiar o conteúdo de suas seções em páginas de memória e _setar_ suas permissões de acordo. Analise agora a figura abaixo:
 
-![Mapeamento de se&#xE7;&#xF5;es em mem&#xF3;ria](../.gitbook/assets/alinhamento%20%281%29.png)
+![Mapeamento de se&#xE7;&#xF5;es em mem&#xF3;ria](../.gitbook/assets/alinhamento.png)
 
 Perceba na figura que a seção .text já ocuparia duas páginas que precisariam ter permissões de leitura e execução. No que sobrou da segunda página, o SO não pode mapear a .data pois esta, apesar de compartilhar a permissão de leitura, exige escrita ao invés de execução. Logo, ele precisa mapeá-la na próxima página.
 

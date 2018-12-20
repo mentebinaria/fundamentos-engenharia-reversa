@@ -2,24 +2,21 @@
 
 ### Memória virtual
 
-Onde já se viu dois executáveis com o **ImageBase** em 0x400000 rodarem ao mesmo tempo se ambos são carregados no mesmo endereço de memória? Bem, a verdade é que não são. Existe um esquema chamado de **memória virtual** que consiste num mapeamento da memória RAM real física para uma memória virtual para cada processo no sistema, dando a eles a ilusão de que estão sozinhos num ambiente monotarefa como era antigamente \(vide MS-DOS e outros sistemas antigos\). A tabela a seguir ilustra este mecanismo:
+Onde já se viu dois executáveis com o **ImageBase** em 0x400000 rodarem ao mesmo tempo se ambos são carregados no mesmo endereço de memória? Bem, a verdade é que não são. Existe um esquema chamado de **memória virtual** que consiste num mapeamento da memória RAM real física para uma memória virtual para cada processo no sistema, dando a eles a ilusão de que estão sozinhos num ambiente monotarefa como era antigamente \(vide MS-DOS e outros sistemas antigos\). Essa memória virtual também pode ser mapeada para um arquivo em disco, com o _pagefile.sys_. O desenho a seguir ilustra o mecanismo de mapeamento:
 
-| Identificador do processo \(PID\) | Tamanho em memória | Endereço virtual | Endereço físico |
-| :--- | :--- | :--- | :--- |
-| 341 | 0x400 | 0x400000 | 0x80000000 |
-| 2181 | 0x1000 | 0x400000 | 0x80000400 |
-| 124 | 0x800 | 0x400000 | 0x80001400 |
-| 843 | 0x2000 | 0x400000 | 0x80001C00 |
+![Memória Virtual](../.gitbook/assets/memoria_virtual.png)
 
-A tabela é apenas ilustrativa, mas abrange o necessário para entender o que acontece no Windows de 32-bits em relação à memória virtual: o sistema gerencia uma tabela que relaciona endereço físico de memória \(real\) com endereço virtual, para cada processo. Por isso é possível para o _kernel_ \(o núcleo\) do sistema saber que, por exemplo, de 0x80000000 a 0x80000400 reside o processo de PID 341, mesmo que este pense que está sozinho no endereço 0x400000. É uma completa enganação mesmo. Todos acham que estão sozinhos, mas na verdade rodam juntos sob controle do _kernel_.
+Conforme explicado no capítulo sobre as Seções dos arquivos PE, a memória é dividida em páginas, tanto a virtual quanto a física. No desenho, os dois processos possuem páginas mapeadas pelo _kernel_ (pelo gerenciador de memória, que é parte deste) em memória física e em disco (sem uso no momento). Perceba que as páginas de memória não precisam ser contíguas (uma imediatamente após a outra) no _layout_ da memória física, nem no da virtual. Além disso, dois processos diferentes podem ter regiões virtuais mapeadas para a mesma região da memória física.
+
+Em resumo, o sistema gerencia uma tabela que relaciona endereço físico de memória \(real\) com endereço virtual, para cada processo. Todos "acham" que estão sozinhos no sistema, mas na verdade estão juntos sob controle do _kernel_.
 
 ### Endereço Virtual
 
-O endereço virtual, em inglês Virtual Address, ou simplesmente VA, é justamente a localização virtual em memória de um dado ou instrução. Por exemplo, quando alguém fazendo engenharia reversa num programa diz que no endereço 0x401000 existe uma função que merece atenção, quer dizer que ela está no VA 0x401000 do binário quando carregado. Para ver a mesma função, você precisa carregar o binário em memória \(normalmente feito com um _debugger_, como veremos num capítulo futuro\) e apontar para tal endereço.
+O endereço virtual, em inglês Virtual Address, ou simplesmente VA, é justamente a localização virtual em memória de um dado ou instrução. Por exemplo, quando alguém fazendo engenharia reversa num programa diz que no endereço 0x401000 existe uma função que merece atenção, quer dizer que ela está no VA 0x401000 do binário quando carregado. Para ver a mesma função, você precisa carregar o binário em memória \(normalmente feito com um _debugger_, como veremos num capítulo futuro\) e verificar o conteúdo de tal endereço.
 
 ### Endereço Virtual Relativo
 
-Em inglês, _Relative Virtual Address_, é um VA não absoluto, mas relativo à uma base. Por exemplo, o valor do campo _entrypoint_ no cabeçalho Opcional é um RVA relativo à base da imagem \(campo _ImageBase_ no mesmo cabeçalho\). Sendo assim, avalie seu valor na saída a seguir:
+Em inglês, _Relative Virtual Address_, é um VA que, ao invés de ser absoluto, é relativo à alguma base. Por exemplo, o valor do campo _entrypoint_ no cabeçalho Opcional é um RVA relativo à base da imagem \(campo _ImageBase_ no mesmo cabeçalho\). Com isso em mente, avalie seu valor na saída a seguir:
 
 ```text
 Optional/Image header
@@ -68,6 +65,3 @@ entrypoint_va = 0x4039c2
 {% hint style="danger" %}
 Os RVA's podem ser relativos à outras bases que não a base da imagem. É preciso consultar na documentação qual a relatividade de um RVA para convertê-lo corretamente para o VA correspondente.
 {% endhint %}
-
-
-
