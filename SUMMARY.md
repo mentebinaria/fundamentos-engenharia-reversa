@@ -11,7 +11,7 @@
 * [Cadeias de texto](cadeias_de_texto/README.md)
   * [ASCII](cadeias_de_texto/ascii.md)
   * [UNICODE](cadeias_de_texto/unicode.md)
-  * [C strings](cadeiras_de_texto/c-strings.md)
+  * [C strings](cadeias_de_texto/c-strings.md)
 * [Arquivos](arquivos/README.md)
   * [Formatos](arquivos/formatos.md)
 * [O formato PE](o-formato-pe/README.md)
