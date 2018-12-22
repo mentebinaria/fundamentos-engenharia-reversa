@@ -32,6 +32,7 @@
   * [Instruções básicas](assembly/instrucoes-basicas.md)
   * [Funções e pilha](assembly/funcoes-e-pilha.md)
 * [Depuração](depuracao/README.md)
+  * [O debugger](depuracao/debugger.md)
   * [Disassembly](depuracao/disassembly.md)
   * [Breakpoints](depuracao/breakpoints.md)
 * [Apêndices](apendices/README.md)
