@@ -6,7 +6,7 @@ Onde já se viu dois executáveis com o **ImageBase** em 0x400000 rodarem ao mes
 
 ![Memória Virtual](../.gitbook/assets/memoria_virtual.png)
 
-Conforme explicado no capítulo sobre as Seções dos arquivos PE, a memória é dividida em páginas, tanto a virtual quanto a física. No desenho, os dois processos possuem páginas mapeadas pelo _kernel_ (pelo gerenciador de memória, que é parte deste) em memória física e em disco (sem uso no momento). Perceba que as páginas de memória não precisam ser contíguas (uma imediatamente após a outra) no _layout_ da memória física, nem no da virtual. Além disso, dois processos diferentes podem ter regiões virtuais mapeadas para a mesma região da memória física.
+Conforme explicado no capítulo sobre as Seções dos arquivos PE, a memória é dividida em páginas, tanto a virtual quanto a física. No desenho, os dois processos possuem páginas mapeadas pelo _kernel_ (pelo gerenciador de memória, que é parte deste) em memória física e em disco (sem uso no momento). Perceba que as páginas de memória não precisam ser contíguas (uma imediatamente após a outra) no _layout_ de memória física, nem no da virtual. Além disso, dois processos diferentes podem ter regiões virtuais mapeadas para a mesma região da memória física, o que chamamos de páginas compartilhadas.
 
 Em resumo, o sistema gerencia uma tabela que relaciona endereço físico de memória \(real\) com endereço virtual, para cada processo. Todos "acham" que estão sozinhos no sistema, mas na verdade estão juntos sob controle do _kernel_.
 

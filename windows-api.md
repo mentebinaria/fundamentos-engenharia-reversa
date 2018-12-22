@@ -39,13 +39,17 @@ A Microsoft utiliza várias convenções de nome que precisam ser explicadas par
 | LPCTSTR | **L**ong **P**ointer to a **C**onst **T**CHAR **STR**ing |
 | UINT | _unsigned int_ ou DWORD \(32-bits\) |
 
-Agora vamos explicar os parâmetros:
+{% hint style="info" %}
+Um _handle_ é um número que identifica um objeto (arquivo, chave de registro, diretório, etc) aberto usado por um processo. É um conceito similar ao _file descriptor_ em ambiente Unix/Linux. _Handles_ só são acessíveis diretamente em _kernel mode_, por isso os programas interagem com eles através de funções da API do Windows. Um bom exemplo é a [CloseHandle](https://msdn.microsoft.com/en-us/library/windows/desktop/ms724211(v=vs.85).aspx).
+{% endhint %}
 
-#### hWnd \[entrada, opcional\]
+Agora vamos explicar os parâmetros da função _MessageBox_:
+
+**hWnd \[entrada, opcional\]**
 
 Um _handle_ que identifica qual janela é dona da caixa de mensagem. Isso serve para atrelar uma mensagem a uma certa janela \(e impedi-la de ser fechada antes da caixa de mensagem, por exemplo\). Como é opcional, este parâmetro pode ser NULL, o que faz com que a caixa de mensagem não possua uma janela dona.
 
-#### lpText \[entrada, opcional\]
+**lpText \[entrada, opcional\]**
 
 Um ponteiro para um texto (uma _string_) que será exibido na caixa de mensagem. Se for NULL, a mensagem não terá um conteúdo, mas ainda assim aparecerá.
 
@@ -53,7 +57,7 @@ Um ponteiro para um texto (uma _string_) que será exibido na caixa de mensagem.
 
 Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL a caixa de mensagem não terá um título, mas ainda assim aparecerá.
 
-#### uType \[entrada\]
+**uType \[entrada\]**
 
 Configura o tipo de caixa de mensagem. É um número inteiro que pode ser definido por macros para cada _flag_, definida na [documentação da função](https://msdn.microsoft.com/pt-br/library/windows/desktop/ms645505%28v=vs.85%29.aspx). Se passada a macro MB\_OKCANCEL \(0x00000001L\), por exemplo, faz com que a caixa de mensagem tenha dois botões: OK e Cancelar. Se passada a macro MB\_ICONEXCLAMATION \(0x00000030L\), a janela terá um ícone de exclamação. Se quiséssemos combinar as duas características, precisaríamos passar as duas _flags_ utilizando uma operação OU entre elas, assim:
 
@@ -61,15 +65,14 @@ Configura o tipo de caixa de mensagem. É um número inteiro que pode ser defini
 MessageBox(NULL, "Cash", "Johnny", MB_OKCANCEL | MB_ICONEXCLAMATION);
 ```
 
-Como macros e cálculos assim são resolvidos em C numa etapa conhecida por pré-compilação, o resultado da operação OU entre 1 e 0x30 será substituído neste código, ficando assim:
+Como macros e cálculos assim são resolvidos em C numa etapa conhecida por pré-compilação, o resultado da operação OU entre 1 e 0x30 será substituído neste código, antes de ser compilado, ficando assim:
 
 ```c
-MessageBox(NULL, "Cash", "Johnny", 0x31);
+MessageBox(0, "Cash", "Johnny", 0x31);
 ```
 
 {% hint style="warning" %}
 Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser NULL, ou zero, dependendo do que a documentação da função diz.
 {% endhint %}
 
-Funções importantes da Win32 incluem CreateFile, DeleteFile, RegOpenKey, RegCreateKey, dentre outras. É altamente recomendado que o leitor crie programas de exemplo utilizando-as para atestar seu funcionamento.
-
+Funções importantes da Win32 incluem CreateFile, DeleteFile, RegOpenKey, RegCreateKey, dentre outras. É altamente recomendado que o leitor crie programas de exemplo utilizando-as para atestar o funcionamento delas. Você encontrará algumas dessas funções separadas por categoria no apêndice [Funções da API do Windows](apendices/funcoes-api-win.md).

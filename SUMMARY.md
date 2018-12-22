@@ -37,6 +37,7 @@
 * [Apêndices](apendices/README.md)
   * [Tabela ASCII](apendices/tabela-ascii.md)
   * [Exemplos de código em Assembly](apendices/exemplos-de-codigo-em-assembly.md)
+  * [Funções da API do Windows](apendices/funcoes-api-win.md)
   * [Ferramentas](apendices/ferramentas.md)
   * [Referências](apendices/referencias.md)
 
