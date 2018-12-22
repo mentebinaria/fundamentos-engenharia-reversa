@@ -103,7 +103,7 @@ Olha como ela fica compilada no Linux em 32-bits:
  8048432:       83 c4 08                add    esp,0x8
 ```
 
-Removi partes do código intencionalmente, pois o objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL \(no endereço 0x804842d em nosso exemplo\) chama as funções e a instrução RET \(em 0x8048417\) retorna para a instrução imediatamente após a CALL \(0x8048432\), para que a execução continue.
+Removi partes do código intencionalmente, pois o objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL \(no endereço 0x804842d em nosso exemplo\) chama a função _soma()_ em 0x0804840b e a instrução RET \(em 0x8048417\) retorna para a instrução imediatamente após a CALL \(0x8048432\), para que a execução continue.
 
 ## A pilha de memória
 
@@ -151,20 +151,30 @@ Por conta dessa atualização do EIP, o fluxo é desviado para o endereço da fu
 
 1. Retira um valor do topo da pilha e coloca no EIP.
 
-{% hint style="danger" %}
-AINDA ESTAMOS TRABALHANDO NESTA SEÇÃO
-{% endhint %}
+Isso faz com que o fluxo de execução do programa volte para a instrução imediatamente após a CALL, que chamou a função.
 
+## Análise da MessageBox
 
+Vamos agora analisar a pilha de memória num exemplo com a função MessageBox, da API do Windows:
 
-* O principal uso da pilha \(stack\) é para as funções armazenarem variáveis locais e também para passagem de parâmetros \(dependendo da calling convention\).
-* Alinhas em 4 bytes \(32-bits\)
-  * Cresce para baixo
-  * Prólogo e epílogo de funções
-* Recuperação de parâmetros
-* Instruções de manipulação da pilha:
-  * PUSH copia um valor para a pilha \(empilha\) e decremente o registrador ESP em 4. Ex.: PUSH 0x51
-  * POP recupera um valor da pilha \(desempilha\) para algum lugar e incrementa ESP em 4. Exemplo: POP EBX.
-  * CALL empilha o endereço da próxima instrução e muda o EIP para o destino dela.
-  * RET desempilha o endereço no topo da pilha para EIP
+```assembly
+00401516 | 6A 31  | push 31                                     |
+00401518 | 68 00  | push msgbox.404000                          | 404000:"Johnny"
+0040151D | 68 07  | push msgbox.404007                          | 404007:"Cash"
+00401522 | 6A 00  | push 0                                      |
+00401524 | E8 E8  | call <user32.MessageBoxA>                   |
+```
 
+Perceba que quatro parâmetros são empilhados antes da chamada à _MessageBoxA_ (versão da função _MessageBox_ que recebe _strings_ ASCII, por isso o sufixo **A**).
+
+Os parâmetros são empilhados na ordem inversa.
+
+Já estudamos o protótipo desta função no capítulo que apresenta a [Windows API](../windows-api.md) e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro [uType](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-messagebox#parameters) e, se o decompormos, veremos que 0x31 é um OU entre 0x30 (MB_ICONEXCLAMATION) e 0x1 (MB_OKCANCEL).
+
+O próximo parâmetro é o número 404000, um ponteiro para a _string_ "Johnny", que é o título da mensagem. Depois vem o ponteiro para o texto da mensagem e por fim o zero (NULL), empilhado em 00401522, que é o _handle_.
+
+O resultado é apresentado a seguir:
+
+![Resultado da chamada à MessageBox](../.gitbook/assets/msgbox.png)
+
+É importante perceber que, após serem compreendidos, podemos controlar estes parâmetros e alterar a execução do programa conforme quisermos. Este é o assunto do próximo capítulo, sobre depuração.

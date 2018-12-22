@@ -53,7 +53,7 @@ Um _handle_ que identifica qual janela é dona da caixa de mensagem. Isso serve 
 
 Um ponteiro para um texto (uma _string_) que será exibido na caixa de mensagem. Se for NULL, a mensagem não terá um conteúdo, mas ainda assim aparecerá.
 
-#### lpCaption \[entrada, opcional\]
+**lpCaption \[entrada, opcional\]**
 
 Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL a caixa de mensagem não terá um título, mas ainda assim aparecerá.
 
