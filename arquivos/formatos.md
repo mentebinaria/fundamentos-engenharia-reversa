@@ -4,7 +4,7 @@ Os arquivos de texto, sejam eles ASCII ou UNICODE são tipos de arquivos bem sim
 
 Ao abrir o arquivo GIF no **wxHexEditor**, é exibida uma tela similar a abaixo: 
 
-![Figura 1: Conte&#xFA;do de um arquivo GIF visualizado em hexadecimal](../.gitbook/assets/hex_fig1.png)
+![Conteúdo de um arquivo GIF visualizado em hexadecimal](../.gitbook/assets/hex_fig1.png)
 
 Para entender como este tipo de _software_ funciona, vamos começar pelas colunas onde os _bytes_ estão organizados:
 
@@ -42,7 +42,7 @@ De volta ao formato, é importante ressaltar que tanto o programador do software
 | 6 | 2 | &lt;variável&gt; | Largura em pixels |
 | 8 | 2 | &lt;variável&gt; | Altura em pixels |
 
-Seguindo esta tabela fornecida por quem desenhou o formato GIF e olhando o conteúdo do arquivo de exemplo na Figura 1, podemos verificar que o primeiro campo, de 6 _bytes_, casa exatamente com o que está definido no padrão. Os _bytes_ são a sequência 0x47, 0x49, 0x46, 0x38, 0x39 e 0x61 que representam a sequência em ASCII GIF89a. É bem comum ao definir formatos de arquivo que o primeiro campo, normalmente chamado de cabeçalho \(_header_\) ou número mágico \(_magic number_\) admita como valor uma representação ASCII que dê alguma indicação de que tipo de arquivo se trata. Por exemplo, os tipos de arquivo ZIP possuem o _magic number_ equivalente ao texto **PK**. Já o tipo de arquivo RAR começa com os _bytes_ equivalentes ao texto **Rar!**. Não é uma regra, mas é comum.
+Seguindo esta tabela fornecida por quem desenhou o formato GIF e olhando o conteúdo do arquivo de exemplo na imagem anterior, podemos verificar que o primeiro campo, de 6 _bytes_, casa exatamente com o que está definido no padrão. Os _bytes_ são a sequência 0x47, 0x49, 0x46, 0x38, 0x39 e 0x61 que representam a sequência em ASCII GIF89a. É bem comum ao definir formatos de arquivo que o primeiro campo, normalmente chamado de cabeçalho \(_header_\) ou número mágico \(_magic number_\) admita como valor uma representação ASCII que dê alguma indicação de que tipo de arquivo se trata. Por exemplo, os tipos de arquivo ZIP possuem o _magic number_ equivalente ao texto **PK**. Já o tipo de arquivo RAR começa com os _bytes_ equivalentes ao texto **Rar!**. Não é uma regra, mas é comum.
 
 {% hint style="danger" %}
 No exemplo do formato GIF o tamanho do primeiro campo é de 6 _bytes,_ mas nem todo _magic number_ possui este tamanho. Na verdade, não há regra.

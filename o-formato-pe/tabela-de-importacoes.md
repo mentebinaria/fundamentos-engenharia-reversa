@@ -37,7 +37,7 @@ Este campo aponta finalmente para o que chamamos de _IAT \(Import Address Table\
 
 Para fixar o conteúdo, é interessante validar tais informações. O exemplo abaixo utiliza o DIE para ver o diretório de dados de um arquivo PE:
 
-![Diret&#xF3;rio de dados de um arquivo PE](../.gitbook/assets/import_directories.png)
+![Diretório de dados de um arquivo PE](../.gitbook/assets/import_directories.png)
 
 Neste exemplo o campo _VirtualAddress_ do _Import Directory_ tem o valor 0x3000. Este é um endereço relativo, que você aprenderá sobre na próxima seção, no entanto, por agora você precisa apenas saber que este endereço é somado ao _ImageBase_ para funcionar. No caso, o _ImageBase_ deste binário é 0x400000 \(muito comum\), então o endereço da _Import  Descriptor Table_, apontado por este campo _VirtualAddress_, é 0x403000.
 

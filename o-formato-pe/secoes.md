@@ -4,7 +4,7 @@ As seções são divisões num binário PE. Uma analogia que torna o conceito de
 
 Podemos então dizer que um binário PE é completamente definido por cabeçalhos e seções \(com seu conteúdo\), como na seguinte ilustração:
 
-![Figura 4 - Vers&#xE3;o simplificada do arquivo PE](../.gitbook/assets/cabsec_fig3.png)
+![Versão simplificada do arquivo PE](../.gitbook/assets/cabsec_fig3.png)
 
 Como dito, a principal separação que existe entre as seções é em relação a seu conteúdo, que distinguimos entre **código** ou **dados**. Apesar de terem seus nomes ignorados pelo _loader_ do Windows, convencionam-se alguns, normalmente iniciados por um ponto. As seções padrão importantes são discutidas a seguir:
 

@@ -14,7 +14,7 @@ Assim como o formato GIF e outras especificações de formato de arquivo, o form
 
 A estrutura geral de um arquivo PE é apresentada na imagem abaixo:
 
-![Figura 2 - Estrutura de um arquivo PE](../.gitbook/assets/arquivo_pe.png)
+![Estrutura de um arquivo PE](../.gitbook/assets/arquivo_pe.png)
 
 Conheceremos agora os cabeçalhos mais importantes para este primeiro contato com a engenharia reversa e, em seguida, as seções de um arquivo PE.
 
