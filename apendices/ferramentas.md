@@ -21,7 +21,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [DIE \(Detect It Easy\)](http://ntinfo.biz/index.html) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
 | [PE-Bear](https://hshrzd.wordpress.com/pe-bear/) | Freeware | Analisador gráfico \(Qt\) multiplataforma que também detecta packers/protectors. |
 | [Stud\_PE](http://www.cgsoftlabs.ro/studpe.html) | Freeware | Analisador e editor com suporte a plugins, assinaturas do antigo PEiD, editor de recursos e mais. |
-| [pev](http://pev.sourceforge.net) | Livre | Meu toolkit de ferramentas de linha de comando para análise de PE. O **readpe** faz parte dele. 💚 |
+| [pev](http://pev.sourceforge.net) | Livre | Nosso 💚 toolkit de ferramentas de linha de comando para análise de PE. O **readpe** faz parte dele. |
 | [pestudio](https://www.winitor.com) | Freeware | Analisador de PE padrão da indústria. Tem versão Pro \(paga\). |
 | [DUMPBIN](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
 | [objdump](https://www.gnu.org/software/binutils/) | Livre | Parte do GNU binutils, também analisa PE, além de ELF, a.out, etc. |
@@ -32,6 +32,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [Binary Ninja](https://binary.ninja) | Comercial | Novo disassembler que teoricamente compete com o IDA. |
+| [Ghidra](https://ghidra-sre.org) | Livre | Disassembler livre lançado pela NSA |
 | [Hopper](https://www.hopperapp.com) | Comercial | Disassembler com foco em binários de Linux e macOS. |
 | [IDA](https://www.hex-rays.com/products/ida/) | Comercial | Disassembler **interativo** padrão de mercado. Possui versão freeware. |
 
@@ -50,6 +51,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
+| [angr](https://angr.io) | Livre | Framework para análise estática e simbólica de binários. |
 | [Frida](https://www.frida.re) | Livre | Framework para instrumentação dinâmica de binários. |
 | [Radare](https://rada.re/r/) | Livre | Suíte completa com debugger, disassembler e outras ferramentas para quase todo tipo de binário existente! |
 
@@ -58,7 +60,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | hexdump/hd | Livre | Padrão no BSD e Linux. Se chamado por "hd" exibe saída em hexa/ASCII. |
-| [hdump](https://sourceforge.net/projects/hdump/) | Livre | Clone próprio, multiplataforma \(funciona no Windows!\) do hexdump que imita a saída do **hd**. |
+| [hdump](https://sourceforge.net/projects/hdump/) | Livre | Clone nosso 💚, multiplataforma \(funciona no Windows!\) do hexdump que imita a saída do **hd**. |
 | od | Livre | Padrão no UNIX e Linux. O comando **od -tx1** produz uma saída similar à do **hd**. |
 | xxd | Livre | Vem com o vim. Uma saída similar à do **hd** é obtida com **xdd -g1**. |
 
@@ -83,6 +85,3 @@ $ xxd -g1 -l32 /bin/ls
 00000000: 7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00  .ELF............
 00000010: 03 00 3e 00 01 00 00 00 30 54 00 00 00 00 00 00  ..>.....0T......
 ```
-
-
-
