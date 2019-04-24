@@ -5,11 +5,3 @@ Chegamos no capítulo onde a engenharia reversa de fato começa. Aqui vamos estu
 Neste livro usaremos o [x64dbg](https://x64dbg.com/) por ser um _debugger_ de código aberto, gratuito e muito atualizado para Windows.
 
 Na próxima seção apresentaremos como baixar e configurar o x64dbg. Também utilizaremos um binário de exemplo durante o livro, que é um desafio chamado de [AnalyseMe00](https://www.mentebinaria.com.br/forums/topic/446-analyseme-n%C3%ADvel-00/). Com ele estudaremos os conceitos de engenharia reversa que precisamos para criar um fundamento sólido para avançar nesta área.
-
-* Highlight de instruções
-* Step into/out
-* Software breakpoints
-* Manipulação do EIP
-* x64dbg
-* Buscando por lugares para colocar um BP
-
