@@ -1,6 +1,9 @@
 # Registro de alterações
 
-#### Versão 0.2, lançada em ???
+### Versão 0.2
+Lançamento esperançosamente em breve
+
+As seguintes seções estão completadas:
 
 * [x] Tabela de Importações
 * [x] Execução de programas
@@ -17,7 +20,10 @@
   * [ ] Manipulação do programa
   * [ ] Patches
 
-#### Versão 0.1, lançada em 12 de Maio de 2017
+Além disso, os exemplos do livro foram atualizados para o Python 3.
+
+### Versão 0.1
+Lançada em 12 de Maio de 2017
 
 Primeira versão pública do livro. As seguintes seções ainda estão sendo trabalhadas:
 
@@ -28,6 +34,3 @@ Além disso, as seguintes seções não foram iniciadas ainda:
 
 * Assembly x86
 * Depuração.
-
-
-
