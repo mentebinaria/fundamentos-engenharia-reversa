@@ -1,4 +1,6 @@
-# Instalação do x64dbg
+# O debugger
+
+## Instalação
 
 1. Numa máquina virtual com o Windows (aqui utilizamos o Windows 7 mas qualquer um superior a este serve), baixe o [snapshot](https://sourceforge.net/projects/x64dbg/files/snapshots/) mais recente do x64dbg. É um arquivo .zip chamado _snapshot\_YYYY-MM-DD\_HH-MM.zip_ que vai variar dependendo da data e hora do _release_ (quando o software é liberado) pelo autor do projeto.
 
@@ -16,7 +18,7 @@ Existem muitas outras opções de configuração que você pode experimentar, ma
 
 ## Tela inicial
 
-Abra o arquivo _AnalyseMe-00.exe_ clicando em **File -> Open**. Você deverá ver uma tela como esta a seguir:
+Se ainda não o fez, faça download do nosso binário de exemplo, o [AnalyseMe-00.exe](https://www.mentebinaria.com.br/applications/core/interface/file/attachment.php?id=557) e abra-o no x32dbg clicando em **File -> Open**. Você deverá ver uma tela como esta:
 
 ![AnalyseMe-00.exe aberto no x32dbg](../.gitbook/assets/x32dbg_01.png)
 
@@ -40,4 +42,6 @@ Como o nome sugere, mostra o valor de cada registrador do processador.
 
 ### Pilha
 
-Mostra a pilha de memória, onde o endereço com fundo em preto marca o topo da pilha.
+Mostra a pilha de memória, onde o endereço com fundo em preto indica o topo da pilha.
+
+Na próxima seção, iremos depurar o binário de exemplo e devemos nos atentar às informações exibidas em cada uma das regiões da tela do debugger, acima apresentadas. Preparado? :)
