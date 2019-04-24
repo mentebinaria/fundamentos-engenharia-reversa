@@ -10,10 +10,12 @@
 * [x] Assembly
   * [x] Registradores
   * [x] Instruções básicas
-  * [ ] Funções e pilha
-* [ ] Depuração
-  * [ ] Disassembly
+  * [x] Funções e pilha
+* [x] Depuração
+  * [x] Disassembly
   * [ ] Breakpoints
+  * [ ] Manipulação do programa
+  * [ ] Patches
 
 #### Versão 0.1, lançada em 12 de Maio de 2017
 

@@ -35,6 +35,8 @@
   * [O debugger](depuracao/debugger.md)
   * [Disassembly](depuracao/disassembly.md)
   * [Breakpoints](depuracao/breakpoints.md)
+  * [Manipulação do fluxo](depuracao/manipulacao.md)
+  * [Patches](depuracao/patches.md)
 * [Apêndices](apendices/README.md)
   * [Tabela ASCII](apendices/tabela-ascii.md)
   * [Exemplos de código em Assembly](apendices/exemplos-de-codigo-em-assembly.md)
@@ -44,5 +46,5 @@
 
 ## Sobre o livro
 
-* [Registro de alterações](parte-0/registro-de-alteracoes.md)
+* [Registro de alterações](sobre/registro-de-alteracoes.md)
 
