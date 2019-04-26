@@ -97,6 +97,12 @@ A disjunção exclusiva entre x e y resulta em 1 se **somente** **um** deles for
 
 Assim como a disjunção é normalmente chamada de "OU", a disjunção exclusiva é chamada de "OU exclusivo", ou simplesmente XOR. Já virou até verbo e é comum ouvir pessoas falando que "XORearam" um dado.
 
+Algumas propriedades importantes desta operação são:
+
+1. Você pode aplicá-la em qualquer ordem. Então, *a ^ (b ^ c) = (a ^ b) ^ c* por exemplo.
+2. Um número "XOReado" com ele mesmo é sempre zero.
+3. Um número "XOReado" com zero é sempre ele mesmo.
+
 A operação XOR tem vários usos em computação. Alguns exemplos:
 
 #### Detecção de diferenças
