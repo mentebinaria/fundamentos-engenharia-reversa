@@ -30,6 +30,6 @@ Você pode adicionar quantos *breakpoints* de software quiser numa sessõa de de
 
 ![Lista de breakpoints](../.gitbook/assets/x32dbg_04_breakpoints.png)
 
-Você também pode assistir a aula 16 do CERO, que trata sobre este assunto.
+Você também pode assistir a aula a seguir do CERO, que trata sobre este assunto.
 
 {% embed url="https://www.youtube.com/watch?v=823KK-FYV9s" caption="Curso de Engenharia Reversa Online - Aula 16 - Breakpoints de software" %}
