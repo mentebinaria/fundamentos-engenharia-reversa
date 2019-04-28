@@ -2,10 +2,22 @@
 
 Já vimos que um _byte_ pode armazenar números de 0 a 255 por conta de seus 8 _bits_. Mas como fazemos quando um número é negativo? Não temos sinal \(-\), só _bits_. E agora? Não é possível ter números negativos então? Claro que sim, do contrário você não poderia fazer contas com números negativos e o código abaixo falharia:
 
-```text
+{% code-tabs %}
+{% code-tabs-item title="Python" %}
+```python
 >>> -3 + 1
 -2
 ```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="Bash" %}
+```bash
+# Usando o bc:
+echo "-3 + 1" | bc
+-2
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Mas não falhou! Isso acontece porque na computação dividimos as possibilidades quase que "ao meio". Por exemplo, sabendo que 1 _byte_ pode representar 256 possibilidades \(sendo o 0 e mais 255 de números positivos\), podemos dividir tais possibilidades, de modo a representar de -128 até +127. Continuamos com 256 possibilidades diferentes \(incluindo o zero\), reduzimos o máximo e aumentamos o mínimo. :-\)
 
@@ -20,10 +32,24 @@ Há ainda a técnica chamada de **complemento de dois**, necessária para calcul
 
 Sendo assim, vamos checar em Python:
 
-```text
+{% code-tabs %}
+{% code-tabs-item title="Python" %}
+```python
 >>> 0b11110110
 246
 ```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="Bash" %}
+```bash
+echo "$((2#11110110))"
+246
+# Usando o bc:
+echo "obase=10; ibase=2; 11110110" | bc
+246
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 O que aconteceu? Bem, realmente 0b11110110 dá 246 \(em decimal\), se interpretado como número sem sinal. Acontece que temos que dizer explicitamente que vamos interpretar um número x como número com sinal \(que pode ser positivo ou negativo\). Em Python, um jeito é usando a biblioteca _ctypes_:
 

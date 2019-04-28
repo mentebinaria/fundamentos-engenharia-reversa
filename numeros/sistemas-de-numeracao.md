@@ -50,12 +50,26 @@ O sistema octal é utilizado para as permissões de arquivo pelo comando chmod n
 Na programação normalmente um número octal é precedido de um algarismo 0 para diferenciar-se do decimal. Por exemplo, 12 seria doze \(decimal\), enquanto 012 é dez \(octal\). Portanto, cuidado ao ignorar o zero à esquerda!
 {% endhint %}
 
-Veja o exemplo em Python:
+Veja o exemplo:
 
+{% code-tabs %}
+{% code-tabs-item title="Python" %}
 ```python
 >>> 012
 10
 ```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="Bash" %}
+```bash
+echo "$((8#012))"
+10
+# Usando o bc:
+echo "obase=10; ibase=8; 012" | bc
+10
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ### Hexadecimal
 
@@ -98,9 +112,11 @@ Existem algumas propriedades interessantes que cabe ressaltar quando relacionamo
 1011 0000 1011 0000 1100 1010
 ```
 
-Teste no Python:
+Teste no terminal:
 
-```text
+{% code-tabs %}
+{% code-tabs-item title="Python" %}
+```python
 >>> 0xa
 10
 >>> 0x0A
@@ -110,6 +126,22 @@ Teste no Python:
 >>> 0xA
 10
 ```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="Bash" %}
+```bash
+echo "$((16#a))"
+10
+echo "$((16#0A))"
+10
+echo "$((16#000000000000000000000a))"
+10
+echo "$((16#A))"
+10
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 
 {% hint style="info" %}
 Em Python, C e outras linguagens, não importa se escrevemos números hexadecimais com letras maiúsculas ou minúsculas \(mais comum\), desde que os prefixemos com 0x. Os zeros à esquerda \(imediatamente após o 0x\) também não importam.
