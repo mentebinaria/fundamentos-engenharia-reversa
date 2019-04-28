@@ -1,6 +1,6 @@
 # Registro de alterações
 
-### Versão 0.2
+### Versão 0.2 (em andamento)
 Lançamento esperançosamente em breve
 
 As seguintes seções estão completadas:
