@@ -52,7 +52,7 @@ Campo que define alguns atributos do arquivo. Este campo é uma **máscara de bi
 
 Analise novamente o (*dump* hexadecimal do executável da calculadora)[dos.md#exercicios] considere que:
 
-* Logo após a assinatura PE na posição 0xd8 temos o primeiro campo do cabeçalho COFF que é o **Machine**. Ele é um campo de 2 _bytes_ conforme já dito, então os _bytes_ 0x4c e 0x01 definem seu valor. Considerando o _endianess_, chegamos ao valor 0x14c, que define que este executável foi criado para máquinas Intel i386 ou compatíveis.
+* Logo após a assinatura PE na posição 0xd8 temos o primeiro campo do cabeçalho COFF que é o **Machine**. Ele é um campo de 2 _bytes_ conforme já dito, então os _bytes_ 0x4c e 0x01 definem seu valor. Considerando o _endianness_, chegamos ao valor 0x14c, que define que este executável foi criado para máquinas Intel i386 ou compatíveis.
 * Em seguida, na posição 0xde, temos o **NumberOfSections** que é 4.
 * Depois vem o campo **TimeDateStamp** com o número inteiro de 32 _bits_ \(4 _bytes_\) sem sinal 0x4ce7979d que é 1290246045 em decimal. Podemos usar o comando **date** do Linux para converter para data e hora atuais:
 
