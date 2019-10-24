@@ -1,7 +1,8 @@
 # Registro de alterações
 
-### Versão 0.2 (em andamento)
-Lançamento esperançosamente em breve
+## Versão 0.2 (em processo de revisão)
+
+Lançamento esperançosamente em breve.
 
 As seguintes seções estão completadas:
 
@@ -16,13 +17,14 @@ As seguintes seções estão completadas:
   * [x] Funções e pilha
 * [x] Depuração
   * [x] Disassembly
-  * [ ] Breakpoints
-  * [ ] Manipulação do programa
-  * [ ] Patches
+  * [x] Breakpoints
+  * [x] Manipulação do programa
+  * [x] Patches
 
 Além disso, os exemplos do livro foram atualizados para o Python 3.
 
-### Versão 0.1
+## Versão 0.1
+
 Lançada em 12 de Maio de 2017
 
 Primeira versão pública do livro. As seguintes seções ainda estão sendo trabalhadas:

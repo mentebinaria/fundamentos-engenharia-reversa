@@ -8,7 +8,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [10 Editor](https://www.sweetscape.com/010editor/) | Shareware | Multiplataforma, tem se tornado o padrão da indústria. |
+| [010 Editor](https://www.sweetscape.com/010editor/) | Shareware | Multiplataforma, bastante usado. |
 | [Hex Workshop](http://www.hexworkshop.com/) | Comercial | Pago, somente para Windows, antigo, mas muito bem feito. |
 | [HT Editor](http://hte.sourceforge.net/) | Livre | Interface gráfica baseada em texto. Feio, porém eficiente. |
 | [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) | Freeware | Sem muitos recursos, mas quebra um galho. |
