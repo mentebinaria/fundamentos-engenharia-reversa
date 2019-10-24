@@ -6,7 +6,7 @@ Uma instrução é um conjunto definido por um código de operação \(_opcode_\
 opcode operando1, operando2, operando3
 ```
 
-Onde _opcode_ representa um código de operação definido no [manual da Intel](https://software.intel.com/en-us/articles/intel-sdm). Os operandos, que podem variar de 0 à 3 na IA-32 \(Intel Architecture de 32-bits\), consistem em números literais, registradores ou endereços de memória necessários para a instrução funcionar. Por exemplo, considere a seguinte instrução, que coloca o valor 2018 no registrador EAX:
+Onde _opcode_ representa um código de operação definido no [manual da Intel](https://software.intel.com/en-us/articles/intel-sdm). O número de operandos, que podem variar de 0 a 3 na IA-32 \(Intel Architecture de 32-bits\), consistem em números literais, registradores ou endereços de memória necessários para a instrução funcionar. Por exemplo, considere a seguinte instrução, que coloca o valor 2018 no registrador EAX:
 
 ```text
 B8 E2 07 00 00

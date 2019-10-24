@@ -26,7 +26,7 @@ De forma resumida, para parar nesta CALL, o que o x64dbg faz é:
 
 Isso poderia ser feito manualmente, mas os debuggers facilitam o trabalho, bastando você pressionar F2 ou clicar na bolinha para que todo este trabalho seja executado em segundo plano, sem que o usuário perceba. Incrível, não? :)
 
-Você pode adicionar quantos *breakpoints* de software quiser numa sessõa de debugging. Todos ficam salvos na aba **Breakpoints**, a não ser que você os exclua. Veja a imagem abaixo:
+Você pode adicionar quantos *breakpoints* de software quiser numa sessão de debugging. Todos ficam salvos na aba **Breakpoints**, a não ser que você os exclua. Veja a imagem abaixo:
 
 ![Lista de breakpoints](../.gitbook/assets/x32dbg_04_breakpoints.png)
 
