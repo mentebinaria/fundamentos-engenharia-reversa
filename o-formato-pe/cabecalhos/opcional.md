@@ -50,7 +50,7 @@ Perceba que a Microsoft chama os executáveis de PE de 64-bits de PE32+ e não d
 
 #### **AddressOfEntryPoint**
 
-Este é talvez o campo mais importante do cabeçalho opcional. Nele está contido o endereço do ponto de entrada \(_entrypoint_\), abreviado EP, que é onde o código do programa deve começar. Para arquivos executávels este endereço é relativo à base da imagem \(campo que veremos a seguir\). Para bibliotecas, ele não é necessário e pode ser zero, já que as funções de bilbioteca podem ser chamadas arbitrariamente.
+Este é talvez o campo mais importante do cabeçalho opcional. Nele está contido o endereço do ponto de entrada \(_entrypoint_\), abreviado EP, que é onde o código do programa deve começar. Para arquivos executáveis este endereço é relativo à base da imagem \(campo que veremos a seguir\). Para bibliotecas, ele não é necessário e pode ser zero, já que as funções de bilbioteca podem ser chamadas arbitrariamente.
 
 #### **ImageBase**
 
