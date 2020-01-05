@@ -168,7 +168,7 @@ Um bom exercício é criar o seu sistema de numeração, com símbolos diferente
 | 8 | $$ |
 | 9 | \#@@ |
 | 10 | \#@\# |
-| 11 | \#\#@ |
+| 11 | \#@$ |
 
 É importante que o leitor perceba a lógica utilizada para contar no sistema Lulip's. Ele não existe, mas criar o próprio sistema é um bom exercício para compreender como qualquer um pode ser convertido entre si.
 
