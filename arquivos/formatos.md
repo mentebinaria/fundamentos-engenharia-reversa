@@ -14,7 +14,7 @@ Define a **posição** no arquivo, em _bytes_. No exemplo acima, o primeiro _byt
 
 * O _byte_ no _offset_ 122 é o 0xb1.
 * A _word_ no _offset_ 226 é 0x3d 0x44.
-* O _byte_ no _offset_ 0x1b \(17 em decimal\) é 1.
+* O _byte_ no _offset_ 0x11 \(17 em decimal\) é 1.
 
 {% hint style="danger" %}
 No **wxHexEditor** você pode exibir os _offsets_ em hexadecimal clicando com o botão direito do mouse sobre eles. Outros editores como o [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) já exibem o _offset_ em hexadecimal por padrão.
