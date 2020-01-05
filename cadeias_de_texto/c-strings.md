@@ -34,7 +34,7 @@ Agora sabemos que a sequência de _bytes_ a ser procurada vai depender do tipo d
 
 * Em UTF-16-LE \(_Little Endian_, que é o padrão\) ou simplesmente UTF-16:
 
-45 00 72 00 72 00 6f
+45 00 72 00 72 00 6f 00
 
 Mas para sermos mais assertivos, caso não haja mais nada depois do "o" da palavra "Erro" no programa, podemos adicionar o _nullbyte_ na busca:
 
@@ -44,7 +44,7 @@ Mas para sermos mais assertivos, caso não haja mais nada depois do "o" da palav
 
 * Em UTF-16:
 
-45 00 72 00 72 00 6f 00 00
+45 00 72 00 72 00 6f 00 00 00
 
 Claro que os programas feitos para buscarem texto dentro de arquivos já possuem esta inteligência, no entanto, a proposta deste livro é entender a fundo como a engenharia reversa funciona e por isso não poderíamos deixar de cobrir esta valiosa informação. ;-\)
 
