@@ -24,7 +24,7 @@ Uma instrução muito comum é a MOV, forma curta de "move" \(do Inglês, "mover
 MOV EBX, B0B0CA
 ```
 
-A instrução acima copia um valor literal 0xB0B0CA para o registrador EAX. A versão compilada desta instrução resulta nos seguintes _bytes_:
+A instrução acima copia um valor literal 0xB0B0CA para o registrador EBX. A versão compilada desta instrução resulta nos seguintes _bytes_:
 
 ```text
 BB CA B0 B0 00
