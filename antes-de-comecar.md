@@ -2,7 +2,7 @@
 
 Todo escritor quer que sua mensagem seja lida e compreendida, isso não é diferente no meu caso. Então, estabeleci umas regras em meu processo de escrita para facilitar o seu processo de compreensão da disciplina de Engenharia Reversa.
 
-### Terminologia
+## Terminologia
 
 Utilizo do _itálico_ para neologismos, palavras em Inglês ou em outro idioma, como _crypter_ \(encriptador\). Em geral, prefiro não utilizar termos "aportuguesados" como baite \(para _byte_\) ou linkeditor \(para _linker\)._ Acho que isso confunde o leitor e por isso mantenho-os em seus originais em Inglês, mas em itálico.
 
@@ -14,11 +14,11 @@ Após a introdução, **engenharia reversa** \(ou simplesmente **ER**\) passa a 
 
 Nas **operações bit-a-bit** \(_bitwise_\), utilizo os símbolos da programação para representar as operações E, OU, OU EXCLUSIVO, etc. No texto, adoto seus mnemônicos em Inglês: AND, OR e XOR.
 
-### Arquitetura de software
+## Arquitetura de software
 
 Cada frase deste livro, a não ser que expressado diferente, considera a arquitetura Intel x86 \(IA-32\), visto que esta é documentada o suficiente para começar o estudo de engenharia reversa e moderna o suficiente para criar exemplos funcionais de código e analisar programas atuais.
 
-### Exercícios
+## Exercícios
 
 Este livro é recheado de trechos de código. É recomendável que o leitor pratique escrevendo os códigos no ambiente específico cada vez que encontrar blocos como os abaixo.
 
@@ -26,9 +26,11 @@ Exemplos de código em Python como a seguir devem ser digitados no ambiente do P
 
 {% code-tabs %}
 {% code-tabs-item title="Python" %}
+
 ```python
 >>> print 'Execute isto no console do Python!'
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
@@ -69,21 +71,20 @@ Caso o código em C inclua a _windows.h_, então deve ser compilado em ambiente 
 
 Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para o aprendizado que você os escreva, execute e analise seus resultados. ;-\)
 
-### Preparação do ambiente
+## Preparação do ambiente
 
 Este é um guia prático. Sendo assim, é recomendável que você seja capaz de reproduzir o que é sugerido neste livro em seu próprio ambiente. Para isso, recomendo instalar uma máquina virtual com as seguintes configurações mínimas:
 
-* Windows 7
-* 1 GB de RAM
+* Windows 7 ou 10
+* 2 GB de RAM
 * 40 GB de disco
 * Placa de rede \(NAT\) com acesso à Internet
 
 Os programas necessários são:
 
 * [x64dbg](https://x64dbg.com/)
-* [Detect It Easy 1.01](http://ntinfo.biz/)
+* [Detect It Easy 2.05](http://ntinfo.biz/)
 * [wxHexEditor 0.24](https://sourceforge.net/projects/wxhexeditor/)
-* [pev 0.70](http://pev.sourceforge.net/)
+* [pev 0.80](https://github.com/merces/pev)
 * [Orwell Dev-C++](https://sourceforge.net/projects/orwelldevcpp/)
-* [Python 2.7](https://www.python.org/download/releases/2.7/)
-
+* [Python 3.7.7](https://www.python.org/downloads/release/python-377/)
