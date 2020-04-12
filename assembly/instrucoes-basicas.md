@@ -16,7 +16,7 @@ O primeiro _byte_ é o _opcode_. Os outros 4 _bytes_ representam o primeiro e ú
 
 Na arquitetura Intel IA-32, uma instrução \(considerando o _opcode_ e seus argumentos\) pode ter de 1 à 15 _bytes_  de tamanho.
 
-### Copiando valores
+## Copiando valores
 
 Uma instrução muito comum é a MOV, forma curta de "move" \(do Inglês, "mover"\). Apesar do nome, o que a instrução faz é copiar o segundo operando \(origem\) para o primeiro \(destino\). O operando de origem pode ser um valor literal, um registrador ou um endereço de memória. O operando de destino funciona de forma similar, com exceção de não poder ser um valor literal, pois não faria sentido mesmo. Ambos os operandos precisam ter o mesmo tamanho, que pode ser de um _byte,_ uma _word_ ou uma _doubleword_, na IA-32. Analise o exemplo a seguir:
 
@@ -30,7 +30,7 @@ A instrução acima copia um valor literal 0xB0B0CA para o registrador EBX. A ve
 BB CA B0 B0 00
 ```
 
-### Aritimética
+## Aritimética
 
 Naturalmente, processadores fazem muitos cálculos matemáticos.  Veremos agora algumas dessas instruções, começando pela instrução ADD, que soma valores. Analise:
 
@@ -137,7 +137,7 @@ A instrução DIV funciona de forma similar, no entanto, é recomendável que o 
 
 Neste ponto acredito que o leitor esteja confortável com a aritimética em processadores x86, mas caso surjam dúvidas, não deixe de enviá-las em nosso [fórum de discussão](http://menteb.in/forum). 😉
 
-### Operações bit-a-bit
+## Operações bit-a-bit
 
 Já explicamos o que são as operações bit-a-bit quando falamos sobre cálculo com binários então vamos dedicar aqui à particularidades de seu uso. Por exemplo, a instrução a XOR, que faz a operação OU EXCLUSIVO, pode ser utilizada para zerar um registrador, o que seria equivalente a mover o valor 0 para o registrador, só que muito mais rápido. Analise:
 
@@ -150,7 +150,7 @@ Além de menor em _bytes_, a versão XOR é também mais rápida. Em ambas as in
 
 Faça você mesmo testes com as instruções AND, OR, SHL, SHR, ROL, ROR e NOT. Todas as suas operações já foram explicadas na seção [Cálculos com binários](https://mentebinaria.gitbook.io/engenharia-reversa/numeros/calculos-com-binarios).
 
-### Comparando valores
+## Comparando valores
 
 Sendo uma operação indispensável ao funcionamento dos computadores, a comparação precisa ser muito bem compreendida. Instruções chave aqui são a CMP \(_Compare_\) e [TEST](https://www.mentebinaria.com.br/forums/topic/140-instruções-test-x-cmp/). Analise o código a seguir:
 
@@ -171,11 +171,11 @@ O resultado da comparação é configurado no registrador EFLAGS, o que signific
 
 A instrução CMP é normalmente precedida de um salto, como veremos a seguir.
 
-### Alterando o fluxo do programa
+## Alterando o fluxo do programa
 
 A ideia de fazer uma comparação é tomar uma decisão na sequencia. Neste caso, **decisão** significa para onde transferir o fluxo de execução do programa, o que é equivalente a dizer para onde **pular**, **saltar**, ou para onde **apontar o EIP** \(o ponteiro de instrução\). Uma maneira de fazer isso é com as instruções de saltos \(_jumps_\).
 
-#### Salto incondicional
+### Salto incondicional
 
 Existem vários tipos de saltos. O mais simples é o salto **incondicional** produzido pela instrução JMP, que possui apenas um operando, podendo ser um valor literal, um registrador ou um endereço de memória. Para entender, analise o programa abaixo:
 
@@ -196,7 +196,7 @@ Note aqui o _opcode_ do salto incondicional JMP, que é o 0xEB. Seu argumento, �
 Você pode entender o salto incondicional JMP como um comando **goto** na linguagem de programação C, mas não conte a ninguém que eu te falei isso. 😂
 {% endhint %}
 
-#### Saltos condicionais sem sinal
+### Saltos condicionais sem sinal
 
 Os saltos condicionais J_cc_ onde _cc_ significa _condition code_, podem ser de vários tipos. O mais famoso deles é o **JE \(**_**Jump if Equal**_**\)**, utilizado para saltar quando os valores da comparação anterior são iguais. Em geral ele vem precedido de uma instrução CMP, como no exemplo abaixo:
 
@@ -227,7 +227,7 @@ O salto JE ocorre se ZF=1, ou seja, se a _zero flag_ estiver _setada_. Por essa 
 
 Nem é preciso dizer que vai ser necessário você criar programas em Assembly para treinar a compreensão de cada um dos saltos, é? 😃
 
-#### Saltos incondicionais com sinal
+### Saltos incondicionais com sinal
 
 Já vimos que comparações são na verdade subtrações, por isso os resultados são diferentes quando utilizados números com e sem sinal. Apesar de a instrução ser a mesma \(CMP\), os saltos podem mudar. Eis os saltos para comparações com sinal:
 
@@ -243,4 +243,3 @@ Já vimos que comparações são na verdade subtrações, por isso os resultados
 | JNO \(Not Overflow\) |  | OF=0 |
 
 Não se preocupe com a quantidade de diferentes instruções na arquiteura. O segredo é ir estudando-as conforme o necessário. Para avançar, só é preciso que você entenda o conceito do salto. Muitos problemas de engenharia reversa são resolvidos com o entendimento de um simples JE \(ZF=1\). Se você já entendeu isso, é suficiente para prosseguir. Se não, volte uma casa. 🤷‍♂️
-

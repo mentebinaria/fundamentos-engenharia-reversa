@@ -8,11 +8,11 @@ Podemos então dizer que um binário PE é completamente definido por cabeçalho
 
 Como dito, a principal separação que existe entre as seções é em relação a seu conteúdo, que distinguimos entre **código** ou **dados**. Apesar de terem seus nomes ignorados pelo _loader_ do Windows, convencionam-se alguns, normalmente iniciados por um ponto. As seções padrão importantes são discutidas a seguir:
 
-### **.text**
+## .text
 
 Também nomeada **CODE** em programas compilados com o Delphi, esta seção contém o código executável do programa. Em seu cabeçalho normalmente encontramos as permissões de leitura e execução.
 
-### **.data**
+## .data
 
 Também chamada de CODE em programas criados com Delphi, esta seção contém dados inicializados com permissão de leitura e escrita. Estes dados podem ser, por exemplo, uma C string declarada e já inicializada. Por exemplo, considere o programa abaixo:
 
@@ -21,7 +21,7 @@ Também chamada de CODE em programas criados com Delphi, esta seção contém da
 
 int main(void) {
     char s[] = "texto grande para o compilador utilizar a seção de dados";
-    
+
     s[0] = 'T';
     puts(s);
     return 0;
@@ -34,7 +34,7 @@ A variável local **s** é um _array_ de _char_ e pode ser alterada a qualquer m
 Apesar de fazer sentido, os compiladores não precisam respeitar tal lógica. O conteúdo da variável **s** no exemplo apresentado pode ser armazenado na seção **.rdata** \(ou mesmo na **.text**\) e ser manipulado na pilha de memória para sofrer alterações. Não há uma imposição por parte do formato e cada compilador escolhe fazer do seu jeito.
 {% endhint %}
 
-### **.rdata**
+## .rdata
 
 Seção que contém dados inicializados, com permissão somente para leitura. Um bom exemplo seria com o programa abaixo:
 
@@ -49,7 +49,7 @@ int main(void) {
 
 Neste caso declaramos a variável **s** como **const**, o que instrui o compilador a armazená-la numa região de memória somente para leitura, casando perfeitamente com a descrição da seção **.rdata**. ;-\)
 
-### **.idata**
+## .idata
 
 Seção para abrigar as tabelas de _imports_, comum em todos os binários que importam funções de outras bibliotecas. Possui permissão tanto para leitura quanto para gravação. Entenderemos o motivo em breve.
 
@@ -80,7 +80,7 @@ Como bônus por ter chegado até aqui, deixamos um presente para o leitor: abaix
 #include <stdio.h>
 #include <windows.h>
 
-int main(void) {	
+int main(void) {
 	SYSTEM_INFO info;
 	
 	GetNativeSystemInfo(&info);	
@@ -91,4 +91,3 @@ int main(void) {
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-

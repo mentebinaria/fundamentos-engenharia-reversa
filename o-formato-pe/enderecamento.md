@@ -1,6 +1,6 @@
 # Endereçamento
 
-### Memória virtual
+## Memória virtual
 
 Onde já se viu dois executáveis com o **ImageBase** em 0x400000 rodarem ao mesmo tempo se ambos são carregados no mesmo endereço de memória? Bem, a verdade é que não são. Existe um esquema chamado de **memória virtual** que consiste num mapeamento da memória RAM real física para uma memória virtual para cada processo no sistema, dando a eles a ilusão de que estão sozinhos num ambiente monotarefa como era antigamente \(vide MS-DOS e outros sistemas antigos\). Essa memória virtual também pode ser mapeada para um arquivo em disco, com o _pagefile.sys_. O desenho a seguir ilustra o mecanismo de mapeamento:
 
@@ -10,11 +10,11 @@ Conforme explicado no capítulo sobre as Seções dos arquivos PE, a memória é
 
 Em resumo, o sistema gerencia uma tabela que relaciona endereço físico de memória \(real\) com endereço virtual, para cada processo. Todos "acham" que estão sozinhos no sistema, mas na verdade estão juntos sob controle do _kernel_.
 
-### Endereço Virtual
+## Endereço Virtual
 
 O endereço virtual, em inglês Virtual Address, ou simplesmente VA, é justamente a localização virtual em memória de um dado ou instrução. Por exemplo, quando alguém fazendo engenharia reversa num programa diz que no endereço 0x401000 existe uma função que merece atenção, quer dizer que ela está no VA 0x401000 do binário quando carregado. Para ver a mesma função, você precisa carregar o binário em memória \(normalmente feito com um _debugger_, como veremos num capítulo futuro\) e verificar o conteúdo de tal endereço.
 
-### Endereço Virtual Relativo
+## Endereço Virtual Relativo
 
 Em inglês, _Relative Virtual Address_, é um VA que, ao invés de ser absoluto, é relativo à alguma base. Por exemplo, o valor do campo _entrypoint_ no cabeçalho Opcional é um RVA relativo à base da imagem \(campo _ImageBase_ no mesmo cabeçalho\). Com isso em mente, avalie seu valor na saída a seguir:
 

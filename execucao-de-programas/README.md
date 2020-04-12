@@ -1,6 +1,6 @@
 # Execução de programas
 
-### Privilégios de execução
+## Privilégios de execução
 
 Para impedir que os programas do usuário acessem ou modifiquem dados críticos do sistema operacional, o Windows suporta dois níveis de execução de código: modo de usuário e modo de kernel, mais conhecidos por suas variante em inglês: _user mode_ e _kernel mode_.
 
@@ -12,7 +12,7 @@ Programas rodando em _user mode_ tampouco possuem acesso ao hardware do computad
 
 Passa que toda a parte legal acontece _kernel mode_, sendo assim, um processo (na verdade uma _thread_) rodando em _user mode_ pode executar tarefas em _kernel mode_ através da API do Windows, que funciona como uma interface para tal.
 
-### Dependências
+## Dependências
 
 Quando um programador cria um programa, em muitos casos ele utiliza funções de bibliotecas \(ou _libraries_ em inglês\), também chamadas de DLL \(_Dynamic-Link Library_\). Sendo assim, analise o seguinte simples programa em C:
 
@@ -33,7 +33,7 @@ Tudo isso garante que vários programadores usem tal função, que tenha sempre 
 
 O fato é que a _printf\(\)_ não escreve diretamente na tela. Ao contrário, a biblioteca de C pede ao _kernel_ através de uma função de sua API que seja feito. Sendo assim, temos, neste caso um EXE que chama uma função de uma DLL que chama o _kernel_. Estudaremos mais a frente como isso é feito.
 
-### Loader
+## Loader
 
 Quando um programa é executado (por exemplo, com um duplo-clique no Windows), ele é copiado para a memória e um **processo** é criado para ele. Dizemos então que um processo está rodando, mas esta afirmação não é muito precisa: na verdade, todo processo no Windows possui pelo menos uma _thread_ e ela sim é que roda. O processo funciona como um "container" que contém várias informações sobre o programa rodando e suas _threads_.
 
@@ -52,4 +52,3 @@ Dentre as funções do _loader_ estão:
 * Carregar módulos adicionais em tempo de execução, se assim for pedido pelo executável principal \(também chamado de módulo principal\).
 * Manter uma lista de módulos carregados por um processo.
 * Transferir a execução para o _entrypoint_ \(EP\) do programa.
-

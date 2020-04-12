@@ -12,13 +12,13 @@ O _linker_ serve para **juntar** todos os objetos num único arquivo, **realocar
 
 O processo de compilação \(transformação do código-fonte em texto em código de máquina\) gera como saída um arquivo chamado de **objeto**.
 
-No que diz respeito ao processo de _linking_, estes executáveis podem assumir dois tipos:
+No que diz respeito ao processo de _linking_, estes executáveis podem ser de dois tipos:
 
-### Estáticos
+## Estáticos
 
 Todo o código das funções externas ao executável principal é compilado junto a ele. O resultado é um executável livre de dependências, porém grande.
 
-### Dinâmicos
+## Dinâmicos
 
 O executável vai **depender** de bibliotecas externas \(DLL's, no caso do Windows\) para funcionar, como estudamos na seção Tabela de Importações.
 
@@ -55,6 +55,3 @@ File Type: EXECUTABLE IMAGE
 O mesmo resultado pode ser atingido utilizando a ferramenta **readpe**. A vantagem desta sobre o **dumpbin** é que o **readpe** é multi-plataforma e livre. Para entender como ele funciona, assista ao vídeo:
 
 {% embed url="https://www.youtube.com/watch?v=7EI\_wRk3VBU" %}
-
-
-

@@ -55,4 +55,3 @@ Agora você sabe o motivo pelo qual um programa compilado não é compatível en
 {% endhint %}
 
 Perceba que Assembly é uma linguagem legível para humanos, diferente da linguagem de máquina que não passa de uma "tripa de _bytes_". Os comandos da linguagem Assembly são chamados de **mnemônicos**. No exemplo de código acima, utilizamos dois: o MOV e o OR. Estudaremos mais mnemônicos em breve.
-

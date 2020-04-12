@@ -2,7 +2,7 @@
 description: Common Object File Format Specification
 ---
 
-# COFF File
+# COFF
 
 Imediatamente após a assinatura PE temos o cabeçalho COFF \(_Common Object File Format Specification_\) às vezes chamado simplesmente de Cabeçalho do Arquivo \(_File Header_ \) ou mesmo Cabeçalho do Arquivo PE \(_PE File Header_\). Trata-se de um cabeçalho especificado antes mesmo do formato PE para o sistema operacional VAX/VMS \(depois chamado de OpenVMS\) da DEC \(empresa comprada pela Compaq, que por sua vez, foi comprada pela HP\) na década de 70. A razão pela qual a Microsoft teria aproveitado o formato COFF é que boa parte dos engenheiros do time que desenvolveu o Windows NT trabalhavam para a DEC antes.
 
@@ -22,25 +22,25 @@ typedef struct {
 
 Vamos à definição dos campos importantes para nós:
 
-### **Machine**
+## Machine
 
 Campo de 2 _bytes_ que define a arquitetura da máquina para qual o programa foi construído. Valores comuns são 0x14c \(Intel i386 ou compatíveis\) e 0x8664 \(AMD64 ou compatíveis\). A tabela completa está disponível na documentação oficial.
 
-### **NumberOfSections**
+## NumberOfSections
 
 Também de 2 _bytes_, o valor deste campo é o número de seções que o arquivo PE em questão possui. As seções serão estudadas mais a frente.
 
-### **TimeDateStamp**
+## TimeDateStamp
 
 Este é um número de 32 _bits_ que define o número de segundos desde à meia-noite do dia 1 de Janeiro de 1970, conhecido também por _Epoch time_. Com este valor é possível saber quando o arquivo foi criado. Para mais informações, veja a dica [Convertendo Epoch no Linux](https://www.mentebinaria.com.br/forums/topic/57-convertendo-epoch-no-linux-número-de-segundos-desde-1970-01-01-000000-utc/).
 
 Vale lembrar que este campo não é utilizado pelo _loader_ de arquivos PE no Windows e seu valor pode ser alterado após a compilação, logo, não é 100% confiável, ou seja, você não pode **garantir** que um binário PE foi compilado na data e hora informadas pelo valor neste campo.
 
-### **SizeOfOptionalHeader**
+## SizeOfOptionalHeader
 
 Contém o tamanho do próximo cabeçalho, conhecido como Cabeçalho Opcional, que estudaremos muito em breve.
 
-### **Characteristics**
+## Characteristics
 
 Campo que define alguns atributos do arquivo. Este campo é uma **máscara de bits**, ou seja, cada _bit_ desses 2 _bytes_ diz respeito à uma característica específica do binário. Não cabe aqui explicar todos os possíveis valores, mas os mais comuns são:
 
@@ -68,7 +68,7 @@ Sat Nov 20 09:40:45 UTC 2010
 Em algumas referências o leitor encontrará o cabeçalho COFF como parte do cabeçalho NT \(IMAGE\_NT\_HEADER\), onde o primeiro campo é chamado de _Signature Bytes_, que é onde fica a assinatura PE para binários PE, mas também pode conter os bytes equivalentes das strings NE, LE ou MZ \(executáveis puros de MS-DOS\). Na verdade o COFF é uma especificação completa para arquivos do tipo "código-objeto", mas não exploraremos seu uso "fora" do formato PE neste livro.
 {% endhint %}
 
-### Exercícios
+## Exercícios
 
 Usando o comando **readpe** do toolkit do [pev](http://pev.sf.net), exiba o cabeçalho COFF do binário CRACKME.EXE. Você deve ver algo assim:
 
@@ -96,4 +96,3 @@ Com o **DIE**, é preciso carregar o CRACKME.EXE nele, clicar no botão **PE \(A
 ![Cabeçalho COFF exibido pelo DIE](../../.gitbook/assets/die_coff.png)
 
 Os botões com "..." localizados ao lado direito de vários valores de campos provêem informações adicionais sobre tais valores. Não deixe de experimentar. ;\)
-

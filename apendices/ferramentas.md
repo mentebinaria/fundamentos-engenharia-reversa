@@ -2,7 +2,7 @@
 
 Esta seção aborda não somente ferramentas utilizadas no livro, mas também outras que vale a pena citar na esperança que o leitor se sinta atraído a baixar, usar e tirar suas próprias conclusões em relação à eficiência delas.
 
-### Editores hexadecimais
+## Editores hexadecimais
 
 Este tipo de ferramenta é útil para editar arquivos binários em geral, não somente executáveis, _dumpar_ \(copiar\) conteúdo de trechos de arquivos, etc. Também é possível editar uma partição ou disco com bons editores hexadecimal a fim de recuperar arquivos, por exemplo.
 
@@ -11,23 +11,26 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [010 Editor](https://www.sweetscape.com/010editor/) | Shareware | Multiplataforma, bastante usado. |
 | [Hex Workshop](http://www.hexworkshop.com/) | Comercial | Pago, somente para Windows, antigo, mas muito bem feito. |
 | [HT Editor](http://hte.sourceforge.net/) | Livre | Interface gráfica baseada em texto. Feio, porém eficiente. |
+| [HxD](https://mh-nexus.de/en/hxd/) | Freeware | Bem bom. Possui recursos extras como geração de hashes, suporte a abrir discos. |
+| [Reverse Engineer's Hex Editor](https://github.com/solemnwarning/rehex) | Livre | Nova proposta de um editor especificamente para engenharia reversa. |
 | [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) | Freeware | Sem muitos recursos, mas quebra um galho. |
 | [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/) | Livre | Multiplataforma, recursos interessantes. |
 
-### Analisadores de executáveis
+## Analisadores de executáveis
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
+| [Exeinfo PE](http://exeinfo.xn.pl/) | Freeware | Detecta compilador, packer, protectors e edita os arquivos, além de suportar vários plugins loucos. Tem versão VIP mediante doação. |
 | [DIE \(Detect It Easy\)](http://ntinfo.biz/index.html) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
 | [PE-Bear](https://hshrzd.wordpress.com/pe-bear/) | Freeware | Analisador gráfico \(Qt\) multiplataforma que também detecta packers/protectors. |
 | [Stud\_PE](http://www.cgsoftlabs.ro/studpe.html) | Freeware | Analisador e editor com suporte a plugins, assinaturas do antigo PEiD, editor de recursos e mais. |
 | [pev](http://pev.sourceforge.net) | Livre | Nosso 💚 toolkit de ferramentas de linha de comando para análise de PE. O **readpe** faz parte dele. |
-| [pestudio](https://www.winitor.com) | Freeware | Analisador de PE padrão da indústria. Tem versão Pro \(paga\). |
+| [pestudio](https://www.winitor.com) | Freeware | Analisador de PE padrão da indústria, com foco em malware. Tem versão Pro \(paga\). |
 | [DUMPBIN](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
 | [objdump](https://www.gnu.org/software/binutils/) | Livre | Parte do GNU binutils, também analisa PE, além de ELF, a.out, etc. |
 | [readelf](https://www.gnu.org/software/binutils/) | Livre | Também parte do binutils, analisador de ELF. |
 
-### Disassemblers
+## Disassemblers
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
@@ -36,7 +39,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [Hopper](https://www.hopperapp.com) | Comercial | Disassembler com foco em binários de Linux e macOS. |
 | [IDA](https://www.hex-rays.com/products/ida/) | Comercial | Disassembler **interativo** padrão de mercado. Possui versão freeware. |
 
-### Debuggers
+## Debuggers
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
@@ -47,7 +50,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [WinDbg](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) | Freeware | Debugger ring0/3, parte integrante do SDK do Windows. |
 | [x64dbg](https://x64dbg.com/) | Livre | Debugger user-mode para Windows com suporte a 32 e 64-bits. |
 
-### Frameworks
+## Frameworks
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
@@ -55,7 +58,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [Frida](https://www.frida.re) | Livre | Framework para instrumentação dinâmica de binários. |
 | [Radare](https://rada.re/r/) | Livre | Suíte completa com debugger, disassembler e outras ferramentas para quase todo tipo de binário existente! |
 
-### Visualizadores hexadecimais de linha de comando
+## Visualizadores hexadecimais de linha de comando
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |

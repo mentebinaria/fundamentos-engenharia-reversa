@@ -43,7 +43,7 @@ $ echo 8+20+4+16*2 | bc
 
 Por ser um cabeçalho ainda presente no formato PE somente por questões de compatibilidade com o MS-DOS, não entraremos em muitos detalhes, mas estudaremos alguns de seus campos a seguir.
 
-### **e\_magic**
+## **e\_magic**
 
 Este campo de 2 _bytes_ sempre contém os valores 0x4d e 0x5a, que são os caracteres 'M' e 'Z' na tabela ASCII. Portanto é comum verificar que todo arquivo executável do Windows que segue o formato PE começa com tais valores, que representam as iniciais de Mark Zbikowski, um dos criadores deste formato para o MS-DOS.
 
@@ -60,7 +60,7 @@ Perceba os _bytes_ 0x4d e 0x5a logo no início do arquivo.
 O **hexdump** exibe um caractere de ponto \(.\) na terceira coluna quando o _byte_ não está na faixa ASCII imprimível, ao contrário do **wxHexEditor** que exibe um caractere de espaço em branco.
 {% endhint %}
 
-### e\_lfanew
+## e\_lfanew
 
 O próximo campo importante para nós é o _e\_lfanew_, um campo de 4 _bytes_ cujo valor é a posição no arquivo do que é conhecido por **assinatura PE**, uma sequência fixa dos seguintes 4 _bytes_: 50 45 00 00.
 
@@ -87,7 +87,7 @@ This program cannot be run in DOS mode.
 
 Depois disso o programa sai. Mas este pequeno programa de MS-DOS é adicionado pelo compilador \(pelo _linker_ mais especificamente\) e seu conteúdo pode variar, pois não há um padrão rígido a ser seguido.
 
-### Exercícios
+## Exercícios
 
 Para por em prática a análise desta primeira parte do arquivo PE, vamos abrir o executável da calculadora do Windows \(normalmente em _C:\Windows\System32\calc.exe_\) no **wxHexEditor**, conforme ilustra a imagem abaixo:
 
@@ -99,4 +99,3 @@ Analisando o que vemos:
 * Na posição 0x3c, ou seja, no campo _e\_lfanew_, há o endereço da assinatura PE \(0xd8 no caso deste executável\).
 * Logo após os 4 _bytes_ do campo _e\_lfanew_, começa o código do programa de MS-DOS, no offset 0x40, com uma sequência de _bytes_ que não fazem sentido para nós por enquanto \(veja que e o texto impresso na tela pelo DOS stub é todavia bem visível\).
 * Finalmente, na posição 0xd8 encontramos a assinatura PE\0\0. Aqui sim, começa o formato PE propriamente dito.
-

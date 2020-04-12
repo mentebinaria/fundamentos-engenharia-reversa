@@ -1,10 +1,10 @@
 # Registro de alterações
 
-## Versão 0.2 (em processo de revisão)
+## Versão 1.0
 
-Lançamento esperançosamente em breve.
+Lançada em 12 de Abril de 2020.
 
-As seguintes seções estão completadas:
+As seguintes seções foram completadas:
 
 * [x] Tabela de Importações
 * [x] Execução de programas

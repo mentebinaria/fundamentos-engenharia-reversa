@@ -4,7 +4,7 @@ Os processadores possuem uma área física em seus _chips_ para armazenamento de
 
 Os registradores possuem normalmente o tamanho da palavra do processador, logo, se este é um processador de 32-bits, seus registradores possuem este tamanho também.
 
-### Registradores de uso geral
+## Registradores de uso geral
 
 Um registrador de uso geral, também chamado de GPR \(_General Purpose Register_\) serve para armazenar temporariamente qualquer tipo de dado. :-\)
 
@@ -118,7 +118,7 @@ A imagem a seguir ilustra os ditos vários registradores dentro dos quatro prime
 
 Os registradores EBP, ESI, EDI e ESP também podem ser utilizados como registradores de 16-bits BP, SI, DI e SP, respectivamente. Note porém que estes últimos não são sub-divididos em partes alta \(_high_\) e baixa \(_low_\).
 
-### Registradores de segmento
+## Registradores de segmento
 
 Estes registradores armazenam o que chamamos de seletores, ponteiros que identificam segmentos na memória, essenciais para operação em modo real. Em modo protegido, que é o modo de operação do processador que os sistemas operacionais modernos utilizam, a função de cada registrador de segmento fica a cargo do SO. Abaixo a lista dos registradores de segmento e sua função em modo protegido:
 
@@ -132,7 +132,7 @@ Estes registradores armazenam o que chamamos de seletores, ponteiros que identif
 
 Não entraremos em mais detalhes sobre estes registradores por fugirem do escopo deste livro.
 
-### Registrador de flags
+## Registrador de flags
 
 O registro de _flags_ EFLAGS é um registrador de 32-bits usado para _flags_ de estado, de controle e de sistema.
 
@@ -152,4 +152,3 @@ Existem 10 _flags_ de sistema, uma de controle e 6 de estado, onde as mais comun
 Além das outras _flags_, há ainda os registradores de debug, MMX, 3DNow!, MSR \(_Model-Specific Registers_\), dentre outros, que fogem do escopo deste livro.
 
 Agora que já reunimos bastante informação sobre os registradores, é hora de treinar um pouco com as instruções básicas do Assembly.
-

@@ -12,4 +12,3 @@ Cada campo possui um **tipo** que também já define seu tamanho. Por exemplo, s
 | QWORD | long int | 8 |
 
 Há também os campos que possuem o que chamamos de máscara de bits. Neste campos, cada _bit_ de seus _bytes_ podem significar alguma coisa. Um bom exemplo é o campo "Characteristics" do cabeçalho de seções do arquivo PE, que veremos mais adiante.
-

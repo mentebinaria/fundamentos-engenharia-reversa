@@ -2,7 +2,7 @@
 
 Apesar de não estudarmos todos os aspectos da linguagem Assembly, alguns assuntos são de extrema importância, mesmo para os fundamentos da engenharia reversa de software. Um deles é como funcionam as funções criadas em um programa e suas chamadas, que discutiremos agora.
 
-## O que é uma função?
+## O que é uma função
 
 Basicamente, uma função é um **bloco de código reutilizável** num programa. Tal bloco faz-se útil quando um determinado conjunto de instruções precisa ser invocado em vários pontos do programa. Por exemplo, suponha um programa que precise converter a temperatura de Fahrenheit para Celsius várias vezes no decorrer de seu código:
 
@@ -169,7 +169,7 @@ Perceba que quatro parâmetros são empilhados antes da chamada à _MessageBoxA_
 
 Os parâmetros são empilhados na ordem inversa.
 
-Já estudamos o protótipo desta função no capítulo que apresenta a [Windows API](../windows-api.md) e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro [uType](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-messagebox#parameters) e, se o decompormos, veremos que 0x31 é um OU entre 0x30 (MB_ICONEXCLAMATION) e 0x1 (MB_OKCANCEL).
+Já estudamos o protótipo desta função no capítulo que apresenta a [Windows API](../windows-api.md) e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro [uType](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox#parameters) e, se o decompormos, veremos que 0x31 é um OU entre 0x30 (MB_ICONEXCLAMATION) e 0x1 (MB_OKCANCEL).
 
 O próximo parâmetro é o número 404000, um ponteiro para a _string_ "Johnny", que é o título da mensagem. Depois vem o ponteiro para o texto da mensagem e por fim o zero (NULL), empilhado em 00401522, que é o _handle_.
 

@@ -27,4 +27,3 @@ Utilizar o _rundll32.exe_ para chamar funções de biblioteca não é a maneira 
 {% endhint %}
 
 Em breve também aprenderemos como _debugar_ uma DLL, mas por hora o conhecimento reunido aqui é suficiente.
-

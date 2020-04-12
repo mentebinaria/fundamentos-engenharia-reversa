@@ -7,7 +7,7 @@ O formato PE é o formato de arquivo executável atualmente utilizado para os pr
 Os programas que criam estes programas, chamados compiladores precisam respeitar tal formato e o programa que os interpreta, carrega e inicia sua execução \(chamado de _loader_\) precisa entendê-lo também.
 
 {% hint style="success" %}
-A documentação completa do formato PE é mantida pela própria Microsoft e está disponível [online](https://msdn.microsoft.com/library/windows/desktop/ms680547%28v=vs.85%29.aspx). Uma versão em formato do Word esteve disponível por um tempo e a salvamos [aqui](https://www.mentebinaria.com.br/files/file/18-microsoft-portable-executable-and-common-object-file-format-specification/).
+A documentação completa do formato PE é mantida pela própria Microsoft e está disponível [online](https://docs.microsoft.com/en-us/windows/win32/debug/pe-format). Uma versão em formato do Word esteve disponível por um tempo e a salvamos [aqui](https://www.mentebinaria.com.br/files/file/18-microsoft-portable-executable-and-common-object-file-format-specification/).
 {% endhint %}
 
 Assim como o formato GIF e outras especificações de formato de arquivo, o formato PE possui cabeçalhos, que possuem campos e valores possíveis. Outro conceito importante é o de seções.
@@ -17,4 +17,3 @@ A estrutura geral de um arquivo PE é apresentada na imagem abaixo:
 ![Estrutura de um arquivo PE](../.gitbook/assets/arquivo_pe.png)
 
 Conheceremos agora os cabeçalhos mais importantes para este primeiro contato com a engenharia reversa e, em seguida, as seções de um arquivo PE.
-

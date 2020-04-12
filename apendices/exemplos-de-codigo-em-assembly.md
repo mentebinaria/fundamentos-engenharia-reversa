@@ -2,7 +2,7 @@
 
 Reuno aqui alguns exemplos de códigos em Assembly, úteis para a compreensão de trechos de binários quando fazemos engenharia reversa.
 
-### Zerar variáveis
+## Zerar variáveis
 
 {% code-tabs %}
 {% code-tabs-item title="Assembly" %}
@@ -18,7 +18,7 @@ int eax=0;
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### Contagem de 1 a 10
+## Contagem de 1 a 10
 
 {% code-tabs %}
 {% code-tabs-item title="Assembly v1" %}
@@ -49,7 +49,7 @@ for (ecx=0; ecx<10; ecx++) {}
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### Testar se é zero
+## Testar se é zero
 
 {% code-tabs %}
 {% code-tabs-item title="Assembly v1" %}
@@ -74,7 +74,7 @@ if (eax == 0)
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### Não fazer nada
+## Não fazer nada
 
 Parece bobo, mas "fazer nada" corretamente significa não alterar nenhuma _flag_, nem nenhum registrador. Seguem as instruções que conheço:
 
@@ -99,4 +99,3 @@ nop
 {% endcode-tabs %}
 
 Instruções que não fazem nada também podem ser utilizadas como _padding_ necessário para o correto alinhamento das seções do binário em memória. Já vi o GCC utilizar XCHG AX, AX neste caso.
-

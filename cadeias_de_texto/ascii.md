@@ -4,7 +4,7 @@ description: American Standard Code for Information Interchange
 
 # ASCII
 
-### ASCII 7-bits
+## ASCII 7-bits
 
 Computadores trabalham com números, mas humanos trabalham também com texto. Sendo assim, houve a necessidade de criar um padrão de representação textual - e também de controle, que você entenderá a seguir.
 
@@ -55,7 +55,7 @@ Agora, algumas relações:
 Sabe quando no Linux você dá um cat num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns beeps? Esses sons são os bytes 0x07 encontrados no arquivo. Experimente! ;-\)
 {% endhint %}
 
-### ASCII extendida
+## ASCII extendida
 
 A tabela ASCII padrão de 7 _bits_ é limitada ao idioma inglês no que diz respeito ao texto. Perceba que uma simples letra 'a' com sinal indicativo de crase é impossível nesta tabela. Sendo assim, ela foi estendida e inteligentemente passou-se a utilizar o último _bit_ do _byte_ que cada caractere ocupa, tornando-se assim uma tabela de 8 _bits_, que vai de 128 a 255 \(em decimal\).
 
@@ -64,4 +64,3 @@ Essa extensão da tabela ASCII varia de acordo com a **codificação** utilizada
 {% hint style="info" %}
 Outro nome para ASCII é US-ASCII. Alguns textos referem-se a texto em ASCII como ANSI strings também.
 {% endhint %}
-

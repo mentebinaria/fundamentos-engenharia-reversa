@@ -8,7 +8,7 @@ Ao abrir o arquivo GIF no **wxHexEditor**, é exibida uma tela similar a abaixo:
 
 Para entender como este tipo de _software_ funciona, vamos começar pelas colunas onde os _bytes_ estão organizados:
 
-#### **Offset em disco**
+## **Offset em disco**
 
 Define a **posição** no arquivo, em _bytes_. No exemplo acima, o primeiro _byte_ \(no _offset_ 0\) é o 0x47. O segundo é o 0x49 e assim por diante. Por padrão no **wxHexEditor** os _offsets_ estão em decimal, não em hexa. Identifique na imagem as afirmações a seguir:
 
@@ -20,19 +20,19 @@ Define a **posição** no arquivo, em _bytes_. No exemplo acima, o primeiro _byt
 No **wxHexEditor** você pode exibir os _offsets_ em hexadecimal clicando com o botão direito do mouse sobre eles. Outros editores como o [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) já exibem o _offset_ em hexadecimal por padrão.
 {% endhint %}
 
-#### **Conteúdo**
+## **Conteúdo**
 
 A próxima coluna exibe os _bytes_ em si. Sem segredos. Por serem editores hexadecimais, programas como o wxHexEditor exibem o conteúdo do arquivo em bytes hexadecimais separados por espaços, mas é importante lembrar que o conteúdo de um arquivo é uma sequência de bits em disco ou em outro dispositivo de armazenamento que, quando aberto num editor, tem seu conteúdo copiado para a memória. A maneira como estes bytes serão visualizados fica a cargo do programa que o abre. Por exemplo, se o editor exibisse os bytes em decimal, os primeiros dois bytes \(0x47 e 0x49\) seriam 71 e 73. Se fosse em binário, seria 1000111 e 1001001.
 
 A esta altura o leitor já deve ter percebido que um número pode ser expresso de várias maneiras, no entanto, o sistema hexadecimal é bem otimizado para o engenheiro reverso.
 
-#### **Representação textual**
+## **Representação textual**
 
 Na terceira coluna o **wxHexEditor** nos apresenta a interpretação ASCII de cada _byte_ na segunda coluna, ou seja, se o _byte_ em questão estiver dentro da faixa de caracteres ASCII imprimíveis \(de 0x20 à 0x7e\), sua representação é exibida. Para valores fora desta faixa, o **wxHexEditor** exibe um espaço em branco.
 
 Há dezenas de outros editores hexadecimais disponíveis, inclusive alguns visualizadores de linha de comando. Vale consultar o Apêndice C - Ferramentas e testar alguns. Se o leitor tiver curiosidade de saber como funciona um visualizador hexadecimal, recomendo olhar o código do [hdump](https://sourceforge.net/projects/hdump/), visualizador para linha de comando que implementei em C para funcionar em Windows, Linux e macOS.
 
-#### **Exemplo do formato GIF**
+## **Exemplo do formato GIF**
 
 De volta ao formato, é importante ressaltar que tanto o programador do software que salva um determinado tipo de arquivo quanto o programador de um software que visualiza tal tipo precisam conhecê-lo bem. Como exemplificamos com o formato GIF, vamos ver como este formato é definido. Em geral, os formatos são definidos por campos \(faixas de _bytes_\) de tamanho fixo ou variável, que podem assumir um certo valor. Para entendê-los, precisamos da documentação deste formato \(no caso, do GIF\). Conforme sua [especificação](https://en.wikipedia.org/wiki/GIF#Example_GIF_file), o formato GIF segue, dentre outras, as seguintes regras:
 
@@ -55,4 +55,3 @@ O próximo campo, também de 2 _bytes_, diz respeito a altura em _pixels_ da ima
 É por isso que alguns sistemas operacionais, com o GNU/Linux, não consideram a extensão de arquivo como sendo algo importante para definir seu tipo. Na verdade, o conteúdo do arquivo o define.
 
 Não seguiremos com toda a interpretação do formato GIF pois este foge ao escopo de estudo de engenharia reversa, mas vamos seguir a mesma lógica para entender o formato de arquivos executáveis do sistema Windows, objeto de estudo do próximo capítulo.
-
