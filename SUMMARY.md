@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Olá, mundo!](README.md)
+* [Apresentação](README.md)
 * [Antes de começar](antes-de-comecar.md)
 * [Introdução](introducao.md)
 * [Números](numeros/README.md)
@@ -47,4 +47,3 @@
 ## Sobre o livro
 
 * [Registro de alterações](sobre/registro-de-alteracoes.md)
-

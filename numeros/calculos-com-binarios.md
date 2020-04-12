@@ -6,7 +6,7 @@ Nesta seção faremos alguns cálculos com números binários, considerando cada
 Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e operações bit-a-bit \(_bitwise_\).
 {% endhint %}
 
-### Conjunção \(AND\)
+## Conjunção \(AND\)
 
 Dados dois bits x e y, a conjunção deles resulta em 1 se ambos forem iguais a 1. Na programação o seu símbolo é normalmente um &. Sendo assim, a chamada **tabela verdade** desta operação é:
 
@@ -43,7 +43,7 @@ O resultado é 0b1000, ou 8 em decimal. Sendo assim, as linhas abaixo farão o m
 
 Por que utilizei tantas bases diferentes? Quero com isso por na sua cabeça que um número é só um número, independente da base na qual ele está sendo representado ou visualizado.
 
-### Disjunção \(OR\)
+## Disjunção \(OR\)
 
 O resultado da disjunção entre dois bits x e y é 1 se pelo menos um deles for 1. Sendo assim, segue a tabela verdade:
 
@@ -84,7 +84,7 @@ Veja que o resultado da disjunção entre 9 e 5, também é 13:
 
 Isso porque numa soma entre 1 e 1 o resultado seria 10 \(2 em decimal\), já na operação OU o resultado é 1.
 
-### Disjunção exclusiva \(XOR\)
+## Disjunção exclusiva \(XOR\)
 
 A disjunção exclusiva entre x e y resulta em 1 se **somente** **um** deles for 1. Sendo assim:
 
@@ -105,7 +105,7 @@ Algumas propriedades importantes desta operação são:
 
 A operação XOR tem vários usos em computação. Alguns exemplos:
 
-#### Detecção de diferenças
+### Detecção de diferenças
 
 É possível saber se um número é diferente de outro com XOR. Se os números forem diferentes, o resultado é diferente de zero. Por exemplo, tomemos um XOR entre 8 e 5 e outro entre 5 e 5:
 
@@ -116,7 +116,7 @@ A operação XOR tem vários usos em computação. Alguns exemplos:
  1101    0000
 ```
 
-#### Zerar variáveis
+### Zerar variáveis
 
 Fica claro que é possível zerar variáveis bastando fazer uma operação XOR do valor dela com ele mesmo, independentemente de que valor é este:
 
@@ -127,7 +127,7 @@ Fica claro que é possível zerar variáveis bastando fazer uma operação XOR d
 0
 ```
 
-#### Troca de valores entre duas variáveis
+### Troca de valores entre duas variáveis
 
 O algoritmo conhecido por _XOR swap_ consiste em trocar os valores de duas variáveis somente com operações XOR, sem usar uma terceira variável temporária. Basta fazer:
 
@@ -159,7 +159,7 @@ y = x ^ y   # resulta em 0b1000 (já é o valor original de x)
 x = x ^ y   # resulta em 0b0101 (o valor original de y)
 ```
 
-#### Cifragem
+### Cifragem
 
 Dado um número x, é possível calcular o resultado de uma operação XOR com um valor que chamamos de chave. Se usarmos a mesma chave num XOR com este resultado, obtemos novamente o número original:
 
@@ -183,7 +183,7 @@ Em textos matemáticos sobre lógica, o acento circunflexo ^ representa conjunç
 Na língua Portuguesa utilizamos a palavra "OU" no sentido de "OU exclusivo". Por exemplo, quando você pede "Pizza de presunto ou pepperoni ou lombo", quer dizer que só quer um dos sabores \(exclusividade\). Se fosse uma disjunção tradicional "OU", o garçom poderia trazer presunto com pepperoni, ou mesmo todos os três ingredientes e você não poderia reclamar. :-D
 {% endhint %}
 
-### Deslocamento \(SHL e SHR\)
+## Deslocamento \(SHL e SHR\)
 
 O deslocamento para a **esquerda** \(_shift left_\) consiste em deslocar todos os _bits_ de um número para a esquerda e completar a posição criada mais à direita com zero. Tomemos por exemplo o número 7 e uma operação SHL com 1 \(deslocar uma vez para a esquerda\):
 
@@ -225,7 +225,7 @@ De forma análoga, o deslocamento para a **direita** \(_shift right_\), ou simpl
 
 O resultado é uma divisão inteira \(sem considerar o resto\) por 2. Assim, 7/2 = 3 \(e sobra 1, que é desconsiderado neste cálculo\). Esta é de fato uma maneira rápida de dobrar ou calcular a metade de um número.
 
-### Rotação \(ROL e ROR\)
+## Rotação \(ROL e ROR\)
 
 Assim como no deslocamento, a rotação envolve deslocar os _bits_ de um número para a esquerda \(_rotate left_\) ou direita \(_rotate right_\) mas o _bit_ mais significativo \(mais à esquerda\) é posto no final \(mais à direita\), no lugar de zero. Por isso é necessário considerar o tamanho ... Tomemos o _byte_ 5 como exemplo:
 
@@ -249,7 +249,7 @@ Desta vez o _bit_ 1, que estava mais à esquerda veio parar ao lado direito do _
 
 Não estamos limitados a fazer operações ROL e ROR somente com 1. O byte 133 ROL 3 por exemplo resulta em 0x2c. Você é capaz de conferir?
 
-### Negação \(NOT\)
+## Negação \(NOT\)
 
 Para negar um bit, basta invertê-lo:
 
@@ -274,4 +274,3 @@ Isso é o mesmo que calcular o complemento \(ou "complemento de um"\) de um núm
 ```
 
 Os processadores Intel x86 trabalham com muitas outras operações _bitwise_, mas que não serão discutidas neste livro. Conforme você avançar no estudo de engenharia reversa, vai se deparar com elas. ;-\)
-

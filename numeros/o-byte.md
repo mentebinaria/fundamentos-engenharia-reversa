@@ -17,4 +17,3 @@ Agora que você já sabe o que é um _byte_, podemos apresentar seus primos nibb
 | _quad word_ | 64 bits | QWORD |
 
 Fica claro que o maior valor que cabe, por exemplo, numa variável, depende de seu tamanho \(quantidade de espaço para armazenar algum dado\). Normalmente um tipo inteiro tem 32 bits, portanto, podemos calcular 2 elevado a 32 menos 1, que dá 4294967295. O inteiro de 32 _bits_ ou 4 _bytes_ é muito comum na arquitetura Intel x86.
-

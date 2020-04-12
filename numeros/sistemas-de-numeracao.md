@@ -126,9 +126,11 @@ Teste no terminal:
 >>> 0xA
 10
 ```
+
 {% endcode-tabs-item %}
 
 {% code-tabs-item title="Bash" %}
+
 ```bash
 echo "$((16#a))"
 10
@@ -139,9 +141,9 @@ echo "$((16#000000000000000000000a))"
 echo "$((16#A))"
 10
 ```
+
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
 
 {% hint style="info" %}
 Em Python, C e outras linguagens, não importa se escrevemos números hexadecimais com letras maiúsculas ou minúsculas \(mais comum\), desde que os prefixemos com 0x. Os zeros à esquerda \(imediatamente após o 0x\) também não importam.
@@ -171,4 +173,3 @@ Um bom exercício é criar o seu sistema de numeração, com símbolos diferente
 | 11 | \#@$ |
 
 É importante que o leitor perceba a lógica utilizada para contar no sistema Lulip's. Ele não existe, mas criar o próprio sistema é um bom exercício para compreender como qualquer um pode ser convertido entre si.
-

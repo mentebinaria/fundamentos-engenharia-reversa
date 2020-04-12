@@ -71,4 +71,3 @@ Por fim, é importante notar que a mesma regra se aplica para números de outros
 | 01111111111111111111111111111111 | 7FFFFFFF | 2147483647 | 2147483647 |
 
 Perceba que o número 0x7fffffff tem seu primeiro _bit_ zerado, portanto nunca será negativo, independente de como seja interpretado. Para ser um número negativo, é necessário que o primeiro _bit_ do número esteja _setado_, ou seja, igual a 1.
-
