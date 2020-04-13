@@ -6,7 +6,7 @@ Para impedir que os programas do usuário acessem ou modifiquem dados críticos 
 
 Os programas comuns rodam em _user mode_, enquanto os serviços internos do SO e _drivers_ rodam em _kernel mode_.
 
-Apesar de o Windows outros sistemas operacionais modernos trabalharem com somente estes dois níveis de privilégios de execução, os processadores Intel e compatíveis suportam quatro níveis, também chamado de anéis \(_rings_\), numerados de 0 a 4. Para _kernel mode_ é utilizado o _ring_ 0 e para _user mode_, o _ring_ 3.
+Apesar de o Windows e outros sistemas operacionais modernos trabalharem com somente estes dois níveis de privilégios de execução, os processadores Intel e compatíveis suportam quatro níveis, também chamado de anéis \(_rings_\), numerados de 0 a 4. Para _kernel mode_ é utilizado o _ring_ 0 e para _user mode_, o _ring_ 3.
 
 Programas rodando em _user mode_ tampouco possuem acesso ao hardware do computador. Essencialmente, todos estes fatores combinados fazem com que os programas rodando neste privilégio de execução não gerem erros fatais como a famosa "tela azul da morte" (ou BSOD - **B**lue **S**creen **O**f **D**eath).
 
