@@ -61,7 +61,7 @@ $ date -ud @1290246045
 Sat Nov 20 09:40:45 UTC 2010
 ```
 
-* Pulamos então 8 _bytes_ referentes aos campos **PointerToSymbolTable** e **NumberOfSymbols** \(normalmente zerados mesmo\), encontrando o valor do da _word_ **SizeOfOptionalHeader** em 0xec de valor 0xe0.
+* Pulamos então 8 _bytes_ referentes aos campos **PointerToSymbolTable** e **NumberOfSymbols** \(normalmente zerados mesmo\), encontrando o valor da _word_ **SizeOfOptionalHeader** em 0xec de valor 0xe0.
 * A próxima _word_ é o valor do campo **Characteristics**, que neste arquivo é 0x102. Convertendo para binário temos o valor 100000010 \(_bits_ 2 e 9 _setados_\) significando que o arquivo é um executável de 32-bits.
 
 {% hint style="warning" %}
