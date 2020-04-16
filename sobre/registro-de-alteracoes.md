@@ -2,7 +2,7 @@
 
 ## Versão 1.0
 
-Lançada em 12 de Abril de 2020.
+Lançada em ? de Abril de 2020.
 
 As seguintes seções foram completadas:
 
@@ -21,7 +21,7 @@ As seguintes seções foram completadas:
   * [x] Manipulação do programa
   * [x] Patches
 
-Além disso, os exemplos do livro foram atualizados para o Python 3.
+Além disso, os exemplos do livro foram atualizados para o Python 3, erros foram corrigidos e algumas ferramentas adicionadas.
 
 ## Versão 0.1
 
