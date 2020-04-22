@@ -23,21 +23,21 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [Exeinfo PE](http://exeinfo.xn.pl/) | Freeware | Detecta compilador, packer, protectors e edita os arquivos, além de suportar vários plugins loucos. Tem versão VIP mediante doação. |
 | [DIE \(Detect It Easy\)](http://ntinfo.biz/index.html) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
-| [PE-Bear](https://hshrzd.wordpress.com/pe-bear/) | Freeware | Analisador gráfico \(Qt\) multiplataforma que também detecta packers/protectors. |
-| [Stud\_PE](http://www.cgsoftlabs.ro/studpe.html) | Freeware | Analisador e editor com suporte a plugins, assinaturas do antigo PEiD, editor de recursos e mais. |
-| [pev](http://pev.sourceforge.net) | Livre | Nosso 💚 toolkit de ferramentas de linha de comando para análise de PE. Artigo introdutório [aqui](https://www.mentebinaria.com.br/artigos/estude-bin%C3%A1rios-de-windows-com-o-novo-pev-r18/). |
-| [pestudio](https://www.winitor.com) | Freeware | Analisador de PE padrão da indústria, com foco em malware. Tem versão Pro \(paga\). |
 | [DUMPBIN](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
+| [Exeinfo PE](http://exeinfo.xn.pl/) | Freeware | Detecta compilador, packer, protectors e edita os arquivos, além de suportar vários plugins loucos. Tem versão VIP mediante doação. |
 | [objdump](https://www.gnu.org/software/binutils/) | Livre | Parte do GNU binutils, também analisa PE, além de ELF, a.out, etc. |
+| [PE-Bear](https://hshrzd.wordpress.com/pe-bear/) | Freeware | Analisador gráfico \(Qt\) multiplataforma que também detecta packers/protectors. |
+| [pestudio](https://www.winitor.com) | Freeware | Analisador de PE padrão da indústria, com foco em malware. Tem versão Pro \(paga\). |
+| [pev](http://pev.sourceforge.net) | Livre | Nosso 💚 toolkit de ferramentas de linha de comando para análise de PE. Artigo introdutório [aqui](https://www.mentebinaria.com.br/artigos/estude-bin%C3%A1rios-de-windows-com-o-novo-pev-r18/). |
 | [readelf](https://www.gnu.org/software/binutils/) | Livre | Também parte do binutils, analisador de ELF. |
+| [Stud\_PE](http://www.cgsoftlabs.ro/studpe.html) | Freeware | Analisador e editor com suporte a plugins, assinaturas do antigo PEiD, editor de recursos e mais. |
 
 ## Disassemblers
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [Binary Ninja](https://binary.ninja) | Comercial | Novo disassembler que teoricamente compete com o IDA. |
+| [Binary Ninja](https://binary.ninja) | Comercial | Novo disassembler que teoricamente compete com o IDA. Possui versão [online gratuita](https://cloud.binary.ninja/) mediante registro. |
 | [Ghidra](https://ghidra-sre.org) | Livre | Disassembler livre lançado pela NSA. Temos um [treinamento](https://www.mentebinaria.com.br/treinamentos/curso-de-ghidra-r9/) em vídeo sobre ele. |
 | [Hopper](https://www.hopperapp.com) | Comercial | Disassembler com foco em binários de Linux e macOS. |
 | [IDA](https://www.hex-rays.com/products/ida/) | Comercial | Disassembler **interativo** padrão de mercado. Possui versão freeware. |
@@ -61,9 +61,9 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [IDR \(Interactive Delphi Reconstructor\)](https://github.com/crypto2011/IDR) | Livre | Para binários compilados em Delphi. |
 | [ILSpy](https://github.com/icsharpcode/ILSpy) | Livre | Descompilador multiplataforma para .NET. |
 | [JD-GUI](https://github.com/java-decompiler/jd-gui) | Livre | Descompilador para Java com GUI. |
-| [VB Decompiler](https://www.vb-decompiler.org/) | Comercial | Descompilador para VB5/6 e disassembler para VB .NET. |
 | [RetDec \(Retargetable Decompiler\)](https://retdec.com/) | Livre | Descompilador para C/C++ feito pelo time do Avast. Inclui detector de compilador e packer, plugins para IDA e radare2. |
 | [Snowman](https://derevenets.com/) | Livre | Descompilador livre para C/C++. Pode ser usado como plugin no IDA, x64dbg, etc. |
+| [VB Decompiler](https://www.vb-decompiler.org/) | Comercial | Descompilador para VB5/6 e disassembler para VB .NET. |
 
 ## Frameworks
 
@@ -77,29 +77,34 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| hexdump/hd | Livre | Padrão no BSD e Linux. Se chamado por "hd" exibe saída em hexa/ASCII. |
 | [hdump](https://sourceforge.net/projects/hdump/) | Livre | Clone nosso 💚, multiplataforma \(funciona no Windows!\) do hexdump que imita a saída do **hd**. |
+| [heksa](https://github.com/raspi/heksa) | Livre | Multiplataforma, com saída colorida e recursos interessantes como seek negativo \(a partir do fim do arquivo\). |
+| hexdump/hd | Livre | Padrão no BSD e Linux. Se chamado por "hd" exibe saída em hexa/ASCII. |
 | od | Livre | Padrão no UNIX e Linux. O comando **od -tx1** produz uma saída similar à do **hd**. |
 | xxd | Livre | Vem com o vim. Uma saída similar à do **hd** é obtida com **xdd -g1**. |
 
 Abaixo um comparativo onde dumpamos os primeiros 32 bytes do binário /bin/ls utilizando os visualizadores acima:
 
 ```text
+$ hdump -n 32 /bin/ls
+00000000  7f 45 4c 46 01 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
+00000010  03 00 28 00 01 00 00 00  21 3e 00 00 34 00 00 00  |..(.....!>..4...|
+
+$ heksa -l 32 /bin/ls
+00000┊7f 45 4c 46 01 01 01 00  00 00 00 00 00 00 00 00┊.ELF...Ø ØØØØØØØØ
+00010┊03 00 28 00 01 00 00 00  21 3e 00 00 34 00 00 00┊.Ø(Ø.ØØØ !>ØØ4ØØØ
+
 $ hd -n32 /bin/ls
-00000000  7f 45 4c 46 02 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
-00000010  03 00 3e 00 01 00 00 00  30 54 00 00 00 00 00 00  |..>.....0T......|
+00000000  7f 45 4c 46 01 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
+00000010  03 00 28 00 01 00 00 00  21 3e 00 00 34 00 00 00  |..(.....!>..4...|
 00000020
 
-$ hdump -n 32 /bin/ls
-00000000  7f 45 4c 46 02 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
-00000010  03 00 3e 00 01 00 00 00  30 54 00 00 00 00 00 00  |..>.....0T......|
-
-$ od -tx1 -N 32 /bin/ls
-0000000 7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
-0000020 03 00 3e 00 01 00 00 00 30 54 00 00 00 00 00 00
+$ od -tx1 -N /bin/ls
+0000000    7f  45  4c  46  01  01  01  00  00  00  00  00  00  00  00  00
+0000020    03  00  28  00  01  00  00  00  21  3e  00  00  34  00  00  00
 0000040
 
 $ xxd -g1 -l32 /bin/ls
-00000000: 7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00  .ELF............
-00000010: 03 00 3e 00 01 00 00 00 30 54 00 00 00 00 00 00  ..>.....0T......
+00000000: 7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00  .ELF............
+00000010: 03 00 28 00 01 00 00 00 21 3e 00 00 34 00 00 00  ..(.....!>..4...
 ```
