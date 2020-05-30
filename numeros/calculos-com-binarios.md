@@ -227,7 +227,7 @@ O resultado é uma divisão inteira \(sem considerar o resto\) por 2. Assim, 7/2
 
 ## Rotação \(ROL e ROR\)
 
-Assim como no deslocamento, a rotação envolve deslocar os _bits_ de um número para a esquerda \(_rotate left_\) ou direita \(_rotate right_\) mas o _bit_ mais significativo \(mais à esquerda\) é posto no final \(mais à direita\), no lugar de zero. Por isso é necessário considerar o tamanho ... Tomemos o _byte_ 5 como exemplo:
+Assim como no deslocamento, a rotação envolve deslocar os _bits_ de um número para a esquerda \(_rotate left_\) ou direita \(_rotate right_\) mas o _bit_ mais significativo \(mais à esquerda\) é posto no final \(mais à direita\), no lugar de zero. Por isso é necessário considerar o tamanho ... Tomemos o número 5 como exemplo:
 
 ```text
  00000101  # 5 em decimal
