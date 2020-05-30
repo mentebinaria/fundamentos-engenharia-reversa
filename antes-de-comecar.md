@@ -73,14 +73,12 @@ Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para
 
 ## Preparação do ambiente
 
-Este é um guia prático. Sendo assim, é recomendável que você seja capaz de reproduzir o que é sugerido neste livro em seu próprio ambiente. Para isso, recomendo instalar uma máquina virtual com as seguintes configurações mínimas:
+Este é um guia prático. Sendo assim, é recomendável que você seja capaz de reproduzir o que é sugerido neste livro em seu próprio ambiente. Precisaremos de:
 
-* Windows 7 ou 10
-* 2 GB de RAM
-* 40 GB de disco
-* Placa de rede \(NAT\) com acesso à Internet
+* Uma máquina (virtual ou real) com Windows 7 ou 10.
+* Uma máquina (virtual ou real) com Linux. Usamos o Debian, mas qualquer outra serve, desde que você saiba instalar pacotes nela.
 
-Os programas necessários são:
+Na máquina com Windows, os programas necessários são:
 
 * [x64dbg](https://x64dbg.com/)
 * [Detect It Easy 2.05](http://ntinfo.biz/)
