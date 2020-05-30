@@ -2,7 +2,7 @@
 
 ## Versão 1.0
 
-Lançada em ? de Abril de 2020.
+Lançada em ?
 
 As seguintes seções foram completadas:
 
@@ -20,6 +20,12 @@ As seguintes seções foram completadas:
   * [x] Breakpoints
   * [x] Manipulação do programa
   * [x] Patches
+
+Os requisitos foram revistos e agora deixam claro que precisamos de duas máquinas: uma com Windows e uma com Linux. Alguns exemplos também podem ser utilizados no macOS.
+
+O capítulo de registradores foi expandido. Uma subseção sobre o EIP foi incluída.
+
+Os exemplos em Assembly foram melhorados. O _label_ **start** foi removido para evitar confusões, já que não _linkamos_ os binários compilados gerados para os exemplos.
 
 Além disso, os exemplos do livro foram atualizados para o Python 3, erros foram corrigidos e algumas ferramentas adicionadas.
 
