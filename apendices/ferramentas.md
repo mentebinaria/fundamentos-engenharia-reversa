@@ -10,8 +10,9 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | :--- | :--- | :--- |
 | [010 Editor](https://www.sweetscape.com/010editor/) | Shareware | Multiplataforma, bastante usado. |
 | [GNU poke](http://jemarch.net/poke) | Livre | Editor REPL genérico (não só para executáveis), ainda em beta, mas muito interessante. Escrevemos um [artigo](https://www.mentebinaria.com.br/artigos/editando-execut%C3%A1veis-com-o-gnu-poke-parte-1-r49/) sobre. |
+| [fhex](https://github.com/echo-devim/fhex) | Livre | Editor gráfico multiplataforma capaz de exibir o binário graficamente, além de suportar expressões regulares na busca.  |
 | [Hex Workshop](http://www.hexworkshop.com/) | Comercial | Pago, somente para Windows, antigo, mas muito bem feito. |
-| [HexFiend](http://ridiculousfish.com/hexfiend/) | Liivre | Somente para macOS, com recursos legais como diff e data inspector. |
+| [HexFiend](http://ridiculousfish.com/hexfiend/) | Livre | Somente para macOS, com recursos legais como diff e data inspector. |
 | [Hiew \(Hacker's View\)](http://www.hiew.ru/) | Comercial | Editor muito poderoso, muito usado por analistas de malware, mas é pago. |
 | [HT Editor](http://hte.sourceforge.net/) | Livre | Interface gráfica baseada em texto. Feio, porém eficiente. |
 | [HxD](https://mh-nexus.de/en/hxd/) | Freeware | Bem bom. Possui recursos extras como geração de hashes, suporte a abrir discos. |
