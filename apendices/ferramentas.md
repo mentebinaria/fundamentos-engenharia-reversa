@@ -49,6 +49,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | :--- | :--- | :--- |
 | [dnSpy](https://github.com/0xd4d/dnSpy) | Livre | Somente para .NET, descompila, debuga e (dis)assembla. |
 | [edb \(Evan's Debugger\)](https://github.com/eteran/edb-debugger) | Livre | Debugger gráfico \(Qt\) com foco em binários ELF no Linux. |
+| [GDB \(GNU Debugger\)](https://sourceware.org/gdb/) | Livre | Super conhecido debugger pra Linux do projeto GNU. Tem uma [versão não oficial pra Windows](http://www.equation.com/servlet/equation.cmd?fa=gdb) também. É modo texto, mas possui vários front-ends como [GDBFrontend](https://github.com/rohanrhu/gdb-frontend) dentre [outros](https://sourceware.org/gdb/wiki/GDB%20Front%20Ends). |
 | [GEF](https://github.com/hugsy/gef) | Livre | O **G**DB **E**nhanced **F**eatures extende o [GDB](https://www.gnu.org/software/gdb/) com recursos para engenharia reversa. |
 | [OllyDbg](http://ollydbg.de) | Freeware | Poderoso debugger, apesar de não mais mantido. |
 | [PEDA](https://github.com/longld/peda) | Livre | O **P**ython **E**xploit **D**evelopment **A**ssistance também extende o GDB, assim como o GEF. A interface é um pouco diferente, no entanto. |
