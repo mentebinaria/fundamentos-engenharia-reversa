@@ -24,6 +24,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
+| [CFF Explorer](https://ntcore.com/?page_id=388) | Freeware | Sendo parte do Explorer Suite, é na real um editor de PE. Com ele é possível adicionar imports, remover seções, etc. |
 | [DIE \(Detect It Easy\)](http://ntinfo.biz/index.html) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
 | [DUMPBIN](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
 | [Exeinfo PE](http://exeinfo.xn.pl/) | Freeware | Detecta compilador, packer, protectors e edita os arquivos, além de suportar vários plugins loucos. Tem versão VIP mediante doação. |
@@ -80,15 +81,47 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [WinDbg](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) | Freeware | Debugger ring0/3, parte integrante do SDK do Windows. |
 | [x64dbg](https://x64dbg.com/) | Livre | Debugger user-mode para Windows com suporte a 32 e 64-bits. |
 
+## Desofuscadores
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [de4dot](https://github.com/0xd4d/de4dot) | Livre | Para .NET. Conhece vários ofuscadores e permite trabalhar genericamente também. |
+| [Threadtear](https://github.com/GraxCode/threadtear) | Livre | Para programas feito em Java. Suporta os ofuscadores mais comuns como Stinger e ZKM. |
+
 ## Descompiladores
+
+### .NET
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [ILSpy](https://github.com/icsharpcode/ILSpy) | Livre | Descompilador multiplataforma para .NET. |
+
+### Delphi
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [IDR \(Interactive Delphi Reconstructor\)](https://github.com/crypto2011/IDR) | Livre | Para binários compilados em Delphi. |
-| [ILSpy](https://github.com/icsharpcode/ILSpy) | Livre | Descompilador multiplataforma para .NET. |
-| [JD-GUI](https://github.com/java-decompiler/jd-gui) | Livre | Descompilador para Java com GUI. |
+
+### Genéricos (C, C++, Delphi, etc)
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
 | [RetDec \(Retargetable Decompiler\)](https://retdec.com/) | Livre | Descompilador para C/C++ feito pelo time do Avast. Inclui detector de compilador e packer, plugins para IDA e radare2. |
 | [Snowman](https://derevenets.com/) | Livre | Descompilador livre para C/C++. Pode ser usado como plugin no IDA, x64dbg, etc. |
+
+### Java
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [CFR](https://www.benf.org/other/cfr/) | Livre | Descompilador para Java de linha de comando. O output é o código fonte e só.  |
+| [IntelliJ IDEA](https://www.jetbrains.com/idea/download/other.html) | Mista | Na verdade é uma IDE para programação em Java mas mesmo a versão Community possui descompilador e debugger para classes compiladas em Java. |
+| [JD-GUI](https://github.com/java-decompiler/jd-gui) | Livre | Descompilador para Java com GUI. |
+| [Procyon](hhttps://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler) | Livre | Para Java, com suporte a recursos novos da linguagem. É modo texto mas há GUI's disponíveis documentadas no link.  |
+
+### Visual Basic
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
 | [VB Decompiler](https://www.vb-decompiler.org/) | Comercial | Descompilador para VB5/6 e disassembler para VB .NET. |
 
 ## Frameworks
