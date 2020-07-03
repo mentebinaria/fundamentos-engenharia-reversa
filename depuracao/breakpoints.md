@@ -1,6 +1,6 @@
 # Breakpoints
 
-Um *breakpoint* nada mais é que um ponto do código onde o debugger vai parar para que você analise o que precisa. É o mesmo conceito dos *breakpoints* presentes nos IDE's como Visual Studio, NetBeans, CodeBlocks, etc. A diferença é que nestas IDE's colocamos *breakpoints* em determinadas linhas do código-fonte. Já nos debuggers destinados à engenharia reversa, colocamos *breakpoints* em **endereços** (RVA's), onde há instruções.
+Um *breakpoint* nada mais é que um ponto do código onde o debugger vai parar para que você analise o que precisa. É o mesmo conceito dos *breakpoints* presentes nos IDE's como Visual Studio, NetBeans, CodeBlocks, etc. A diferença é que nestas IDE's colocamos *breakpoints* em determinadas linhas do código-fonte. Já nos debuggers destinados à engenharia reversa, colocamos *breakpoints* em **endereços** (VA's), onde há instruções.
 
 ## Seu primeiro *breakpoint*
 
@@ -10,7 +10,7 @@ Há várias maneiras de se colocar um *breakpoint* em um endereço utilizando o 
 
 Um segundo clique desabilita o *breakpoint*, mas não o exclui da aba **Breakpoints** (Alt+B). O terceiro clique de fato o deleta.
 
-Após colocar o *breakpoint* nesta CALL, rode o programa (F9). O que acontece? O debugger executa todas as linhas anteriores a este *breakpoint* e pára onde você pediu. Simples assim.
+Após colocar o *breakpoint* nesta CALL, rode o programa (F9). O que acontece? O debugger executa todas as instruções anteriores a este *breakpoint* e pára onde você pediu. Simples assim.
 
 ## Como *breakpoints* são implementados
 

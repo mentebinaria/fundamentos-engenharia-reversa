@@ -24,7 +24,7 @@ print(celsius)
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-O programa acima funciona e a saída é, conforme esperada:
+O programa acima funciona e a saída é a esperada:
 
 ```text
 110.22222222222223
@@ -32,7 +32,7 @@ O programa acima funciona e a saída é, conforme esperada:
 32.27777777777778
 ```
 
-No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada fica maior em _bytes_. Também prejudica a manutenção do código pois se o programador precisar fazer uma alteração no cálculo, vai ter que alterar em todos eles. É aí que entram as funções. Veja:
+No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada fica maior em _bytes_. Toda esta repetição também prejudica a manutenção do código pois se o programador precisar fazer uma alteração no cálculo, vai ter que alterar em todos eles. É aí que entram as funções. Veja:
 
 {% code-tabs %}
 {% code-tabs-item title="fahrenheit2celsius.py" %}
@@ -54,7 +54,7 @@ print(celsius)
 
 A saída é a mesma, mas agora o programa está utilizando uma função, onde o cálculo só foi definido uma única vez e toda vez que for necessário, o programa a chama.
 
-Uma função tem:
+Uma função norlmalmente tem:
 
 1. Argumentos, também chamados de parâmetros, que são os dados que a função recebe, necessários para cumprir seu propósito.
 2. Retorno, que é o resultado da conclusão do seu propósito, seja bem sucedida ou não.

@@ -146,7 +146,7 @@ b9 00 00 00 00       	mov    ecx,0x0
 31 c9                	xor    ecx,ecx
 ```
 
-Além de menor em _bytes_, a versão XOR é também mais rápida. Em ambas as instruções, o resultado é que o registrador ECX terá o valor 0 e _flag_ ZF será _setada_, como em qualquer operação que resulte em zero.
+Além de menor em _bytes_, a versão XOR é também mais rápida. Em ambas as instruções, depois de executadas, o resultado é que o registrador ECX terá o valor 0 e a _flag_ ZF será _setada_, como em qualquer operação que resulte em zero.
 
 Faça você mesmo testes com as instruções AND, OR, SHL, SHR, ROL, ROR e NOT. Todas as suas operações já foram explicadas na seção [Cálculos com binários](https://mentebinaria.gitbook.io/engenharia-reversa/numeros/calculos-com-binarios).
 
@@ -227,7 +227,7 @@ O salto JE ocorre se ZF=1, ou seja, se a _zero flag_ estiver _setada_. Por essa 
 
 Nem é preciso dizer que vai ser necessário você criar programas em Assembly para treinar a compreensão de cada um dos saltos, é? 😃
 
-### Saltos incondicionais com sinal
+### Saltos condicionais com sinal
 
 Já vimos que comparações são na verdade subtrações, por isso os resultados são diferentes quando utilizados números com e sem sinal. Apesar de a instrução ser a mesma \(CMP\), os saltos podem mudar. Eis os saltos para comparações com sinal:
 
