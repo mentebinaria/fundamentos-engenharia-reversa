@@ -13,6 +13,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [fhex](https://github.com/echo-devim/fhex) | Livre | Editor gráfico multiplataforma capaz de exibir o binário graficamente, além de suportar expressões regulares na busca.  |
 | [Hex Workshop](http://www.hexworkshop.com/) | Comercial | Pago, somente para Windows, antigo, mas muito bem feito. |
 | [HexFiend](http://ridiculousfish.com/hexfiend/) | Livre | Somente para macOS, com recursos legais como diff e data inspector. |
+| [Helium Hex Edtitor](http://jacquelin.potier.free.fr/HeliumHexEditor/) | Comercial | Editor incrível para Windows. Tem recursos muito legais como edição e alocação de memória, operações com dados (XOR, SHL, etc) e na versão paga tem suporte a vários algoritmos criptográficos, disassembly e mais. |
 | [Hiew \(Hacker's View\)](http://www.hiew.ru/) | Comercial | Editor (e disassembler) muito poderoso, principalmente por conta de seeus módulos HEM. É muito usado por analistas de malware, mas é pago. |
 | [HT Editor](http://hte.sourceforge.net/) | Livre | Interface gráfica baseada em texto, parecido com o Hiew. Feio, mas cumpre seu trabalho. |
 | [HxD](https://mh-nexus.de/en/hxd/) | Freeware | Bem bom. Possui recursos extras como geração de hashes, suporte a abrir discos. |
@@ -22,8 +23,11 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 
 ## Analisadores de executáveis
 
+Analisam estaticamente os binários, sem carregá-los. São úteis para uma primeira visão sobre um executável desconhecido.
+
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
+| [capa](https://github.com/fireeye/capa) | Livre | Detecta as capacidades de executáveis PE e shellcodes para Windows. |
 | [CFF Explorer](https://ntcore.com/?page_id=388) | Freeware | Sendo parte do Explorer Suite, é na real um editor de PE. Com ele é possível adicionar imports, remover seções, etc. |
 | [DIE \(Detect It Easy\)](http://ntinfo.biz/index.html) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
 | [DUMPBIN](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
@@ -130,7 +134,26 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | :--- | :--- | :--- |
 | [angr](https://angr.io) | Livre | Framework para análise estática e simbólica de binários. |
 | [Frida](https://www.frida.re) | Livre | Framework para instrumentação dinâmica de binários. |
+| [Qiling](https://github.com/qilingframework/qiling) | Livre | Framework que combina emulação com instrumentação de binários. |
 | [Radare](https://rada.re/r/) | Livre | Suíte completa com debugger, disassembler e outras ferramentas para quase todo tipo de binário existente! |
+
+## Sandboxes (Linux)
+
+Existem outros projetos como Limon, Detux, HaboMalHunter, mas na lista abaixo procurei deixar somente os que estão ativos.
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [LiSa](https://github.com/danieluhricek/LiSa) | Livre | Possui uma API bem simples e suporta binários ELF compilados para x86, x86-64, ARM e MIPS. |
+
+## Sandboxes (Windows)
+
+Esta lista não inclui serviços de sandbox puramente comerciais.
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [DRAKVUF Sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) | Livre | Projeto co-financiado pelo CERT da Polônia que usa o engine DRAKVUF para criar uma sandbox de Windows 7 ou Windows 10 sem agente no *guest*. |
+| [CAPE](https://github.com/ctxis/CAPE) | Livre | Sandbox específica para extração de configuração de malware. |
+| [Cuckoo](https://cuckoosandbox.org/) | Livre | Provavelmente a sandbox mais popular e utilizada.  |
 
 ## Visualizadores hexadecimais
 
