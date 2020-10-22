@@ -2,7 +2,7 @@
 
 ## Memória virtual
 
-Onde já se viu dois executáveis com o **ImageBase** em 0x400000 rodarem ao mesmo tempo se ambos são carregados no mesmo endereço de memória? Bem, a verdade é que não são. Existe um esquema chamado de **memória virtual** que consiste num mapeamento da memória RAM real física para uma memória virtual para cada processo no sistema, dando a eles a ilusão de que estão sozinhos num ambiente monotarefa como era antigamente \(vide MS-DOS e outros sistemas antigos\). Essa memória virtual também pode ser mapeada para um arquivo em disco, com o _pagefile.sys_. O desenho a seguir ilustra o mecanismo de mapeamento:
+Onde já se viu dois executáveis com o **ImageBase** em 0x400000 rodarem ao mesmo tempo se ambos são carregados no mesmo endereço de memória? Bem, a verdade é que não são. Existe um esquema chamado de **memória virtual** que consiste num mapeamento da memória RAM real física para uma memória virtual para cada processo no sistema, dando a eles a ilusão de que estão sozinhos num ambiente monotarefa como era antigamente \(vide MS-DOS e outros sistemas antigos\). Essa memória virtual também pode ser mapeada para um arquivo em disco, como o _pagefile.sys_. O desenho a seguir ilustra o mecanismo de mapeamento:
 
 ![Memória Virtual](../.gitbook/assets/memoria_virtual.png)
 
