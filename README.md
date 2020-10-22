@@ -18,14 +18,6 @@ Tendo estes conhecimentos, qualquer pessoa que almeje se tornar um engenheiro re
 
 Se encontrou algum erro, quer fazer um comentário, sugestão ou pergunta, por favor utilize o [tópico criado especialmente para este livro](https://www.mentebinaria.com.br/forums/topic/341-livro-fundamentos-de-engenharia-reversa/) no fórum do portal Mente Binária.
 
-## Colaboradores
+## Autor
 
-{% tabs %}
-{% tab title="Conteúdo" %}
 Fernando Mercês \([@mer0x36](https://twitter.com/mer0x36)\)
-{% endtab %}
-
-{% tab title="Revisão" %}
-Carlos Cabral \([@kbralx](https://twitter.com/kbralx)\)
-{% endtab %}
-{% endtabs %}
