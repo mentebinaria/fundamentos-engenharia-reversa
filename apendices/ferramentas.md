@@ -141,8 +141,9 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [Process Explorer](https://github.com/zodiacon/SystemExplorer/releases) | Livre | Versão do Pavel Yosifovich que conta com algumas vantagens sobre o Process Explorer, como visualizar informações de processos protegidos (através de um driver), listar todas as threads abertas no Windows, todos os jobs, etc. |
-| [System Explorer](https://docs.microsoft.com/en-us/sysinternals/) | Freeware | Clássica ferramenta do conjunto SysInternals, que exibe muito mais que o Gerenciador de Tarefas comum. |
+| [Process Hacker](https://processhacker.sourceforge.io/) | Livre | Talvez o melhor da categoria. Mostra os handles, objetos, processos, quem tá usando o que e muita mais.   |
+| [Process Explorer](https://docs.microsoft.com/en-us/sysinternals/) | Freeware | Clássica ferramenta do conjunto SysInternals, que exibe muito mais que o Gerenciador de Tarefas comum. |
+| [System Explorer](https://github.com/zodiacon/SystemExplorer/releases) | Livre | Versão do Pavel Yosifovich que conta com algumas vantagens sobre o Process Explorer, como visualizar informações de processos protegidos (através de um driver), listar todas as threads abertas no Windows, todos os jobs, etc. |
 
 ## Sandboxes (Linux)
 
