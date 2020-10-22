@@ -1,21 +1,21 @@
 # Windows API
 
-Uma API \(_Application Programming Interface_\) é uma interface para programar uma aplicação. No caso do Windows, consiste num conjunto de funções expostas para serem usadas por aplicativos, inclusive em _user mode_.
+Uma API \(_Application Programming Interface_\) é uma interface para programar uma aplicação. No caso da Windows API, esta consiste num conjunto de funções expostas para serem usadas por aplicativos rodando em _user mode_.
 
-Para o escopo deste livro, vamos cobrir uma pequena parte da Win32 API, com foco nas funções disponíveis basicamente em duas bibliotecas diferentes: a USER32.DLL e a KERNEL32.DLL.
+Para o escopo deste livro, vamos cobrir uma minúscula parte da Win32 API (outro nome para a Windows API), com foco nas funções disponíveis basicamente em duas bibliotecas diferentes: a USER32.DLL e a KERNEL32.DLL.
 
-Considere o seguinte programa:
+Considere o seguinte programa em C:
 
 ```c
 #include <windows.h>
 
-int main() {
+int main(void) {
     MessageBox(NULL, "Cash", "Johnny", MB_OK);
     return 0;
 }
 ```
 
-A função _MessageBox\(\)_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da USER32.DLL \(além de outras bibliotecas\), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível na [MSDN](https://msdn.microsoft.com/pt-br/library/windows/desktop/ms645505%28v=vs.85%29.aspx). Copiamos seu protótipo abaixo para explicar seus parâmetros:
+A função _MessageBox\(\)_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da USER32.DLL \(além de outras bibliotecas\), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível no [site da Microsoft](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox). Copiamos seu protótipo abaixo para explicar seus parâmetros:
 
 ```c
 int WINAPI MessageBox(
@@ -33,27 +33,29 @@ A Microsoft utiliza várias convenções de nome que precisam ser explicadas par
 | WINAPI | Define que a convenção de chamada da função é a \_\_stdcall |
 | \_In\_ | Define que o parâmetro é de entrada |
 | \_Out\_ | Define que o parâmetro é de saída \(a função vai escrever nele\) |
-| \_opt\_ | O parâmetro é opcional \(pode ser NULL\) |
+| \_opt\_ | O parâmetro é opcional \(pode ser NULL, ou 0 normalmente\) |
 | HANDLE | Um número identificador de um objeto no ambiente Windows  |
 | HWND | Um _handle_ \(identificador\) da janela |
 | LPCTSTR | **L**ong **P**ointer to a **C**onst **T**CHAR **STR**ing |
 | UINT | _unsigned int_ ou DWORD \(32-bits\) |
 
 {% hint style="info" %}
-Um _handle_ é um número que identifica um objeto (arquivo, chave de registro, diretório, etc) aberto usado por um processo. É um conceito similar ao _file descriptor_ em ambiente Unix/Linux. _Handles_ só são acessíveis diretamente em _kernel mode_, por isso os programas interagem com eles através de funções da API do Windows. Um bom exemplo é a [CloseHandle](https://msdn.microsoft.com/en-us/library/windows/desktop/ms724211(v=vs.85).aspx).
+Um _handle_ é um número que identifica um objeto (arquivo, chave de registro, diretório, etc) aberto usado por um processo. É um conceito similar ao _file descriptor_ em ambiente Unix/Linux. _Handles_ só são acessíveis diretamente em _kernel mode_, por isso os programas interagem com eles através de funções da API do Windows. Por exemplo, a função CreateFile() retorna um handle em caso de sucesso, enquanto a função CloseHandle() o fecha.
 {% endhint %}
 
 Agora vamos explicar os parâmetros da função _MessageBox_:
 
-**hWnd \[entrada, opcional\]**
+## MessageBox
+
+### hWnd \[entrada, opcional\]
 
 Um _handle_ que identifica qual janela é dona da caixa de mensagem. Isso serve para atrelar uma mensagem a uma certa janela \(e impedi-la de ser fechada antes da caixa de mensagem, por exemplo\). Como é opcional, este parâmetro pode ser NULL, o que faz com que a caixa de mensagem não possua uma janela dona.
 
-**lpText \[entrada, opcional\]**
+## lpText \[entrada, opcional\]
 
 Um ponteiro para um texto (uma _string_) que será exibido na caixa de mensagem. Se for NULL, a mensagem não terá um conteúdo, mas ainda assim aparecerá.
 
-**lpCaption \[entrada, opcional\]**
+## lpCaption \[entrada, opcional\]
 
 Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL a caixa de mensagem não terá um título, mas ainda assim aparecerá.
 
