@@ -21,7 +21,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/) | Livre | Multiplataforma, recursos interessantes. |
 | [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) | Freeware | Sem muitos recursos, mas quebra um galho. |
 
-## Analisadores de executáveis
+## Analisadores estáticos de executáveis
 
 Analisam estaticamente os binários, sem carregá-los. São úteis para uma primeira visão sobre um executável desconhecido.
 
@@ -137,6 +137,13 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | [Qiling](https://github.com/qilingframework/qiling) | Livre | Framework que combina emulação com instrumentação de binários. |
 | [Radare](https://rada.re/r/) | Livre | Suíte completa com debugger, disassembler e outras ferramentas para quase todo tipo de binário existente! |
 
+## Monitores de processos
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [Process Explorer](https://github.com/zodiacon/SystemExplorer/releases) | Livre | Versão do Pavel Yosifovich que conta com algumas vantagens sobre o Process Explorer, como visualizar informações de processos protegidos (através de um driver), listar todas as threads abertas no Windows, todos os jobs, etc. |
+| [System Explorer](https://docs.microsoft.com/en-us/sysinternals/) | Freeware | Clássica ferramenta do conjunto SysInternals, que exibe muito mais que o Gerenciador de Tarefas comum. |
+
 ## Sandboxes (Linux)
 
 Existem outros projetos como Limon, Detux, HaboMalHunter, mas na lista abaixo procurei deixar somente os que estão ativos.
@@ -154,6 +161,14 @@ Esta lista não inclui serviços de sandbox puramente comerciais.
 | [DRAKVUF Sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) | Livre | Projeto co-financiado pelo CERT da Polônia que usa o engine DRAKVUF para criar uma sandbox de Windows 7 ou Windows 10 sem agente no *guest*. |
 | [CAPE](https://github.com/ctxis/CAPE) | Livre | Sandbox específica para extração de configuração de malware. |
 | [Cuckoo](https://cuckoosandbox.org/) | Livre | Provavelmente a sandbox mais popular e utilizada.  |
+
+## Sandboxes (Online)
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [Any.Run](https://app.any.run/submissions) | Community | Apesar do nome, só suporta artefatos de Windows, mas é muito bom! |
+| [Hybrid Analysis](https://www.hybrid-analysis.com/) | Community | Sandbox muito boa. Também é um portal de investigação inclusive com suporte à regras de Yara. |
+| [Joe Sandbox](https://www.joesandbox.com/#advanced) | Community | Um dos primeiros serviços. Suporta ELF (x86 e x86-64), PE e documentos. |
 
 ## Visualizadores hexadecimais
 
@@ -190,3 +205,11 @@ $ xxd -g1 -l32 /bin/ls
 00000000: 7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00  .ELF............
 00000010: 03 00 28 00 01 00 00 00 21 3e 00 00 34 00 00 00  ..(.....!>..4...
 ```
+
+## Outras
+
+Ferramentas que não analisei ainda e não sei exatamente as vantagens de utilizá-las. 😁
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [Intezer Analyzer](https://analyze.intezer.com) | Community | Online. Requer um pequeno cadastro. Tem um recursos de identificar "genes" estaticamente de famílias de binários. |
