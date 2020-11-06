@@ -57,7 +57,7 @@ Optional/Image header
 No exemplo acima, o campo _entrypoint_ tem o valor 0x39c2, que é um RVA. Como este campo é relativo ao _ImageBase_, o VA \(endereço virtual\) do _entrypoint_ é então dado pela sua soma com o valor de _ImageBase_:
 
 ```text
-entrypoint_va = entreypoint_rva + imagebase
+entrypoint_va = entrypoint_rva + imagebase
 entrypoint_va = 0x39c2 + 0x400000
 entrypoint_va = 0x4039c2
 ```
