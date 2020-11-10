@@ -47,7 +47,7 @@ Dentre as funções do _loader_ estão:
 
 * Ler os cabeçalhos do arquivo PE a ser executado e alocar a memória necessária para a imagem como um todo, suas seções, etc.
   * As seções são mapeadas para a memória, respeitando-se suas permissões.
-* Ler a tabela de importações do arquivo PE a fim de carregar as DLLs requeridas por este e que ainda não foram carregas em memória. Esse processo também é chamado de **resolução de dependências**.
+* Ler a tabela de importações do arquivo PE a fim de carregar as DLLs requeridas por este e que ainda não foram carregadas em memória. Esse processo também é chamado de **resolução de dependências**.
 * Preencher a IAT com os endereços das funções importadas.
 * Carregar módulos adicionais em tempo de execução, se assim for pedido pelo executável principal \(também chamado de módulo principal\).
 * Manter uma lista de módulos carregados por um processo.
