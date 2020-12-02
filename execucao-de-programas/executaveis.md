@@ -54,4 +54,5 @@ File Type: EXECUTABLE IMAGE
 
 O mesmo resultado pode ser atingido utilizando a ferramenta **readpe**. A vantagem desta sobre o **dumpbin** é que o **readpe** é multi-plataforma e livre. Para entender como ele funciona, assista ao vídeo:
 
-{% embed url="https://www.youtube.com/watch?v=7EI\_wRk3VBU" %}
+{% embed url="https://www.youtube.com/watch?v=7EI\_wRk3VBU" caption="" %}
+

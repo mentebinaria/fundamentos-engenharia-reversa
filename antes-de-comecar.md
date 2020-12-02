@@ -24,41 +24,47 @@ Este livro é recheado de trechos de código. É recomendável que o leitor prat
 
 Exemplos de código em Python como a seguir devem ser digitados no ambiente do Python da sua máquina virtual \(ou real\) Linux:
 
-{% code-tabs %}
-{% code-tabs-item title="Python" %}
+{% tabs %}
+{% tab title="Python" %}
+```python
+>>> print 'oi'
+```
+{% endtab %}
+{% endtabs %}
 
+{% tabs %}
+{% tab title="Python" %}
 ```python
 >>> print 'Execute isto no console do Python!'
 ```
-
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Vários exemplos são no _shell_ do Linux, que é o Bash por padrão:
 
-{% code-tabs %}
-{% code-tabs-item title="Bash" %}
+{% tabs %}
+{% tab title="Bash" %}
 ```bash
 $ echo 'Este vai no Bash'
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 O leitor também encontrará códigos em linguagem C como este:
 
-{% code-tabs %}
-{% code-tabs-item title="exemplo.c" %}
+{% tabs %}
+{% tab title="exemplo.c" %}
 ```c
 #include <stdio.h>
 
 int main(void) {
-	printf("Compilar com o gcc e executar!\n");
+    printf("Compilar com o gcc e executar!\n");
 
-	return 0;
+    return 0;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Neste caso, exceto quando especificado diferente, é preciso salvar o código em C num arquivo de texto e assim compilar e executar no ambiente GNU/Linux, assim:
 
@@ -75,8 +81,8 @@ Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para
 
 Este é um guia prático. Sendo assim, é recomendável que você seja capaz de reproduzir o que é sugerido neste livro em seu próprio ambiente. Precisaremos de:
 
-* Uma máquina (virtual ou real) com Windows 7 ou 10.
-* Uma máquina (virtual ou real) com Linux. Usamos o Debian, mas qualquer outra serve, desde que você saiba instalar pacotes nela.
+* Uma máquina \(virtual ou real\) com Windows 7 ou 10.
+* Uma máquina \(virtual ou real\) com Linux. Usamos o Debian, mas qualquer outra serve, desde que você saiba instalar pacotes nela.
 
 Na máquina com Windows, os programas necessários são:
 
@@ -86,3 +92,4 @@ Na máquina com Windows, os programas necessários são:
 * [pev 0.80](https://github.com/merces/pev)
 * [Orwell Dev-C++](https://sourceforge.net/projects/orwelldevcpp/)
 * [Python 3.7.7](https://www.python.org/downloads/release/python-377/)
+

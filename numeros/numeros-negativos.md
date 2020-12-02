@@ -2,22 +2,22 @@
 
 Já vimos que um _byte_ pode armazenar números de 0 a 255 por conta de seus 8 _bits_. Mas como fazemos quando um número é negativo? Não temos sinal \(-\), só _bits_. E agora? Não é possível ter números negativos então? Claro que sim, do contrário você não poderia fazer contas com números negativos e o código abaixo falharia:
 
-{% code-tabs %}
-{% code-tabs-item title="Python" %}
+{% tabs %}
+{% tab title="Python" %}
 ```python
 >>> -3 + 1
 -2
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="Bash" %}
+{% tab title="Bash" %}
 ```bash
 # Usando o bc:
 echo "-3 + 1" | bc
 -2
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Mas não falhou! Isso acontece porque na computação dividimos as possibilidades quase que "ao meio". Por exemplo, sabendo que 1 _byte_ pode representar 256 possibilidades \(sendo o 0 e mais 255 de números positivos\), podemos dividir tais possibilidades, de modo a representar de -128 até +127. Continuamos com 256 possibilidades diferentes \(incluindo o zero\), reduzimos o máximo e aumentamos o mínimo. :-\)
 
@@ -32,15 +32,15 @@ Há ainda a técnica chamada de **complemento de dois**, necessária para calcul
 
 Sendo assim, vamos checar em Python:
 
-{% code-tabs %}
-{% code-tabs-item title="Python" %}
+{% tabs %}
+{% tab title="Python" %}
 ```python
 >>> 0b11110110
 246
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="Bash" %}
+{% tab title="Bash" %}
 ```bash
 echo "$((2#11110110))"
 246
@@ -48,8 +48,8 @@ echo "$((2#11110110))"
 echo "obase=10; ibase=2; 11110110" | bc
 246
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 O que aconteceu? Bem, realmente 0b11110110 dá 246 \(em decimal\), se interpretado como número sem sinal. Acontece que temos que dizer explicitamente que vamos interpretar um número x como número com sinal \(que pode ser positivo ou negativo\). Em Python, um jeito é usando a biblioteca _ctypes_:
 
@@ -71,3 +71,4 @@ Por fim, é importante notar que a mesma regra se aplica para números de outros
 | 01111111111111111111111111111111 | 7FFFFFFF | 2147483647 | 2147483647 |
 
 Perceba que o número 0x7fffffff tem seu primeiro _bit_ zerado, portanto nunca será negativo, independente de como seja interpretado. Para ser um número negativo, é necessário que o primeiro _bit_ do número esteja _setado_, ou seja, igual a 1.
+

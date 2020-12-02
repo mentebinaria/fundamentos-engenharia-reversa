@@ -46,4 +46,5 @@
 
 ## Sobre o livro
 
-* [Registro de alterações](sobre/registro-de-alteracoes.md)
+* [Registro de alterações](sobre-o-livro/registro-de-alteracoes.md)
+

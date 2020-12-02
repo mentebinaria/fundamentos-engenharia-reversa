@@ -21,3 +21,4 @@ Se encontrou algum erro, quer fazer um comentário, sugestão ou pergunta, por f
 ## Autor
 
 Fernando Mercês \([@mer0x36](https://twitter.com/mer0x36)\)
+

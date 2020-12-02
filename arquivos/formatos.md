@@ -2,9 +2,9 @@
 
 Os arquivos de texto, sejam eles ASCII ou UNICODE são tipos de arquivos bem simples. Começaremos agora a avaliar tipos de arquivos mais complexos. Acontece que para um programa **salvar** ou **abrir** um determinado tipo de arquivo, é essencial que este conheça seu **formato**. Tomemos por exemplo o formato GIF, mas agora ao invés de utilizar o **hd** para inspecionar seu conteúdo, utilizaremos, no Windows, um editor hexadecimal gráfico, o [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/).
 
-Ao abrir o arquivo GIF no **wxHexEditor**, é exibida uma tela similar a abaixo: 
+Ao abrir o arquivo GIF no **wxHexEditor**, é exibida uma tela similar a abaixo:
 
-![Conteúdo de um arquivo GIF visualizado em hexadecimal](../.gitbook/assets/hex_fig1.png)
+![Conte&#xFA;do de um arquivo GIF visualizado em hexadecimal](../.gitbook/assets/hex_fig1.png)
 
 Para entender como este tipo de _software_ funciona, vamos começar pelas colunas onde os _bytes_ estão organizados:
 
@@ -55,3 +55,4 @@ O próximo campo, também de 2 _bytes_, diz respeito a altura em _pixels_ da ima
 É por isso que alguns sistemas operacionais, com o GNU/Linux, não consideram a extensão de arquivo como sendo algo importante para definir seu tipo. Na verdade, o conteúdo do arquivo o define.
 
 Não seguiremos com toda a interpretação do formato GIF pois este foge ao escopo de estudo de engenharia reversa, mas vamos seguir a mesma lógica para entender o formato de arquivos executáveis do sistema Windows, objeto de estudo do próximo capítulo.
+

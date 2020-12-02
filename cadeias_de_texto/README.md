@@ -33,3 +33,4 @@ Event: time 1500442813.610261, -------------- EV_SYN ------------
 Perceba os 6 eventos. Se quiser saber mais sobre como o _kernel_ Linux padroniza e transforma os _scan codes_ enviados pelo teclado para estes valores, basta ler a [documentação](https://github.com/torvalds/linux/blob/master/Documentation/input/event-codes.rst), mas este não é nosso assunto alvo aqui.
 
 Assim como na entrada de dados pelo teclado, o tratamento da entrada do _mouse_ ou de qualquer outro dispositivo também é numérico e, de maneira geral, o computador necessita entender que ao ler um determinado número, precisa tomar alguma ação, como desenhar o que conhecemos por caractere "a". Para ele é um número, para nós, um símbolo. Veremos nas seções a seguir como essa conversão se dá.
+

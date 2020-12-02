@@ -100,3 +100,4 @@ Sendo a contraparte da _Export Table_, a _Import Table_ aponta para a tabela de 
 ## Resource Table
 
 Aponta para uma estrutura de árvore binária que armazena todos os _resources_ num executável \(ícones, janelas, strings - principalmente quando o programa suporta vários idiomas\), etc. Também estudaremos um pouco mais sobre estes "recursos" no futuro.
+

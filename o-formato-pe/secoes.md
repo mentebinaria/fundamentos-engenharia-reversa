@@ -4,7 +4,7 @@ As seções são divisões num binário PE. Uma analogia que torna o conceito de
 
 Podemos então dizer que um binário PE é completamente definido por cabeçalhos e seções \(com seu conteúdo\), como na seguinte ilustração:
 
-![Versão simplificada do arquivo PE](../.gitbook/assets/cabsec_fig3.png)
+![Vers&#xE3;o simplificada do arquivo PE](../.gitbook/assets/cabsec_fig3.png)
 
 Como dito, a principal separação que existe entre as seções é em relação a seu conteúdo, que distinguimos entre **código** ou **dados**. Apesar de terem seus nomes ignorados pelo _loader_ do Windows, convencionam-se alguns, normalmente iniciados por um ponto. As seções padrão importantes são discutidas a seguir:
 
@@ -41,7 +41,7 @@ Seção que contém dados inicializados, com permissão somente para leitura. Um
 ```c
 int main(void) {
     const char s[] = "texto grande para o compilador utilizar a seção de dados";
-    
+
     puts(s);
     return 0;
 }
@@ -74,20 +74,20 @@ Como consequência, o tamanho total de cada seção em memória é maior que seu
 Como bônus por ter chegado até aqui, deixamos um presente para o leitor: abaixo há um código que, depois de compilado e executado, vai dizer qual o tamanho da página de memória na sua versão do Windows.
 {% endhint %}
 
-{% code-tabs %}
-{% code-tabs-item title="pagesize.c" %}
+{% tabs %}
+{% tab title="pagesize.c" %}
 ```c
 #include <stdio.h>
 #include <windows.h>
 
 int main(void) {
-	SYSTEM_INFO info;
-	
-	GetNativeSystemInfo(&info);	
-	printf("dwPageSize: %u\n", info.dwPageSize);
-	return 0;
-}
+    SYSTEM_INFO info;
 
+    GetNativeSystemInfo(&info);    
+    printf("dwPageSize: %u\n", info.dwPageSize);
+    return 0;
+}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
+

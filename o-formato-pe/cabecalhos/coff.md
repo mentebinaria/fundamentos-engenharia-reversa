@@ -50,7 +50,7 @@ Campo que define alguns atributos do arquivo. Este campo é uma **máscara de bi
 | 9 | IMAGE\_FILE\_32BIT\_MACHINE | Arquivo de 32-bits |
 | 14 | IMAGE\_FILE\_DLL | O arquivo é uma DLL |
 
-Analise novamente o (*dump* hexadecimal do executável da calculadora)[dos.md#exercicios] considere que:
+Analise novamente o \(_dump_ hexadecimal do executável da calculadora\)\[dos.md\#exercicios\] considere que:
 
 * Logo após a assinatura PE na posição 0xd8 temos o primeiro campo do cabeçalho COFF que é o **Machine**. Ele é um campo de 2 _bytes_ conforme já dito, então os _bytes_ 0x4c e 0x01 definem seu valor. Considerando o _endianness_, chegamos ao valor 0x14c, que define que este executável foi criado para máquinas Intel i386 ou compatíveis.
 * Em seguida, na posição 0xde, temos o **NumberOfSections** que é 4.
@@ -93,6 +93,7 @@ Characteristics:                 0x818e
 
 Com o **DIE**, é preciso carregar o CRACKME.EXE nele, clicar no botão **PE \(Alt+P\)**, na aba **NT Headers** e por fim, na aba **File Header**. Você deve ver uma janela como a abaixo:
 
-![Cabeçalho COFF exibido pelo DIE](../../.gitbook/assets/die_coff.png)
+![Cabe&#xE7;alho COFF exibido pelo DIE](../../.gitbook/assets/die_coff.png)
 
 Os botões com "..." localizados ao lado direito de vários valores de campos provêem informações adicionais sobre tais valores. Não deixe de experimentar. ;\)
+

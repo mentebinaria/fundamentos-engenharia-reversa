@@ -99,7 +99,7 @@ Assim como a disjunção é normalmente chamada de "OU", a disjunção exclusiva
 
 Algumas propriedades importantes desta operação são:
 
-1. Você pode aplicá-la em qualquer ordem. Então, *a ^ (b ^ c) = (a ^ b) ^ c* por exemplo.
+1. Você pode aplicá-la em qualquer ordem. Então, _a ^ \(b ^ c\) = \(a ^ b\) ^ c_ por exemplo.
 2. Um número "XOReado" com ele mesmo é sempre zero.
 3. Um número "XOReado" com zero é sempre ele mesmo.
 
@@ -216,7 +216,7 @@ No exemplo acima deslocamos 1 _bit_ do número 7 \(0b111\) para a esquerda três
 56
 ```
 
-De forma análoga, o deslocamento para a **direita** \(_shift right_\), ou simplesmente SHR, consiste em deslocar todos os _bits_de um número para a direita e completar a posição criada à esquerda com zero. Tomando o mesmo 7 \(0b111\):
+De forma análoga, o deslocamento para a **direita** \(_shift right_\), ou simplesmente SHR, consiste em deslocar todos os \_bits\_de um número para a direita e completar a posição criada à esquerda com zero. Tomando o mesmo 7 \(0b111\):
 
 ```text
 >>> 0b111 >> 1
@@ -274,3 +274,4 @@ Isso é o mesmo que calcular o complemento \(ou "complemento de um"\) de um núm
 ```
 
 Os processadores Intel x86 trabalham com muitas outras operações _bitwise_, mas que não serão discutidas neste livro. Conforme você avançar no estudo de engenharia reversa, vai se deparar com elas. ;-\)
+
