@@ -17,6 +17,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [Hiew \(Hacker's View\)](http://www.hiew.ru/) | Comercial | Editor \(e disassembler\) muito poderoso, principalmente por conta de seeus módulos HEM. É muito usado por analistas de malware, mas é pago. |
 | [HT Editor](http://hte.sourceforge.net/) | Livre | Interface gráfica baseada em texto, parecido com o Hiew. Feio, mas cumpre seu trabalho. |
 | [HxD](https://mh-nexus.de/en/hxd/) | Freeware | Bem bom. Possui recursos extras como geração de hashes, suporte a abrir discos. |
+| [ImHex](https://github.com/WerWolv/ImHex) | Livre | Impressionante editor gráfico para Windows e Linux. Possui uma linguagem de _patterns_ para aplicar no arquivo, exporta/importa patches e muito mais. |
 | [Reverse Engineer's Hex Editor](https://github.com/solemnwarning/rehex) | Livre | Nova proposta de um editor especificamente para engenharia reversa. |
 | [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/) | Livre | Multiplataforma, recursos interessantes. |
 | [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) | Freeware | Sem muitos recursos, mas quebra um galho. |
@@ -178,6 +179,7 @@ Esta lista não inclui serviços de sandbox puramente comerciais.
 | [hdump](https://sourceforge.net/projects/hdump/) | Livre | Clone nosso 💚, multiplataforma \(funciona no Windows!\) do hexdump que imita a saída do **hd**. |
 | [heksa](https://github.com/raspi/heksa) | Livre | Multiplataforma, com saída colorida e recursos interessantes como seek negativo \(a partir do fim do arquivo\). |
 | hexdump/hd | Livre | Padrão no BSD e Linux. Se chamado por "hd" exibe saída em hexa/ASCII. |
+| [hexyl](https://github.com/sharkdp/hexyl) | Livre | Multiplataforma, também com _output_ colorido, exibição de borda, etc. |
 | od | Livre | Padrão no UNIX e Linux. O comando **od -tx1** produz uma saída similar à do **hd**. |
 | xxd | Livre | Vem com o vim. Uma saída similar à do **hd** é obtida com **xdd -g1**. |
 
@@ -191,6 +193,12 @@ $ hdump -n 32 /bin/ls
 $ heksa -l 32 /bin/ls
 00000┊7f 45 4c 46 01 01 01 00  00 00 00 00 00 00 00 00┊.ELF...Ø ØØØØØØØØ
 00010┊03 00 28 00 01 00 00 00  21 3e 00 00 34 00 00 00┊.Ø(Ø.ØØØ !>ØØ4ØØØ
+
+$ hexyl -n32 /bin/ls
+┌────────┬─────────────────────────┬─────────────────────────┬────────┬────────┐
+│00000000│ 7f 45 4c 46 02 01 01 00 ┊ 00 00 00 00 00 00 00 00 │•ELF•••0┊00000000│
+│00000010│ 02 00 3e 00 01 00 00 00 ┊ fc 4a 40 00 00 00 00 00 │•0>0•000┊×J@00000│
+└────────┴─────────────────────────┴─────────────────────────┴────────┴────────┘
 
 $ hd -n32 /bin/ls
 00000000  7f 45 4c 46 01 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
