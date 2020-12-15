@@ -129,13 +129,19 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | :--- | :--- | :--- |
 | [VB Decompiler](https://www.vb-decompiler.org/) | Comercial | Descompilador para VB5/6 e disassembler para VB .NET. |
 
+## Emuladores
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [Qiling](https://github.com/qilingframework/qiling) | Livre | Framework que combina emulação com instrumentação de binários. É possível emular programas de Windows e Linux, além de outros SOs, incluindo ring0. |
+| [Speakeasy](https://github.com/fireeye/speakeasy) | Livre | Emulador feito pela FireEye, inicialmente para programas nativos de Windows (ring0) mas possui um crescente suporta à programas em usermode (ring3), emulando várias das funções da Windows API. |
+
 ## Frameworks
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [angr](https://angr.io) | Livre | Framework para análise estática e simbólica de binários. |
 | [Frida](https://www.frida.re) | Livre | Framework para instrumentação dinâmica de binários. |
-| [Qiling](https://github.com/qilingframework/qiling) | Livre | Framework que combina emulação com instrumentação de binários. |
 | [Radare](https://rada.re/r/) | Livre | Suíte completa com debugger, disassembler e outras ferramentas para quase todo tipo de binário existente! |
 
 ## Monitores de processos
