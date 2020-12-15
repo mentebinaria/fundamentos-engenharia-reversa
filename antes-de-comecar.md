@@ -27,14 +27,6 @@ Exemplos de código em Python como a seguir devem ser digitados no ambiente do P
 {% tabs %}
 {% tab title="Python" %}
 ```python
->>> print 'oi'
-```
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="Python" %}
-```python
 >>> print 'Execute isto no console do Python!'
 ```
 {% endtab %}
