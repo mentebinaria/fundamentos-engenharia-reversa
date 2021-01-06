@@ -140,7 +140,7 @@ Estes registradores armazenam o que chamamos de seletores, ponteiros que identif
 | DS | Data Segment |
 | SS | Stack Segment |
 | ES | Extra Data Segment |
-| FS | Data Segment \(no Windows em x86, aponta para o o [TEB](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686708%28v=vs.85%29.aspx) \(_Thread Environment Block_\) da _thread_ atual do processo em execução\) |
+| FS | Data Segment \(no Windows em x86, aponta para o [TEB](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686708%28v=vs.85%29.aspx) \(_Thread Environment Block_\) da _thread_ atual do processo em execução\) |
 | GS | Data Segment |
 
 Não entraremos em mais detalhes sobre estes registradores por fugirem do escopo deste livro.
