@@ -242,5 +242,4 @@ Já vimos que comparações são na verdade subtrações, por isso os resultados
 | JO \(Overflow\) |  | OF=1 |
 | JNO \(Not Overflow\) |  | OF=0 |
 
-Não se preocupe com a quantidade de diferentes instruções na arquiteura. O segredo é ir estudando-as conforme o necessário. Para avançar, só é preciso que você entenda o conceito do salto. Muitos problemas de engenharia reversa são resolvidos com o entendimento de um simples JE \(ZF=1\). Se você já entendeu isso, é suficiente para prosseguir. Se não, volte uma casa. 🤷‍♂️
-
+Não se preocupe com a quantidade de diferentes instruções na arquitetura. O segredo é estudá-las conforme o necessário, na medida em que surgem nos programas que você analisa. Para avançar, só é preciso que você entenda o conceito do salto. Muitos problemas de engenharia reversa são resolvidos com o entendimento de um simples JE \(ZF=1\). Se você já entendeu isso, é suficiente para prosseguir. Se não, volte uma casa. 🤷‍♂️
