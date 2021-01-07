@@ -64,3 +64,4 @@ Essa extensão da tabela ASCII varia de acordo com a **codificação** utilizada
 {% hint style="info" %}
 Outro nome para ASCII é US-ASCII. Alguns textos referem-se a texto em ASCII como ANSI strings também.
 {% endhint %}
+

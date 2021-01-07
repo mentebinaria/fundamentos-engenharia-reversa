@@ -2,7 +2,7 @@
 
 A esta altura o leitor já pode imaginar a dificuldade que programadores enfrentam em trabalhar com diferentes codificações de texto. Mas existe um esforço chamado de UNICODE mantido pelo [Unicode Consortium](http://unicode.org/) que compreende várias codificações, que estudaremos a seguir. Estas _strings_ também são chamadas de _**wide strings**_ \(largas, numa tradução livre\).
 
-### UTF-8
+## UTF-8
 
 O padrão UTF \(_Unicode Transformation Format_\) de 8 _bits_ foi desenhado originalmente por Ken Thompson \(sim, o criador do Unix!\) e Rob Pike para abranger todos os caracteres possíveis nos vários idiomas deste planeta.
 
@@ -31,7 +31,7 @@ Como os _shells_ atuais utilizam UTF-8, ao utilizar um caractere não presente n
 
 {% embed url="https://www.youtube.com/watch?v=D7\_zPEt5vGs" caption="Identificando arquivos com o file" %}
 
-### UTF-16
+## UTF-16
 
 Também conhecido por UCS-2, este tipo de codificação é frequentemente encontrado em programas compilados para Windows, incluindo os escritos em .NET. É de extrema importância que o engenheiro reverso o conheça bem.
 
@@ -109,7 +109,7 @@ papo
 Uma boa leitura adicional é o artigo [Viewing strings in executables](https://blog.didierstevens.com/2006/07/07/viewing-strings-in-executables/) \(em Inglês\), do pesquisador Didier Stevens sobre _strings_ UTF-16.
 {% endhint %}
 
-### UTF-32
+## UTF-32
 
 Raramente utilizado no Windows porém existente em alguns programas para Linux e Unix, este padrão utiliza 4 _bytes_ para cada caractere. Vamos já analisar a _string_ "papo" em UTF-32 com a opção -L do comando **strings**:
 
@@ -120,8 +120,7 @@ papo
 
 É importante ressaltar que simplesmente dizer que uma _string_ é UNICODE não diz exatamente qual codificação ela está utilizando, fato que normalmente depende do sistema operacional, do programador, do compilador, etc. Por exemplo, um programa feito em C no Windows e compilado com Visual Studio tem as _wide strings_ em UTF-16 normalmente. Já no Linux, o tamanho do tipo _wchar\_t_ é 32 _bits_, resultando em _strings_ UTF-32. Escreva o seguinte programa em C para entender:
 
-{% code-tabs %}
-{% code-tabs-item title="wide.c" %}
+{% code title="wide.c" %}
 ```c
 #include <wchar.h>
 
@@ -132,8 +131,7 @@ int main(void) {
   return 0;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Salve-o no Linux como _wide.c_ e compile utilizando o gcc:
 

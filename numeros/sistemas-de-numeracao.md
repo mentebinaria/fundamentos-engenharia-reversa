@@ -4,7 +4,7 @@ Conhecemos bem os dez símbolos latinos 0, 1, 2, 3, 4, 5, 6, 7, 8 e 9 utilizados
 
 Mas este não é o único - nem é o primeiro - sistema para representação de quantidades. Ou seja, não é o único sistema de numeração possível. Os computadores, diferente dos humanos, são máquinas elétricas. Sendo assim, a maneira mais fácil de números fluírem por eles seria com um sistema que pudesse ser **interpretado** a partir de dois estados: ligado e desligado.
 
-### Binário
+## Binário
 
 O sistema binário surgiu há muito tempo e não vou arriscar precisar quando ou onde, mas em 1703 o alemão Leibniz publicou um [trabalho refinado](http://www.leibniz-translations.com/binary.htm) baseado na dualidade taoísta chinesa do _yin_ e _yan_ a qual descrevia o sistema binário moderno com dois símbolos: 0 \(nulo\) e 1 \(uma unidade\). Por ter somente dois símbolos, ficou conhecido como sistema binário, ou de base 2. A contagem segue a regra: depois de 0 e 1, pega-se o símbolo que representa uma unidade e se insere, à sua direita, o que representa nulo, formando o número que representa duas unidades neste sistema: 10.
 
@@ -18,27 +18,27 @@ Perceba que a lógica de organização dos símbolos no sistema binário é a me
 
 Por utilizar dois símbolos que são idênticos aos do sistema decimal, num contexto genérico, números binários são normalmente precedidos com 0b para não haver confusão. Então para expressar dez quantidades faríamos 0b1010. Por exemplo, a seguinte linha na console do Python imprime o valor 10:
 
-{% code-tabs %}
-{% code-tabs-item title="Python" %}
+{% tabs %}
+{% tab title="Python" %}
 ```python
 print(0b1010)
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="Bash" %}
+{% tab title="Bash" %}
 ```bash
 echo $((0b1010))
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="C" %}
+{% tab title="C" %}
 ```c
 printf("%d\n", 0b1010);
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
-### Octal
+## Octal
 
 Como o próprio nome sugere, o sistema octal possui oito símbolos: 0, 1, 2, 3, 4, 5, 6 e 7. À esta altura já dá pra sacar que para representar oito quantidades em octal o número é 10. Nove é 11, dez é 12 e assim sucessivamente.
 
@@ -52,15 +52,15 @@ Na programação normalmente um número octal é precedido de um algarismo 0 par
 
 Veja o exemplo:
 
-{% code-tabs %}
-{% code-tabs-item title="Python" %}
+{% tabs %}
+{% tab title="Python" %}
 ```python
 >>> 012
 10
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="Bash" %}
+{% tab title="Bash" %}
 ```bash
 echo "$((8#012))"
 10
@@ -68,10 +68,10 @@ echo "$((8#012))"
 echo "obase=10; ibase=8; 012" | bc
 10
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
-### Hexadecimal
+## Hexadecimal
 
 Finalmente o queridinho hexa \(para os íntimos\); o sistema de numeração que mais vamos utilizar durante todo o livro. O hexadecimal apresenta várias vantagens sobre seus colegas, a começar pelo número de símbolos: 16. São eles: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E e F. Os números que eles formam são normalmente prefixados com 0x.
 
@@ -114,8 +114,8 @@ Existem algumas propriedades interessantes que cabe ressaltar quando relacionamo
 
 Teste no terminal:
 
-{% code-tabs %}
-{% code-tabs-item title="Python" %}
+{% tabs %}
+{% tab title="Python" %}
 ```python
 >>> 0xa
 10
@@ -126,11 +126,9 @@ Teste no terminal:
 >>> 0xA
 10
 ```
+{% endtab %}
 
-{% endcode-tabs-item %}
-
-{% code-tabs-item title="Bash" %}
-
+{% tab title="Bash" %}
 ```bash
 echo "$((16#a))"
 10
@@ -141,9 +139,8 @@ echo "$((16#000000000000000000000a))"
 echo "$((16#A))"
 10
 ```
-
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 Em Python, C e outras linguagens, não importa se escrevemos números hexadecimais com letras maiúsculas ou minúsculas \(mais comum\), desde que os prefixemos com 0x. Os zeros à esquerda \(imediatamente após o 0x\) também não importam.
@@ -153,7 +150,7 @@ Falaremos bastante em endereços de memória no conteúdo de engenharia reversa 
 
 {% embed url="https://www.youtube.com/watch?v=vLhABLeb11o" caption="Cálculo no shell com o bc" %}
 
-### Crie seu próprio sistema de numeração
+## Crie seu próprio sistema de numeração
 
 Um bom exercício é criar o seu sistema de numeração, com símbolos diferentes dos habituais. Pode ser qualquer coisa. Digamos que farei um sistema ternário chamado Lulip's que possui os seguintes símbolos para representar zero, uma e duas quantidades respectivamente: @, \# e $. Olha só como ficaria a comparação com decimal:
 
@@ -173,3 +170,4 @@ Um bom exercício é criar o seu sistema de numeração, com símbolos diferente
 | 11 | \#@$ |
 
 É importante que o leitor perceba a lógica utilizada para contar no sistema Lulip's. Ele não existe, mas criar o próprio sistema é um bom exercício para compreender como qualquer um pode ser convertido entre si.
+

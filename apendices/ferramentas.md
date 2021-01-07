@@ -9,14 +9,15 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [010 Editor](https://www.sweetscape.com/010editor/) | Shareware | Multiplataforma, bastante usado. |
-| [GNU poke](http://jemarch.net/poke) | Livre | Editor REPL genérico (não só para executáveis), ainda em beta, mas muito interessante. Escrevemos um [artigo](https://www.mentebinaria.com.br/artigos/editando-execut%C3%A1veis-com-o-gnu-poke-parte-1-r49/) sobre. |
-| [fhex](https://github.com/echo-devim/fhex) | Livre | Editor gráfico multiplataforma capaz de exibir o binário graficamente, além de suportar expressões regulares na busca.  |
+| [GNU poke](http://jemarch.net/poke) | Livre | Editor REPL genérico \(não só para executáveis\), ainda em beta, mas muito interessante. Escrevemos um [artigo](https://www.mentebinaria.com.br/artigos/editando-execut%C3%A1veis-com-o-gnu-poke-parte-1-r49/) sobre. |
+| [fhex](https://github.com/echo-devim/fhex) | Livre | Editor gráfico multiplataforma capaz de exibir o binário graficamente, além de suportar expressões regulares na busca. |
 | [Hex Workshop](http://www.hexworkshop.com/) | Comercial | Pago, somente para Windows, antigo, mas muito bem feito. |
 | [HexFiend](http://ridiculousfish.com/hexfiend/) | Livre | Somente para macOS, com recursos legais como diff e data inspector. |
-| [Helium Hex Edtitor](http://jacquelin.potier.free.fr/HeliumHexEditor/) | Comercial | Editor incrível para Windows. Tem recursos muito legais como edição e alocação de memória, operações com dados (XOR, SHL, etc) e na versão paga tem suporte a vários algoritmos criptográficos, disassembly e mais. |
-| [Hiew \(Hacker's View\)](http://www.hiew.ru/) | Comercial | Editor (e disassembler) muito poderoso, principalmente por conta de seeus módulos HEM. É muito usado por analistas de malware, mas é pago. |
+| [Helium Hex Edtitor](http://jacquelin.potier.free.fr/HeliumHexEditor/) | Comercial | Editor incrível para Windows. Tem recursos muito legais como edição e alocação de memória, operações com dados \(XOR, SHL, etc\) e na versão paga tem suporte a vários algoritmos criptográficos, disassembly e mais. |
+| [Hiew \(Hacker's View\)](http://www.hiew.ru/) | Comercial | Editor \(e disassembler\) muito poderoso, principalmente por conta de seeus módulos HEM. É muito usado por analistas de malware, mas é pago. |
 | [HT Editor](http://hte.sourceforge.net/) | Livre | Interface gráfica baseada em texto, parecido com o Hiew. Feio, mas cumpre seu trabalho. |
 | [HxD](https://mh-nexus.de/en/hxd/) | Freeware | Bem bom. Possui recursos extras como geração de hashes, suporte a abrir discos. |
+| [ImHex](https://github.com/WerWolv/ImHex) | Livre | Impressionante editor gráfico para Windows e Linux. Possui uma linguagem de _patterns_ para aplicar no arquivo, exporta/importa patches e muito mais. |
 | [Reverse Engineer's Hex Editor](https://github.com/solemnwarning/rehex) | Livre | Nova proposta de um editor especificamente para engenharia reversa. |
 | [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/) | Livre | Multiplataforma, recursos interessantes. |
 | [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) | Freeware | Sem muitos recursos, mas quebra um galho. |
@@ -32,7 +33,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | [DIE \(Detect It Easy\)](http://ntinfo.biz/index.html) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
 | [DUMPBIN](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
 | [Exeinfo PE](http://exeinfo.xn.pl/) | Freeware | Detecta compilador, packer, protectors e edita os arquivos, além de suportar vários plugins loucos. Tem versão VIP mediante doação. |
-| [Malwoverview](https://github.com/alexandreborges/malwoverview) | Livre | Mais um nacional pra uma primeira impressão de arquivos suspeitos, URLs e domínios. Checa também APK's. :) |
+| [Malwoverview](https://github.com/alexandreborges/malwoverview) | Livre | Mais um nacional pra uma primeira impressão de arquivos suspeitos, URLs e domínios. Checa também APK's. :\) |
 | [objdump](https://www.gnu.org/software/binutils/) | Livre | Parte do GNU binutils, também analisa PE, além de ELF, a.out, etc. |
 | [PE-Bear](https://hshrzd.wordpress.com/pe-bear/) | Freeware | Analisador gráfico \(Qt\) multiplataforma que também detecta packers/protectors. |
 | [PEdump](http://pedump.me/) | Livre | Analisador online muito legal! |
@@ -45,7 +46,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [BFD](https://ftp.gnu.org/pub/old-gnu/Manuals/bfd-2.9.1/html_chapter/bfd_1.html) | Livre | **B**inary **F**ile **D**escriptor é a biblioteca usada por programas como readpe e objdump. Tem suporte a muitos tipos de arquivos, incluindo PE e ELF, claro.|
+| [BFD](https://ftp.gnu.org/pub/old-gnu/Manuals/bfd-2.9.1/html_chapter/bfd_1.html) | Livre | **B**inary **F**ile **D**escriptor é a biblioteca usada por programas como readpe e objdump. Tem suporte a muitos tipos de arquivos, incluindo PE e ELF, claro. |
 | [libpe](https://github.com/merces/libpe) | Livre | Nossa 💚 biblioteca multipltaforma para _parsing_ de arquivos PE. |
 | [libPeConv](https://github.com/hasherezade/libpeconv) | Livre | Biblioteca em C++ para PE usada pelo PE-Bear. |
 | [pefile](https://github.com/erocarrera/pefile) | Livre | Famosa biblioteca em Python pra fazer qualquer coisa com arquivos PE. |
@@ -58,9 +59,9 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [flat assembler \(FASM\)](https://flatassembler.net/) | Livre | Assembler bem recente que já vem com vários exemplos de código. Windows e Linux. |
-| [GNU Assembler \(GAS\)](https://sourceware.org/binutils/docs/as/) | Livre | Também chamado simplesmente de **as**, é o assembler do projeto GNU e provavelmente já está instalado no seu Linux! ;) |
-| [Microsoft Macro Assembler \(MASM\)](https://docs.microsoft.com/en-us/cpp/assembler/masm/microsoft-macro-assembler-reference) | Freeware | Atualmente já vem com o Visual Studio da Microsoft, mesmo na versão Community. Segue um [tutorial de como compilar um "Hello, world"](https://www.mentebinaria.com.br/forums/topic/146-hello-world-em-masm-no-windows/).|
-| [Netwide Assembler \(NASM\)](https://www.nasm.us/) | Livre | Multiplataforma, suporte à sintaxe Intel e bem popular. Veja um [tutorial de como compilar um "Hello, world" no Linux](https://www.mentebinaria.com.br/forums/topic/51-%E2%80%9Chello-world%E2%80%9D-em-nasm-no-linux-x86/).|
+| [GNU Assembler \(GAS\)](https://sourceware.org/binutils/docs/as/) | Livre | Também chamado simplesmente de **as**, é o assembler do projeto GNU e provavelmente já está instalado no seu Linux! ;\) |
+| [Microsoft Macro Assembler \(MASM\)](https://docs.microsoft.com/en-us/cpp/assembler/masm/microsoft-macro-assembler-reference) | Freeware | Atualmente já vem com o Visual Studio da Microsoft, mesmo na versão Community. Segue um [tutorial de como compilar um "Hello, world"](https://www.mentebinaria.com.br/forums/topic/146-hello-world-em-masm-no-windows/). |
+| [Netwide Assembler \(NASM\)](https://www.nasm.us/) | Livre | Multiplataforma, suporte à sintaxe Intel e bem popular. Veja um [tutorial de como compilar um "Hello, world" no Linux](https://www.mentebinaria.com.br/forums/topic/51-%E2%80%9Chello-world%E2%80%9D-em-nasm-no-linux-x86/). |
 | [Yasm Modular Assembler \(YASM\)](https://yasm.tortall.net/) | Livre | Multiplataforma, escrito com base no NASM pra ser um substituto mas acho que não vingou. hehe |
 
 ## Disassemblers
@@ -76,7 +77,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [dnSpy](https://github.com/0xd4d/dnSpy) | Livre | Somente para .NET, descompila, debuga e (dis)assembla. |
+| [dnSpy](https://github.com/0xd4d/dnSpy) | Livre | Somente para .NET, descompila, debuga e \(dis\)assembla. |
 | [edb \(Evan's Debugger\)](https://github.com/eteran/edb-debugger) | Livre | Debugger gráfico \(Qt\) com foco em binários ELF no Linux. |
 | [GDB \(GNU Debugger\)](https://sourceware.org/gdb/) | Livre | Super conhecido debugger pra Linux do projeto GNU. Tem uma [versão não oficial pra Windows](http://www.equation.com/servlet/equation.cmd?fa=gdb) também. É modo texto, mas possui vários front-ends como [GDBFrontend](https://github.com/rohanrhu/gdb-frontend), dentre [outros](https://sourceware.org/gdb/wiki/GDB%20Front%20Ends). |
 | [GEF](https://github.com/hugsy/gef) | Livre | O **G**DB **E**nhanced **F**eatures extende o GDB com recursos para engenharia reversa. |
@@ -106,7 +107,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | :--- | :--- | :--- |
 | [IDR \(Interactive Delphi Reconstructor\)](https://github.com/crypto2011/IDR) | Livre | Para binários compilados em Delphi. |
 
-### Genéricos (C, C++, Delphi, etc)
+### Genéricos \(C, C++, Delphi, etc\)
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
@@ -117,10 +118,10 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [CFR](https://www.benf.org/other/cfr/) | Livre | Descompilador para Java de linha de comando. O output é o código fonte e só.  |
+| [CFR](https://www.benf.org/other/cfr/) | Livre | Descompilador para Java de linha de comando. O output é o código fonte e só. |
 | [IntelliJ IDEA](https://www.jetbrains.com/idea/download/other.html) | Mista | Na verdade é uma IDE para programação em Java mas mesmo a versão Community possui descompilador e debugger para classes compiladas em Java. |
 | [JD-GUI](https://github.com/java-decompiler/jd-gui) | Livre | Descompilador para Java com GUI. |
-| [Procyon](hhttps://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler) | Livre | Para Java, com suporte a recursos novos da linguagem. É modo texto mas há GUI's disponíveis documentadas no link.  |
+| [Procyon](hhttps://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler) | Livre | Para Java, com suporte a recursos novos da linguagem. É modo texto mas há GUI's disponíveis documentadas no link. |
 
 ### Visual Basic
 
@@ -128,24 +129,30 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | :--- | :--- | :--- |
 | [VB Decompiler](https://www.vb-decompiler.org/) | Comercial | Descompilador para VB5/6 e disassembler para VB .NET. |
 
+## Emuladores
+
+| Nome | Licença | Descrição |
+| :--- | :--- | :--- |
+| [Qiling](https://github.com/qilingframework/qiling) | Livre | Framework que combina emulação com instrumentação de binários. É possível emular programas de Windows e Linux, além de outros SOs, incluindo ring0. |
+| [Speakeasy](https://github.com/fireeye/speakeasy) | Livre | Emulador feito pela FireEye, inicialmente para programas nativos de Windows (ring0) mas possui um crescente suporta à programas em usermode (ring3), emulando várias das funções da Windows API. |
+
 ## Frameworks
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [angr](https://angr.io) | Livre | Framework para análise estática e simbólica de binários. |
 | [Frida](https://www.frida.re) | Livre | Framework para instrumentação dinâmica de binários. |
-| [Qiling](https://github.com/qilingframework/qiling) | Livre | Framework que combina emulação com instrumentação de binários. |
 | [Radare](https://rada.re/r/) | Livre | Suíte completa com debugger, disassembler e outras ferramentas para quase todo tipo de binário existente! |
 
 ## Monitores de processos
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [Process Hacker](https://processhacker.sourceforge.io/) | Livre | Talvez o melhor da categoria. Mostra os handles, objetos, processos, quem tá usando o que e muita mais.   |
+| [Process Hacker](https://processhacker.sourceforge.io/) | Livre | Talvez o melhor da categoria. Mostra os handles, objetos, processos, quem tá usando o que e muita mais. |
 | [Process Explorer](https://docs.microsoft.com/en-us/sysinternals/) | Freeware | Clássica ferramenta do conjunto SysInternals, que exibe muito mais que o Gerenciador de Tarefas comum. |
-| [System Explorer](https://github.com/zodiacon/SystemExplorer/releases) | Livre | Versão do Pavel Yosifovich que conta com algumas vantagens sobre o Process Explorer, como visualizar informações de processos protegidos (através de um driver), listar todas as threads abertas no Windows, todos os jobs, etc. |
+| [System Explorer](https://github.com/zodiacon/SystemExplorer/releases) | Livre | Versão do Pavel Yosifovich que conta com algumas vantagens sobre o Process Explorer, como visualizar informações de processos protegidos \(através de um driver\), listar todas as threads abertas no Windows, todos os jobs, etc. |
 
-## Sandboxes (Linux)
+## Sandboxes \(Linux\)
 
 Existem outros projetos como Limon, Detux, HaboMalHunter, mas na lista abaixo procurei deixar somente os que estão ativos.
 
@@ -153,23 +160,23 @@ Existem outros projetos como Limon, Detux, HaboMalHunter, mas na lista abaixo pr
 | :--- | :--- | :--- |
 | [LiSa](https://github.com/danieluhricek/LiSa) | Livre | Possui uma API bem simples e suporta binários ELF compilados para x86, x86-64, ARM e MIPS. |
 
-## Sandboxes (Windows)
+## Sandboxes \(Windows\)
 
 Esta lista não inclui serviços de sandbox puramente comerciais.
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [DRAKVUF Sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) | Livre | Projeto co-financiado pelo CERT da Polônia que usa o engine DRAKVUF para criar uma sandbox de Windows 7 ou Windows 10 sem agente no *guest*. |
+| [DRAKVUF Sandbox](https://github.com/CERT-Polska/drakvuf-sandbox) | Livre | Projeto co-financiado pelo CERT da Polônia que usa o engine DRAKVUF para criar uma sandbox de Windows 7 ou Windows 10 sem agente no _guest_. |
 | [CAPE](https://github.com/ctxis/CAPE) | Livre | Sandbox específica para extração de configuração de malware. |
-| [Cuckoo](https://cuckoosandbox.org/) | Livre | Provavelmente a sandbox mais popular e utilizada.  |
+| [Cuckoo](https://cuckoosandbox.org/) | Livre | Provavelmente a sandbox mais popular e utilizada. |
 
-## Sandboxes (Online)
+## Sandboxes \(Online\)
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [Any.Run](https://app.any.run/submissions) | Community | Apesar do nome, só suporta artefatos de Windows, mas é muito bom! |
 | [Hybrid Analysis](https://www.hybrid-analysis.com/) | Community | Sandbox muito boa. Também é um portal de investigação inclusive com suporte à regras de Yara. |
-| [Joe Sandbox](https://www.joesandbox.com/#advanced) | Community | Um dos primeiros serviços. Suporta ELF (x86 e x86-64), PE e documentos. |
+| [Joe Sandbox](https://www.joesandbox.com/#advanced) | Community | Um dos primeiros serviços. Suporta ELF \(x86 e x86-64\), PE e documentos. |
 
 ## Visualizadores hexadecimais
 
@@ -178,6 +185,7 @@ Esta lista não inclui serviços de sandbox puramente comerciais.
 | [hdump](https://sourceforge.net/projects/hdump/) | Livre | Clone nosso 💚, multiplataforma \(funciona no Windows!\) do hexdump que imita a saída do **hd**. |
 | [heksa](https://github.com/raspi/heksa) | Livre | Multiplataforma, com saída colorida e recursos interessantes como seek negativo \(a partir do fim do arquivo\). |
 | hexdump/hd | Livre | Padrão no BSD e Linux. Se chamado por "hd" exibe saída em hexa/ASCII. |
+| [hexyl](https://github.com/sharkdp/hexyl) | Livre | Multiplataforma, também com _output_ colorido, exibição de borda, etc. |
 | od | Livre | Padrão no UNIX e Linux. O comando **od -tx1** produz uma saída similar à do **hd**. |
 | xxd | Livre | Vem com o vim. Uma saída similar à do **hd** é obtida com **xdd -g1**. |
 
@@ -191,6 +199,12 @@ $ hdump -n 32 /bin/ls
 $ heksa -l 32 /bin/ls
 00000┊7f 45 4c 46 01 01 01 00  00 00 00 00 00 00 00 00┊.ELF...Ø ØØØØØØØØ
 00010┊03 00 28 00 01 00 00 00  21 3e 00 00 34 00 00 00┊.Ø(Ø.ØØØ !>ØØ4ØØØ
+
+$ hexyl -n32 /bin/ls
+┌────────┬─────────────────────────┬─────────────────────────┬────────┬────────┐
+│00000000│ 7f 45 4c 46 02 01 01 00 ┊ 00 00 00 00 00 00 00 00 │•ELF•••0┊00000000│
+│00000010│ 02 00 3e 00 01 00 00 00 ┊ fc 4a 40 00 00 00 00 00 │•0>0•000┊×J@00000│
+└────────┴─────────────────────────┴─────────────────────────┴────────┴────────┘
 
 $ hd -n32 /bin/ls
 00000000  7f 45 4c 46 01 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
@@ -214,3 +228,4 @@ Ferramentas que não analisei ainda e não sei exatamente as vantagens de utiliz
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [Intezer Analyzer](https://analyze.intezer.com) | Community | Online. Requer um pequeno cadastro. Tem um recursos de identificar "genes" estaticamente de famílias de binários. |
+

@@ -14,7 +14,7 @@ B8 E2 07 00 00
 
 O primeiro _byte_ é o _opcode_. Os outros 4 _bytes_ representam o primeiro e único argumento dessa instrução. Sabemos então que 0xB8 faz com que um valor seja colocado em EAX. Como este registrador tem 32-bits, nada mais natural que o argumento dessa instrução ser também de 32-bits ou 4 _bytes._ Considerando o _endianess_, como já explicado anteriormente neste livro, o valor literal 2018 \(0x7E2 ou, em sua forma completa de 32-bits, 0x000007E2\) é escrito em _little-endian_ com seus _bytes_ na ordem inversa, resultando em E2 07 00 00.
 
-Na arquitetura Intel IA-32, uma instrução \(considerando o _opcode_ e seus argumentos\) pode ter de 1 à 15 _bytes_  de tamanho.
+Na arquitetura Intel IA-32, uma instrução \(considerando o _opcode_ e seus argumentos\) pode ter de 1 à 15 _bytes_ de tamanho.
 
 ## Copiando valores
 
@@ -32,9 +32,9 @@ BB CA B0 B0 00
 
 ## Aritimética
 
-Naturalmente, processadores fazem muitos cálculos matemáticos.  Veremos agora algumas dessas instruções, começando pela instrução ADD, que soma valores. Analise:
+Naturalmente, processadores fazem muitos cálculos matemáticos. Veremos agora algumas dessas instruções, começando pela instrução ADD, que soma valores. Analise:
 
-```assembly
+```text
 MOV ECX, 7
 ADD ECX, 1
 ```
@@ -43,7 +43,7 @@ No código acima, a instrução ADD soma 1 ao valor de ECX \(que no nosso caso �
 
 Uma outra forma de atingir este resultado seria utilizar a instrução INC, que incrementa seu operando em uma unidade, dessa forma:
 
-```assembly
+```text
 MOV ECX, 7
 INC ECX
 ```
@@ -52,26 +52,26 @@ A instrução INC recebe um único operando que pode ser um registrador ou um en
 
 O leitor pode se perguntar por que existe uma instrução INC se é possível incrementar um operando em uma unidade com a instrução ADD. Para entender, compile o seguinte o programa com o NASM:
 
-{% code-tabs %}
-{% code-tabs-item title="soma.s" %}
-```assembly
+{% tabs %}
+{% tab title="soma.s" %}
+```text
 BITS 32
 
 global start
 
 section .text
 start:
-	mov eax, 7
-	add eax, 1
-	inc eax
+    mov eax, 7
+    add eax, 1
+    inc eax
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Após compilar, verifique o código objeto gerado com o **objdump**:
 
-{% code-tabs %}
-{% code-tabs-item title="Linux" %}
+{% tabs %}
+{% tab title="Linux" %}
 ```text
 $ objdump -dM intel soma.o
 
@@ -80,26 +80,26 @@ soma.o:     file format elf32-i386
 Disassembly of section .text:
 
 00000000 <start>:
-   0:	b8 07 00 00 00       	mov    eax,0x7
-   5:	83 c0 01             	add    eax,0x1
-   8:	40                   	inc    eax
+   0:    b8 07 00 00 00           mov    eax,0x7
+   5:    83 c0 01                 add    eax,0x1
+   8:    40                       inc    eax
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="macOS" %}
-```
+{% tab title="macOS" %}
+```text
 $ objdump -d -x86-asm-syntax=intel -print-imm-hex soma.o
 
-soma.o:	file format Mach-O 32-bit i386
+soma.o:    file format Mach-O 32-bit i386
 
 Disassembly of section __TEXT,__text:
 start:
-       0:	b8 07 00 00 00  mov eax, 0x7
-       5:	83 c0 01        add eax, 0x1
-       8:	40              inc eax
+       0:    b8 07 00 00 00  mov eax, 0x7
+       5:    83 c0 01        add eax, 0x1
+       8:    40              inc eax
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Há duas diferenças básicas entre as instruções ADD e INC neste caso. A mais óbvia é que a instrução ADD EAX, 1 custou três _bytes_ no programa, enquanto a instrução INC EAX utilizou somente um. Isso pode parecer capricho, mas não é: binários compilados possuem normalmente milhares de instruções Assembly e a diferença de tamanho no resultado final pode ser significativa.
 
@@ -111,9 +111,9 @@ Outra vantagem da INC sobre a ADD é a velocidade de execução, já que a segun
 
 A instrução SUB funciona de forma similar e para subtrair somente uma unidade, também existe uma instrução DEC \(de decremento\). Vamos então estudar um pouco sobre a instrução MUL agora. Esta instrução tem o primeiro operando \(o de destino\) **implícito**, ou seja, você não precisa fornecê-lo: será sempre EAX ou uma sub-divisão dele, dependendo do tamanho do segundo operando \(de origem\), que pode ser um outro registrador ou um endereço de memória. Analise:
 
-{% code-tabs %}
-{% code-tabs-item title="mul.s" %}
-```assembly
+{% tabs %}
+{% tab title="mul.s" %}
+```text
 BITS 32
 
 global start
@@ -124,8 +124,8 @@ start:
   mov ebx, 2
   mul ebx
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 A instrução MUL EBX vai realizar uma multiplicação sem sinal \(sempre positiva\) de EBX com EAX e armazenar o resultado em EAX.
 
@@ -142,8 +142,8 @@ Neste ponto acredito que o leitor esteja confortável com a aritimética em proc
 Já explicamos o que são as operações bit-a-bit quando falamos sobre cálculo com binários então vamos dedicar aqui à particularidades de seu uso. Por exemplo, a instrução XOR, que faz a operação OU EXCLUSIVO, pode ser utilizada para zerar um registrador, o que seria equivalente a mover o valor 0 para o registrador, só que muito mais rápido. Analise:
 
 ```text
-b9 00 00 00 00       	mov    ecx,0x0
-31 c9                	xor    ecx,ecx
+b9 00 00 00 00           mov    ecx,0x0
+31 c9                    xor    ecx,ecx
 ```
 
 Além de menor em _bytes_, a versão XOR é também mais rápida. Em ambas as instruções, depois de executadas, o resultado é que o registrador ECX terá o valor 0 e a _flag_ ZF será _setada_, como em qualquer operação que resulte em zero.
@@ -155,11 +155,11 @@ Faça você mesmo testes com as instruções AND, OR, SHL, SHR, ROL, ROR e NOT. 
 Sendo uma operação indispensável ao funcionamento dos computadores, a comparação precisa ser muito bem compreendida. Instruções chave aqui são a CMP \(_Compare_\) e [TEST](https://www.mentebinaria.com.br/forums/topic/140-instruções-test-x-cmp/). Analise o código a seguir:
 
 ```text
-b8 b0 b0 00 00       	mov    eax,0xb0b0
-3d 10 fe 00 00       	cmp    eax,0xfe10
+b8 b0 b0 00 00           mov    eax,0xb0b0
+3d 10 fe 00 00           cmp    eax,0xfe10
 ```
 
-A instrução CMP neste caso compara o valor de EAX \(previamente _setado_ para 0xB0B0\) com 0xFE10. O leitor tem alguma ideia de como tal comparação é feita matematicamente? Acertou quem pensou em  diminuir de EAX o valor a ser comparado. Dependendo do resultado, podemos saber o resultado da comparação da seguinte maneira:
+A instrução CMP neste caso compara o valor de EAX \(previamente _setado_ para 0xB0B0\) com 0xFE10. O leitor tem alguma ideia de como tal comparação é feita matematicamente? Acertou quem pensou em diminuir de EAX o valor a ser comparado. Dependendo do resultado, podemos saber o resultado da comparação da seguinte maneira:
 
 * Se o resultado for **zero**, então os operandos de destino e origem são **iguais**.
 * Se o resultado for um número **negativo**, então o operando de destino é **maior** que o de origem.
@@ -180,10 +180,10 @@ A ideia de fazer uma comparação é tomar uma decisão na sequencia. Neste caso
 Existem vários tipos de saltos. O mais simples é o salto **incondicional** produzido pela instrução JMP, que possui apenas um operando, podendo ser um valor literal, um registrador ou um endereço de memória. Para entender, analise o programa abaixo:
 
 ```text
-   0:	b8 01 00 00 00       	mov    eax,0x1
-   5:	eb 03                	jmp    0xa
-   7:	83 c0 04             	add    eax,0x4
-   a:	40                   	inc    eax
+   0:    b8 01 00 00 00           mov    eax,0x1
+   5:    eb 03                    jmp    0xa
+   7:    83 c0 04                 add    eax,0x4
+   a:    40                       inc    eax
 ```
 
 A instrução ADD EAX, 4 nunca será executada pois o salto faz a execução pular para o endereço 0x0A, onde temos a instrução INC EAX. Portanto, o valor final de EAX será 2.
@@ -201,11 +201,11 @@ Você pode entender o salto incondicional JMP como um comando **goto** na lingua
 Os saltos condicionais J_cc_ onde _cc_ significa _condition code_, podem ser de vários tipos. O mais famoso deles é o **JE \(**_**Jump if Equal**_**\)**, utilizado para saltar quando os valores da comparação anterior são iguais. Em geral ele vem precedido de uma instrução CMP, como no exemplo abaixo:
 
 ```text
-   0:	b8 01 00 00 00       	mov    eax,0x1
-   5:	83 f8 01             	cmp    eax,0x1
-   8:	74 03                	je     0xd
-   a:	83 c0 03             	add    eax,0x3
-   d:	40                   	inc    eax
+   0:    b8 01 00 00 00           mov    eax,0x1
+   5:    83 f8 01                 cmp    eax,0x1
+   8:    74 03                    je     0xd
+   a:    83 c0 03                 add    eax,0x3
+   d:    40                       inc    eax
 ```
 
 A instrução no endereço 0x5 compara o valor de EAX com 1 e vai sempre resultar em verdadeiro neste caso, o que significa que a _zero flag_ será _setada_.
@@ -242,4 +242,4 @@ Já vimos que comparações são na verdade subtrações, por isso os resultados
 | JO \(Overflow\) |  | OF=1 |
 | JNO \(Not Overflow\) |  | OF=0 |
 
-Não se preocupe com a quantidade de diferentes instruções na arquitetura. O segredo é ir estudando-as conforme o necessário. Para avançar, só é preciso que você entenda o conceito do salto. Muitos problemas de engenharia reversa são resolvidos com o entendimento de um simples JE \(ZF=1\). Se você já entendeu isso, é suficiente para prosseguir. Se não, volte uma casa. 🤷‍♂️
+Não se preocupe com a quantidade de diferentes instruções na arquitetura. O segredo é estudá-las conforme o necessário, na medida em que surgem nos programas que você analisa. Para avançar, só é preciso que você entenda o conceito do salto. Muitos problemas de engenharia reversa são resolvidos com o entendimento de um simples JE \(ZF=1\). Se você já entendeu isso, é suficiente para prosseguir. Se não, volte uma casa. 🤷‍♂️

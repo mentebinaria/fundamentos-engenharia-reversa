@@ -42,3 +42,4 @@ Além disso, as seguintes seções não foram iniciadas ainda:
 
 * Assembly x86
 * Depuração.
+

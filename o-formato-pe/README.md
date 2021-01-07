@@ -17,3 +17,4 @@ A estrutura geral de um arquivo PE é apresentada na imagem abaixo:
 ![Estrutura de um arquivo PE](../.gitbook/assets/arquivo_pe.png)
 
 Conheceremos agora os cabeçalhos mais importantes para este primeiro contato com a engenharia reversa e, em seguida, as seções de um arquivo PE.
+

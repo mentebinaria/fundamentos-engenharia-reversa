@@ -37,7 +37,7 @@ B8 20 00 00 00
 83 C8 18
 ```
 
-Na primeira, que tem um total de 5 _bytes_, o _opcode_ 0xb8 é utilizado para colocar  o número de 32-bits \(4 _bytes_\) na sequência em memória. Como nosso número desejado possui somente 1 _byte_, preenchemos os outros três com zero, respeitando o _endianess_.
+Na primeira, que tem um total de 5 _bytes_, o _opcode_ 0xb8 é utilizado para colocar o número de 32-bits \(4 _bytes_\) na sequência em memória. Como nosso número desejado possui somente 1 _byte_, preenchemos os outros três com zero, respeitando o _endianess_.
 
 A segunda instrução tem 3 _bytes_ sendo que o primeiro é o _opcode_ dela \(OR\), o segundo é o identificador da área de memória e o terceiro é o nosso operando 0x18, que deve sofrer o OR com o valor na área de memória indicada por C8.
 
@@ -55,3 +55,4 @@ Agora você sabe o motivo pelo qual um programa compilado não é compatível en
 {% endhint %}
 
 Perceba que Assembly é uma linguagem legível para humanos, diferente da linguagem de máquina que não passa de uma "tripa de _bytes_". Os comandos da linguagem Assembly são chamados de **mnemônicos**. No exemplo de código acima, utilizamos dois: o MOV e o OR. Estudaremos mais mnemônicos em breve.
+

@@ -35,3 +35,4 @@ Fundamentos em programação Assembly - José Augusto N. G. Manzano, 2006.
 História da Matemática - Carl B. Boyer, 1974.
 
 Reversing: Secrets of Reverse Engineering - Eldad Eilam, 2005.
+

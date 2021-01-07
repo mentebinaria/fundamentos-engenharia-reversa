@@ -53,3 +53,4 @@ arquivo: text/plain; charset=us-ascii
 ```
 
 Como o leitor pode notar, a opção **-i** o **file** também nos dá o tipo MIME \(do inglês _Multipurpose Internet Mail Extensions_\), que é o tipo de arquivo utilizado na Internet para _downloads_, e-mail, etc.
+

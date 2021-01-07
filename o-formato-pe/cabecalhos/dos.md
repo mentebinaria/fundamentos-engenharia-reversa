@@ -91,7 +91,7 @@ Depois disso o programa sai. Mas este pequeno programa de MS-DOS é adicionado p
 
 Para por em prática a análise desta primeira parte do arquivo PE, vamos abrir o executável da calculadora do Windows \(normalmente em _C:\Windows\System32\calc.exe_\) no **wxHexEditor**, conforme ilustra a imagem abaixo:
 
-![Visualização hexadecimal do calc.exe com o wxHexEditor](../../.gitbook/assets/calc_fig2.png)
+![Visualiza&#xE7;&#xE3;o hexadecimal do calc.exe com o wxHexEditor](../../.gitbook/assets/calc_fig2.png)
 
 Analisando o que vemos:
 
@@ -99,3 +99,4 @@ Analisando o que vemos:
 * Na posição 0x3c, ou seja, no campo _e\_lfanew_, há o endereço da assinatura PE \(0xd8 no caso deste executável\).
 * Logo após os 4 _bytes_ do campo _e\_lfanew_, começa o código do programa de MS-DOS, no offset 0x40, com uma sequência de _bytes_ que não fazem sentido para nós por enquanto \(veja que o texto impresso na tela pelo DOS stub é todavia bem visível\).
 * Finalmente, na posição 0xd8 encontramos a assinatura PE\0\0. Aqui sim, começa o formato PE propriamente dito.
+

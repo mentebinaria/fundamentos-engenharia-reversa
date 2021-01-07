@@ -1,6 +1,6 @@
 # C strings
 
-Na linguagem C foi criado um padrão para saber _programaticamente_ o fim de uma _string_: ela precisa ser terminada com um ****_byte_ ****nulo. Sendo assim, a _string_ ASCII "fernando", se utilizada num programa escrito em C, fica no binário compilado \(no .exe final, ou outro formato\) da seguinte forma:
+Na linguagem C foi criado um padrão para saber _programaticamente_ o fim de uma _string_: ela precisa ser terminada com um _**byte**_ ****nulo. Sendo assim, a _string_ ASCII "fernando", se utilizada num programa escrito em C, fica no binário compilado \(no .exe final, ou outro formato\) da seguinte forma:
 
 ```text
 66 65 72 6e 61 6e 64 6f 00
@@ -47,3 +47,4 @@ Mas para sermos mais assertivos, caso não haja mais nada depois do "o" da palav
 45 00 72 00 72 00 6f 00 00 00
 
 Claro que os programas feitos para buscarem texto dentro de arquivos já possuem esta inteligência, no entanto, a proposta deste livro é entender a fundo como a engenharia reversa funciona e por isso não poderíamos deixar de cobrir esta valiosa informação. ;-\)
+

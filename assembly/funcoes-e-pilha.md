@@ -6,8 +6,8 @@ Apesar de não estudarmos todos os aspectos da linguagem Assembly, alguns assunt
 
 Basicamente, uma função é um **bloco de código reutilizável** num programa. Tal bloco faz-se útil quando um determinado conjunto de instruções precisa ser invocado em vários pontos do programa. Por exemplo, suponha um programa que precise converter a temperatura de Fahrenheit para Celsius várias vezes no decorrer de seu código:
 
-{% code-tabs %}
-{% code-tabs-item title="fahrenheit2celsius.py" %}
+{% tabs %}
+{% tab title="fahrenheit2celsius.py" %}
 ```python
 fahrenheit = 230.4
 celsius = (fahrenheit - 32) * 5 / 9
@@ -21,8 +21,8 @@ fahrenheit = 90.1
 celsius = (fahrenheit - 32) * 5 / 9
 print(celsius)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 O programa acima funciona e a saída é a esperada:
 
@@ -34,8 +34,8 @@ O programa acima funciona e a saída é a esperada:
 
 No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada fica maior em _bytes_. Toda esta repetição também prejudica a manutenção do código pois se o programador precisar fazer uma alteração no cálculo, vai ter que alterar em todos eles. É aí que entram as funções. Veja:
 
-{% code-tabs %}
-{% code-tabs-item title="fahrenheit2celsius.py" %}
+{% tabs %}
+{% tab title="fahrenheit2celsius.py" %}
 ```python
 def fahrenheit2celsius(fahrenheit):
     return (fahrenheit - 32) * 5 / 9
@@ -49,8 +49,8 @@ print(celsius)
 celsius = fahrenheit2celsius(90.1)
 print(celsius)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 A saída é a mesma, mas agora o programa está utilizando uma função, onde o cálculo só foi definido uma única vez e toda vez que for necessário, o programa a chama.
 
@@ -103,7 +103,7 @@ Olha como ela fica compilada no Linux em 32-bits:
  8048432:       83 c4 08                add    esp,0x8
 ```
 
-Removi partes do código intencionalmente, pois o objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL \(no endereço 0x804842d em nosso exemplo\) chama a função _soma()_ em 0x0804840b e a instrução RET \(em 0x8048417\) retorna para a instrução imediatamente após a CALL \(0x8048432\), para que a execução continue.
+Removi partes do código intencionalmente, pois o objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL \(no endereço 0x804842d em nosso exemplo\) chama a função _soma\(\)_ em 0x0804840b e a instrução RET \(em 0x8048417\) retorna para a instrução imediatamente após a CALL \(0x8048432\), para que a execução continue.
 
 ## A pilha de memória
 
@@ -120,15 +120,15 @@ Existem dois registradores diretamente associados com a pilha de memória alocad
 * O ESP, que aponta para o topo da pilha.
 * O EBP, que aponta para a base do _stack frame_.
 
-Veremos agora as instruções de manipulação de pilha. A primeira é a instrução PUSH (do inglês "empurrar") que, como o nome sugere, empilha um dado. Na forma abaixo, essa instrução faz com que o processador copie o conteúdo do registrador EAX para o topo da pilha:
+Veremos agora as instruções de manipulação de pilha. A primeira é a instrução PUSH \(do inglês "empurrar"\) que, como o nome sugere, empilha um dado. Na forma abaixo, essa instrução faz com que o processador copie o conteúdo do registrador EAX para o topo da pilha:
 
-```assembly
+```text
 push eax
 ```
 
 Também é possível empilhar um valor literal. Por exemplo, supondo que o programa coloque o valor um na pilha:
 
-```assembly
+```text
 push 1
 ```
 
@@ -136,7 +136,7 @@ Além de copiar o valor proposto para o topo da pilha, a instrução PUSH **decr
 
 Sua instrução antagônica é a POP, que só precisa de um registrador de destino para copiar lá o valor que está no topo da pilha. Por exemplo:
 
-```assembly
+```text
 pop edx
 ```
 
@@ -157,7 +157,7 @@ Isso faz com que o fluxo de execução do programa volte para a instrução imed
 
 Vamos agora analisar a pilha de memória num exemplo com a função MessageBox, da API do Windows:
 
-```assembly
+```text
 00401516 | 6A 31  | push 31                                     |
 00401518 | 68 00  | push msgbox.404000                          | 404000:"Johnny"
 0040151D | 68 07  | push msgbox.404007                          | 404007:"Cash"
@@ -165,16 +165,17 @@ Vamos agora analisar a pilha de memória num exemplo com a função MessageBox, 
 00401524 | E8 E8  | call <user32.MessageBoxA>                   |
 ```
 
-Perceba que quatro parâmetros são empilhados antes da chamada à _MessageBoxA_ (versão da função _MessageBox_ que recebe _strings_ ASCII, por isso o sufixo **A**).
+Perceba que quatro parâmetros são empilhados antes da chamada à _MessageBoxA_ \(versão da função _MessageBox_ que recebe _strings_ ASCII, por isso o sufixo **A**\).
 
 Os parâmetros são empilhados na ordem inversa.
 
-Já estudamos o protótipo desta função no capítulo que apresenta a [Windows API](../windows-api.md) e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro [uType](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox#parameters) e, se o decompormos, veremos que 0x31 é um OU entre 0x30 (MB_ICONEXCLAMATION) e 0x1 (MB_OKCANCEL).
+Já estudamos o protótipo desta função no capítulo que apresenta a [Windows API](../windows-api.md) e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro [uType](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox#parameters) e, se o decompormos, veremos que 0x31 é um OU entre 0x30 \(MB\_ICONEXCLAMATION\) e 0x1 \(MB\_OKCANCEL\).
 
-O próximo parâmetro é o número 404000, um ponteiro para a _string_ "Johnny", que é o título da mensagem. Depois vem o ponteiro para o texto da mensagem e por fim o zero (NULL), empilhado em 00401522, que é o _handle_.
+O próximo parâmetro é o número 404000, um ponteiro para a _string_ "Johnny", que é o título da mensagem. Depois vem o ponteiro para o texto da mensagem e por fim o zero \(NULL\), empilhado em 00401522, que é o _handle_.
 
 O resultado é apresentado a seguir:
 
-![Resultado da chamada à MessageBox](../.gitbook/assets/msgbox.png)
+![Resultado da chamada &#xE0; MessageBox](../.gitbook/assets/msgbox.png)
 
 É importante perceber que, após serem compreendidos, podemos controlar estes parâmetros e alterar a execução do programa conforme quisermos. Este é o assunto do próximo capítulo, sobre depuração.
+

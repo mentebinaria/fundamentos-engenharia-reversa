@@ -18,12 +18,13 @@ Para chamar uma função desta DLL, teríamos que criar um executável que a **i
 C:\>rundll32.exe <DLL>,<Função> <Parâmetros>
 ```
 
- Como a função _ShellAboutA\(\)_ recebe um texto ASCII para ser exibido na tela "Sobre" do Windows, podemos testá-la da seguinte forma:
+Como a função _ShellAboutA\(\)_ recebe um texto ASCII para ser exibido na tela "Sobre" do Windows, podemos testá-la da seguinte forma:
 
 ![](../.gitbook/assets/shellabouta.png)
 
 {% hint style="danger" %}
-Utilizar o _rundll32.exe_ para chamar funções de biblioteca não é a maneira mais adequada de fazê-lo e não funciona com todas as funções, principalmente as que precisam de parâmetros que não são do tipo _string_.  Somente o utilizamos aqui para fins de compreensão do conteúdo.
+Utilizar o _rundll32.exe_ para chamar funções de biblioteca não é a maneira mais adequada de fazê-lo e não funciona com todas as funções, principalmente as que precisam de parâmetros que não são do tipo _string_. Somente o utilizamos aqui para fins de compreensão do conteúdo.
 {% endhint %}
 
 Em breve também aprenderemos como _debugar_ uma DLL, mas por hora o conhecimento reunido aqui é suficiente.
+
