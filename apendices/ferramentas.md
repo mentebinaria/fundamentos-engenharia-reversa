@@ -9,12 +9,13 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [010 Editor](https://www.sweetscape.com/010editor/) | Shareware | Multiplataforma, bastante usado. |
-| [GNU poke](http://jemarch.net/poke) | Livre | Editor REPL genérico \(não só para executáveis\), ainda em beta, mas muito interessante. Escrevemos um [artigo](https://www.mentebinaria.com.br/artigos/editando-execut%C3%A1veis-com-o-gnu-poke-parte-1-r49/) sobre. |
 | [fhex](https://github.com/echo-devim/fhex) | Livre | Editor gráfico multiplataforma capaz de exibir o binário graficamente, além de suportar expressões regulares na busca. |
+| [GNU poke](http://jemarch.net/poke) | Livre | Editor REPL genérico \(não só para executáveis\), ainda em beta, mas muito interessante. Escrevemos um [artigo](https://www.mentebinaria.com.br/artigos/editando-execut%C3%A1veis-com-o-gnu-poke-parte-1-r49/) sobre. |
+| [Helium Hex Edtitor](http://jacquelin.potier.free.fr/HeliumHexEditor/) | Comercial | Editor incrível para Windows. Tem recursos muito legais como edição e alocação de memória, operações com dados \(XOR, SHL, etc\) e na versão paga tem suporte a vários algoritmos criptográficos, disassembly e mais. |
 | [Hex Workshop](http://www.hexworkshop.com/) | Comercial | Pago, somente para Windows, antigo, mas muito bem feito. |
 | [HexFiend](http://ridiculousfish.com/hexfiend/) | Livre | Somente para macOS, com recursos legais como diff e data inspector. |
-| [Helium Hex Edtitor](http://jacquelin.potier.free.fr/HeliumHexEditor/) | Comercial | Editor incrível para Windows. Tem recursos muito legais como edição e alocação de memória, operações com dados \(XOR, SHL, etc\) e na versão paga tem suporte a vários algoritmos criptográficos, disassembly e mais. |
-| [Hiew \(Hacker's View\)](http://www.hiew.ru/) | Comercial | Editor \(e disassembler\) muito poderoso, principalmente por conta de seeus módulos HEM. É muito usado por analistas de malware, mas é pago. |
+| [hexxed](https://github.com/meme/hexxed) | Livre | Novo, baseado na ncurses, portanto de linha de comando. Tem potencial, mas ainda está bem cru. É um bom projeto para aprender C, acompanhar o desenvolvimento, etc. |
+| [Hiew \(Hacker's View\)](http://www.hiew.ru/) | Comercial | Editor \(e disassembler\) muito poderoso, principalmente por conta de seeus módulos HEM. Tem suporte à vários formatos e é muito usado por analistas de malware, mas é pago. |
 | [HT Editor](http://hte.sourceforge.net/) | Livre | Interface gráfica baseada em texto, parecido com o Hiew. Feio, mas cumpre seu trabalho. |
 | [HxD](https://mh-nexus.de/en/hxd/) | Freeware | Bem bom. Possui recursos extras como geração de hashes, suporte a abrir discos. |
 | [ImHex](https://github.com/WerWolv/ImHex) | Livre | Impressionante editor gráfico para Windows e Linux. Possui uma linguagem de _patterns_ para aplicar no arquivo, exporta/importa patches e muito mais. |
@@ -184,8 +185,9 @@ Esta lista não inclui serviços de sandbox puramente comerciais.
 | :--- | :--- | :--- |
 | [hdump](https://sourceforge.net/projects/hdump/) | Livre | Clone nosso 💚, multiplataforma \(funciona no Windows!\) do hexdump que imita a saída do **hd**. |
 | [heksa](https://github.com/raspi/heksa) | Livre | Multiplataforma, com saída colorida e recursos interessantes como seek negativo \(a partir do fim do arquivo\). |
-| hexdump/hd | Livre | Padrão no BSD e Linux. Se chamado por "hd" exibe saída em hexa/ASCII. |
+| [HexLasso](https://suszter.com/hexlasso-online/) | Gratuito | Visualizador web que faz análises estatísticas visuais muito úteis. |
 | [hexyl](https://github.com/sharkdp/hexyl) | Livre | Multiplataforma, também com _output_ colorido, exibição de borda, etc. |
+| hexdump/hd | Livre | Padrão no BSD e Linux. Se chamado por "hd" exibe saída em hexa/ASCII. |
 | od | Livre | Padrão no UNIX e Linux. O comando **od -tx1** produz uma saída similar à do **hd**. |
 | xxd | Livre | Vem com o vim. Uma saída similar à do **hd** é obtida com **xdd -g1**. |
 
@@ -227,5 +229,5 @@ Ferramentas que não analisei ainda e não sei exatamente as vantagens de utiliz
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
+| [Kaitai Struct](https://kaitai.io/) | Livre | Se você pensa em _parsear_ um formato desconhecido ou tá estudando PE/ELF, vale olhar este gerador de _parser_ livre. |
 | [Intezer Analyzer](https://analyze.intezer.com) | Community | Online. Requer um pequeno cadastro. Tem um recursos de identificar "genes" estaticamente de famílias de binários. |
-
