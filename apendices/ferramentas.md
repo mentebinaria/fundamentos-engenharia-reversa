@@ -48,7 +48,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [BFD](https://ftp.gnu.org/pub/old-gnu/Manuals/bfd-2.9.1/html_chapter/bfd_1.html) | Livre | **B**inary **F**ile **D**escriptor é a biblioteca usada por programas como readpe e objdump. Tem suporte a muitos tipos de arquivos, incluindo PE e ELF, claro. |
-| [libpe](https://github.com/merces/libpe) | Livre | Nossa 💚 biblioteca multipltaforma para _parsing_ de arquivos PE. |
+| [libpe](https://github.com/merces/libpe) | Livre | Nossa 💚 biblioteca multiplataforma para _parsing_ de arquivos PE. |
 | [libPeConv](https://github.com/hasherezade/libpeconv) | Livre | Biblioteca em C++ para PE usada pelo PE-Bear. |
 | [pefile](https://github.com/erocarrera/pefile) | Livre | Famosa biblioteca em Python pra fazer qualquer coisa com arquivos PE. |
 | [PeNet](https://github.com/secana/PeNet) | Livre | Biblioteca em .Net para PE. |
