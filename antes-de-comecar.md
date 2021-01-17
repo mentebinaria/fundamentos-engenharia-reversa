@@ -65,7 +65,7 @@ $ gcc -o exemplo exemplo.c
 $ ./exemplo
 ```
 
-Caso o código em C inclua a _windows.h_, então deve ser compilado em ambiente Windows utilizando de preferência o [Orwell DevC++](https://sourceforge.net/projects/orwelldevcpp/).
+Caso o código em C inclua a _windows.h_, então deve ser compilado em ambiente Windows utilizando de preferência o [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
 
 Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para o aprendizado que você os escreva, execute e analise seus resultados. ;-\)
 
@@ -73,15 +73,14 @@ Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para
 
 Este é um guia prático. Sendo assim, é recomendável que você seja capaz de reproduzir o que é sugerido neste livro em seu próprio ambiente. Precisaremos de:
 
-* Uma máquina \(virtual ou real\) com Windows 7 ou 10.
-* Uma máquina \(virtual ou real\) com Linux. Usamos o Debian, mas qualquer outra serve, desde que você saiba instalar pacotes nela.
+* Uma máquina \(virtual ou real\) com Windows 10.
+* Uma máquina \(virtual ou real\) com Linux. Usamos o Ubuntu, mas qualquer outra serve desde que você saiba instalar pacotes nela.
 
 Na máquina com Windows, os programas necessários são:
 
 * [x64dbg](https://x64dbg.com/)
-* [Detect It Easy 2.05](http://ntinfo.biz/)
-* [wxHexEditor 0.24](https://sourceforge.net/projects/wxhexeditor/)
-* [pev 0.80](https://github.com/merces/pev)
-* [Orwell Dev-C++](https://sourceforge.net/projects/orwelldevcpp/)
-* [Python 3.7.7](https://www.python.org/downloads/release/python-377/)
-
+* [Detect It Easy](http://ntinfo.biz/)
+* [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/)
+* [pev](https://github.com/merces/pev)
+* [Visual Studio](https://visualstudio.microsoft.com/vs/community/)
+* [Python 3](https://www.python.org/downloads/)
