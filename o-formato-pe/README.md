@@ -1,4 +1,4 @@
-# 💼O formato PE
+# 💼 O formato PE
 
 Como explicado no capítulo anterior, a maioria dos tipos de arquivo que trabalhamos possuem uma especificação. Com os arquivos executáveis no Windows não é diferente: eles seguem a especificação do formato PE \(_Portable Executable_\) que conheceremos agora.
 

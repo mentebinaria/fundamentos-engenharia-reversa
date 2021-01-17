@@ -1,4 +1,4 @@
-# Execução de programas
+# 🚗 Execução de programas
 
 ## Privilégios de execução
 

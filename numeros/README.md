@@ -1,4 +1,4 @@
-# 🔢Números
+# 🔢 Números
 
 > Tudo é número \(Pitágoras\)
 
