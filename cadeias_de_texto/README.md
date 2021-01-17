@@ -1,4 +1,4 @@
-# Cadeias de texto
+# 🧵Cadeias de texto
 
 Se o computador só entende números, como podemos trabalhar com texto então? Bem, não se engane, o computador realmente só entende números. O fato de você apertar uma tecla no teclado que tem o desenho de um símbolo do alfabeto utilizado no seu país não garante que é isto que de fato seja enviado para o computador e, naturalmente, não é. Ao invés disso, cada tecla possui um código conhecido como _scan code_ ou _make code_ que é enviado, entre outras informações, pelo barramento de dados do teclado para a placa-mãe do computador e passa por vários estágios até chegar ao _kernel_, o núcleo do sistema operacional. Por exemplo, de acordo com informação contida no site [Beyond Logic](http://retired.beyondlogic.org/keyboard/keybrd.htm), o _scan code_ da tecla "A" é o byte 0x1c.
 

@@ -1,4 +1,4 @@
-# Arquivos
+# 🗂 Arquivos
 
 Não há dúvida de que o leitor já se deparou com diversos arquivos, mas será que já pensou numa definição para eles? Defino arquivo como uma sequência de _bytes_ armazenada numa mídia digital somados a uma entrada, um registro, no sistema de arquivos \(_filesystem_\) que o referencie. Por exemplo, vamos no Linux criar um arquivo cujo seu conteúdo é somente a _string_ ASCII "mentebinaria.com.br" \(sem aspas\):
 

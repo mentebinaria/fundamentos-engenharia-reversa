@@ -1,4 +1,4 @@
-# Registro de alterações
+# 📝Registro de alterações
 
 ## Versão 1.0 - Em breve 🚀
 

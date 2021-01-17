@@ -1,4 +1,4 @@
-# Depuração
+# 🐞 Depuração
 
 Chegamos no capítulo onde a engenharia reversa de fato começa. Aqui vamos estudar a depuração, ou _debugging_ em inglês. O conceito, como o nome em sugere, é buscar identificar erros \(_bugs_\) num programa, a fim de corrigi-los. No entanto, os _debuggers_ - como são chamados os softwares que servem a este fim - servem para muito mais que isso.
 

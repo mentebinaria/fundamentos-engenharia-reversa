@@ -1,4 +1,4 @@
-# Assembly
+# ⚙️ Assembly
 
 Agora que você já sabe como um binário PE é construído, está na hora de entender como o código contido em suas seções de código de fato executa. Acontece que um processador é programado em sua fábrica para entender determinadas sequências de _bytes_ como código e executar alguma operação. Para entender isso, vamos fazer uma analogia com um componente muito mais simples que um processador, um **circuito integrado** \(popularmente chamado de _chip_\).
 

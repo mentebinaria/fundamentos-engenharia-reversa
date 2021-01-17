@@ -1,4 +1,4 @@
-# Windows API
+# 🖼 Windows API
 
 Uma API \(_Application Programming Interface_\) é uma interface para programar uma aplicação. No caso da Windows API, esta consiste num conjunto de funções expostas para serem usadas por aplicativos rodando em _user mode_.
 
