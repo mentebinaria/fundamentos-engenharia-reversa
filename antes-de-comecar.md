@@ -84,3 +84,4 @@ Na máquina com Windows, os programas necessários são:
 * [pev](https://github.com/merces/pev)
 * [Visual Studio](https://visualstudio.microsoft.com/vs/community/)
 * [Python 3](https://www.python.org/downloads/)
+

@@ -1,8 +1,14 @@
 # Registro de alterações
 
-## Versão 1.0
+## Versão 1.0 - Em breve 🚀
 
-Lançada em ?
+### O que ainda falta
+
+* [ ] Desenvolver um pouco mais o capítulo da [Windows API](../windows-api.md). Possivelmente transformá-lo em uma seção e falar sobre _handles_, processos, etc.
+* [ ] Atualização das capturas de tela dos programas.
+* [ ] Revisão geral do fluxo do livro com as novas versões dos programas.
+
+### O que já rolou
 
 As seguintes seções foram completadas:
 
@@ -16,22 +22,18 @@ As seguintes seções foram completadas:
   * [x] Instruções básicas
   * [x] Funções e pilha
 * [x] Depuração
+
   * [x] Disassembly
   * [x] Breakpoints
   * [x] Manipulação do programa
   * [x] Patches
 
-Os requisitos foram revistos e agora deixam claro que precisamos de duas máquinas: uma com Windows e uma com Linux. Alguns exemplos também podem ser utilizados no macOS.
+* Os requisitos foram revistos e agora deixam claro que precisamos de duas máquinas: uma com Windows e uma com Linux. Alguns exemplos também podem ser utilizados no macOS.
+* O capítulo de registradores foi expandido. Uma subseção sobre o EIP foi incluída.
+* Os exemplos em Assembly foram melhorados. O _label_ **start** foi removido para evitar confusões, já que não _linkamos_ os binários compilados gerados para os exemplos.
+* Os exemplos do livro foram atualizados para o Python 3, erros foram corrigidos e muitas ferramentas foram adicionadas ao apêndice [Ferramentas](../apendices/ferramentas.md).
 
-O capítulo de registradores foi expandido. Uma subseção sobre o EIP foi incluída.
-
-Os exemplos em Assembly foram melhorados. O _label_ **start** foi removido para evitar confusões, já que não _linkamos_ os binários compilados gerados para os exemplos.
-
-Além disso, os exemplos do livro foram atualizados para o Python 3, erros foram corrigidos e algumas ferramentas adicionadas.
-
-## Versão 0.1
-
-Lançada em 12 de Maio de 2017
+## Versão 0.1 - 12/5/2017
 
 Primeira versão pública do livro. As seguintes seções ainda estão sendo trabalhadas:
 

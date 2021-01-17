@@ -26,7 +26,7 @@ int WINAPI MessageBox(
 );
 ```
 
-A Microsoft utiliza várias convenções de nome que precisam ser explicadas para o entendimento dos protótipos das funções de sua API. Para entender o protótipo da função _MessageBox_, é preciso conhecer algumas:
+A Microsoft utiliza em várias de suas documentações de funções em C uma espécie de linguagem de anotação alheia à linguagem C padrão, que ela criou chamou de [SAL _\(Source-code Annotation Language\)_](https://docs.microsoft.com/en-us/cpp/code-quality/understanding-sal). Além disso, ela criou definições de novos tipos na linguagem que precisam ser explicadas para o entendimento dos protótipos das funções de sua API. Para entender o protótipo da função _MessageBox_, é preciso conhecer o significado dos seguintes termos:
 
 |  |  |
 | :--- | :--- |
@@ -51,15 +51,15 @@ Agora vamos explicar os parâmetros da função _MessageBox_:
 
 Um _handle_ que identifica qual janela é dona da caixa de mensagem. Isso serve para atrelar uma mensagem a uma certa janela \(e impedi-la de ser fechada antes da caixa de mensagem, por exemplo\). Como é opcional, este parâmetro pode ser NULL, o que faz com que a caixa de mensagem não possua uma janela dona.
 
-## lpText \[entrada, opcional\]
+### lpText \[entrada, opcional\]
 
 Um ponteiro para um texto \(uma _string_\) que será exibido na caixa de mensagem. Se for NULL, a mensagem não terá um conteúdo, mas ainda assim aparecerá.
 
-## lpCaption \[entrada, opcional\]
+### lpCaption \[entrada, opcional\]
 
 Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL a caixa de mensagem não terá um título, mas ainda assim aparecerá.
 
-**uType \[entrada\]**
+### **uType \[entrada\]**
 
 Configura o tipo de caixa de mensagem. É um número inteiro que pode ser definido por macros para cada _flag_, definida na [documentação da função](https://msdn.microsoft.com/pt-br/library/windows/desktop/ms645505%28v=vs.85%29.aspx). Se passada a macro MB\_OKCANCEL \(0x00000001L\), por exemplo, faz com que a caixa de mensagem tenha dois botões: OK e Cancelar. Se passada a macro MB\_ICONEXCLAMATION \(0x00000030L\), a janela terá um ícone de exclamação. Se quiséssemos combinar as duas características, precisaríamos passar as duas _flags_ utilizando uma operação OU entre elas, assim:
 

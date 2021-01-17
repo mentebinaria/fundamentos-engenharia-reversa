@@ -1,4 +1,4 @@
-# Apresentação
+# ✨ Apresentação
 
 ## O que é este livro
 

@@ -135,7 +135,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [Qiling](https://github.com/qilingframework/qiling) | Livre | Framework que combina emulação com instrumentação de binários. É possível emular programas de Windows e Linux, além de outros SOs, incluindo ring0. |
-| [Speakeasy](https://github.com/fireeye/speakeasy) | Livre | Emulador feito pela FireEye, inicialmente para programas nativos de Windows (ring0) mas possui um crescente suporta à programas em usermode (ring3), emulando várias das funções da Windows API. |
+| [Speakeasy](https://github.com/fireeye/speakeasy) | Livre | Emulador feito pela FireEye, inicialmente para programas nativos de Windows \(ring0\) mas possui um crescente suporta à programas em usermode \(ring3\), emulando várias das funções da Windows API. |
 
 ## Frameworks
 
@@ -231,3 +231,4 @@ Ferramentas que não analisei ainda e não sei exatamente as vantagens de utiliz
 | :--- | :--- | :--- |
 | [Kaitai Struct](https://kaitai.io/) | Livre | Se você pensa em _parsear_ um formato desconhecido ou tá estudando PE/ELF, vale olhar este gerador de _parser_ livre. |
 | [Intezer Analyzer](https://analyze.intezer.com) | Community | Online. Requer um pequeno cadastro. Tem um recursos de identificar "genes" estaticamente de famílias de binários. |
+

@@ -1,22 +1,19 @@
 # Funções da API do Windows
 
-Segue uma lista de funções interessantes para colocarmos _breakpoints_ quando revertendo binários em Windows.
+Segue uma lista de funções interessantes para colocarmos _breakpoints_ quando revertendo binários em Windows. Em **quais** funções colocaremos os _breakpoints_ vai depender de **onde** queremos que o programa sob o controle do _debugger_ pare afim de observarmos o comportamento de determinada ação. A seguir veremos alguns nomes de funções bem comuns em programas.
 
-## Caixas de diálogo
+## Mensagens / Caixas de diálogo
 
-### MessageBoxA
+| Função | Biblioteca |
+| :--- | :--- |
+| MessageBoxA / MessageBoxW | USER32.DLL |
+| MessageBoxExA / MessageBoxExW | USER32.DLL |
 
-### MessageBoxW
+## Caixas de texto
 
-### MessageBoxExA
-
-### MessageBoxExW
-
-### DialogBoxParamA
-
-### GetWindowTextA
-
-### GetDlgItemTextA
+| Função | Biblioteca |
+| :--- | :--- |
+| GetDlgItemTextA / GetDlgItemTextW | USER32.DLL |
 
 ## Janelas
 

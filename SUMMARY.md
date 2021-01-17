@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Apresentação](README.md)
+* [✨ Apresentação](README.md)
 * [Antes de começar](antes-de-comecar.md)
 * [Introdução](introducao.md)
 * [Números](numeros/README.md)

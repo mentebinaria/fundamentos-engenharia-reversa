@@ -139,7 +139,7 @@ Neste ponto acredito que o leitor esteja confortável com a aritimética em proc
 
 ## Operações bit-a-bit
 
-Já explicamos o que são as operações bit-a-bit quando falamos sobre cálculo com binários então vamos dedicar aqui à particularidades de seu uso. Por exemplo, a instrução XOR, que faz a operação OU EXCLUSIVO, pode ser utilizada para zerar um registrador, o que seria equivalente a mover o valor 0 para o registrador, só que muito mais rápido. Analise:
+Já explicamos o que são as operações bit-a-bit quando falamos sobre cálculo com binários, então vamos dedicar aqui à particularidades de seu uso. Por exemplo, a instrução XOR, que faz a operação OU EXCLUSIVO, pode ser utilizada para zerar um registrador, o que seria equivalente a mover o valor 0 para o registrador, só que muito mais rápido. Analise:
 
 ```text
 b9 00 00 00 00           mov    ecx,0x0
@@ -243,3 +243,4 @@ Já vimos que comparações são na verdade subtrações, por isso os resultados
 | JNO \(Not Overflow\) |  | OF=0 |
 
 Não se preocupe com a quantidade de diferentes instruções na arquitetura. O segredo é estudá-las conforme o necessário, na medida em que surgem nos programas que você analisa. Para avançar, só é preciso que você entenda o conceito do salto. Muitos problemas de engenharia reversa são resolvidos com o entendimento de um simples JE \(ZF=1\). Se você já entendeu isso, é suficiente para prosseguir. Se não, volte uma casa. 🤷‍♂️
+
