@@ -14,10 +14,10 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [Helium Hex Edtitor](http://jacquelin.potier.free.fr/HeliumHexEditor/) | Comercial | Editor incrível para Windows. Tem recursos muito legais como edição e alocação de memória, operações com dados \(XOR, SHL, etc\) e na versão paga tem suporte a vários algoritmos criptográficos, disassembly e mais. |
 | [Hex Workshop](http://www.hexworkshop.com/) | Comercial | Pago, somente para Windows, antigo, mas muito bem feito. |
 | [HexFiend](http://ridiculousfish.com/hexfiend/) | Livre | Somente para macOS, com recursos legais como diff e data inspector. |
-| [hexxed](https://github.com/meme/hexxed) | Livre | Novo, baseado na ncurses, portanto de linha de comando. Tem potencial, mas ainda está bem cru. É um bom projeto para aprender C, acompanhar o desenvolvimento, etc. |
+| [hexxed](https://github.com/meme/hexxed) | Livre | Novo, baseado na ncurses, portanto de linha de comando. Tem potencial e vale o teste.  |
 | [Hiew \(Hacker's View\)](http://www.hiew.ru/) | Comercial | Editor \(e disassembler\) muito poderoso, principalmente por conta de seeus módulos HEM. Tem suporte à vários formatos e é muito usado por analistas de malware, mas é pago. |
 | [HT Editor](http://hte.sourceforge.net/) | Livre | Interface gráfica baseada em texto, parecido com o Hiew. Feio, mas cumpre seu trabalho. |
-| [HxD](https://mh-nexus.de/en/hxd/) | Freeware | Bem bom. Possui recursos extras como geração de hashes, suporte a abrir discos. |
+| [HxD](https://mh-nexus.de/en/hxd/) | Freeware | Bem bom. Possui recursos extras como geração de hashes e suporte a abrir discos. |
 | [ImHex](https://github.com/WerWolv/ImHex) | Livre | Impressionante editor gráfico para Windows e Linux. Possui uma linguagem de _patterns_ para aplicar no arquivo, exporta/importa patches e muito mais. |
 | [Reverse Engineer's Hex Editor](https://github.com/solemnwarning/rehex) | Livre | Nova proposta de um editor especificamente para engenharia reversa. |
 | [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/) | Livre | Multiplataforma, recursos interessantes. |
@@ -224,8 +224,6 @@ $ xxd -g1 -l32 /bin/ls
 ```
 
 ## Outras
-
-Ferramentas que não analisei ainda e não sei exatamente as vantagens de utilizá-las. 😁
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
