@@ -19,7 +19,7 @@ int main() {
 		L"Mente Binária",
 		MB_OK | MB_ICONINFORMATION);
 
-	return ERROR_SUCCESS;
+	return EXIT_SUCCESS;
 }
 ```
 
@@ -34,7 +34,7 @@ Há vários conceitos escondidos neste código de propósito, de forma que dedei
 * Ainda na **linha 4** introduzi um conceito novo, de `nullptr` ao invés de `NULL`, aproveitando que o compilador utilizado é de C++. Acho melhor de digitar.
 * Nas **linhas 5 e 6** \(sim, não há o menor problema em colocar os outros parâmetros da função em outras linhas para facilitar a leitura\) eu passo para a função o texto e o título, respectivamente. Impossível não notar o `L` colado com as aspas duplas que abrem uma string em C não é mesmo? Ele serve para transformar a string subsequente em uma **wide** string \(UNICODE\), que já estudamos. É necessário para a função `MessageBoxW` \(perceba o `W` no final\) que subsituirá a função `MessageBox` neste código. Também usamos o caractere de nova linha `\n` duas vezes para dividir a mensagem em três linhas, sendo a segunda vazia.
 * Na **linha 7** eu utilizo uma combinação de duas flags: `MB_OK` __e `MB_ICONINFORMATION`. Esta última configura este ícone de um "i" numa bolinha azul.
-* Por fim, **na linha 9**, utilizo a macro ERROR\_SUCCESS, que expande para 0.
+* Por fim, **na linha 9**, utilizo a macro `EXIT_SUCCESS`, que expande para `0`. Sua contraparte é `EXIT_SUCCESS`, que expande para `1`.
 
 ## Lendo o retorno da função
 
@@ -59,7 +59,7 @@ int main() {
 		MessageBoxW(nullptr, L"Tá esperando o que então? Vai lá!", titulo, MB_OK); 
 	}
 
-	return ERROR_SUCCESS;
+	return EXIT_SUCCESS;
 }
 ```
 
