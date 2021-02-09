@@ -82,6 +82,6 @@ Na máquina com Windows, os programas necessários são:
 * [Detect It Easy](http://ntinfo.biz/)
 * [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/)
 * [pev](https://github.com/merces/pev)
-* [Visual Studio](https://visualstudio.microsoft.com/vs/community/)
+* [Visual Studio Community 2019](https://visualstudio.microsoft.com/vs/community/)
 * [Python 3](https://www.python.org/downloads/)
 

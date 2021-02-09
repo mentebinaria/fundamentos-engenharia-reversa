@@ -6,7 +6,11 @@ Esses apêndices servem tanto de referência como de material de apoio para estu
 
 {% page-ref page="exemplos-de-codigo-em-assembly.md" %}
 
+{% page-ref page="funcoes-api-win.md" %}
+
 {% page-ref page="ferramentas.md" %}
 
 {% page-ref page="referencias.md" %}
+
+
 

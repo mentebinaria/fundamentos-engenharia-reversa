@@ -169,7 +169,7 @@ Perceba que quatro parâmetros são empilhados antes da chamada à _MessageBoxA_
 
 Os parâmetros são empilhados na ordem inversa.
 
-Já estudamos o protótipo desta função no capítulo que apresenta a [Windows API](../windows-api.md) e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro [uType](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox#parameters) e, se o decompormos, veremos que 0x31 é um OU entre 0x30 \(MB\_ICONEXCLAMATION\) e 0x1 \(MB\_OKCANCEL\).
+Já estudamos o protótipo desta função no capítulo que apresenta a [Windows API](../windows-api/) e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro [uType](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox#parameters) e, se o decompormos, veremos que 0x31 é um OU entre 0x30 \(MB\_ICONEXCLAMATION\) e 0x1 \(MB\_OKCANCEL\).
 
 O próximo parâmetro é o número 404000, um ponteiro para a _string_ "Johnny", que é o título da mensagem. Depois vem o ponteiro para o texto da mensagem e por fim o zero \(NULL\), empilhado em 00401522, que é o _handle_.
 

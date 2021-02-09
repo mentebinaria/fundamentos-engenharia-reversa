@@ -15,7 +15,7 @@ int main(void) {
 }
 ```
 
-A função _MessageBox\(\)_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da USER32.DLL \(além de outras bibliotecas\), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível no [site da Microsoft](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox). Copiamos seu protótipo abaixo para explicar seus parâmetros:
+A função _MessageBox\(\)_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da USER32.DLL \(além de outras bibliotecas, dependendo de certas opções de compilação\), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível no [site da Microsoft](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox). Copiamos seu protótipo abaixo para explicar seus parâmetros:
 
 ```c
 int WINAPI MessageBox(
@@ -40,7 +40,7 @@ A Microsoft utiliza em várias de suas documentações de funções em C uma esp
 | UINT | _unsigned int_ ou DWORD \(32-bits\) |
 
 {% hint style="info" %}
-Um _handle_ é um número que identifica um objeto \(arquivo, chave de registro, diretório, etc\) aberto usado por um processo. É um conceito similar ao _file descriptor_ em ambiente Unix/Linux. _Handles_ só são acessíveis diretamente em _kernel mode_, por isso os programas interagem com eles através de funções da API do Windows. Por exemplo, a função CreateFile\(\) retorna um handle em caso de sucesso, enquanto a função CloseHandle\(\) o fecha.
+Um _handle_ é um número que identifica um objeto \(arquivo, chave de registro, diretório, etc\) aberto usado por um processo. É um conceito similar ao _file descriptor_ em ambiente Unix/Linux. _Handles_ só são acessíveis diretamente em _kernel mode_, por isso os programas interagem com eles através de funções da API do Windows. Por exemplo, a função CreateFile\(\) retorna um handle válido em caso de execução com sucesso, enquanto a função CloseHandle\(\) o fecha.
 {% endhint %}
 
 Agora vamos explicar os parâmetros da função _MessageBox_:
@@ -77,5 +77,5 @@ MessageBox(0, "Cash", "Johnny", 0x31);
 Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser NULL, ou zero, dependendo do que a documentação da função diz.
 {% endhint %}
 
-Funções importantes da Win32 incluem CreateFile, DeleteFile, RegOpenKey, RegCreateKey, dentre outras. É altamente recomendado que o leitor crie programas de exemplo utilizando-as para atestar o funcionamento delas. Você encontrará algumas dessas funções separadas por categoria no apêndice [Funções da API do Windows](apendices/funcoes-api-win.md).
+Funções importantes da Win32 incluem CreateFile, DeleteFile, RegOpenKey, RegCreateKey, dentre outras. É altamente recomendado que o leitor crie programas de exemplo utilizando-as para atestar o funcionamento delas. Você encontrará algumas dessas funções separadas por categoria no apêndice [Funções da API do Windows](../apendices/funcoes-api-win.md).
 
