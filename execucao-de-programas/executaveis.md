@@ -1,6 +1,6 @@
 # Executáveis
 
-Normalmente, chamamos de arquivos executáveis os arquivo que, quando clicados duas vezes \(no caso do Windows\), executam. A extensão mais comum - e foco do nosso estudo aqui - são os arquivos .exe. Para entender como estes arquivos são criados, é preciso notar os passos:
+Normalmente, chamamos de arquivos executáveis os arquivo que, quando clicados duas vezes \(no caso do Windows\), executam. A extensão mais comum - e foco do nosso estudo aqui - são os arquivos `.exe`. Para entender como estes arquivos são criados, é preciso notar os passos:
 
 1. Escrita do código-fonte na linguagem escolhida num arquivo de texto.
 2. Compilação.
@@ -16,7 +16,7 @@ No que diz respeito ao processo de _linking_, estes executáveis podem ser de do
 
 ## Estáticos
 
-Todo o código das funções externas ao executável principal é compilado junto a ele. O resultado é um executável livre de dependências, porém grande.
+Todo o código das funções externas ao executável principal é compilado junto a ele. O resultado é um executável livre de dependências, porém grande. É raro encontrar executáveis assim para Windows.
 
 ## Dinâmicos
 

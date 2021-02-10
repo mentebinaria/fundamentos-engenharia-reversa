@@ -2,7 +2,7 @@
 
 Uma API \(_Application Programming Interface_\) é uma interface para programar uma aplicação. No caso da Windows API, esta consiste num conjunto de funções expostas para serem usadas por aplicativos rodando em _user mode_.
 
-Para o escopo deste livro, vamos cobrir uma minúscula parte da Win32 API \(outro nome para a Windows API\), com foco nas funções disponíveis basicamente em duas bibliotecas diferentes: a USER32.DLL e a KERNEL32.DLL.
+Para o escopo deste livro, vamos cobrir uma pequena parte da Win32 API \(outro nome para a Windows API\), pois o assunto é bastante extenso.
 
 Considere o seguinte programa em C:
 
@@ -77,5 +77,5 @@ MessageBox(0, "Cash", "Johnny", 0x31);
 Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser NULL, ou zero, dependendo do que a documentação da função diz.
 {% endhint %}
 
-Funções importantes da Win32 incluem CreateFile, DeleteFile, RegOpenKey, RegCreateKey, dentre outras. É altamente recomendado que o leitor crie programas de exemplo utilizando-as para atestar o funcionamento delas. Você encontrará algumas dessas funções separadas por categoria no apêndice [Funções da API do Windows](../apendices/funcoes-api-win.md).
+Veremos agora algumas funções da Windows API para funções básicas, mas você encontrará informações sobre outras rotinas no apêdice [Funções da API do Windows](../apendices/funcoes-api-win.md).
 

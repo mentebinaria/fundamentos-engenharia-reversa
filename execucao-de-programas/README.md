@@ -10,7 +10,9 @@ Apesar de o Windows e outros sistemas operacionais modernos trabalharem com some
 
 Programas rodando em _user mode_ tampouco possuem acesso ao hardware do computador. Essencialmente, todos estes fatores combinados fazem com que os programas rodando neste privilégio de execução não gerem erros fatais como a famosa "tela azul da morte" \(ou BSOD - **B**lue **S**creen **O**f **D**eath\).
 
-Passa que toda a parte legal acontece em _kernel mode_, sendo assim, um processo \(na verdade uma _thread_\) rodando em _user mode_ pode executar tarefas em _kernel mode_ através da API do Windows, que funciona como uma interface para tal.
+Passa que toda a parte legal acontece em _kernel mode_, sendo assim, um processo \(na verdade uma _thread_\) rodando em _user mode_ pode executar tarefas em _kernel mode_ através da API do Windows, que funciona como uma interface para tal. Essa comunicação é ilustrada no diagrama a seguir:
+
+![Diagrama simplificado da execu&#xE7;&#xE3;o de programas no Windows](../.gitbook/assets/windows_api.png)
 
 ## Dependências
 

@@ -2,7 +2,7 @@
 
 As bibliotecas, ou DLL's no Windows, são também arquivos PE, mas sua intenção é ter suas funções utilizadas \(importadas e chamadas\) por arquivos executáveis. Elas também importam funções de outras bibliotecas, mas além disso, **exportam** funções para serem utilizadas.
 
-Novamente, é possível utilizar o DIE para ver as funções importadas e exportadas por uma DLL, mas no exemplo a seguir, utilizamos novamente o **dumpbin** contra a biblioteca _SHELL32.DLL_, nativa do Windows:
+Novamente, é possível utilizar o DIE para ver as funções importadas e exportadas por uma DLL, mas no exemplo a seguir, utilizamos novamente o **dumpbin** contra a biblioteca `Shell32.dll`, nativa do Windows:
 
 ```text
 C:\>dumpbin /exports %windir%\system32\shell32.dll | findstr /i shellabout

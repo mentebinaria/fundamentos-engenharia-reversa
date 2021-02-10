@@ -2,190 +2,187 @@
 
 Segue uma lista de funções interessantes para colocarmos _breakpoints_ quando revertendo binários em Windows. Em **quais** funções colocaremos os _breakpoints_ vai depender de **onde** queremos que o programa sob o controle do _debugger_ pare afim de observarmos o comportamento de determinada ação. A seguir veremos alguns nomes de funções bem comuns em programas.
 
-## Mensagens / Caixas de diálogo
+## Mensagens
 
-| Função | Biblioteca |
-| :--- | :--- |
-| MessageBoxA / MessageBoxW | USER32.DLL |
-| MessageBoxExA / MessageBoxExW | USER32.DLL |
+À esta altura, essas funções dispensam apresentações, não é mesmo? :-\)
+
+MessageBox
+
+MessageBoxEx
 
 ## Caixas de texto
 
-| Função | Biblioteca |
-| :--- | :--- |
-| GetDlgItemTextA / GetDlgItemTextW | USER32.DLL |
+Usadas para ler textos de caixas de texto.
+
+GetDlgItemText
 
 ## Janelas
 
-### EnableWindow
+Habilitam ou desabilitam janelas ou itens dentro dela.
 
-### EnableMenuItem
+EnableMenuItem
 
-### EnableWindow
-
-## Entrada e saída \(I/O\)
-
-### CreateFileA
-
-### CreateFileW
-
-### OpenFile
-
-### OpenFileMappingA
-
-### OpenFileMappingW
-
-### OpenMutexA
-
-### OpenMutexW
-
-### LoadLibraryA
-
-### LoadLibraryExA
-
-### LoadLibraryW
-
-### LoadLibraryExW
-
-### CreateFileMappingA
-
-### CopyFileA
-
-### CopyFileW
-
-### CopyFileExA
-
-### CopyFileExW
-
-### MoveFileA
-
-### MoveFileW
-
-### MoveFileExA
-
-### MoveFileExW
-
-### DeleteFileA
-
-### DeleteFileW
-
-### LoadCursorFromFileA
-
-### GetPrivateProfileStringA
-
-### GetPrivateProfileIntA
-
-## Registro
-
-### RegOpenKeyA
-
-### RegOpenKeyExA
-
-### RegCloseKey
-
-### RegQueryValueA
-
-### RegEnumKeyExA
-
-### RegSetValueA
-
-### RegSetValueW
-
-### RegSetValueExA
-
-### RegSetValueExW
+EnableWindow
 
 ## Data e hora
 
-### SetSystemTime
+SetSystemTime
 
-### GetLocalTime
+GetLocalTime
 
-### SetLocalTime
+SetLocalTime
+
+## Entrada e saída \(I/O\)
+
+### CopyFile
+
+Usada para copiar um arquivo. Tem uma segunda versão que permite mais parâmetros. Consulte a documentação. ;-\)
+
+{% tabs %}
+{% tab title="CopyeFile" %}
+```cpp
+CopyFile(L"origem.txt", L"destino.txt", false);
+```
+{% endtab %}
+
+{% tab title="CopyFile2" %}
+```cpp
+COPYFILE2_EXTENDED_PARAMETERS cf2;
+// configura os parâmetros
+CopyFile2(L"origem.txt", L"destino.txt", &cf2);
+```
+{% endtab %}
+{% endtabs %}
+
+### CreateFile
+
+Abre para ler e/ou para escrever e também cria e até trunca \(zera\) arquivos no disco. Também trabalha outros objetos como pipes, diretórios, consoles e mais. Segue um exemplo de abertura de um arquivo que vai falhar caso o arquivo não exista:
+
+```cpp
+	HANDLE hFile = CreateFileW(L"arquivo.txt",
+		GENERIC_READ,
+		0,
+		nullptr,
+		OPEN_EXISTING,
+		FILE_ATTRIBUTE_NORMAL,
+		nullptr);
+```
+
+Existe também uma CreateFile2.
+
+DeleteFile
+
+LoadLibrary
+
+MoveFile
+
+OpenFile
+
+OpenFileMapping
+
+OpenMutex
+
+CreateFileMapping
+
+## Registro
+
+RegOpenKey
+
+RegOpenKeyEx
+
+RegCloseKey
+
+RegQueryValueA
+
+RegEnumKeyExA
+
+RegSetValue
+
+RegSetValueExA
+
+RegSetValueExW
 
 ## Processos e _threads_
 
-### CreateToolhelp32Snapshot
+CreateToolhelp32Snapshot
 
-### Process32First
+Process32First
 
-### Process32Next
+Process32Next
 
-### Process32FirstW
+Module32First
 
-### Module32First
+Module32Next
 
-### Module32Next
+Toolhelp32ReadProcessMemory
 
-### Module32FirstW
+Heap32ListFirst
 
-### Module32NextW
+Heap32ListNext
 
-### Toolhelp32ReadProcessMemory
+Heap32First
 
-### Heap32ListFirst
+Heap32Next
 
-### Heap32ListNext
+OpenProcess
 
-### Heap32First
+TerminateProcess
 
-### Heap32Next
+ExitProcess
 
-### OpenProcess
+ExitThread
 
-### TerminateProcess
+OpenProcessToken - ADVAPI32.DLL
 
-### ExitProcess
+OpenThreadToken - ADVAPI32.DLL
 
-### ExitThread
+ZwQueryInformationProcess - NTDLL.DLL
 
-### OpenProcessToken
+ZwSetInformationThread - NTDLL.DLL
 
-ADVAPI32.DLL
+WriteProcessMemory
 
-### OpenThreadToken
+CreateThread
 
-ADVAPI32.DLL
+CreateRemoteThread
 
-### ZwQueryInformationProcess
+CreateProcess
 
-NTDLL.DLL
-
-### ZwSetInformationThread
-
-NTDLL.DLL
-
-### WriteProcessMemory
-
-### CreateThread
-
-### CreateRemoteThread
-
-### CreateProcessA
+ShellExecute
 
 ## Anti-debugging
 
-### IsDebuggerPresent
+IsDebuggerPresent
 
-### CheckRemoteDebuggerPresent
+CheckRemoteDebuggerPresent
 
-### NtSetInformationThread
-
-NTDLL.DLL
+NtSetInformationThread - NTDLL.DLL
 
 ## Strings
 
-### lstrcatA
+lstrcat
 
-### lstrcmpA
+lstrcmp
 
-### lstrcpyA
+lstrcpy
 
-### lstrlenA
+lstrlen
 
 ## Disco
 
-### GetDiskFreeSpaceA
+GetDiskFreeSpace
 
-### GetDriveTypeA
+GetDriveType
+
+## Rede
+
+InternetOpenUrl...
+
+## Criptografia
+
+CryptDecrypt...
+
+## Alocação de memória
+
+VirtualAlloc, HeapAlloc...
 

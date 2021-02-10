@@ -2,6 +2,7 @@
 
 ## Versão 1.0 - Em breve 🚀
 
+* [x] Adicionada a seção Processos no capítulo Executção de programas.
 * [x] Desenvolver um pouco mais o capítulo da [Windows API](../windows-api/). Possivelmente transformá-lo em uma seção e falar sobre _handles_, processos, etc.
   * [x] Caixas de mensagens
   * [ ] Manipulação de arquivos
@@ -10,9 +11,6 @@
   * [ ] Download de arquivos
 * [ ] Atualização das capturas de tela dos programas.
 * [ ] Revisão geral do fluxo do livro com as novas versões dos programas.
-
-As seguintes seções foram completadas:
-
 * [x] Tabela de Importações
 * [x] Execução de programas
   * [x] Executáveis
