@@ -27,7 +27,7 @@ print(0b1010)
 
 {% tab title="Bash" %}
 ```bash
-echo $((0b1010))
+echo $((2#1010))
 ```
 {% endtab %}
 
