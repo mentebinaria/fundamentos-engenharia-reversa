@@ -143,6 +143,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | :--- | :--- | :--- |
 | [angr](https://angr.io) | Livre | Framework para análise estática e simbólica de binários. |
 | [Frida](https://www.frida.re) | Livre | Framework para instrumentação dinâmica de binários. |
+| [PANDA](https://panda.re) | Livre | Plataforma de análise dinâmica baseada no QEMU, que faz até replay de ações. |
 | [Radare](https://rada.re/r/) | Livre | Suíte completa com debugger, disassembler e outras ferramentas para quase todo tipo de binário existente! |
 
 ## Monitores de processos
