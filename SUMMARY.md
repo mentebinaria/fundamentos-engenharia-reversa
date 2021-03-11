@@ -48,6 +48,7 @@
   * [Exemplos de código em Assembly](apendices/exemplos-de-codigo-em-assembly.md)
   * [Funções da API do Windows](apendices/funcoes-api-win.md)
   * [Ferramentas](apendices/ferramentas.md)
+  * [Repositórios](apendices/repositorios.md)
   * [Referências](apendices/referencias.md)
 
 ## Sobre o livro
