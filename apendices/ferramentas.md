@@ -82,6 +82,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | [edb \(Evan's Debugger\)](https://github.com/eteran/edb-debugger) | Livre | Debugger gráfico \(Qt\) com foco em binários ELF no Linux. |
 | [GDB \(GNU Debugger\)](https://sourceware.org/gdb/) | Livre | Super conhecido debugger pra Linux do projeto GNU. Tem uma [versão não oficial pra Windows](http://www.equation.com/servlet/equation.cmd?fa=gdb) também. É modo texto, mas possui vários front-ends como [GDBFrontend](https://github.com/rohanrhu/gdb-frontend), dentre [outros](https://sourceware.org/gdb/wiki/GDB%20Front%20Ends). |
 | [GEF](https://github.com/hugsy/gef) | Livre | O **G**DB **E**nhanced **F**eatures extende o GDB com recursos para engenharia reversa. |
+| [HyperDbg](https://hyperdbg.com) | Livre | Debugger que roda no nível do hypervisor, também conhecido como ring -1. |
 | [OllyDbg](http://ollydbg.de) | Freeware | Poderoso debugger, apesar de não mais mantido. |
 | [PEDA](https://github.com/longld/peda) | Livre | O **P**ython **E**xploit **D**evelopment **A**ssistance também extende o GDB, assim como o GEF. A interface é um pouco diferente, no entanto. |
 | [WinDbg](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) | Freeware | Debugger ring0/3, parte integrante do SDK do Windows. |
@@ -112,6 +113,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
+| [Reko](https://github.com/uxmal/reko) | Livre | Descompilador genérico com versão de linha de comando, gráfica e até web. |
 | [RetDec \(Retargetable Decompiler\)](https://retdec.com/) | Livre | Descompilador para C/C++ feito pelo time do Avast. Inclui detector de compilador e packer, plugins para IDA e radare2. |
 | [Snowman](https://derevenets.com/) | Livre | Descompilador livre para C/C++. Pode ser usado como plugin no IDA, x64dbg, etc. |
 
