@@ -34,15 +34,7 @@ int MessageBoxA(
 );
 ```
 
-```c
-int MessageBoxExA(
-  [in, optional] HWND   hWnd,
-  [in, optional] LPCSTR lpText,
-  [in, optional] LPCSTR lpCaption,
-  [in]           UINT   uType,
-  [in]           WORD   wLanguageId
-);
-```
+Ver também: `MessageBoxEx`.
 
 ## Caixas de Texto
 
@@ -58,6 +50,8 @@ UINT GetDlgItemTextA(
 ```
 
 ## Criptografia
+
+Implementam algoritmos de criptografia como algoritmos de hash e criptografia simétrica e assimétrica.
 
 ```c
 BOOL CryptEncrypt(
@@ -75,6 +69,8 @@ Ver também: `CryptDecrypt`, `CryptGenKey`, e `CryptImportKey`.
 
 ## Data e Hora
 
+Configuram e consultam data e hora do sistema.
+
 ```c
 void GetLocalTime(
   [out] LPSYSTEMTIME lpSystemTime
@@ -85,21 +81,17 @@ Ver também: `SetSystemTime` e `SetLocalTime`.
 
 ## Discos e Volumes
 
+Pegam informações sobre num disco, pen drive, drives de rede mapeados, etc e também sobre seus volumes \(partições\).
+
 ```c
 DWORD GetLogicalDrives();
 ```
 
 Ver também: `GetDiskFreeSpace`, `GetDriveType` e `GetVolumeInformationA`.
 
-## Entrada e saída \(I/O\)
+## Entrada e Saída \(I/O\)
 
-```c
-BOOL CopyFile(
-  [in] LPCTSTR lpExistingFileName,
-  [in] LPCTSTR lpNewFileName,
-  [in] BOOL    bFailIfExists
-);
-```
+Manipulam arquivos e outros objetos.
 
 ```c
 HANDLE CreateFileA(
@@ -115,19 +107,24 @@ HANDLE CreateFileA(
 
 `CreateFileA` e `CreateFileW` abrem para ler e/ou para escrever e também criam e até truncam \(zeram\) arquivos no disco. Também trabalham com outros objetos como pipes, diretórios e consoles.
 
+Ver também: `CopyFile`, `CreateFileMapping`, `DeleteFile`, `GetFullPathName`, `GetTempPath`, `LoadLibrary`, `MoveFile`, `OpenFile`, `OpenFileMapping` e `OpenMutex`.
+
+## Internet
+
+Funções que falam com a internet, normalmente via HTTP.
+
 ```c
-BOOL DeleteFileA(
-  [in] LPCSTR lpFileName
+HINTERNET InternetOpenUrlA(
+  [in] HINTERNET hInternet,
+  [in] LPCSTR    lpszUrl,
+  [in] LPCSTR    lpszHeaders,
+  [in] DWORD     dwHeadersLength,
+  [in] DWORD     dwFlags,
+  [in] DWORD_PTR dwContext
 );
 ```
 
-```c
-HMODULE LoadLibraryA(
-  [in] LPCSTR lpLibFileName
-);
-```
-
-Consulte também a documentação das funções `MoveFile`, `OpenFile`, `OpenFileMapping`, `OpenMutex` e `CreateFileMapping`.
+Ver também: `HttpSendRequestA`, `InternetOpenA`, `InternetOpenW`, `InternetOpenUrlW` e `InternetReadFile`.
 
 ## Janelas
 
@@ -150,6 +147,8 @@ BOOL EnableWindow(
 
 ## Memória
 
+Gerenciam memória, alocando ou deselocando, configurando permissões, dentre outras operações.
+
 ```c
 LPVOID VirtualAlloc(
   [in, optional] LPVOID lpAddress,
@@ -162,6 +161,8 @@ LPVOID VirtualAlloc(
 Ver também: `VirtualAllocEx`, `VirtualFree`, `VirtualLock`, `VirtualProtect` e `VirtualQuery`.
 
 ## Processos e _Threads_
+
+Manipulam processos e _threads_. Podem enumerar, alterar o estado, executar e mais.
 
 ```c
 BOOL CreateProcessA(
@@ -180,22 +181,9 @@ BOOL CreateProcessA(
 
 Ver também: `CreateRemoteThread`, `CreateThread`, `CreateToolhelp32Snapshot`, `ExitProcess`, `ExitThread`, `Heap32First`, `Heap32ListFirst`, `Heap32ListNext`, `Heap32Next`, `Module32First`, `Module32Next`, `OpenProcess`, `OpenProcessToken`, `OpenThreadToken`, `Process32First`, `Process32Next`, `ShellExecute`, `TerminateProcess`, `Toolhelp32ReadProcessMemory`, `WriteProcessMemory`, `ZwQueryInformationProcess` e `ZwSetInformationThread`.
 
-## Rede
-
-```c
-HINTERNET InternetOpenUrlA(
-  [in] HINTERNET hInternet,
-  [in] LPCSTR    lpszUrl,
-  [in] LPCSTR    lpszHeaders,
-  [in] DWORD     dwHeadersLength,
-  [in] DWORD     dwFlags,
-  [in] DWORD_PTR dwContext
-);
-```
-
-Ver também: `HttpSendRequestA` e `InternetRead$File`.
-
 ## Registro
+
+Criam e alteram chaves e valores no registro.
 
 ```c
 LSTATUS RegSetValueA(
@@ -210,6 +198,8 @@ LSTATUS RegSetValueA(
 Ver também: `RegCloseKey`, `RegEnumKeyExA`, `RegOpenKey`, `RegOpenKeyEx`, `RegQueryValueA`, `RegSetValueW`, `RegSetValueExA` e `RegSetValueExW`.
 
 ## Strings
+
+Manipulam cadeias de texto.
 
 ```c
 int lstrcmpA(
