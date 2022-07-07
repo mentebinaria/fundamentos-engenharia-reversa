@@ -1,8 +1,8 @@
-# Caixas de mensagens
+# Caixas de Mensagens
 
 ## Um "hello, world" conceituado
 
-Vamos programar um pouco. Neste momento é importante, se ainda não o fez, que instale o [Visual Studio Community 2019](https://visualstudio.microsoft.com/vs/community/).
+Vamos programar um pouco. Neste momento é importante, se ainda não o fez, que instale o [Visual Studio Community.
 
 Abra o Visual Studio e crie um novo projeto do tipo Console App, conforme a imagem abaixo mostra:
 
@@ -73,7 +73,7 @@ Vamos analisar os conceitos novos aqui, como fizemos com o programa anterior:
 Em relação às strings, há três maneiras de se programar com a Windows API: ASCII \(`CHAR`\), UNICODE \(`WCHAR`\) ou em compatibilidade \(`TCHAR`\), que vai ser `CHAR` ou `WCHAR`, caso `UNICODE` esteja definida. Sinceramente, não há razão para não utilizar o padrão UNICODE e portanto usaremo-os bastante neste livro.
 {% endhint %}
 
-A tabela abaixo, retirada de uma [resposta a uma dúvida na MSDN](https://social.msdn.microsoft.com/forums/vstudio/en-US/1b994ff3-da28-46a8-90ef-6c7fab8dcd21/lpctstr#e4e05bbe-7cb8-4321-97de-fcf1c435952e), ajuda na compreensão:
+A tabela abaixo ajuda na compreensão:
 
 | Tipo | Expansão |
 | :--- | :--- |

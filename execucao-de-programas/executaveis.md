@@ -22,13 +22,10 @@ Todo o código das funções externas ao executável principal é compilado junt
 
 O executável vai **depender** de bibliotecas externas \(DLL's, no caso do Windows\) para funcionar, como estudamos na seção Tabela de Importações.
 
-O nosso binário CRACKME.EXE, que usamos em vários momentos deste livro é dinâmico. Nós já vimos isso ao analisar sua _Imports Table_ com o DIE, mas agora vamos utilizar a ferramenta [dumpbin](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-options), parte integrante do Visual Studio da Microsoft, para checar suas dependências:
+O nosso binário CRACKME.EXE, que usamos em vários momentos deste livro é dinâmico. Nós já vimos isso ao analisar sua _Imports Table_ com o DIE, mas agora vamos utilizar novamente a ferramenta dumpbin para checar suas dependências:
 
 ```text
-D:\>dumpbin /dependents CRACKME.EXE
-Microsoft (R) COFF/PE Dumper Version 14.12.25830.2
-Copyright (C) Microsoft Corporation.  All rights reserved.
-
+D:\>dumpbin /nologo /dependents CRACKME.EXE
 
 Dump of file CRACKME.EXE
 
@@ -52,7 +49,4 @@ File Type: EXECUTABLE IMAGE
         1000 DATA
 ```
 
-O mesmo resultado pode ser atingido utilizando a ferramenta **readpe**. A vantagem desta sobre o **dumpbin** é que o **readpe** é multi-plataforma e livre. Para entender como ele funciona, assista ao vídeo:
-
-{% embed url="https://www.youtube.com/watch?v=7EI\_wRk3VBU" caption="" %}
-
+Existem vários _parsers_ de executáveis alternativos ao dumpbin. Consulta o apêndice Ferramentas para ver uma lista.

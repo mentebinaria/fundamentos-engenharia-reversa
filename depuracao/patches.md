@@ -10,5 +10,5 @@ Se você veio da seção anterior e tem ainda as modificações no AnalyseMe-00,
 
 A partir desta tela, é possível exportá-los para um arquivo \(Export\), mas também criar um novo arquivo executável com as alterações salvas \(Patch File\).
 
-Perceba que você pode fazer qualquer tipo de patch, desde uma simples alteração da lógica de um salto até inserir de fato novas funções num programa. Pode dar trabalho, mas é possível. 😉
+Perceba que você pode fazer qualquer tipo de patch, desde uma simples alteração da lógica de um salto até inserir de fato novas funções num programa. Pode dar trabalho, mas é possível.
 

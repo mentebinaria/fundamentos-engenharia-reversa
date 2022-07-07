@@ -4,7 +4,7 @@ Os processadores possuem uma área física em seus _chips_ para armazenamento de
 
 Os registradores possuem normalmente o tamanho da palavra do processador, logo, se este é um processador de 32-bits, seus registradores possuem este tamanho também.
 
-## Registradores de uso geral
+## Registradores de Uso Geral
 
 Um registrador de uso geral, também chamado de GPR \(_General Purpose Register_\) serve para armazenar temporariamente qualquer tipo de dado, para qualquer função.
 
@@ -23,38 +23,21 @@ Existem 8 registradores de uso geral na arquitetura Intel x86. Apesar de poderem
 
 Para fixar o assunto, é importante trabalhar um pouco. Vamos escrever o seguinte programa em Assembly no Linux ou macOS:
 
-{% tabs %}
-{% tab title="ou.s" %}
 ```text
 section .text
     mov eax, 0x30
     or eax, 0x18
 ```
-{% endtab %}
-{% endtabs %}
 
-Para compilar, vamos instalar o [NASM](https://www.nasm.us/), que para o nosso caso é útil por ser multiplataforma:
+Salve-o como `ou.s` e para compilar, vamos instalar o Netwide Assembler \(NASM\), que para o nosso caso é útil por ser multiplataforma:
 
-{% tabs %}
-{% tab title="Linux" %}
 ```text
 $ sudo apt install nasm
 $ nasm -felf ou.s
 ```
-{% endtab %}
 
-{% tab title="macOS" %}
-```text
-$ brew install nasm
-$ nasm -fmacho ou.s
-```
-{% endtab %}
-{% endtabs %}
+Confira como ficou o código **compilado** no arquivo objeto com a ferramenta **objdump**, do pacote binutils:
 
-Confira como ficou o código **compilado** no arquivo objeto com a ferramenta **objdump**, do pacote [binutils](https://www.gnu.org/software/binutils/):
-
-{% tabs %}
-{% tab title="Linux" %}
 ```text
 $ objdump -dM intel ou.o
 
@@ -67,23 +50,8 @@ Disassembly of section .text:
    0:    b8 30 00 00 00           mov    eax,0x30
    5:    83 c8 18                 or     eax,0x18
 ```
-{% endtab %}
 
-{% tab title="macOS" %}
-```text
-$ objdump -d -x86-asm-syntax=intel -print-imm-hex ou.o
-
-ou.o:    file format Mach-O 32-bit i386
-
-Disassembly of section __TEXT,__text:
-__text:
-       0:    b8 30 00 00 00     mov    eax, 0x30
-       5:    83 c8 18     or    eax, 0x18
-```
-{% endtab %}
-{% endtabs %}
-
-Percebe os _opcodes_ e argumentos idênticos aos exemplificados na introdução deste capítulo? Prova que não mentimos. :\)
+Perceba os _opcodes_ e argumentos idênticos aos exemplificados na introdução deste capítulo.
 
 {% hint style="info" %}
 O NASM compilou corretamente a linguagem Assembly para código de máquina. O objdump mostrou tanto o código de máquina quanto o equivalente em Assembly, processo conhecido como **desmontagem** ou _**disassembly**_.
@@ -115,7 +83,7 @@ A imagem a seguir ilustra os ditos vários registradores dentro dos quatro prime
 
 Os registradores EBP, ESI, EDI e ESP também podem ser utilizados como registradores de 16-bits BP, SI, DI e SP, respectivamente. Note porém que estes últimos não são sub-divididos em partes alta \(_high_\) e baixa \(_low_\).
 
-## Ponteiro de instrução
+## Ponteiro de Instrução
 
 Existe um registrador chamado de EIP \(_Extended Instruction Pointer_\), também de PC \(_Program Counter_\) em algumas literaturas que aponta para a próxima instrução a ser executada. Não é possível copiar um valor literal para este registrador. Portanto, uma instrução `mov eip, 0x401000` **não** é válida.
 
@@ -131,7 +99,7 @@ Outra propriedade importante deste registrador é que ele é incrementado com o 
 
 Quando a primeira instrução do trecho acima estiver prestes à ser executada, o registrador EIP conterá o valor 0x8049000. Após a execução desta primeira instrução MOV, o EIP será incrementado em 5 unidades, já que tal instrução possui 5 _bytes_. Por isso o **objdump** já mostra o endereço correto da instrução seguinte. Perceba, no entanto, que a instrução no endereço 804900a possui apenas 2 _bytes_, o que vai fazer com o que o registrador EIP seja incrementado em 2 unidades para apontar para a próxima instrução MOV, no endereço 804900c.
 
-## Registradores de segmento
+## Registradores de Segmento
 
 Estes registradores armazenam o que chamamos de seletores, ponteiros que identificam segmentos na memória, essenciais para operação em modo real. Em modo protegido, que é o modo de operação do processador que os sistemas operacionais modernos utilizam, a função de cada registrador de segmento fica a cargo do SO. Abaixo a lista dos registradores de segmento e sua função em modo protegido:
 
@@ -141,12 +109,12 @@ Estes registradores armazenam o que chamamos de seletores, ponteiros que identif
 | DS | Data Segment |
 | SS | Stack Segment |
 | ES | Extra Data Segment |
-| FS | Data Segment \(no Windows em x86, aponta para o [TEB](https://msdn.microsoft.com/en-us/library/windows/desktop/ms686708%28v=vs.85%29.aspx) \(_Thread Environment Block_\) da _thread_ atual do processo em execução\) |
+| FS | Data Segment \(no Windows em x86, aponta para o TEB \(_Thread Environment Block_\) da _thread_ atual do processo em execução\) |
 | GS | Data Segment |
 
 Não entraremos em mais detalhes sobre estes registradores por fugirem do escopo deste livro.
 
-## Registrador de flags
+## Registrador de Flags
 
 O registrador de _flags_ EFLAGS é um registrador de 32-bits usado para _flags_ de estado, de controle e de sistema.
 
@@ -163,7 +131,7 @@ Existem 10 _flags_ de sistema, uma de controle e 6 de estado. As _flags_ de esta
 | 7 | Sign | SF | Setada de acordo com o MSB \(_Most Significant Bit_\) do resultado, que é justamente o _bit_ que define se um inteiro com sinal é positivo \(0\) ou negativo \(1\), conforme visto na seção Números negativos. |
 | 11 | Overflow | OF | Estouro para números com sinal. |
 
-Além das outras _flags_, há ainda os registradores da FPU \(_Float Point Unit_\), de debug, de controle, XMM \(parte da extensão [SSE](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions)\), MMX, 3DNow!, MSR \(_Model-Specific Registers_\), e possivelmente outros que não abordaremos neste livro em prol da brevidade.
+Além das outras _flags_, há ainda os registradores da FPU \(_Float Point Unit_\), de debug, de controle, XMM \(parte da extensão SSE\), MMX, 3DNow!, MSR \(_Model-Specific Registers_\), e possivelmente outros que não abordaremos neste livro em prol da brevidade.
 
 Agora que já reunimos bastante informação sobre os registradores, é hora de treinarmos um pouco com as instruções básicas do Assembly.
 

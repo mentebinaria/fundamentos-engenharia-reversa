@@ -70,12 +70,8 @@ Perceba na figura que a seção .text já ocuparia duas páginas que precisariam
 
 Como consequência, o tamanho total de cada seção em memória é maior que seu tamanho em disco, devido ao que chamamos de **alinhamento de seção**. No cabeçalho opcional existe o campo **SectionAlignment**, que pulei propositalmente. Este campo define qual fator de alinhamento deve ser utilizado para todas as seções do binário quando mapeadas em memória. O padrão é o valor do tamanho da página de memória do sistema.
 
-{% hint style="info" %}
-Como bônus por ter chegado até aqui, deixamos um presente para o leitor: abaixo há um código que, depois de compilado e executado, vai dizer qual o tamanho da página de memória na sua versão do Windows.
-{% endhint %}
+Como bônus por ter chegado até aqui, segue um código que, depois de compilado e executado, vai dizer qual o tamanho da página de memória na sua versão do Windows.
 
-{% tabs %}
-{% tab title="pagesize.c" %}
 ```c
 #include <stdio.h>
 #include <windows.h>
@@ -85,9 +81,5 @@ int main(void) {
 
     GetNativeSystemInfo(&info);    
     printf("dwPageSize: %u\n", info.dwPageSize);
-    return 0;
 }
 ```
-{% endtab %}
-{% endtabs %}
-

@@ -6,7 +6,7 @@ Uma instrução é um conjunto definido por um código de operação \(_opcode_\
 opcode operando1, operando2, operando3
 ```
 
-Onde _opcode_ representa um código de operação definido no [manual da Intel](https://software.intel.com/en-us/articles/intel-sdm). O número de operandos, que podem variar de 0 a 3 na IA-32 \(Intel Architecture de 32-bits\), consistem em números literais, registradores ou endereços de memória necessários para a instrução funcionar. Por exemplo, considere a seguinte instrução, que coloca o valor 2018 no registrador EAX:
+Onde _opcode_ representa um código de operação definido no manual da Intel, disponível em seu website. O número de operandos, que podem variar de 0 a 3 na IA-32 \(Intel Architecture de 32-bits\), consistem em números literais, registradores ou endereços de memória necessários para a instrução funcionar. Por exemplo, considere a seguinte instrução, que coloca o valor 2018 no registrador EAX:
 
 ```text
 B8 E2 07 00 00
@@ -50,10 +50,8 @@ INC ECX
 
 A instrução INC recebe um único operando que pode ser um registrador ou um endereço de memória. O resultado do incremento é armazenado no próprio operando, que em nosso caso é o registrador ECX.
 
-O leitor pode se perguntar por que existe uma instrução INC se é possível incrementar um operando em uma unidade com a instrução ADD. Para entender, compile o seguinte o programa com o NASM:
+O leitor pode se perguntar por que existe uma instrução INC se é possível incrementar um operando em uma unidade com a instrução ADD. Para entender, compile o escreva o seguinte programa:
 
-{% tabs %}
-{% tab title="soma.s" %}
 ```text
 BITS 32
 
@@ -65,13 +63,9 @@ start:
     add eax, 1
     inc eax
 ```
-{% endtab %}
-{% endtabs %}
 
-Após compilar, verifique o código objeto gerado com o **objdump**:
+Salve como `soma.s` e compile com o NASM. Terminada a compilação, verifique o código objeto gerado com o comand `objdump`:
 
-{% tabs %}
-{% tab title="Linux" %}
 ```text
 $ objdump -dM intel soma.o
 
@@ -84,22 +78,6 @@ Disassembly of section .text:
    5:    83 c0 01                 add    eax,0x1
    8:    40                       inc    eax
 ```
-{% endtab %}
-
-{% tab title="macOS" %}
-```text
-$ objdump -d -x86-asm-syntax=intel -print-imm-hex soma.o
-
-soma.o:    file format Mach-O 32-bit i386
-
-Disassembly of section __TEXT,__text:
-start:
-       0:    b8 07 00 00 00  mov eax, 0x7
-       5:    83 c0 01        add eax, 0x1
-       8:    40              inc eax
-```
-{% endtab %}
-{% endtabs %}
 
 Há duas diferenças básicas entre as instruções ADD e INC neste caso. A mais óbvia é que a instrução ADD EAX, 1 custou três _bytes_ no programa, enquanto a instrução INC EAX utilizou somente um. Isso pode parecer capricho, mas não é: binários compilados possuem normalmente milhares de instruções Assembly e a diferença de tamanho no resultado final pode ser significativa.
 
@@ -135,9 +113,9 @@ Perceba que não se pode fazer diretamente MUL EAX, 2. Foi preciso colocar o val
 
 A instrução DIV funciona de forma similar, no entanto, é recomendável que o leitor faça testes e leia sobre estas instruções no manual da Intel caso queira se aprofundar no entendimento delas.
 
-Neste ponto acredito que o leitor esteja confortável com a aritimética em processadores x86, mas caso surjam dúvidas, não deixe de enviá-las em nosso [fórum de discussão](http://menteb.in/forum). 😉
+Neste ponto acredito que o leitor esteja confortável com a aritimética em processadores x86, mas caso surjam dúvidas, não deixe de discuti-las em https://menteb.in/forum.
 
-## Operações bit-a-bit
+## Operações Bit-a-bit
 
 Já explicamos o que são as operações bit-a-bit quando falamos sobre cálculo com binários, então vamos dedicar aqui à particularidades de seu uso. Por exemplo, a instrução XOR, que faz a operação OU EXCLUSIVO, pode ser utilizada para zerar um registrador, o que seria equivalente a mover o valor 0 para o registrador, só que muito mais rápido. Analise:
 
@@ -148,11 +126,11 @@ b9 00 00 00 00           mov    ecx,0x0
 
 Além de menor em _bytes_, a versão XOR é também mais rápida. Em ambas as instruções, depois de executadas, o resultado é que o registrador ECX terá o valor 0 e a _flag_ ZF será _setada_, como em qualquer operação que resulte em zero.
 
-Faça você mesmo testes com as instruções AND, OR, SHL, SHR, ROL, ROR e NOT. Todas as suas operações já foram explicadas na seção [Cálculos com binários](https://mentebinaria.gitbook.io/engenharia-reversa/numeros/calculos-com-binarios).
+Faça você mesmo testes com as instruções AND, OR, SHL, SHR, ROL, ROR e NOT. Todas as suas operações já foram explicadas na seção Cálculos com Binários.
 
-## Comparando valores
+## Comparando Valores
 
-Sendo uma operação indispensável ao funcionamento dos computadores, a comparação precisa ser muito bem compreendida. Instruções chave aqui são a CMP \(_Compare_\) e [TEST](https://www.mentebinaria.com.br/forums/topic/140-instruções-test-x-cmp/). Analise o código a seguir:
+Sendo uma operação indispensável ao funcionamento dos computadores, a comparação precisa ser muito bem compreendida. Instruções chave aqui são a CMP \(_Compare_\) e TEST. Analise o código a seguir:
 
 ```text
 b8 b0 b0 00 00           mov    eax,0xb0b0
@@ -171,11 +149,11 @@ O resultado da comparação é configurado no registrador EFLAGS, o que signific
 
 A instrução CMP é normalmente precedida de um salto, como veremos a seguir.
 
-## Alterando o fluxo do programa
+## Alterando o Fluxo do Programa
 
 A ideia de fazer uma comparação é tomar uma decisão na sequencia. Neste caso, **decisão** significa para onde transferir o fluxo de execução do programa, o que é equivalente a dizer para onde **pular**, **saltar**, ou para onde **apontar o EIP** \(o ponteiro de instrução\). Uma maneira de fazer isso é com as instruções de saltos \(_jumps_\).
 
-### Salto incondicional
+### Salto Incondicional
 
 Existem vários tipos de saltos. O mais simples é o salto **incondicional** produzido pela instrução JMP, que possui apenas um operando, podendo ser um valor literal, um registrador ou um endereço de memória. Para entender, analise o programa abaixo:
 
@@ -193,10 +171,10 @@ Note aqui o _opcode_ do salto incondicional JMP, que é o 0xEB. Seu argumento, �
 {% endhint %}
 
 {% hint style="info" %}
-Você pode entender o salto incondicional JMP como um comando **goto** na linguagem de programação C, mas não conte a ninguém que eu te falei isso. 😂
+Você pode entender o salto incondicional JMP como um comando **goto** na linguagem de programação C.
 {% endhint %}
 
-### Saltos condicionais sem sinal
+### Saltos Condicionais Sem Sinal
 
 Os saltos condicionais J_cc_ onde _cc_ significa _condition code_, podem ser de vários tipos. O mais famoso deles é o **JE \(**_**Jump if Equal**_**\)**, utilizado para saltar quando os valores da comparação anterior são iguais. Em geral ele vem precedido de uma instrução CMP, como no exemplo abaixo:
 
@@ -225,9 +203,9 @@ O salto JE ocorre se ZF=1, ou seja, se a _zero flag_ estiver _setada_. Por essa 
 | JCXZ \(CX Zero\) |  | Registrador CX=0 |
 | JECXZ \(ECX Zero\) |  | Registrador ECX=0 |
 
-Nem é preciso dizer que vai ser necessário você criar programas em Assembly para treinar a compreensão de cada um dos saltos, é? 😃
+Nem é preciso dizer que vai ser necessário você criar programas em Assembly para treinar a compreensão de cada um dos saltos, é?
 
-### Saltos condicionais com sinal
+### Saltos Condicionais Com Sinal
 
 Já vimos que comparações são na verdade subtrações, por isso os resultados são diferentes quando utilizados números com e sem sinal. Apesar de a instrução ser a mesma \(CMP\), os saltos podem mudar. Eis os saltos para comparações com sinal:
 
@@ -242,5 +220,4 @@ Já vimos que comparações são na verdade subtrações, por isso os resultados
 | JO \(Overflow\) |  | OF=1 |
 | JNO \(Not Overflow\) |  | OF=0 |
 
-Não se preocupe com a quantidade de diferentes instruções na arquitetura. O segredo é estudá-las conforme o necessário, na medida em que surgem nos programas que você analisa. Para avançar, só é preciso que você entenda o conceito do salto. Muitos problemas de engenharia reversa são resolvidos com o entendimento de um simples JE \(ZF=1\). Se você já entendeu isso, é suficiente para prosseguir. Se não, volte uma casa. 🤷‍♂️
-
+Não se preocupe com a quantidade de diferentes instruções na arquitetura. O segredo é estudá-las conforme o necessário, na medida em que surgem nos programas que você analisa. Para avançar, só é preciso que você entenda o conceito do salto. Muitos problemas de engenharia reversa são resolvidos com o entendimento de um simples JE \(ZF=1\). Se você já entendeu isso, é suficiente para prosseguir. Se não, releia até entender. É normal não compreender tudo de uma vez e vários dos assuntos necessitam de revisão e exercícios para serem completamente entendidos.

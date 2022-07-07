@@ -15,7 +15,7 @@ int main(void) {
 }
 ```
 
-A função _MessageBox\(\)_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da USER32.DLL \(além de outras bibliotecas, dependendo de certas opções de compilação\), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível no [site da Microsoft](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox). Copiamos seu protótipo abaixo para explicar seus parâmetros:
+A função _MessageBox\(\)_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da USER32.DLL \(além de outras bibliotecas, dependendo de certas opções de compilação\), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível no site da Microsoft. Copiamos seu protótipo abaixo para explicar seus parâmetros:
 
 ```c
 int WINAPI MessageBox(
@@ -26,7 +26,7 @@ int WINAPI MessageBox(
 );
 ```
 
-A Microsoft utiliza em várias de suas documentações de funções em C uma espécie de linguagem de anotação alheia à linguagem C padrão, que ela criou chamou de [SAL _\(Source-code Annotation Language\)_](https://docs.microsoft.com/en-us/cpp/code-quality/understanding-sal). Além disso, ela criou definições de novos tipos na linguagem que precisam ser explicadas para o entendimento dos protótipos das funções de sua API. Para entender o protótipo da função _MessageBox_, é preciso conhecer o significado dos seguintes termos:
+A Microsoft utiliza em várias de suas documentações de funções em C uma espécie de linguagem de anotação alheia à linguagem C padrão, que ela criou chamou de SAL _\(Source-code Annotation Language\)_. Além disso, ela criou definições de novos tipos na linguagem que precisam ser explicadas para o entendimento dos protótipos das funções de sua API. Para entender o protótipo da função _MessageBox_, é preciso conhecer o significado dos seguintes termos:
 
 |  |  |
 | :--- | :--- |
@@ -61,7 +61,7 @@ Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL a
 
 ### **uType \[entrada\]**
 
-Configura o tipo de caixa de mensagem. É um número inteiro que pode ser definido por macros para cada _flag_, definida na [documentação da função](https://msdn.microsoft.com/pt-br/library/windows/desktop/ms645505%28v=vs.85%29.aspx). Se passada a macro MB\_OKCANCEL \(0x00000001L\), por exemplo, faz com que a caixa de mensagem tenha dois botões: OK e Cancelar. Se passada a macro MB\_ICONEXCLAMATION \(0x00000030L\), a janela terá um ícone de exclamação. Se quiséssemos combinar as duas características, precisaríamos passar as duas _flags_ utilizando uma operação OU entre elas, assim:
+Configura o tipo de caixa de mensagem. É um número inteiro que pode ser definido por macros para cada _flag_, definida na documentação da função. Se passada a macro MB\_OKCANCEL \(0x00000001L\), por exemplo, faz com que a caixa de mensagem tenha dois botões: OK e Cancelar. Se passada a macro MB\_ICONEXCLAMATION \(0x00000030L\), a janela terá um ícone de exclamação. Se quiséssemos combinar as duas características, precisaríamos passar as duas _flags_ utilizando uma operação OU entre elas, assim:
 
 ```c
 MessageBox(NULL, "Cash", "Johnny", MB_OKCANCEL | MB_ICONEXCLAMATION);
@@ -77,5 +77,4 @@ MessageBox(0, "Cash", "Johnny", 0x31);
 Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser NULL, ou zero, dependendo do que a documentação da função diz.
 {% endhint %}
 
-Veremos agora algumas funções da Windows API para funções básicas, mas você encontrará informações sobre outras rotinas no apêdice [Funções da API do Windows](../apendices/funcoes-api-win.md).
-
+Veremos agora algumas funções da Windows API para funções básicas, mas você encontrará informações sobre outras rotinas no apêdice Funções da API do Windows.

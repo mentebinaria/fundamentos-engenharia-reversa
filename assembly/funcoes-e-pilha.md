@@ -1,13 +1,11 @@
-# Funções e pilha
+# Funções e Pilha
 
 Apesar de não estudarmos todos os aspectos da linguagem Assembly, alguns assuntos são de extrema importância, mesmo para os fundamentos da engenharia reversa de software. Um deles é como funcionam as funções criadas em um programa e suas chamadas, que discutiremos agora.
 
-## O que é uma função
+## O Que É Uma Função
 
-Basicamente, uma função é um **bloco de código reutilizável** num programa. Tal bloco faz-se útil quando um determinado conjunto de instruções precisa ser invocado em vários pontos do programa. Por exemplo, suponha um programa que precise converter a temperatura de Fahrenheit para Celsius várias vezes no decorrer de seu código:
+Basicamente, uma função é um **bloco de código reutilizável** num programa. Tal bloco faz-se útil quando um determinado conjunto de instruções precisa ser invocado em vários pontos do programa. Por exemplo, suponha um programa emn Python que precise converter a temperatura de Fahrenheit para Celsius várias vezes no decorrer de seu código. Ele pode ser escrito assim:
 
-{% tabs %}
-{% tab title="fahrenheit2celsius.py" %}
 ```python
 fahrenheit = 230.4
 celsius = (fahrenheit - 32) * 5 / 9
@@ -21,10 +19,8 @@ fahrenheit = 90.1
 celsius = (fahrenheit - 32) * 5 / 9
 print(celsius)
 ```
-{% endtab %}
-{% endtabs %}
 
-O programa acima funciona e a saída é a esperada:
+O programa funciona e a saída é a esperada:
 
 ```text
 110.22222222222223
@@ -32,10 +28,8 @@ O programa acima funciona e a saída é a esperada:
 32.27777777777778
 ```
 
-No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada fica maior em _bytes_. Toda esta repetição também prejudica a manutenção do código pois se o programador precisar fazer uma alteração no cálculo, vai ter que alterar em todos eles. É aí que entram as funções. Veja:
+No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada fica maior em _bytes_. Toda esta repetição também prejudica a manutenção do código pois se o programador precisar fazer uma alteração no cálculo, vai ter que alterar em todos eles. É aí que entram as funções. Analise a seguinte versão do mesmo programa:
 
-{% tabs %}
-{% tab title="fahrenheit2celsius.py" %}
 ```python
 def fahrenheit2celsius(fahrenheit):
     return (fahrenheit - 32) * 5 / 9
@@ -49,8 +43,6 @@ print(celsius)
 celsius = fahrenheit2celsius(90.1)
 print(celsius)
 ```
-{% endtab %}
-{% endtabs %}
 
 A saída é a mesma, mas agora o programa está utilizando uma função, onde o cálculo só foi definido uma única vez e toda vez que for necessário, o programa a chama.
 
@@ -60,7 +52,7 @@ Uma função norlmalmente tem:
 2. Retorno, que é o resultado da conclusão do seu propósito, seja bem sucedida ou não.
 3. Um nome \(na visão do programador\) ou um endereço de memória \(na visão do processador\).
 
-Agora cabe a nós estudar como isso tudo funciona em baixo nível. Pronto? 🤷‍♂️
+Agora cabe a nós estudar como isso tudo funciona em baixo nível.
 
 {% hint style="info" %}
 Nos primórdios da computação as funções eram chamadas de **procedimentos** \(_procedures_\). Em algumas linguagens de programação, no entanto, possuem tanto funções quanto procedimentos. Estes últimos são "funções que não retornam nada". Já no paradigma da programação orientada a objetos \(POO\), as funções de uma classe são chamadas de **métodos**.
@@ -105,7 +97,7 @@ Olha como ela fica compilada no Linux em 32-bits:
 
 Removi partes do código intencionalmente, pois o objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL \(no endereço 0x804842d em nosso exemplo\) chama a função _soma\(\)_ em 0x0804840b e a instrução RET \(em 0x8048417\) retorna para a instrução imediatamente após a CALL \(0x8048432\), para que a execução continue.
 
-## A pilha de memória
+## A Pilha de Memória
 
 A memória RAM para um processo é dividida em áreas com diferentes propósitos. Uma delas é a pilha, ou _stack_.
 
@@ -158,18 +150,18 @@ Isso faz com que o fluxo de execução do programa volte para a instrução imed
 Vamos agora analisar a pilha de memória num exemplo com a função MessageBox, da API do Windows:
 
 ```text
-00401516 | 6A 31  | push 31                                     |
-00401518 | 68 00  | push msgbox.404000                          | 404000:"Johnny"
-0040151D | 68 07  | push msgbox.404007                          | 404007:"Cash"
-00401522 | 6A 00  | push 0                                      |
-00401524 | E8 E8  | call <user32.MessageBoxA>                   |
+00401516 | push 31                                     |
+00401518 | push msgbox.404000                          | 404000:"Johnny"
+0040151D | push msgbox.404007                          | 404007:"Cash"
+00401522 | push 0                                      |
+00401524 | call <user32.MessageBoxA>                   |
 ```
 
 Perceba que quatro parâmetros são empilhados antes da chamada à _MessageBoxA_ \(versão da função _MessageBox_ que recebe _strings_ ASCII, por isso o sufixo **A**\).
 
 Os parâmetros são empilhados na ordem inversa.
 
-Já estudamos o protótipo desta função no capítulo que apresenta a [Windows API](../windows-api/) e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro [uType](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox#parameters) e, se o decompormos, veremos que 0x31 é um OU entre 0x30 \(MB\_ICONEXCLAMATION\) e 0x1 \(MB\_OKCANCEL\).
+Já estudamos o protótipo desta função no capítulo que apresenta a Windows API e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro `uType` e, se o decompormos, veremos que 0x31 é um OU entre 0x30 \(MB\_ICONEXCLAMATION\) e 0x1 \(MB\_OKCANCEL\).
 
 O próximo parâmetro é o número 404000, um ponteiro para a _string_ "Johnny", que é o título da mensagem. Depois vem o ponteiro para o texto da mensagem e por fim o zero \(NULL\), empilhado em 00401522, que é o _handle_.
 

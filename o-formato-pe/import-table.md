@@ -23,7 +23,7 @@ Não se deve confundir a IDT \(_Import Descriptor Table_\) com a IDT \(_Interrup
 
 O número de elementos do _array_ de estruturas IMAGE\_IMPORT\_DESCRIPTOR é igual ao número de bibliotecas que o executável PE depende, ou seja, o número de DLL's das quais o executável importa funções. Há ainda um elemento adicional, completamente zero \(preenchido com _null bytes_\) para indicar o fim do _array_.
 
-## OriginalFirstThunk / rvaImportLookupTable
+## OriginalFirstThunk ou rvaImportLookupTable
 
 O campo _OriginalFirstThunk_ \(chamado de _rvaImportLookupTable_ em algumas literaturas\) aponta para o que chamamos _Import Lookup Table \(ILT\)_, um _array_ de números de 32-bits \(64-bits para PE32+\), onde seu _bit_ mais significativo _\(MSB - Most Significant Bit\)_ define se a função será importada por número ordinal \(caso o _bit_ seja 1\). Já no caso de este _bit_ estar zerado, a importação da função dá-se por nome e os outros 31 _bits_ do número representam um endereço para uma estrutura que finalmente contém o nome da função.
 

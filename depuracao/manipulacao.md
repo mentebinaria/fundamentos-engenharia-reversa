@@ -22,7 +22,7 @@ O que a gente vai fazer é mudar esta string, mudando assim o programa que o Ana
 
 ![Seguindo o endere&#xE7;o da string no Dump](../.gitbook/assets/manipulacao_follow_in_dump.png)
 
-O endereço em questão é exibido no Dump 1. Outra opção seria ir no Dump 1, teclar Ctrl+G, digitar 402020 e clicar em OK. 😉
+O endereço em questão é exibido no Dump 1. Outra opção seria ir no Dump 1, teclar Ctrl+G, digitar 402020 e clicar em OK.
 
 ## Alterando a string
 
@@ -34,7 +34,7 @@ Após fazer a alteração e clicar em OK, perceba que o Dump 1 agora destaca os 
 
 ![Bytes alterados exibidos em vermelho no Dump](../.gitbook/assets/manipulacao_dump_alterado.png)
 
-Ao seguir com a execução da chamada à DeleteFileA \(F8\), o programa tenta excluir o calc.exe ao invés de o cmd.exe. No entanto, como em versões modernas do Windows o conteúdo deste diretório é protegido, a função retorna zero \(perceba o registrador EAX zerado\), que no caso desta função, indica que houve [falha](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-deletefilea#return-value), e as variáveis [LastError](https://docs.microsoft.com/en-us/windows/win32/debug/last-error-code) e LastStatus são modificadas para refletir o que aconteceu.
+Ao seguir com a execução da chamada à DeleteFileA \(F8\), o programa tenta excluir o calc.exe ao invés de o cmd.exe. No entanto, como em versões modernas do Windows o conteúdo deste diretório é protegido, a função retorna zero \(perceba o registrador EAX zerado\), que no caso desta função, indica que houve falha, e as variáveis `LastError` e `LastStatus` são modificadas para refletir o que aconteceu.
 
 ![Retorno zero em EAX e vari&#xE1;veis LastError e LastStatus em vermelho](../.gitbook/assets/manipulacao_lasterror.png)
 
