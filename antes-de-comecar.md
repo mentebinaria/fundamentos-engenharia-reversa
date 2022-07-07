@@ -24,28 +24,18 @@ Este livro é recheado de trechos de código. É recomendável que o leitor prat
 
 Exemplos de código em Python como a seguir devem ser digitados no ambiente do Python da sua máquina virtual \(ou real\) Linux:
 
-{% tabs %}
-{% tab title="Python" %}
 ```python
 >>> print 'Execute isto no console do Python!'
 ```
-{% endtab %}
-{% endtabs %}
 
 Vários exemplos são no _shell_ do Linux, que é o Bash por padrão:
 
-{% tabs %}
-{% tab title="Bash" %}
 ```bash
 $ echo 'Este vai no Bash'
 ```
-{% endtab %}
-{% endtabs %}
 
 O leitor também encontrará códigos em linguagem C como este:
 
-{% tabs %}
-{% tab title="exemplo.c" %}
 ```c
 #include <stdio.h>
 
@@ -54,9 +44,6 @@ int main(void) {
 
     return 0;
 }
-```
-{% endtab %}
-{% endtabs %}
 
 Neste caso, exceto quando especificado diferente, é preciso salvar o código em C num arquivo de texto e assim compilar e executar no ambiente GNU/Linux, assim:
 
@@ -65,9 +52,9 @@ $ gcc -o exemplo exemplo.c
 $ ./exemplo
 ```
 
-Caso o código em C inclua a _windows.h_, então deve ser compilado em ambiente Windows utilizando de preferência o [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
+Caso o código em C inclua a _windows.h_, então deve ser compilado em ambiente Windows utilizando de preferência o Visual Studio Community, disponível gratuitamente em https://aka.ms/vs.
 
-Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para o aprendizado que você os escreva, execute e analise seus resultados. ;-\)
+Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para o aprendizado que você os escreva, execute e analise seus resultados.
 
 ## Preparação do ambiente
 
@@ -78,10 +65,9 @@ Este é um guia prático. Sendo assim, é recomendável que você seja capaz de 
 
 Na máquina com Windows, os programas necessários são:
 
-* [x64dbg](https://x64dbg.com/)
-* [Detect It Easy](http://ntinfo.biz/)
-* [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/)
-* [pev](https://github.com/merces/pev)
-* [Visual Studio Community 2019](https://visualstudio.microsoft.com/vs/community/)
-* [Python 3](https://www.python.org/downloads/)
-
+* x64dbg - https://x64dbg.com
+* Detect It Easy - https://horsicq.github.io
+* wxHexEditor - https://sourceforge.net/projects/wxhexeditor
+* pev - https://github.com/merces/pev
+* Visual Studio Community - https://aka.ms/vs
+* Python 3 - https://www.python.org
