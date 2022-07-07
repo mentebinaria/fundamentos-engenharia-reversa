@@ -1,6 +1,6 @@
 # UNICODE
 
-A esta altura o leitor já pode imaginar a dificuldade que programadores enfrentam em trabalhar com diferentes codificações de texto. Mas existe um esforço chamado de UNICODE mantido pelo [Unicode Consortium](http://unicode.org/) que compreende várias codificações, que estudaremos a seguir. Estas _strings_ também são chamadas de _**wide strings**_ \(largas, numa tradução livre\).
+A esta altura o leitor já pode imaginar a dificuldade que programadores enfrentam em trabalhar com diferentes codificações de texto. Mas existe um esforço chamado de UNICODE mantido pelo Unicode Consortium que compreende várias codificações, que estudaremos a seguir. Estas _strings_ também são chamadas de _**wide strings**_ \(largas, numa tradução livre\).
 
 ## UTF-8
 
@@ -19,7 +19,7 @@ Como dito antes, os caracteres da tabela ASCII são os mesmos, mas o caractere '
 
 Você pode confirmar que esta é uma _string_ UTF-8 utilizado o comando **file** \(presente no Linux e macOS\). Veja a diferença:
 
-```bash
+```text
 $ echo -n "papobinario" | file -
 /dev/stdin: ASCII text, with no line terminators
 
@@ -27,7 +27,7 @@ $ echo -n "papobinário" | file -
 /dev/stdin: UTF-8 Unicode text, with no line terminators
 ```
 
-Como os _shells_ atuais utilizam UTF-8, ao utilizar um caractere não presente na tabela ASCII padrão, uma _string_ UTF-8 é gerada. O traço após o nome do comando **file** o fez ler da entrada padrão \(**stdin**\). Para saber mais sobre como o comando **file** funciona, assista ao seguinte vídeo:
+Como os _shells_ atuais utilizam UTF-8, ao utilizar um caractere não presente na tabela ASCII padrão, uma _string_ UTF-8 é gerada. O traço após o nome do comando **file** o fez ler da entrada padrão \(**stdin**\). Para saber mais sobre como o comando **file** funciona, assista ao vídeo Identificando arquivos com o file, disponível no canal Papo Binário no YouTube.
 
 {% embed url="https://www.youtube.com/watch?v=D7\_zPEt5vGs" caption="Identificando arquivos com o file" %}
 
@@ -39,14 +39,14 @@ Representados em UTF-16, os caracteres equivalentes na tabela ASCII possuem **2 
 
 Primeiro vamos exibir o texto em ASCII "papo" mas ao invés de imprimir na tela, vamos passar a saída para o programa **strings**:
 
-```bash
+```text
 $ echo -ne "\x70\x61\x70\x6f" | strings
 papo
 ```
 
 Até aí, nenhuma novidade. O **strings** busca justamente _strings_ naquilo que é passado para ele. Mas vamos agora tentar o mesmo texto escrito em UTF-16, em que cada caractere possui dois _bytes_ e seu equivalente em ASCII e um zerado em sequência:
 
-```bash
+```text
 $ echo -ne "\x70\x00\x61\x00\x70\x00\x6f\x00" | strings
 $
 ```
@@ -106,7 +106,7 @@ $ echo -ne "\x00\x70\x00\x61\x00\x70\x00\x6f" | strings -e b
 papo
 ```
 
-Uma boa leitura adicional é o artigo [Viewing strings in executables](https://blog.didierstevens.com/2006/07/07/viewing-strings-in-executables/) \(em Inglês\), do pesquisador Didier Stevens sobre _strings_ UTF-16.
+Uma boa leitura adicional é o artigo Viewing strings in executables disponível em https://blog.didierstevens.com.
 {% endhint %}
 
 ## UTF-32
@@ -120,7 +120,6 @@ papo
 
 É importante ressaltar que simplesmente dizer que uma _string_ é UNICODE não diz exatamente qual codificação ela está utilizando, fato que normalmente depende do sistema operacional, do programador, do compilador, etc. Por exemplo, um programa feito em C no Windows e compilado com Visual Studio tem as _wide strings_ em UTF-16 normalmente. Já no Linux, o tamanho do tipo _wchar\_t_ é 32 _bits_, resultando em _strings_ UTF-32. Escreva o seguinte programa em C para entender:
 
-{% code title="wide.c" %}
 ```c
 #include <wchar.h>
 
@@ -131,7 +130,6 @@ int main(void) {
   return 0;
 }
 ```
-{% endcode %}
 
 Salve-o no Linux como _wide.c_ e compile utilizando o gcc:
 
@@ -148,7 +146,7 @@ $ strings -e L wide
 papo
 ```
 
-O mesmo programa compilado em Windows resultaria em _strings_ UTF-16 ao invés de UTF-32, portanto, fique esperto. ;-\)
+O mesmo programa compilado em Windows resultaria em _strings_ UTF-16 ao invés de UTF-32, portanto, fique esperto.
 
 Há muito mais sobre codificação de texto para ser dito, mas isso foge ao escopo deste livro. Se o leitor desejar se aprofundar, basta consultar a documentação oficial dos grupos que especificam tais padrões. No entanto, cabe ressaltar que a prática \(compilar programas e buscar como as _strings_ são codificadas\) é a melhor escola.
 

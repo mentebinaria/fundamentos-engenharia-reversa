@@ -10,28 +10,28 @@ Computadores trabalham com números, mas humanos trabalham também com texto. Se
 
 O **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange, ou em português, Código Padrão Americano para o Intercâmbio de Informação, é uma codificação criada nos EUA \(como o nome sugere\), já que o berço da computação foi basicamente lá.
 
-Na época em que foi definido, lá pela década de 60, foi logo usado em equipamentos de telecomunicações e também nos computadores. Basicamente é uma tabela que relaciona um **número** de 7 _bits_ com sinais de controle e caracteres imprimíveis. Por exemplo, o número 97 \(0b1100001\) representa o caractere 'a', enquanto 98 \(0b1100010\) é o 'b'. Perceba que tais números não excedem os 7 _bits_, mas como em computação falamos quase sempre em _bytes_, então acaba que um caractere ASCII possui 8 _bits_ mas só usa 7. A tabela ASCII vai de 0 a 127 e pode ser encontrada no Apêndice, que você deve consultar agora.
+Na época em que foi definido, lá pela década de 60, foi logo usado em equipamentos de telecomunicações e também nos computadores. Basicamente é uma tabela que relaciona um **número** de 7 _bits_ com sinais de controle e caracteres imprimíveis. Por exemplo, o número 97 \(0b1100001\) representa o caractere 'a', enquanto 98 \(0b1100010\) é o 'b'. Perceba que tais números não excedem os 7 _bits_, mas como em computação falamos quase sempre em _bytes_, então acaba que um caractere ASCII possui 8 _bits_ mas só usa 7. A tabela ASCII vai de 0 a 127 e pode ser encontrada no apêndice Tabela ASCII, que você deve consultar agora.
 
 Há vários testes interessantes que você pode fazer para entender melhor as _strings_ ASCII. Ao saber que o caractere 'a' é o número 97, você pode usar a função _chr\(\)_ no Python, por exemplo:
 
-```text
+```python
 >>> print chr(97)
 a
 ```
 
 Ou no próprio shell do Linux, o comando _echo_:
 
-```text
+```bash
 $ echo -ne \\x61  # 0x61 em hexa é 97 em decimal!
 a
 ```
 
-Viu? Quando você digita 'a', o computador entende o _byte_ 0x61. De forma análoga, quando um programa que exibe um texto na tela encontra o _byte_ 0x61, ele exibe 'a'. Como você pode ver na tabela ASCII, todas as letras do alfabeto americano estão lá, então é razoável concluir que uma frase inteira seja na verdade uma sequência de _bytes_ onde cada um deles está dentro da faixa da tabela ASCII. Isso fica facilmente visualizável no shell do Linux com o comando _hd_\(hexdump\):
+Viu? Quando você digita 'a', o computador entende o _byte_ 0x61. De forma análoga, quando um programa que exibe um texto na tela encontra o _byte_ 0x61, ele exibe 'a'. Como você pode ver na tabela ASCII, todas as letras do alfabeto americano estão lá, então é razoável concluir que uma frase inteira seja na verdade uma sequência de _bytes_ onde cada um deles está dentro da faixa da tabela ASCII. Isso fica facilmente visualizável no shell do Linux com o comando _hd_ \(hexdump\):
 
 ```text
-$ echo 'Acesse mentebinaria.com.br' | hd
-00000000  41 63 65 73 73 65 20 6d  65 6e 74 65 62 69 6e 61  |Acesse mentebina|
-00000010  72 69 61 2e 63 6f 6d 2e  62 72 0a                 |ria.com.br.|
+$ echo menteb.in | hd
+00000000  6d 65 6e 74 65 62 2e 69  6e 0a                    |menteb.in.|
+0000000a
 ```
 
 É exatamente assim que um texto ASCII vai parar dentro de um programa ou arquivo.

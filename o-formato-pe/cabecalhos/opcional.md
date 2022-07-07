@@ -1,4 +1,4 @@
-# Opcional
+# Optional
 
 Não parece, mas este cabeçalho é muito importante. Seu nome deve-se ao fato de que ele é opcional para arquivos objeto, mas é requerido em arquivos executáveis, nosso foco de estudo. Seu tamanho não é fixo. Ao contrário, é definido pelo campo _SizeOfOptionalHeader_ do cabeçalho COFF, que vimos anteriormente. Sua estrutura para arquivos PE de 32-bits, também chamados de PE32, é a seguinte:
 
@@ -76,9 +76,9 @@ O estado _bit_ 6 nos diz se a randomização de endereços de memória, também 
 
 ## Diretórios de dados
 
-Ainda como parte do cabeçalho opcional, temos os diretórios de dados, ou _Data Directories_. São 16 diretórios ao todo, cada um com uma função. Concentraremos, no entanto, nos mais importantes para este estudo inicial. A estrutura de cada diretório de dados é conhecida por [IMAGE\_DATA\_DIRECTORY](https://msdn.microsoft.com/en-us/library/windows/desktop/ms680305%28v=vs.85%29.aspx) e tem a seguinte definição:
+Ainda como parte do cabeçalho opcional, temos os diretórios de dados, ou _Data Directories_. São 16 diretórios ao todo, cada um com uma função. Concentraremos, no entanto, nos mais importantes para este estudo inicial. A estrutura de cada diretório de dados é conhecida por IMAGE\_DATA\_DIRECTORY e tem a seguinte definição:
 
-```text
+```c
 typedef struct _IMAGE_DATA_DIRECTORY {
     uint32_t   VirtualAddress;
     uint32_t   Size;

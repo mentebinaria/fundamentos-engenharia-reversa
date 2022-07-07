@@ -34,12 +34,7 @@ Este cabeçalho possui 64 _bytes_ de tamanho. Para chegar a esta conclusão bast
 * uint16\_t e\_res2\[10\] que é um _array_ de 10 campos de 16 _bits_, totalizando em 160 _bits_ ou 20 _bytes_.
 * uint32\_t e\_lfanew que é um campo de 32 _bits_ ou 4 _bytes_.
 
-Os outros 16 campos possuem o tamanho de um **uint16\_t** \(16 _bits_ ou 2 _bytes_\). Então somando os tamanhos de todos os campos em _bytes_, temos:
-
-```text
-$ echo 8+20+4+16*2 | bc
-64
-```
+Os outros 16 campos possuem o tamanho de um **uint16\_t** \(16 _bits_ ou 2 _bytes_\). Então somando os tamanhos de todos os campos temos 64 bytes.
 
 Por ser um cabeçalho ainda presente no formato PE somente por questões de compatibilidade com o MS-DOS, não entraremos em muitos detalhes, mas estudaremos alguns de seus campos a seguir.
 
@@ -89,7 +84,7 @@ Depois disso o programa sai. Mas este pequeno programa de MS-DOS é adicionado p
 
 ## Exercícios
 
-Para por em prática a análise desta primeira parte do arquivo PE, vamos abrir o executável da calculadora do Windows \(normalmente em _C:\Windows\System32\calc.exe_\) no **wxHexEditor**, conforme ilustra a imagem abaixo:
+Para por em prática a análise desta primeira parte do arquivo PE, vamos abrir o executável da calculadora do Windows \(normalmente em _C:\Windows\System32\calc.exe_\) no **wxHexEditor**, conforme ilustra a imagem a seguir:
 
 ![Visualiza&#xE7;&#xE3;o hexadecimal do calc.exe com o wxHexEditor](../../.gitbook/assets/calc_fig2.png)
 

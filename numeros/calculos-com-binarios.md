@@ -1,4 +1,4 @@
-# Cálculos com binários
+# Cálculos com Binários
 
 Nesta seção faremos alguns cálculos com números binários, considerando cada um de seus dígitos, também chamados de **bits**. Além das clássicas como adição, subtração, multiplicação e divisão, estudaremos aqui a conjunção, disjunção, negação e disjunção exclusiva. Também incluiremos outras operações bit-a-bit que fogem da álgebra tradicional, como deslocamento e rotação de bits. Todas são importantes pois existem no contexto do Assembly, que estudaremos no futuro, e são aplicadas a números de qualquer espécie, como endereços de memória.
 
@@ -28,7 +28,7 @@ Então suponha que queiramos calcular a conjunção do número 0xa com 12. Sim, 
 
 O resultado é 0b1000, ou 8 em decimal. Sendo assim, as linhas abaixo farão o mesmo cálculo, mesmo utilizando sistemas de numeração \(bases\) diferentes:
 
-```text
+```python
 >>> 0b1010 & 12
 8
 >>> 10 & 12
@@ -67,11 +67,11 @@ O resultado é 0b1101, que é 13 em decimal.
 
 Aí você pode questionar:
 
-* > Opa, então a disjunção é tipo a soma?
+> Opa, então a disjunção é tipo a soma?
 
-  Te respondo:
+Te respondo:
 
-  > Mais ou menos.
+> Não.
 
 Veja que o resultado da disjunção entre 9 e 5, também é 13:
 
@@ -84,7 +84,7 @@ Veja que o resultado da disjunção entre 9 e 5, também é 13:
 
 Isso porque numa soma entre 1 e 1 o resultado seria 10 \(2 em decimal\), já na operação OU o resultado é 1.
 
-## Disjunção exclusiva \(XOR\)
+## Disjunção Exclusiva \(XOR\)
 
 A disjunção exclusiva entre x e y resulta em 1 se **somente** **um** deles for 1. Sendo assim:
 
@@ -105,7 +105,7 @@ Algumas propriedades importantes desta operação são:
 
 A operação XOR tem vários usos em computação. Alguns exemplos:
 
-### Detecção de diferenças
+### Detecção de Diferenças
 
 É possível saber se um número é diferente de outro com XOR. Se os números forem diferentes, o resultado é diferente de zero. Por exemplo, tomemos um XOR entre 8 e 5 e outro entre 5 e 5:
 
@@ -116,7 +116,7 @@ A operação XOR tem vários usos em computação. Alguns exemplos:
  1101    0000
 ```
 
-### Zerar variáveis
+### Zerar Variáveis
 
 Fica claro que é possível zerar variáveis bastando fazer uma operação XOR do valor dela com ele mesmo, independentemente de que valor é este:
 
@@ -127,7 +127,7 @@ Fica claro que é possível zerar variáveis bastando fazer uma operação XOR d
 0
 ```
 
-### Troca de valores entre duas variáveis
+### Troca de Valores Entre Duas Variáveis
 
 O algoritmo conhecido por _XOR swap_ consiste em trocar os valores de duas variáveis somente com operações XOR, sem usar uma terceira variável temporária. Basta fazer:
 
@@ -137,7 +137,7 @@ O algoritmo conhecido por _XOR swap_ consiste em trocar os valores de duas vari�
 
 Veja:
 
-```text
+```python
 >>> x=8
 >>> y=5
 >>> x = x ^ y
@@ -163,14 +163,14 @@ x = x ^ y   # resulta em 0b0101 (o valor original de y)
 
 Dado um número x, é possível calcular o resultado de uma operação XOR com um valor que chamamos de chave. Se usarmos a mesma chave num XOR com este resultado, obtemos novamente o número original:
 
-```text
->>> x = 2017
+```python
+>>> x = 2022
 >>> x = x ^ 0x51
 >>> x
-1968
+1975
 >>> x = x ^ 0x51
 >>> x
-2017
+2022
 ```
 
 Portanto, para uma cifrabem básica, se quiser esconder o valor original de um número antes de enviá-lo numa mensagem, basta _XOReá-lo_ com uma chave que só eu e o receptor da mensagem conheça \(0x51 no exemplo\). Assim eu uso tal chave para fazer a operação XOR com ele e instruo o receptor da mensagem \(por outro canal\) a usar a mesma chave e operação XOR, afim de obter o número original.
@@ -196,7 +196,7 @@ O deslocamento para a **esquerda** \(_shift left_\) consiste em deslocar todos o
 
 Assim podemos perceber que deslocar à esquerda dá no mesmo que multiplicar por 2. Veja:
 
-```text
+```python
 >>> x = 7
 >>> x = x << 1
 >>> x
@@ -211,14 +211,14 @@ Assim podemos perceber que deslocar à esquerda dá no mesmo que multiplicar por
 
 No exemplo acima deslocamos 1 _bit_ do número 7 \(0b111\) para a esquerda três vezes, que resultou em 56. Seria o mesmo que deslocar 3 _bits_ de uma só vez:
 
-```text
+```python
 >>> 7 << 3
 56
 ```
 
 De forma análoga, o deslocamento para a **direita** \(_shift right_\), ou simplesmente SHR, consiste em deslocar todos os \_bits\_de um número para a direita e completar a posição criada à esquerda com zero. Tomando o mesmo 7 \(0b111\):
 
-```text
+```python
 >>> 0b111 >> 1
 3
 ```
@@ -268,10 +268,9 @@ No entanto, para inverter o número 0b100 é preciso saber seu tamanho:
 
 Isso é o mesmo que calcular o complemento \(ou "complemento de um"\) de um número. Para obter seu simétrico, é preciso ainda somar uma unidade, como vimos anteriormente. Por isso, um NOT _bit-a-bit_ no número 4, por exemplo, resulta em -5. Veja:
 
-```text
+```python
 >>> ~4
 -5
 ```
 
-Os processadores Intel x86 trabalham com muitas outras operações _bitwise_, mas que não serão discutidas neste livro. Conforme você avançar no estudo de engenharia reversa, vai se deparar com elas. ;-\)
-
+Os processadores Intel x86 trabalham com muitas outras operações _bitwise_, mas que não serão discutidas neste livro. Conforme você avançar no estudo de engenharia reversa, vai se deparar com elas. 

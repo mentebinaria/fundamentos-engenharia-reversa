@@ -19,13 +19,6 @@ $ echo -n Erro | hd
 00000000  45 72 72 6f                                       |Erro|
 ```
 
-Alternativamente, você pode experimentar a função _bh\_str2hex\(\)_ do projeto [bashacks](https://github.com/merces/bashacks), disponível para Linux, macOS e Windows 10:
-
-```bash
-$ bh_str2hex Erro
-45 72 72 6f
-```
-
 Agora sabemos que a sequência de _bytes_ a ser procurada vai depender do tipo de _string_.
 
 * Em ASCII:
@@ -46,5 +39,5 @@ Mas para sermos mais assertivos, caso não haja mais nada depois do "o" da palav
 
 45 00 72 00 72 00 6f 00 00 00
 
-Claro que os programas feitos para buscarem texto dentro de arquivos já possuem esta inteligência, no entanto, a proposta deste livro é entender a fundo como a engenharia reversa funciona e por isso não poderíamos deixar de cobrir esta valiosa informação. ;-\)
+Claro que os programas feitos para buscarem texto dentro de arquivos já possuem esta inteligência, no entanto, a proposta deste livro é entender a fundo como a engenharia reversa funciona e por isso não poderíamos deixar de cobrir esta valiosa informação.
 

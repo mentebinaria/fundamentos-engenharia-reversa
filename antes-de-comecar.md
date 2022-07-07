@@ -44,6 +44,7 @@ int main(void) {
 
     return 0;
 }
+```
 
 Neste caso, exceto quando especificado diferente, é preciso salvar o código em C num arquivo de texto e assim compilar e executar no ambiente GNU/Linux, assim:
 

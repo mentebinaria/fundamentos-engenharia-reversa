@@ -32,7 +32,7 @@ Também de 2 _bytes_, o valor deste campo é o número de seções que o arquivo
 
 ## TimeDateStamp
 
-Este é um número de 32 _bits_ que define o número de segundos desde à meia-noite do dia 1 de Janeiro de 1970, conhecido também por _Epoch time_. Com este valor é possível saber quando o arquivo foi criado. Para mais informações, veja a dica [Convertendo Epoch no Linux](https://www.mentebinaria.com.br/forums/topic/57-convertendo-epoch-no-linux-número-de-segundos-desde-1970-01-01-000000-utc/).
+Este é um número de 32 _bits_ que define o número de segundos desde à meia-noite do dia 1 de Janeiro de 1970, conhecido também por _Epoch time_. Com este valor é possível saber quando o arquivo foi criado.
 
 Vale lembrar que este campo não é utilizado pelo _loader_ de arquivos PE no Windows e seu valor pode ser alterado após a compilação, logo, não é 100% confiável, ou seja, você não pode **garantir** que um binário PE foi compilado na data e hora informadas pelo valor neste campo.
 
@@ -70,30 +70,36 @@ Em algumas referências o leitor encontrará o cabeçalho COFF como parte do cab
 
 ## Exercícios
 
-Usando o comando **readpe** do toolkit do [pev](http://pev.sf.net), exiba o cabeçalho COFF do binário CRACKME.EXE. Você deve ver algo assim:
+Baixe e descompate o arquivo CRACKME.ZIP em https://menteb.in/cruehead. Usando o comando **dumpbin** através do Visual Studio Developer Command Prompt (instalado com o Visual Studio Community), exiba o COFF/File Header do binário CRACKME.EXE. Você deve ver algo assim:
 
 ```text
-C:\Users\Homer\Desktop>readpe --header coff CRACKME.EXE
+D:\>dumpbin /nologo /headers CRACKME.EXE
 
-COFF/File header
-Machine:                         0x14c IMAGE_FILE_MACHINE_I386
-Number of sections:              6
-Date/time stamp:                 182002729 (Wed, 08 Oct 1975 12:18:49 UTC)
-Symbol Table offset:             0
-Number of symbols:               0
-Size of optional header:         0xe0
-Characteristics:                 0x818e
-                                 IMAGE_FILE_EXECUTABLE_IMAGE
-                                 IMAGE_FILE_LINE_NUMS_STRIPPED
-                                 IMAGE_FILE_LOCAL_SYMS_STRIPPED
-                                 IMAGE_FILE_BYTES_REVERSED_LO
-                                 IMAGE_FILE_32BIT_MACHINE
-                                 IMAGE_FILE_BYTES_REVERSED_HI
+Dump of file CRACKME.EXE
+
+PE signature found
+
+File Type: EXECUTABLE IMAGE
+
+FILE HEADER VALUES
+             14C machine (x86)
+               6 number of sections
+         AD92429 time date stamp Wed Oct  8 09:18:49 1975
+               0 file pointer to symbol table
+               0 number of symbols
+              E0 size of optional header
+            818E characteristics
+                   Executable
+                   Line numbers stripped
+                   Symbols stripped
+                   Bytes reversed
+                   32 bit word machine
+--suprimido--
 ```
 
 Com o **DIE**, é preciso carregar o CRACKME.EXE nele, clicar no botão **PE \(Alt+P\)**, na aba **NT Headers** e por fim, na aba **File Header**. Você deve ver uma janela como a abaixo:
 
 ![Cabe&#xE7;alho COFF exibido pelo DIE](../../.gitbook/assets/die_coff.png)
 
-Os botões com "..." localizados ao lado direito de vários valores de campos provêem informações adicionais sobre tais valores. Não deixe de experimentar. ;\)
+Os botões com "..." localizados ao lado direito de vários valores de campos provêem informações adicionais sobre tais valores. Não deixe de experimentar.
 

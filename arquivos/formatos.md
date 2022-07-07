@@ -1,6 +1,6 @@
 # Formatos
 
-Os arquivos de texto, sejam eles ASCII ou UNICODE são tipos de arquivos bem simples. Começaremos agora a avaliar tipos de arquivos mais complexos. Acontece que para um programa **salvar** ou **abrir** um determinado tipo de arquivo, é essencial que este conheça seu **formato**. Tomemos por exemplo o formato GIF, mas agora ao invés de utilizar o **hd** para inspecionar seu conteúdo, utilizaremos, no Windows, um editor hexadecimal gráfico, o [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/).
+Os arquivos de texto, sejam eles ASCII ou UNICODE são tipos de arquivos bem simples. Começaremos agora a avaliar tipos de arquivos mais complexos. Acontece que para um programa **salvar** ou **abrir** um determinado tipo de arquivo, é essencial que este conheça seu **formato**. Tomemos por exemplo o formato GIF, mas agora ao invés de utilizar o **hd** para inspecionar seu conteúdo, utilizaremos, no Windows, um editor hexadecimal gráfico, o wxHexEditor.
 
 Ao abrir o arquivo GIF no **wxHexEditor**, é exibida uma tela similar a abaixo:
 
@@ -17,7 +17,7 @@ Define a **posição** no arquivo, em _bytes_. No exemplo acima, o primeiro _byt
 * O _byte_ no _offset_ 0x11 \(17 em decimal\) é 1.
 
 {% hint style="danger" %}
-No **wxHexEditor** você pode exibir os _offsets_ em hexadecimal clicando com o botão direito do mouse sobre eles. Outros editores como o [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) já exibem o _offset_ em hexadecimal por padrão.
+No **wxHexEditor** você pode exibir os _offsets_ em hexadecimal clicando com o botão direito do mouse sobre eles. Outros editores como o XVI32 já exibem o _offset_ em hexadecimal por padrão.
 {% endhint %}
 
 ## **Conteúdo**
@@ -30,11 +30,11 @@ A esta altura o leitor já deve ter percebido que um número pode ser expresso d
 
 Na terceira coluna o **wxHexEditor** nos apresenta a interpretação ASCII de cada _byte_ na segunda coluna, ou seja, se o _byte_ em questão estiver dentro da faixa de caracteres ASCII imprimíveis \(de 0x20 à 0x7e\), sua representação é exibida. Para valores fora desta faixa, o **wxHexEditor** exibe um espaço em branco.
 
-Há dezenas de outros editores hexadecimais disponíveis, inclusive alguns visualizadores de linha de comando. Vale consultar o Apêndice C - Ferramentas e testar alguns. Se o leitor tiver curiosidade de saber como funciona um visualizador hexadecimal, recomendo olhar o código do [hdump](https://sourceforge.net/projects/hdump/), visualizador para linha de comando que implementei em C para funcionar em Windows, Linux e macOS.
+Há dezenas de outros editores hexadecimais disponíveis, inclusive alguns visualizadores de linha de comando. Vale consultar o apêndice Ferramentas e testar alguns. Se o leitor tiver curiosidade de saber como funciona um visualizador hexadecimal, recomendo olhar o código do hdump, disponível em https://github.com/merces/hdump, um visualizador para linha de comando que implementei em C para funcionar em Windows, Linux e macOS.
 
 ## **Exemplo do formato GIF**
 
-De volta ao formato, é importante ressaltar que tanto o programador do software que salva um determinado tipo de arquivo quanto o programador de um software que visualiza tal tipo precisam conhecê-lo bem. Como exemplificamos com o formato GIF, vamos ver como este formato é definido. Em geral, os formatos são definidos por campos \(faixas de _bytes_\) de tamanho fixo ou variável, que podem assumir um certo valor. Para entendê-los, precisamos da documentação deste formato \(no caso, do GIF\). Conforme sua [especificação](https://en.wikipedia.org/wiki/GIF#Example_GIF_file), o formato GIF segue, dentre outras, as seguintes regras:
+De volta ao formato, é importante ressaltar que tanto o programador do software que salva um determinado tipo de arquivo quanto o programador de um software que visualiza tal tipo precisam conhecê-lo bem. Como exemplificamos com o formato GIF, vamos ver como este formato é definido. Em geral, os formatos são definidos por campos \(faixas de _bytes_\) de tamanho fixo ou variável, que podem assumir um certo valor. Para entendê-los, precisamos da documentação deste formato \(no caso, do GIF\). Conforme sua especificação, o formato GIF segue, dentre outras, as seguintes regras:
 
 | Byte offset \(posição no arquivo\) | Tamanho do campo em bytes | Valor em hexadecimal | Descrição |
 | :--- | :--- | :--- | :--- |

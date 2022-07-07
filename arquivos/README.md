@@ -29,7 +29,7 @@ Change: 2017-09-08 17:21:24.097159494 -0400
  Birth: -
 ```
 
-A referência é justamente o que o Linux chama de _inode_, mas este assunto foge ao escopo de nosso livro. Se quiser entender melhor sobre este e outros detalhes de implementação do Linux, recomendo o livro [Descobrindo o Linux](https://novatec.com.br/livros/linux-3ed/), do João Eriberto Mota Filho.
+A referência é justamente o que o Linux chama de _inode_, mas este assunto foge ao escopo de nosso livro. Se quiser entender melhor sobre este e outros detalhes de implementação do Linux, recomendo o livro Descobrindo o Linux, do João Eriberto Mota Filho.
 
 A pergunta mais interessante para nós é, no entanto, em relação ao **tipo** de arquivo. Criamos eles sem extensão e aqui e é bom lembrar que uma extensão de arquivo nada mais é que parte de seu nome e esta não mantém nenhuma relação com seu tipo real. A única forma de saber um tipo de arquivo é **inferindo-o** através de seu conteúdo. Vamos olhar seu conteúdo com um visualizador hexadecimal, o **hexdump**, invocado por seu atalho mais comum, o **hd**:
 
