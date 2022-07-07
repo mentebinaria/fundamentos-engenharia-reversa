@@ -1,7 +1,3 @@
----
-description: American Standard Code for Information Interchange
----
-
 # Tabela ASCII
 
 ```text
@@ -23,4 +19,3 @@ Dec Hex    Dec Hex    Dec Hex  Dec Hex  Dec Hex  Dec Hex   Dec Hex   Dec Hex
  14 0E SO   30 1E RS   46 2E .  62 3E >  78 4E N  94 5E ^  110 6E n  126 7E ~
  15 0F SI   31 1F US   47 2F /  63 3F ?  79 4F O  95 5F _  111 6F o  127 7F DEL
 ```
-

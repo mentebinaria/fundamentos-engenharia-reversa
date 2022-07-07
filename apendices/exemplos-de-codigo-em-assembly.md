@@ -1,27 +1,15 @@
-# Exemplos de código em Assembly
+# Exemplos de Código em Assembly
 
-Reuno aqui alguns exemplos de códigos em Assembly, úteis para a compreensão de trechos de binários quando fazemos engenharia reversa.
+Reuni aqui alguns exemplos de códigos em Assembly, úteis para a compreensão de trechos de binários quando fazemos engenharia reversa.
 
-## Zerar variáveis
+## Zerar Variáveis
 
-{% tabs %}
-{% tab title="Assembly" %}
 ```text
 xor eax, eax
 ```
-{% endtab %}
 
-{% tab title="C" %}
-```c
-int eax=0;
-```
-{% endtab %}
-{% endtabs %}
+## Contar de Um a Dez
 
-## Contagem de 1 a 10
-
-{% tabs %}
-{% tab title="Assembly v1" %}
 ```text
 xor ecx, ecx
 loop:
@@ -29,9 +17,9 @@ loop:
   cmp ecx, 0xa
   jl loop
 ```
-{% endtab %}
 
-{% tab title="Assembly v2" %}
+Outra versão:
+
 ```text
 mov ecx, 0
 loop:
@@ -39,64 +27,33 @@ loop:
   cmp ecx, 0x9
   jle loop
 ```
-{% endtab %}
 
-{% tab title="C" %}
-```c
-int ecx;
-for (ecx=0; ecx<10; ecx++) {}
-```
-{% endtab %}
-{% endtabs %}
+## Testar Se É Zero
 
-## Testar se é zero
-
-{% tabs %}
-{% tab title="Assembly v1" %}
 ```text
 cmp eax, 0
 je destino
 ```
-{% endtab %}
 
-{% tab title="Assembly v2" %}
+Outra versão:
+
 ```text
 test eax, eax
 je destino
 ```
-{% endtab %}
 
-{% tab title="C" %}
-```text
-if (eax == 0)
-    // destino
-```
-{% endtab %}
-{% endtabs %}
+## Fazer Nada
 
-## Não fazer nada
+Parece bobo, mas "fazer nada" corretamente significa não alterar nenhuma _flag_, nem nenhum registrador. A instrução em Assembly Intel mais famosa para tal é a NOP \(NO Operation\):
 
-Parece bobo, mas "fazer nada" corretamente significa não alterar nenhuma _flag_, nem nenhum registrador. Seguem as instruções que conheço:
-
-{% tabs %}
-{% tab title="Assembly v1" %}
-```text
-xchg eax, eax
-```
-{% endtab %}
-
-{% tab title="Assembly v2" %}
 ```text
 nop
 ```
-{% endtab %}
 
-{% tab title="C" %}
+Mas também é possível atingir o mesmo resultado com instruções como a XCHG \(eXCHanGe\). Por exemplo, se você trocar o valor do registrador EAX com ele mesmo, acaba por não fazer "nada":
+
 ```text
-;
+xchg eax, eax
 ```
-{% endtab %}
-{% endtabs %}
 
 Instruções que não fazem nada também podem ser utilizadas como _padding_ necessário para o correto alinhamento das seções do binário em memória. Já vi o GCC utilizar XCHG AX, AX neste caso.
-
