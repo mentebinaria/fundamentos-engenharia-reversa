@@ -1,6 +1,25 @@
 # Funções da API do Windows
 
-Segue uma lista de funções interessantes para colocarmos _breakpoints_ quando revertendo binários em Windows. Em **quais** funções colocaremos os _breakpoints_ vai depender de **onde** queremos que o programa sob o controle do _debugger_ pare afim de observarmos o comportamento de determinada ação. A seguir veremos alguns nomes de funções bem comuns em programas.
+Através de várias bibliotecas como kernel32.dll, user32.dll, advapi32.dll e ntdll.dll, só para citar algumas, a Windows API provê inúmeras funções para os programas em _usermode_ chamarem. Criar uma lista com todas essas funções seria insano, mas destaco aqui algumas comumente encontradas em programas para Windows. Optei também por colocar o protótipo de algumas delas, para rápida referência, mas todas as informações sobre estas funções podem ser encontradas na documentação oficial. Basta buscar por um nome de função em seu buscador preferido que certamente o site da Microsoft com a documentação da função estará entre os primeiros.
+
+Mesmo que você não sabia tudo sobre a função funciona, essa lista te ajudará a saber **onde** colocar _breakpoints_, de acordo com o seu caso. Por exemplo, caso suspeite que um programa está abrindo um arquivo, pode colocar um _breakpoint_ nas funções `CreateFileA` e `CreateFileW`.
+
+Vamos agora à lista de funções, separadas por categoria.
+
+## Anti-debugging
+
+Utilizadas em técnicas básicas para evitar a depuração de aplicações.
+
+```c
+BOOL IsDebuggerPresent();
+```
+
+```c
+BOOL CheckRemoteDebuggerPresent(
+  [in]      HANDLE hProcess,
+  [in, out] PBOOL  pbDebuggerPresent
+);
+```
 
 ## Caixas de Mensagens
 
@@ -38,24 +57,21 @@ UINT GetDlgItemTextA(
 );
 ```
 
-## Janelas
-
-Habilitam ou desabilitam janelas ou itens dentro dela.
+## Criptografia
 
 ```c
-BOOL EnableMenuItem(
-  [in] HMENU hMenu,
-  [in] UINT  uIDEnableItem,
-  [in] UINT  uEnable
+BOOL CryptEncrypt(
+  [in]      HCRYPTKEY  hKey,
+  [in]      HCRYPTHASH hHash,
+  [in]      BOOL       Final,
+  [in]      DWORD      dwFlags,
+  [in, out] BYTE       *pbData,
+  [in, out] DWORD      *pdwDataLen,
+  [in]      DWORD      dwBufLen
 );
 ```
 
-```c
-BOOL EnableWindow(
-  [in] HWND hWnd,
-  [in] BOOL bEnable
-);
-```
+Ver também: `CryptDecrypt`, `CryptGenKey`, e `CryptImportKey`.
 
 ## Data e Hora
 
@@ -65,7 +81,15 @@ void GetLocalTime(
 );
 ```
 
-Ver também: SetSystemTime e SetLocalTime.
+Ver também: `SetSystemTime` e `SetLocalTime`.
+
+## Discos e Volumes
+
+```c
+DWORD GetLogicalDrives();
+```
+
+Ver também: `GetDiskFreeSpace`, `GetDriveType` e `GetVolumeInformationA`.
 
 ## Entrada e saída \(I/O\)
 
@@ -75,18 +99,6 @@ BOOL CopyFile(
   [in] LPCTSTR lpNewFileName,
   [in] BOOL    bFailIfExists
 );
-```
-
-Usada para copiar um arquivo. Tem uma segunda versão que permite mais parâmetros. Consulte a documentação. Exemplos:
-
-```cpp
-CopyFile(L"origem.txt", L"destino.txt", false);
-```
-
-```cpp
-COPYFILE2_EXTENDED_PARAMETERS cf2;
-// configura os parâmetros
-CopyFile2(L"origem.txt", L"destino.txt", &cf2);
 ```
 
 ```c
@@ -115,107 +127,95 @@ HMODULE LoadLibraryA(
 );
 ```
 
-Consulte também a documentação das funções MoveFile, OpenFile, OpenFileMapping, OpenMutex e CreateFileMapping.
+Consulte também a documentação das funções `MoveFile`, `OpenFile`, `OpenFileMapping`, `OpenMutex` e `CreateFileMapping`.
 
-## Registro
+## Janelas
 
-RegOpenKey
+Habilitam ou desabilitam janelas ou itens dentro dela.
 
-RegOpenKeyEx
+```c
+BOOL EnableMenuItem(
+  [in] HMENU hMenu,
+  [in] UINT  uIDEnableItem,
+  [in] UINT  uEnable
+);
+```
 
-RegCloseKey
+```c
+BOOL EnableWindow(
+  [in] HWND hWnd,
+  [in] BOOL bEnable
+);
+```
 
-RegQueryValueA
+## Memória
 
-RegEnumKeyExA
+```c
+LPVOID VirtualAlloc(
+  [in, optional] LPVOID lpAddress,
+  [in]           SIZE_T dwSize,
+  [in]           DWORD  flAllocationType,
+  [in]           DWORD  flProtect
+);
+```
 
-RegSetValue
+Ver também: `VirtualAllocEx`, `VirtualFree`, `VirtualLock`, `VirtualProtect` e `VirtualQuery`.
 
-RegSetValueExA
+## Processos e _Threads_
 
-RegSetValueExW
+```c
+BOOL CreateProcessA(
+  [in, optional]      LPCSTR                lpApplicationName,
+  [in, out, optional] LPSTR                 lpCommandLine,
+  [in, optional]      LPSECURITY_ATTRIBUTES lpProcessAttributes,
+  [in, optional]      LPSECURITY_ATTRIBUTES lpThreadAttributes,
+  [in]                BOOL                  bInheritHandles,
+  [in]                DWORD                 dwCreationFlags,
+  [in, optional]      LPVOID                lpEnvironment,
+  [in, optional]      LPCSTR                lpCurrentDirectory,
+  [in]                LPSTARTUPINFOA        lpStartupInfo,
+  [out]               LPPROCESS_INFORMATION lpProcessInformation
+);
+```
 
-## Processos e _threads_
-
-CreateToolhelp32Snapshot
-
-Process32First
-
-Process32Next
-
-Module32First
-
-Module32Next
-
-Toolhelp32ReadProcessMemory
-
-Heap32ListFirst
-
-Heap32ListNext
-
-Heap32First
-
-Heap32Next
-
-OpenProcess
-
-TerminateProcess
-
-ExitProcess
-
-ExitThread
-
-OpenProcessToken - ADVAPI32.DLL
-
-OpenThreadToken - ADVAPI32.DLL
-
-ZwQueryInformationProcess - NTDLL.DLL
-
-ZwSetInformationThread - NTDLL.DLL
-
-WriteProcessMemory
-
-CreateThread
-
-CreateRemoteThread
-
-CreateProcess
-
-ShellExecute
-
-## Anti-debugging
-
-IsDebuggerPresent
-
-CheckRemoteDebuggerPresent
-
-NtSetInformationThread - NTDLL.DLL
-
-## Strings
-
-lstrcat
-
-lstrcmp
-
-lstrcpy
-
-lstrlen
-
-## Disco
-
-GetDiskFreeSpace
-
-GetDriveType
+Ver também: `CreateRemoteThread`, `CreateThread`, `CreateToolhelp32Snapshot`, `ExitProcess`, `ExitThread`, `Heap32First`, `Heap32ListFirst`, `Heap32ListNext`, `Heap32Next`, `Module32First`, `Module32Next`, `OpenProcess`, `OpenProcessToken`, `OpenThreadToken`, `Process32First`, `Process32Next`, `ShellExecute`, `TerminateProcess`, `Toolhelp32ReadProcessMemory`, `WriteProcessMemory`, `ZwQueryInformationProcess` e `ZwSetInformationThread`.
 
 ## Rede
 
-InternetOpenUrl...
+```c
+HINTERNET InternetOpenUrlA(
+  [in] HINTERNET hInternet,
+  [in] LPCSTR    lpszUrl,
+  [in] LPCSTR    lpszHeaders,
+  [in] DWORD     dwHeadersLength,
+  [in] DWORD     dwFlags,
+  [in] DWORD_PTR dwContext
+);
+```
 
-## Criptografia
+Ver também: `HttpSendRequestA` e `InternetRead$File`.
 
-CryptDecrypt...
+## Registro
 
-## Alocação de memória
+```c
+LSTATUS RegSetValueA(
+  [in]           HKEY   hKey,
+  [in, optional] LPCSTR lpSubKey,
+  [in]           DWORD  dwType,
+  [in]           LPCSTR lpData,
+  [in]           DWORD  cbData
+);
+```
 
-VirtualAlloc, HeapAlloc...
+Ver também: `RegCloseKey`, `RegEnumKeyExA`, `RegOpenKey`, `RegOpenKeyEx`, `RegQueryValueA`, `RegSetValueW`, `RegSetValueExA` e `RegSetValueExW`.
 
+## Strings
+
+```c
+int lstrcmpA(
+  [in] LPCSTR lpString1,
+  [in] LPCSTR lpString2
+);
+```
+
+Ver também: `lstrcat`, `lstrcpy` e `lstrlen`.
