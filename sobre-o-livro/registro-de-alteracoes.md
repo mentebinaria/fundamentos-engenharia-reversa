@@ -4,23 +4,24 @@
 
 * [x] Adicionada a seção Processos no capítulo Executção de programas.
 * [x] Desenvolver um pouco mais o capítulo da Windows API. Possivelmente transformá-lo em uma seção e falar sobre _handles_, processos, etc.
-  * [x] Caixas de mensagens
-  * [x] Manipulação de arquivos
+  * [x] Caixas de Mensagens
+  * [x] Manipulação de Arquivos
+  * [x] Acesso ao Registro
 * [x] Atualização das capturas de tela dos programas.
 * [x] Revisão geral do fluxo do livro com as novas versões dos programas.
 * [x] Tabela de Importações
-* [x] Execução de programas
+* [x] Execução de Programas
   * [x] Executáveis
   * [x] Bibliotecas
 * [x] Windows API
 * [x] Assembly
   * [x] Registradores
-  * [x] Instruções básicas
-  * [x] Funções e pilha
+  * [x] Instruções Básicas
+  * [x] Funções e Pilha
 * [x] Depuração
   * [x] Disassembly
   * [x] Breakpoints
-  * [x] Manipulação do programa
+  * [x] Manipulação do Programa
   * [x] Patches
 
 * Os requisitos foram revistos e agora deixam claro que precisamos de duas máquinas: uma com Windows e uma com Linux.
