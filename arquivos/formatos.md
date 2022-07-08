@@ -6,7 +6,7 @@ Analise o seguinte arquivo GIF aberto no HxD:
 
 ![Conte&#xFA;do de um arquivo GIF visualizado em hexadecimal](../.gitbook/assets/hxdgif.png)
 
-O HxD é um editor hexadecimal. Para entender estes editores funcionam, vamos começar pelas colunas onde os _bytes_ estão organizados:
+O HxD é um editor hexadecimal. Para entender estes editores funcionam, vamos começar pelas colunas onde os _bytes_ estão organizados.
 
 ## **Offset**
 
@@ -15,8 +15,8 @@ Também chamado de **offset no arquivo** ou **offset em disco**, esta coluna exi
 . Identifique na imagem as afirmações a seguir:
 
 * O _byte_ no _offset_ 0x53 é o 0xc8.
-* A _word_ no _offset_ 0x5b é 0xfef4.
-* A _double word_ no _offset_ 0xd2 é 0x4baea370.
+* O _byte_ no _offset_ 0x7c é 0xc0.
+* O _byte_ no _offset_ 0x90 é 0x6c.
 
 ## **Conteúdo**
 
