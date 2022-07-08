@@ -20,11 +20,11 @@ HANDLE CreateFileA(
 
 Agora vamos aos parâmetros:
 
-## lpFileName \[entrada\]
+### lpFileName \[entrada\]
 
 O caminho do arquivo que será aberto para escrita ou leitura. Se somente um nome for especificado, o diretório de onde o programa é chamado será considerado. Este parâmetro é do tipo LPCSTR na versão ASCII da função e do tipo LPCSWSTR na versão UNICODE.
 
-## dwDesiredAccess \[entrada\]
+### dwDesiredAccess \[entrada\]
 
 Este é um campo numérico que designa o tipo de acesso desejado ao arquivo. Os valores possíveis são:
 
@@ -37,7 +37,7 @@ Este é um campo numérico que designa o tipo de acesso desejado ao arquivo. Os 
 
 Também é possível combinar tais valores. Por exemplo, `GENERIC_READ | GENERIC_WRITE` para abrir um arquivo com acesso de leitura e escrita.
 
-## dwShareMode \[entrada\]
+### dwShareMode \[entrada\]
 
 O modo de compartilhamento deste arquivo com outros processos. Os valores possíveis são:
 
@@ -49,11 +49,11 @@ O modo de compartilhamento deste arquivo com outros processos. Os valores possí
 
 No entanto, o valor `0` é bem comum e faz com que nenhum outro processo apossa abrir o arquivo simultâneamente.
 
-##  lpSecurityAttributes \[entrada, opcional\]
+###  lpSecurityAttributes \[entrada, opcional\]
 
 Um ponteiro para uma estrutura especial do tipo `SECURITY_ATTRIBUTES`. Em geral, é `NULL`.
 
-## dwCreationDisposition \[entrada\]
+### dwCreationDisposition \[entrada\]
 
 Em relação à criação do arquivo, pode ser:
 
@@ -65,11 +65,11 @@ Em relação à criação do arquivo, pode ser:
 #define TRUNCATE_EXISTING   5
 ```
 
-## dwFlagsAndAttributes \[entrada\]
+### dwFlagsAndAttributes \[entrada\]
 
 Atributos e flags especiais para os arquivos. O mais comum é passar somente `FILE_ATTRIBUTE_NORMAL`, mas a documentação oficial prevê muitos outros possíveis valores.
 
-## hTemplateFile \[entrada, opcional\]
+### hTemplateFile \[entrada, opcional\]
 
 Um handle válido para um arquivo modelo, para ter os atributos copiados. Normalmente é `NULL`.
 
