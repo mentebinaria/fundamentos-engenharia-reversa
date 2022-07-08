@@ -1,12 +1,10 @@
-# Manipulação de arquivos
+# Manipulação de Arquivos
 
-{% hint style="warning" %}
-Em breve
-{% endhint %}
+É muito comum softwares trabalharem com arquivos. O mesmo vale para malware. Considero importante, do ponto de vista de engenharia reversa, saber como as funções do Windows que trabalham com arquivos são chamadas. Vamos começar pela `CreateFile`.
 
 ```c
-#include <Windows.h>
 #include <stdio.h>
+#include <Windows.h>
 
 int main() {
 	HANDLE hFile = CreateFileW(L"log.txt",
