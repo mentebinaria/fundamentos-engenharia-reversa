@@ -80,11 +80,11 @@ LSTATUS RegSetKeyValueA(
 
 Já sabemos o que são os parâmetros `hKey` e `lpSubKey`. Nos restam então os seguintes:
 
-### lpValueName
+### lpValueName \[entrada, opcional\]
 
-Um ponteiro para uma string contendo o nome do valor.
+Um ponteiro para uma string contendo o nome do valor. Caso seja `NULL` ou aponte para uma string vazia, o valor padrão da chave é considerado.
 
-### dwType
+### dwType \[entrada\]
 
 O tipo do valor. Pode ser um dos seguintes:
 
@@ -106,11 +106,11 @@ O tipo do valor. Pode ser um dos seguintes:
 #define REG_QWORD_LITTLE_ENDIAN     ( 11ul ) // Número de 64-bits (o mesmo que REG_QWORD)
 ```
 
-### lpData
+### lpData \[entrada, opcional\]
 
 Os dados do valor, que deve ser casar com o tipo configurado no parâmetro `dwType`.
 
-### cbData
+### cbData \[entrada\]
 
 O tamanho dos dadoos do valor.
 
