@@ -114,7 +114,7 @@ Os dados do valor, que deve ser casar com o tipo configurado no parâmetro `dwTy
 
 O tamanho dos dadoos do valor.
 
-O código abaixo cria uma chave `HKCU\Software\Mente Binária`, configura um valor "Habilitado" do tipo `REG_DWORD` com o dado `1` e um valor "Website" do tipo `REG_SZ` com o valor `https://menteb.in`:
+O código abaixo cria uma chave `HKCU\Software\Mente Binária`, configura um valor "Habilitado" do tipo `REG_DWORD` com o dado `1` e um valor "Website" do tipo `REG_SZ` com o dado textual "https://menteb.in":
 
 ```c
 HKEY hChave;
