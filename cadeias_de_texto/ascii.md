@@ -52,7 +52,7 @@ Agora, algumas relações:
 * Se diminuirmos 0x30 de um dígito, temos o equivalente numérico do dígito. Ex.: 0x35 - 0x30 = 5.
 
 {% hint style="info" %}
-Sabe quando no Linux você dá um cat num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns beeps? Esses sons são os bytes 0x07 encontrados no arquivo. Experimente! ;-\)
+Sabe quando no Linux você dá um cat num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns beeps? Esses sons são os bytes 0x07 encontrados no arquivo. Experimente!
 {% endhint %}
 
 ## ASCII extendida
