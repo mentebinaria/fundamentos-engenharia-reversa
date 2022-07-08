@@ -2,7 +2,7 @@
 
 Esta seção aborda não somente ferramentas utilizadas no livro, mas também outras que vale a pena citar na esperança que o leitor se sinta atraído a baixar, usar e tirar suas próprias conclusões em relação à eficiência delas.
 
-## Editores hexadecimais
+## Editores Hexadecimais
 
 Este tipo de ferramenta é útil para editar arquivos binários em geral, não somente executáveis, _dumpar_ \(copiar\) conteúdo de trechos de arquivos, etc. Também é possível editar uma partição ou disco com bons editores hexadecimal a fim de recuperar arquivos, por exemplo.
 
@@ -23,7 +23,7 @@ Este tipo de ferramenta é útil para editar arquivos binários em geral, não s
 | [wxHexEditor](https://sourceforge.net/projects/wxhexeditor/) | Livre | Multiplataforma, recursos interessantes. |
 | [XVI32](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) | Freeware | Sem muitos recursos, mas quebra um galho. |
 
-## Analisadores estáticos de executáveis
+## Analisadores Estáticos de Executáveis
 
 Analisam estaticamente os binários, sem carregá-los. São úteis para uma primeira visão sobre um executável desconhecido.
 
@@ -34,7 +34,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | [DIE \(Detect It Easy\)](http://ntinfo.biz/index.html) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
 | [DUMPBIN](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
 | [Exeinfo PE](http://exeinfo.xn.pl/) | Freeware | Detecta compilador, packer, protectors e edita os arquivos, além de suportar vários plugins loucos. Tem versão VIP mediante doação. |
-| [Malwoverview](https://github.com/alexandreborges/malwoverview) | Livre | Mais um nacional pra uma primeira impressão de arquivos suspeitos, URLs e domínios. Checa também APK's. :\) |
+| [Malwoverview](https://github.com/alexandreborges/malwoverview) | Livre | Mais um nacional pra uma primeira impressão de arquivos suspeitos, URLs e domínios. Checa também APK's. |
 | [objdump](https://www.gnu.org/software/binutils/) | Livre | Parte do GNU binutils, também analisa PE, além de ELF, a.out, etc. |
 | [PE-Bear](https://hshrzd.wordpress.com/pe-bear/) | Freeware | Analisador gráfico \(Qt\) multiplataforma que também detecta packers/protectors. |
 | [PEdump](http://pedump.me/) | Livre | Analisador online muito legal! |
@@ -43,7 +43,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | [readelf](https://www.gnu.org/software/binutils/) | Livre | Também parte do binutils, analisador de ELF. |
 | [Stud\_PE](http://www.cgsoftlabs.ro/studpe.html) | Freeware | Analisador e editor com suporte a plugins, assinaturas do antigo PEiD, editor de recursos e mais. |
 
-## Bibliotecas para _parsear_ executáveis
+## Bibliotecas para _parsear_ Executáveis
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
@@ -60,7 +60,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [flat assembler \(FASM\)](https://flatassembler.net/) | Livre | Assembler bem recente que já vem com vários exemplos de código. Windows e Linux. |
-| [GNU Assembler \(GAS\)](https://sourceware.org/binutils/docs/as/) | Livre | Também chamado simplesmente de **as**, é o assembler do projeto GNU e provavelmente já está instalado no seu Linux! ;\) |
+| [GNU Assembler \(GAS\)](https://sourceware.org/binutils/docs/as/) | Livre | Também chamado simplesmente de **as**, é o assembler do projeto GNU e provavelmente já está instalado no seu Linux! |
 | [Microsoft Macro Assembler \(MASM\)](https://docs.microsoft.com/en-us/cpp/assembler/masm/microsoft-macro-assembler-reference) | Freeware | Atualmente já vem com o Visual Studio da Microsoft, mesmo na versão Community. Segue um [tutorial de como compilar um "Hello, world"](https://www.mentebinaria.com.br/forums/topic/146-hello-world-em-masm-no-windows/). |
 | [Netwide Assembler \(NASM\)](https://www.nasm.us/) | Livre | Multiplataforma, suporte à sintaxe Intel e bem popular. Veja um [tutorial de como compilar um "Hello, world" no Linux](https://www.mentebinaria.com.br/forums/topic/51-%E2%80%9Chello-world%E2%80%9D-em-nasm-no-linux-x86/). |
 | [Yasm Modular Assembler \(YASM\)](https://yasm.tortall.net/) | Livre | Multiplataforma, escrito com base no NASM pra ser um substituto mas acho que não vingou. hehe |
@@ -148,7 +148,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | [PANDA](https://panda.re) | Livre | Plataforma de análise dinâmica baseada no QEMU, que faz até replay de ações. |
 | [Radare](https://rada.re/r/) | Livre | Suíte completa com debugger, disassembler e outras ferramentas para quase todo tipo de binário existente! |
 
-## Monitores de processos
+## Monitores de Processos
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
@@ -182,7 +182,7 @@ Esta lista não inclui serviços de sandbox puramente comerciais.
 | [Hybrid Analysis](https://www.hybrid-analysis.com/) | Community | Sandbox muito boa. Também é um portal de investigação inclusive com suporte à regras de Yara. |
 | [Joe Sandbox](https://www.joesandbox.com/#advanced) | Community | Um dos primeiros serviços. Suporta ELF \(x86 e x86-64\), PE e documentos. |
 
-## Visualizadores hexadecimais
+## Visualizadores Hexadecimais
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
@@ -232,4 +232,3 @@ $ xxd -g1 -l32 /bin/ls
 | :--- | :--- | :--- |
 | [Kaitai Struct](https://kaitai.io/) | Livre | Se você pensa em _parsear_ um formato desconhecido ou tá estudando PE/ELF, vale olhar este gerador de _parser_ livre. |
 | [Intezer Analyzer](https://analyze.intezer.com) | Community | Online. Requer um pequeno cadastro. Tem um recursos de identificar "genes" estaticamente de famílias de binários. |
-

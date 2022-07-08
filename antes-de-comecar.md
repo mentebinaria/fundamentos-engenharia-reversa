@@ -14,7 +14,7 @@ Após a introdução, **engenharia reversa** \(ou simplesmente **ER**\) passa a 
 
 Nas **operações bit-a-bit** \(_bitwise_\), utilizo os símbolos da programação para representar as operações E, OU, OU EXCLUSIVO, etc. No texto, adoto seus mnemônicos em Inglês: AND, OR e XOR.
 
-## Arquitetura de software
+## Arquitetura de Software
 
 Cada frase deste livro, a não ser que expressado diferente, considera a arquitetura Intel x86 \(IA-32\), visto que esta é documentada o suficiente para começar o estudo de engenharia reversa e moderna o suficiente para criar exemplos funcionais de código e analisar programas atuais.
 
@@ -41,8 +41,6 @@ O leitor também encontrará códigos em linguagem C como este:
 
 int main(void) {
     printf("Compilar com o gcc e executar!\n");
-
-    return 0;
 }
 ```
 
@@ -61,14 +59,13 @@ Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para
 
 Este é um guia prático. Sendo assim, é recomendável que você seja capaz de reproduzir o que é sugerido neste livro em seu próprio ambiente. Precisaremos de:
 
-* Uma máquina \(virtual ou real\) com Windows 10.
+* Uma máquina \(virtual ou real\) com Windows 7 ou 10.
 * Uma máquina \(virtual ou real\) com Linux. Usamos o Ubuntu, mas qualquer outra serve desde que você saiba instalar pacotes nela.
 
 Na máquina com Windows, os programas necessários são:
 
-* x64dbg - https://x64dbg.com
 * Detect It Easy - https://horsicq.github.io
-* wxHexEditor - https://sourceforge.net/projects/wxhexeditor
-* pev - https://github.com/merces/pev
-* Visual Studio Community - https://aka.ms/vs
+* HxD - https://mh-nexus.de
 * Python 3 - https://www.python.org
+* Visual Studio Community - https://aka.ms/vs
+* x64dbg - https://x64dbg.com

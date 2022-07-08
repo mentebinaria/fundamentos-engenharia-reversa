@@ -2,23 +2,23 @@
 
 ## Artigos
 
-[Qual a diferença entre linguagem compilada para linguagem interpretada?](https://pt.stackoverflow.com/questions/77070/qual-a-diferen%C3%A7a-entre-linguagem-compilada-para-linguagem-interpretada), StackOverflow.
+A Crash Course in Everything Cryptographic - https://medium.com/dataseries/a-crash-course-in-everything-cryptographic-50daa0fda482 - Leo Whitehead, 2019.
 
-[Linguagem compilada](https://pt.wikipedia.org/wiki/Linguagem_compilada), Wikipedia.
+Linguagem compilada - https://pt.wikipedia.org/wiki/Linguagem_compilada - Wikipedia.
 
-[Linguagem interpretada](https://pt.wikipedia.org/wiki/Linguagem_interpretada), Wikipedia.
+Linguagem interpretada - https://pt.wikipedia.org/wiki/Linguagem_interpretada - Wikipedia.
 
-[Microprocessador](https://pt.wikipedia.org/wiki/Microprocessador), Wikipedia.
+Microprocessador - https://pt.wikipedia.org/wiki/Microprocessador - Wikipedia.
 
-[Transístor](https://pt.wikipedia.org/wiki/Trans%C3%ADstor), Wikipedia.
+Qual a diferença entre linguagem compilada para linguagem interpretada? - https://pt.stackoverflow.com/questions/77070/qual-a-diferen%C3%A7a-entre-linguagem-compilada-para-linguagem-interpretada - StackOverflow.
 
-[A Crash Course in Everything Cryptographic](https://medium.com/@lduck11007/a-crash-course-in-everything-cryptographic-50daa0fda482), Leo Whitehead, 2019.
+Transístor - https://pt.wikipedia.org/wiki/Transístor - Wikipedia.
 
-[Understand flags and conditional jumps](http://www.godevtool.com/GoasmHelp/usflags.htm) - Jeremy Gordon, 2002-2003.
+Understand flags and conditional jumps - http://www.godevtool.com/GoasmHelp/usflags.htm - Jeremy Gordon, 2002-2003.
 
 ## Vídeos
 
-[Pluralsight's Windows Internals](https://app.pluralsight.com/library/courses/windows-internals) - Pavel Yosifovich, 2013.
+Pluralsight's Windows Internals - https://app.pluralsight.com/library/courses/windows-internals - Pavel Yosifovich, 2013.
 
 ## Manuais
 

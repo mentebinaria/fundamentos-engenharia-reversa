@@ -1,24 +1,25 @@
 # 🙌 Apresentação
 
-## O que é este livro
+## Sobre Este Livro
 
-Este livro é mais um projeto da Mente Binária, uma instituição de ensino e pesquisa sem fins lucrativos. Ele consiste o resultado de um extenso trabalho de organização de conteúdo e escrita após centenas de horas de aulas ministradas sobre engenharia reversa de software para iniciantes. A intenção é documentar os conhecimentos fundamentais necessários para a formação dos novos engenheiros reversos.
+Este livro detalha os assuntos necessários para dar os primeiros passos na engenharia reversa de software em ambientes Windows, com foco em programas de 32-bits compilados para a arquitetura Intel. É pensado para ser interativo: você precisa seguir os exemplos e comandos apresentados no livro a fim de entender por completo os conceitos apresentados. Ao fim do livro, você será capaz de reverter programas básicos com confiança em seu conhecimento.
 
-## A quem se destina este livro
+## Público Alvo
 
-É esperado que o leitor seja iniciante ou mesmo já iniciado em engenharia reversa, mas não em computação. Lógica de programação é essencial para o máximo aproveitamento deste conteúdo. Conhecer o básico da organização de computadores também é essencial para o aproveitamento do livro.
+É esperado que você seja conheça computação básica, saiba baixar e instalar programas no Windows e no Linux e tenha conhecimentos básicos de lógica de programação.
 
-Tendo estes conhecimentos, qualquer pessoa que almeje se tornar um engenheiro reverso para atuar na área de segurança, construção e desconstrução de software ou simplesmente reverter programas como um _hobby_. Também pode ser utilizado por quem quer entender um pouco melhor como um computador moderno funciona.
-
-## Apoie este livro
-
-**Este livro está em constante desenvolvimento** e a versão online dele está disponível em https://menteb.in/livro para você e outros milhões de falantes da língua portuguesa sem nenhum custo. No entanto, para continuar, precisamos de doações. Se este conteúdo te ajudar, por favor considere tornar-se um apoiador seguindo as instruções em https://menteb.in/apoie. Isso vai ajudar a garantir que mantenhamos esse livro atualizado e cada vez mais abrangente.
-
-## Erros, comentários e sugestões
+## Erros, Comentários e Sugestões
 
 Se encontrou algum erro, quer fazer um comentário, sugestão ou pergunta, por favor utilize o Fórum em https://menteb.in/forum ou nosso servidor do Discord em https://menteb.in/discord.
 
-## Autor
+## Sobre O Autor
 
-Fernando Mercês - @mer0x36 no Twitter.
+Fernando Mercês atua há mais de dez anos como pesquisador sênior de ameaças na Trend Micro, uma das maiores empresas dedicadas à softwares de segurança do mundo. Seu trabalho envolve o uso da engenharia reversa para analisar malwares em diversos ambientes e arquiteturas. Já ministrou diversos treinamentos em escolas, eventos e empresas sobre computação de base, segurança, hardware, programação e tópicos correlatos. É autor de diversas ferramentas livres e é fundador do Mente Binária.
 
+## Sobre O Mente Binária
+
+O Mente Binária é uma instituição de ensino e pesquisa sem fins lucrativos que desenvolve programas de capacitação e treinamento em computação com foco em programação de baixo nível e segurança. A instituição sobrevive com doações e venda de cursos e materiais como este, mas também disponibiliza todo o seu conteúdo de forma online e irrestrita.
+
+## Apoie Este Livro
+
+**Este livro está em constante desenvolvimento** e a versão online dele está disponível em https://menteb.in/livro para você e outros milhões de falantes da língua portuguesa sem nenhum custo. No entanto, para continuar, precisamos de doações. Se este conteúdo te ajudar, por favor considere tornar-se um apoiador seguindo as instruções em https://menteb.in/apoie. Isso vai ajudar a garantir que mantenhamos esse livro atualizado e cada vez mais abrangente.

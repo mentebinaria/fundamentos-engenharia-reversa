@@ -79,7 +79,7 @@ Após a execução das quatro instruções acima, EAX volta para o valor **0xaab
 
 A imagem a seguir ilustra os ditos vários registradores dentro dos quatro primeiros registradores de uso geral.
 
-![Sub-divis&#xF5;es de EAX, EBX, ECX e EDX](../.gitbook/assets/registradores%20%282%29.png)
+![Sub-divis&#xF5;es de EAX, EBX, ECX e EDX](../.gitbook/assets/registradores.png)
 
 Os registradores EBP, ESI, EDI e ESP também podem ser utilizados como registradores de 16-bits BP, SI, DI e SP, respectivamente. Note porém que estes últimos não são sub-divididos em partes alta \(_high_\) e baixa \(_low_\).
 

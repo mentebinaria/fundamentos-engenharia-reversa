@@ -11,6 +11,3 @@ Esses apêndices servem tanto de referência como de material de apoio para estu
 {% page-ref page="ferramentas.md" %}
 
 {% page-ref page="referencias.md" %}
-
-
-
