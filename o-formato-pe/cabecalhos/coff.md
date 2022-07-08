@@ -68,7 +68,7 @@ Sat Nov 20 09:40:45 UTC 2010
 Em algumas referências o leitor encontrará o cabeçalho COFF como parte do cabeçalho NT \(IMAGE\_NT\_HEADER\), onde o primeiro campo é chamado de _Signature Bytes_, que é onde fica a assinatura PE para binários PE, mas também pode conter os bytes equivalentes das strings NE, LE ou MZ \(executáveis puros de MS-DOS\). Na verdade o COFF é uma especificação completa para arquivos do tipo "código-objeto", mas não exploraremos seu uso "fora" do formato PE neste livro.
 {% endhint %}
 
-## Exercícios
+## Exercício
 
 Baixe e descompate o arquivo CRACKME.ZIP em https://menteb.in/cruehead. Usando o comando **dumpbin** através do Visual Studio Developer Command Prompt (instalado com o Visual Studio Community), exiba o COFF/File Header do binário CRACKME.EXE. Você deve ver algo assim:
 

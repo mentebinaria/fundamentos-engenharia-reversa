@@ -26,4 +26,4 @@ O Mente Binária é uma instituição de ensino e pesquisa sem fins lucrativos q
 
 ## Agradecimentos
 
-Durante a jornada de concepção deste livro, várias pessoas foram envolvidas. Gostaria de agradecer aos usuários do GitHub que contribuíram com correções @hudsantos, @gleysonnnnn, @st3phano, @pr3y, @tiagorlampert, @felipensp, @xfgusta, @eremit4 e @morkin1792. Também à Gabriela Vicari, Leandro Fróes e Carlos Cabral, pelo grande apoio.
+Durante a jornada de concepção deste livro, várias pessoas foram envolvidas. Gostaria de agradecer aos usuários do GitHub que contribuíram com correções @hudsantos, @gleysonnnnn, @st3phano, @pr3y, @tiagorlampert, @felipensp, @xfgusta, @eremit4 e @morkin1792. Também à Gabriela Vicari, Leandro Fróes e Carlos Cabral, pelo apoio em vários níveis neste projeto.

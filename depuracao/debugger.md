@@ -3,7 +3,7 @@
 ## Instalação
 
 1. Numa máquina virtual com o Windows \(aqui utilizamos o Windows 7 mas qualquer um superior a este serve\), baixe o snapshot mais recente do x64dbg. É um arquivo .zip chamado _snapshot\_YYYY-MM-DD\_HH-MM.zip_ que vai variar dependendo da data e hora do _release_ \(quando o software é liberado\) pelo autor do projeto.
-2. Ao descompactar o arquivo .zip, execute o arquivo _x96dbg.exe_ dentro do diretório _release_. Esse nome deve-se ao fato de que o x64dbg tem suporte tanto a 32 quanto a 64-bits, então o autor resolveu somar 32+64 e nomear o binário assim. :\)
+2. Ao descompactar o arquivo .zip, execute o arquivo _x96dbg.exe_ dentro do diretório _release_. Esse nome deve-se ao fato de que o x64dbg tem suporte tanto a 32 quanto a 64-bits, então o autor resolveu somar 32+64 e nomear o binário assim.
 3. O _x96dbg.exe_ é o _launcher_ do x64dbg e tem três botões. Escolha **Setup** e responda "Sim" para todas as perguntas.
 4. À esta altura você já deve ter o atalho x32dbg na área de trabalho. Ao clicar, você verá a tela inicial do _debugger_. A ideia é que você depure binários \(.exe, .dll, etc\) portanto, vamos abrir o AnalyseMe-00.exe e seguir.
 

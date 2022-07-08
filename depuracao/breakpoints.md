@@ -24,7 +24,7 @@ De forma resumida, para parar nesta CALL, o que o x64dbg faz é:
 2. Executar o programa.
 3. Restaurar o primeiro _byte_ do opcode da CALL, substituindo o 0xcc por 0xff \(neste caso\).
 
-Isso poderia ser feito manualmente, mas os debuggers facilitam o trabalho, bastando você pressionar F2 ou clicar na bolinha para que todo este trabalho seja executado em segundo plano, sem que o usuário perceba. Incrível, não? :\)
+Isso poderia ser feito manualmente, mas os debuggers facilitam o trabalho, bastando você pressionar F2 ou clicar na bolinha para que todo este trabalho seja executado em segundo plano, sem que o usuário perceba. Incrível, não é?
 
 Você pode adicionar quantos _breakpoints_ de software quiser numa sessão de debugging. Todos ficam salvos na aba **Breakpoints**, a não ser que você os exclua. Veja a imagem abaixo:
 

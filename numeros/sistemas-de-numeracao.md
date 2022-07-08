@@ -69,7 +69,7 @@ echo "obase=10; ibase=8; 012" | bc
 
 Finalmente o queridinho hexa \(para os íntimos\); o sistema de numeração que mais vamos utilizar durante todo o livro. O hexadecimal apresenta várias vantagens sobre seus colegas, a começar pelo número de símbolos: 16. São eles: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E e F. Os números que eles formam são normalmente prefixados com 0x.
 
-Perceba que os sistemas utilizam os mesmos símbolos latinos. Isso é só para facilitar mesmo. :\)
+Perceba que os sistemas utilizam os mesmos símbolos latinos. Isso é só para facilitar mesmo.
 
 Aqui cabe uma tabela comparativa, só para exercitar:
 
