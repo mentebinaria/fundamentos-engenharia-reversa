@@ -264,7 +264,7 @@ No entanto, para inverter o número 0b100 é preciso saber seu tamanho:
 | :--- | :--- | :--- |
 | 1 byte | 0b00000100 | 0b11111011 |
 | 2 _bytes_ \(WORD\) | 0b0000000000000100 | 0b1111111111111011 |
-| 4 \_bytes \_\(DWORD\) | 0b00000000000000000000000000000100 | 0b11111111111111111111111111111011 |
+| 4 _bytes_ \(DWORD\) | 0b00000000000000000000000000000100 | 0b11111111111111111111111111111011 |
 
 Isso é o mesmo que calcular o complemento \(ou "complemento de um"\) de um número. Para obter seu simétrico, é preciso ainda somar uma unidade, como vimos anteriormente. Por isso, um NOT _bit-a-bit_ no número 4, por exemplo, resulta em -5. Veja:
 

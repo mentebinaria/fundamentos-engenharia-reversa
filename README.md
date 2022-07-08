@@ -23,3 +23,7 @@ O Mente Binária é uma instituição de ensino e pesquisa sem fins lucrativos q
 ## Apoie Este Livro
 
 **Este livro está em constante desenvolvimento** e a versão online dele está disponível em https://menteb.in/livro para você e outros milhões de falantes da língua portuguesa sem nenhum custo. No entanto, para continuar, precisamos de doações. Se este conteúdo te ajudar, por favor considere tornar-se um apoiador seguindo as instruções em https://menteb.in/apoie. Isso vai ajudar a garantir que mantenhamos esse livro atualizado e cada vez mais abrangente.
+
+## Agradecimentos
+
+Durante a jornada de concepção deste livro, várias pessoas foram envolvidas. Gostaria de agradecer aos usuários do GitHub que contribuíram com correções @hudsantos, @gleysonnnnn, @st3phano, @pr3y, @tiagorlampert, @felipensp, @xfgusta, @eremit4 e @morkin1792. Também à Gabriela Vicari, Leandro Fróes e Carlos Cabral, pelo grande apoio.
