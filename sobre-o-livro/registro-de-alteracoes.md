@@ -5,10 +5,7 @@
 * [x] Adicionada a seção Processos no capítulo Executção de programas.
 * [x] Desenvolver um pouco mais o capítulo da Windows API. Possivelmente transformá-lo em uma seção e falar sobre _handles_, processos, etc.
   * [x] Caixas de mensagens
-  * [ ] Manipulação de arquivos
-  * [ ] Execução de processos
-  * [ ] Acesso ao registro
-  * [ ] Download de arquivos
+  * [x] Manipulação de arquivos
 * [x] Atualização das capturas de tela dos programas.
 * [x] Revisão geral do fluxo do livro com as novas versões dos programas.
 * [x] Tabela de Importações

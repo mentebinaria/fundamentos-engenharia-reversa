@@ -20,11 +20,11 @@ HANDLE CreateFileA(
 
 Agora vamos aos parâmetros:
 
-## lpFileName
+## lpFileName \[entrada\]
 
 O caminho do arquivo que será aberto para escrita ou leitura. Se somente um nome for especificado, o diretório de onde o programa é chamado será considerado. Este parâmetro é do tipo LPCSTR na versão ASCII da função e do tipo LPCSWSTR na versão UNICODE.
 
-## dwDesiredAccess
+## dwDesiredAccess \[entrada\]
 
 Este é um campo numérico que designa o tipo de acesso desejado ao arquivo. Os valores possíveis são:
 
@@ -37,7 +37,7 @@ Este é um campo numérico que designa o tipo de acesso desejado ao arquivo. Os 
 
 Também é possível combinar tais valores. Por exemplo, `GENERIC_READ | GENERIC_WRITE` para abrir um arquivo com acesso de leitura e escrita.
 
-## dwShareMode
+## dwShareMode \[entrada\]
 
 O modo de compartilhamento deste arquivo com outros processos. Os valores possíveis são:
 
@@ -47,13 +47,13 @@ O modo de compartilhamento deste arquivo com outros processos. Os valores possí
 #define FILE_SHARE_DELETE               0x00000004 
 ```
 
-No entanto, o valor `NULL` é bem comum e faz com que nenhum outro processo apossa abrir o arquivo simultâneamente.
+No entanto, o valor `0` é bem comum e faz com que nenhum outro processo apossa abrir o arquivo simultâneamente.
 
-##  lpSecurityAttributes
+##  lpSecurityAttributes \[entrada, opcional\]
 
 Um ponteiro para uma estrutura especial do tipo `SECURITY_ATTRIBUTES`. Em geral, é `NULL`.
 
-## dwCreationDisposition
+## dwCreationDisposition \[entrada\]
 
 Em relação à criação do arquivo, pode ser:
 
@@ -65,11 +65,11 @@ Em relação à criação do arquivo, pode ser:
 #define TRUNCATE_EXISTING   5
 ```
 
-## dwFlagsAndAttributes
+## dwFlagsAndAttributes \[entrada\]
 
 Atributos e flags especiais para os arquivos. O mais comum é passar somente `FILE_ATTRIBUTE_NORMAL`, mas a documentação oficial prevê muitos outros possíveis valores.
 
-## hTemplateFile
+## hTemplateFile \[entrada, opcional\]
 
 Um handle válido para um arquivo modelo, para ter os atributos copiados. Normalmente é `NULL`.
 
@@ -121,17 +121,17 @@ A `WriteFile` retorna `TRUE` se a escrita ocorreu, ou `FALSE` em caso de falha.
 
 Com tais definições, podemos completar nosso programa para fazê-lo escrever um texto no arquivo antes de fechar o arquivo com a `CloseHandle`. O código final fica assim:
 
-```c
+```cpp
 #include <Windows.h>
 
 int main() {
 	HANDLE hFile = CreateFileA("log.txt",
 		GENERIC_WRITE,
 		0,
-		NULL,
+		nullptr,
 		CREATE_ALWAYS,
 		FILE_ATTRIBUTE_NORMAL,
-		NULL);
+		nullptr);
 
 	if (hFile == INVALID_HANDLE_VALUE) {
 		return EXIT_FAILURE;
@@ -140,7 +140,7 @@ int main() {
 	LPCSTR texto = "Programando usando a API do Windows";
 	size_t tam = lstrlenA(texto);
 
-	if (WriteFile(hFile, texto, tam, NULL, NULL) == FALSE) {
+	if (WriteFile(hFile, texto, tam, nullptr, nullptr) == FALSE) {
 		return EXIT_FAILURE;
 	}
 

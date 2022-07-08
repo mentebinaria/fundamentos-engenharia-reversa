@@ -57,9 +57,9 @@ Um ponteiro para um texto \(uma _string_\) que será exibido na caixa de mensage
 
 ### lpCaption \[entrada, opcional\]
 
-Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL a caixa de mensagem não terá um título, mas ainda assim aparecerá.
+Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL, a caixa de mensagem terá o título padrão "Error".
 
-### **uType \[entrada\]**
+### uType \[entrada\]
 
 Configura o tipo de caixa de mensagem. É um número inteiro que pode ser definido por macros para cada _flag_, definida na documentação da função. Se passada a macro MB\_OKCANCEL \(0x00000001L\), por exemplo, faz com que a caixa de mensagem tenha dois botões: OK e Cancelar. Se passada a macro MB\_ICONEXCLAMATION \(0x00000030L\), a janela terá um ícone de exclamação. Se quiséssemos combinar as duas características, precisaríamos passar as duas _flags_ utilizando uma operação OU entre elas, assim:
 

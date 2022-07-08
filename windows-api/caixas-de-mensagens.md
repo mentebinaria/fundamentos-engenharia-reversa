@@ -1,6 +1,6 @@
 # Caixas de Mensagens
 
-## Um "hello, world" conceituado
+## Um "Hello, World" Conceituado
 
 Vamos programar um pouco. Neste momento é importante, se ainda não o fez, que instale o [Visual Studio Community.
 
@@ -36,11 +36,11 @@ Há vários conceitos escondidos neste código de propósito, de forma que dedei
 * Na **linha 7** eu utilizo uma combinação de duas flags: `MB_OK` __e `MB_ICONINFORMATION`. Esta última configura este ícone de um "i" numa bolinha azul.
 * Por fim, **na linha 9**, utilizo a macro `EXIT_SUCCESS`, que expande para `0`. Sua contraparte é `EXIT_SUCCESS`, que expande para `1`.
 
-## Lendo o retorno da função
+## Lendo o Retorno da Função
 
 Agora vamos criar um programa um pouco maior afim de estudar mais conceitos da API do Windows. Compila aí:
 
-```c
+```cpp
 #include <Windows.h>
 
 int main() {
