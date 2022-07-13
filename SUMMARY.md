@@ -30,6 +30,7 @@
 * [🖼 Windows API](windows-api/README.md)
   * [Caixas de Mensagens](windows-api/caixas-de-mensagens.md)
   * [Manipulação de Arquivos](windows-api/manipulacao-de-arquivos.md)
+  * [Acesso ao Registro](windows-api/acesso-ao-registro.md)
 * [⚙️ Assembly](assembly/README.md)
   * [Registradores](assembly/registradores.md)
   * [Instruções Básicas](assembly/instrucoes-basicas.md)
