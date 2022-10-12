@@ -2,7 +2,7 @@
 
 Um _breakpoint_ nada mais é que um ponto do código onde o debugger vai parar para que você analise o que precisa. É o mesmo conceito dos _breakpoints_ presentes nos IDE's como Visual Studio, NetBeans, CodeBlocks, etc. A diferença é que nestas IDE's colocamos _breakpoints_ em determinadas linhas do código-fonte. Já nos debuggers destinados à engenharia reversa, colocamos _breakpoints_ em **endereços** (VA's), onde há instruções.
 
-## Seu primeiro _breakpoint_
+## Seu Primeiro _Breakpoint_
 
 Há várias maneiras de se colocar um _breakpoint_ em um endereço utilizando o x64dbg. Você pode selecionar a instrução e pressionar F2, usar um dos comandos SetBPX/bp/bpx ou simplesmente clicar na pequena bolinha cinza à esquerda do endereço. Ao fazê-lo, este ficará com um fundo vermelho, como sugere a imagem:
 

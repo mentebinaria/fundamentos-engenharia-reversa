@@ -114,13 +114,13 @@ Existem dois registradores diretamente associados com a pilha de memória alocad
 
 Veremos agora as instruções de manipulação de pilha. A primeira é a instrução PUSH \(do inglês "empurrar"\) que, como o nome sugere, empilha um dado. Na forma abaixo, essa instrução faz com que o processador copie o conteúdo do registrador EAX para o topo da pilha:
 
-```text
+```asm
 push eax
 ```
 
 Também é possível empilhar um valor literal. Por exemplo, supondo que o programa coloque o valor um na pilha:
 
-```text
+```asm
 push 1
 ```
 
@@ -128,7 +128,7 @@ Além de copiar o valor proposto para o topo da pilha, a instrução PUSH **decr
 
 Sua instrução antagônica é a POP, que só precisa de um registrador de destino para copiar lá o valor que está no topo da pilha. Por exemplo:
 
-```text
+```asm
 pop edx
 ```
 
