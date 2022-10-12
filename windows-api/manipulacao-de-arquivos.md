@@ -51,11 +51,11 @@ No entanto, o valor `0` é bem comum e faz com que nenhum outro processo apossa 
 
 ###  lpSecurityAttributes \[entrada, opcional\]
 
-Um ponteiro para uma estrutura especial do tipo `SECURITY_ATTRIBUTES`. Em geral, é `NULL`.
+Um ponteiro para uma estrutura especial do tipo `SECURITY_ATTRIBUTES`. Em geral, usamos `NULL`.
 
 ### dwCreationDisposition \[entrada\]
 
-Em relação à criação do arquivo, pode ser:
+Ações para tomar em relação à criação do arquivo, pode ser:
 
 ```c
 #define CREATE_NEW          1

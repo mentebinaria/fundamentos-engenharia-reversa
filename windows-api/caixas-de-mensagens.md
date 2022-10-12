@@ -2,7 +2,7 @@
 
 ## Um "Hello, World" Conceituado
 
-Vamos programar um pouco. Neste momento é importante, se ainda não o fez, que instale o \[Visual Studio Community.
+Vamos programar um pouco. Neste momento é importante, se ainda não o fez, que você instale o Visual Studio Community.
 
 Abra o Visual Studio e crie um novo projeto do tipo Console App, conforme a imagem abaixo mostra:
 
@@ -10,7 +10,7 @@ Abra o Visual Studio e crie um novo projeto do tipo Console App, conforme a imag
 
 Nomeie o projeto como "Mensagem" (sem aspas) e após criá-lo, substitua o conteúdo do arquivo Mensagens.cpp que o Visual Studio criará automaticamente por este:
 
-```c
+```cpp
 #include <Windows.h>
 
 int main() {
@@ -30,10 +30,15 @@ Tecle F5 para rodar o programa e você deve ver uma janela como esta:
 Há vários conceitos escondidos neste código de propósito, de forma que dedeiquemos alguns minutos ao estudo deles. Acompanhe:
 
 * Na **linha 1**, como o Windows utiliza sistemas de arquivos que não são sensíveis ao caso, ou seja, não diferenciam maiúsculas de minúsculas, tanto faz escrever `Windows.h`, `windows.h` ou mesmo `WINDOWS.H`. Vai funcionar.
-* Na **linha 4** chamei a função `MessageBox`, mas ela na verdade não existe: é uma macro, substituída pelo pré-processador pelas funções `MessageBoxW` (mais comum) ou `MessageBoxA` (caso a macro `UNICODE` não esteja definida)
+
+* Na **linha 4** chamei a função `MessageBox`, mas ela na verdade não existe: é uma macro, substituída pelo pré-processador pelas funções `MessageBoxW` (mais comum) ou `MessageBoxA` (caso a macro `UNICODE` não esteja definida).
+
 * Ainda na **linha 4** introduzi um conceito novo, de `nullptr` ao invés de `NULL`, aproveitando que o compilador utilizado é de C++. Acho melhor de digitar.
+
 * Nas **linhas 5 e 6** (sim, não há o menor problema em colocar os outros parâmetros da função em outras linhas para facilitar a leitura) eu passo para a função o texto e o título, respectivamente. Impossível não notar o `L` colado com as aspas duplas que abrem uma string em C não é mesmo? Ele serve para transformar a string subsequente em uma **wide** string (UNICODE), que já estudamos. É necessário para a função `MessageBoxW` (perceba o `W` no final) que subsituirá a função `MessageBox` neste código. Também usamos o caractere de nova linha  duas vezes para dividir a mensagem em três linhas, sendo a segunda vazia.
-* Na **linha 7** eu utilizo uma combinação de duas flags: `MB_OK` \_\_e `MB_ICONINFORMATION`. Esta última configura este ícone de um "i" numa bolinha azul.
+
+* Na **linha 7** eu utilizo uma combinação de duas flags: `MB_OK` e `MB_ICONINFORMATION`. Esta última configura este ícone de um "i" numa bolinha azul.
+
 * Por fim, **na linha 9**, utilizo a macro `EXIT_SUCCESS`, que expande para `0`. Sua contraparte é `EXIT_SUCCESS`, que expande para `1`.
 
 ## Lendo o Retorno da Função
@@ -44,7 +49,6 @@ Agora vamos criar um programa um pouco maior afim de estudar mais conceitos da A
 #include <Windows.h>
 
 int main() {
-
 	LPCWSTR titulo = L"Mente Binária";
 	
 	int ret = MessageBoxW(nullptr,
@@ -66,11 +70,13 @@ int main() {
 Vamos analisar os conceitos novos aqui, como fizemos com o programa anterior:
 
 * Na linha 5 declaro uma variável do tipo `LPCWSTR`. A diferença de `LPCSTR`, que já estudamos, é este "W", de _wide_, para definir uma string UNICODE.
+
 * A linha 7 declara uma variável `ret` do tipo `int` e já a inicializa com o retorno da chamada à `MessageBoxW`.
+
 * Nas linhas 12 e 15 comparo o conteúdo da variável `res`, que detém o retorno da chamada à `MessageBoxW`. Se for igual a `IDYES`, novamente uma macro, mostra uma determinada mensagem. Se for igual a `IDNO`, mostra outra.
 
 {% hint style="success" %}
-Em relação às strings, há três maneiras de se programar com a Windows API: ASCII (`CHAR`), UNICODE (`WCHAR`) ou em compatibilidade (`TCHAR`), que vai ser `CHAR` ou `WCHAR`, caso `UNICODE` esteja definida. Sinceramente, não há razão para não utilizar o padrão UNICODE e portanto usaremo-os bastante neste livro.
+Em relação às strings, há três maneiras de se programar com a Windows API: ASCII (`CHAR`), UNICODE (`WCHAR`) ou em compatibilidade (`TCHAR`), que expandirá para `CHAR` ou `WCHAR`, caso a macro `\_UNICODE` esteja definida.
 {% endhint %}
 
 A tabela abaixo ajuda na compreensão:
