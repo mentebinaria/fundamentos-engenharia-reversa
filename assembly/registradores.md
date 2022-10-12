@@ -23,7 +23,7 @@ Existem 8 registradores de uso geral na arquitetura Intel x86. Apesar de poderem
 
 Para fixar o assunto, é importante trabalhar um pouco. Vamos escrever o seguinte programa em Assembly no Linux ou macOS:
 
-```
+```asm
 section .text
     mov eax, 0x30
     or eax, 0x18
@@ -61,14 +61,14 @@ Agora cabe à você fazer mais alguns testes com outros registradores de uso ger
 
 Para entender, analise as seguintes instruções:
 
-```
+```asm
 mov eax, 0xaabbccdd
 mov ax, 0xeeff
 ```
 
 Após a execução das instruções acima, EAX conterá o valor **0xaabbeeff**, já que somente sua parte **baixa** foi modificada pela segunda instrução. Agora analise o seguinte trecho:
 
-```
+```asm
 mov eax, 0xaabbccdd
 mov ax, 0xeeff
 mov ah, 0xcc
@@ -79,7 +79,7 @@ Após a execução das quatro instruções acima, EAX volta para o valor **0xaab
 
 A imagem a seguir ilustra os ditos vários registradores dentro dos quatro primeiros registradores de uso geral.
 
-![Sub-divisões de EAX, EBX, ECX e EDX](<../.gitbook/assets/registradores (1).png>)
+![Sub-divisões de EAX, EBX, ECX e EDX](<../.gitbook/assets/registradores.png>)
 
 Os registradores EBP, ESI, EDI e ESP também podem ser utilizados como registradores de 16-bits BP, SI, DI e SP, respectivamente. Note porém que estes últimos não são sub-divididos em partes alta (_high_) e baixa (_low_).
 

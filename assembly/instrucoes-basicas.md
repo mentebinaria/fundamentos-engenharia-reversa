@@ -52,7 +52,7 @@ A instrução INC recebe um único operando que pode ser um registrador ou um en
 
 O leitor pode se perguntar por que existe uma instrução INC se é possível incrementar um operando em uma unidade com a instrução ADD. Para entender, compile o escreva o seguinte programa:
 
-```
+```asm
 BITS 32
 
 global start
@@ -89,9 +89,7 @@ Outra vantagem da INC sobre a ADD é a velocidade de execução, já que a segun
 
 A instrução SUB funciona de forma similar e para subtrair somente uma unidade, também existe uma instrução DEC (de decremento). Vamos então estudar um pouco sobre a instrução MUL agora. Esta instrução tem o primeiro operando (o de destino) **implícito**, ou seja, você não precisa fornecê-lo: será sempre EAX ou uma sub-divisão dele, dependendo do tamanho do segundo operando (de origem), que pode ser um outro registrador ou um endereço de memória. Analise:
 
-{% tabs %}
-{% tab title="mul.s" %}
-```
+```asm
 BITS 32
 
 global start
@@ -102,8 +100,6 @@ start:
   mov ebx, 2
   mul ebx
 ```
-{% endtab %}
-{% endtabs %}
 
 A instrução MUL EBX vai realizar uma multiplicação sem sinal (sempre positiva) de EBX com EAX e armazenar o resultado em EAX.
 
@@ -188,7 +184,7 @@ Os saltos condicionais J\_cc\_ onde _cc_ significa _condition code_, podem ser d
 
 A instrução no endereço 0x5 compara o valor de EAX com 1 e vai sempre resultar em verdadeiro neste caso, o que significa que a _zero flag_ será _setada_.
 
-O salto JE ocorre se ZF=1, ou seja, se a _zero flag_ estiver _setada_. Por essa razão, ele também é chamado de **JZ (**_**Jump if Zero**_**)**. Abaixo uma tabela com os saltos que são utilizados para comparações entre números sem sinal e as condições para que o salto ocorra:
+O salto JE ocorre se ZF=1, ou seja, se a _zero flag_ estiver _setada_. Por essa razão, ele também é chamado de **JZ (_Jump if Zero_)**. Abaixo uma tabela com os saltos que são utilizados para comparações entre números sem sinal e as condições para que o salto ocorra:
 
 | Instrução        | Alternativa                             | Condição          |
 | ---------------- | --------------------------------------- | ----------------- |

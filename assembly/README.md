@@ -10,12 +10,12 @@ Se você já estudou portas lógicas, vai perceber que este CI tem 4 portas NAND
 
 Admitindo duas entradas \(A e B\) e uma saída S, a tabela verdade de cada uma das portas deste CI é a seguinte:
 
-| A | B | A & B | S |
-| :--- | :--- | :--- | :--- |
-| 0 | 0 | 0 | 1 |
-| 1 | 0 | 0 | 1 |
-| 0 | 1 | 0 | 1 |
-| 1 | 1 | 1 | 0 |
+| A    | B    | A & B | S    |
+| :--- | :--- | :---  | :--- |
+| 0    | 0    | 0     | 1    |
+| 1    | 0    | 0     | 1    |
+| 0    | 1    | 0     | 1    |
+| 1    | 1    | 1     | 0    |
 
 Podemos dizer então que este CI faz uma única operação sempre, com as entradas de dados que recebe.
 
@@ -23,7 +23,7 @@ Se seu projeto precisasse também de portas OR, XOR, AND, etc você precisaria c
 
 Neste sentido um microprocessador, ou simplesmente **processador** é muito mais poderoso. Ao invés de o usuário gravar um programa nele, o próprio fabricante já o faz, de modo que este microprograma entenda diferentes instruções para realizar diferentes operações de muito alto nível \(se comparadas às simples operações _booleanas_\). Sua entrada de dados também é muito mais flexível: ao invés de entradas binárias, um processador pode receber números bem maiores. O antigo Intel 8088 já possuía um barramento de 8 _bits_, por exemplo.
 
-Isso significa que se um processador receber em seu barramento um conjunto de _bytes_ específico, sabe que vai precisar executar uma operação específica. À estes _bytes_ possíveis damos o nome de _**opcodes**_. Ao conjunto dos _opcodes_ + operandos damos o nome de **instrução**.
+Isso significa que se um processador receber em seu barramento um conjunto de _bytes_ específico, sabe que vai precisar executar uma operação específica. À estes _bytes_ possíveis damos o nome de **_opcodes_**. Ao conjunto dos _opcodes_ + operandos damos o nome de **instrução**.
 
 Supondo que queiramos então fazer uma operação OR entre os valores 0x20 e 0x18 utilizando um processador x86. Na documentação deste processador, constam as seguintes informações:
 
@@ -43,7 +43,7 @@ A segunda instrução tem 3 _bytes_ sendo que o primeiro é o _opcode_ dela \(OR
 
 Temos que concordar que criar um programa assim não é nada fácil. Para resolver este problema foi criada uma **linguagem de programação**, completamente presa à arquitetura do processador \(seus _opcodes_, suas instruções\), chamada **Assembly**. Com ela, os programadores poderiam escrever o programa acima praticamente em inglês:
 
-```text
+```asm
 MOV EAX, 20
 OR EAX, 18
 ```
