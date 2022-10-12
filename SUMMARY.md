@@ -1,4 +1,4 @@
-# Table of Contents
+# Table of contents
 
 * [🙌 Apresentação](README.md)
 * [👀 Antes de Começar](antes-de-comecar.md)
@@ -8,10 +8,10 @@
   * [O Byte](numeros/o-byte.md)
   * [Números Negativos](numeros/numeros-negativos.md)
   * [Cálculos com Binários](numeros/calculos-com-binarios.md)
-* [🧵 Cadeias de Texto](cadeias_de_texto/README.md)
-  * [ASCII](cadeias_de_texto/ascii.md)
-  * [UNICODE](cadeias_de_texto/unicode.md)
-  * [C Strings](cadeias_de_texto/c-strings.md)
+* [🧵 Cadeias de Texto](cadeias\_de\_texto/README.md)
+  * [ASCII](cadeias\_de\_texto/ascii.md)
+  * [UNICODE](cadeias\_de\_texto/unicode.md)
+  * [C Strings](cadeias\_de\_texto/c-strings.md)
 * [🗂 Arquivos](arquivos/README.md)
   * [Formatos](arquivos/formatos.md)
 * [💼 O formato PE](o-formato-pe/README.md)
@@ -46,10 +46,8 @@
   * [Exemplos de Código em Assembly](apendices/exemplos-de-codigo-em-assembly.md)
   * [Funções da API do Windows](apendices/funcoes-api-win.md)
   * [Ferramentas](apendices/ferramentas.md)
-  * [Repositórios](apendices/repositorios.md)
   * [Referências](apendices/referencias.md)
 
 ## Sobre o livro
 
 * [📝Registro de alterações](sobre-o-livro/registro-de-alteracoes.md)
-

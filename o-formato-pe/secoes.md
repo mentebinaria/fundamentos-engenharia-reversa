@@ -53,16 +53,16 @@ Neste caso declaramos a variável **s** como **const**, o que instrui o compilad
 
 Seção para abrigar as tabelas de _imports_, comum em todos os binários que importam funções de outras bibliotecas. Possui permissão tanto para leitura quanto para gravação. Entenderemos o motivo em breve.
 
-## Alinhamento de seções
+## Alinhamento de Seções
 
-O sistema operacional divide a memória RAM em páginas, normalmente de 4 _kilobytes_ (ou 4096 _bytes_) nas versões atuais do Windows. Nestas páginas de memória o sistema configura as permissões (leitura, escrita e execução). Os arquivos executáveis precisam ser carregados na memória e cada seção requer um permissionamento diferente. Com isso em mente, considere a seguinte situação hipotética:
+O sistema operacional divide a memória RAM em páginas, normalmente de 4 _kilobytes_ (ou 4096 _bytes_) nas versões atuais do Windows. Nestas páginas de memória o sistema configura as permissões (leitura, escrita e execução). Os arquivos executáveis precisam ser carregados na memória e cada seção pode requerer permissões diferentes. Com isso em mente, considere a seguinte situação hipotética:
 
 * Um executável tem seus cabeçalhos ocupando 2 KB.
 * Sua seção .text tem 6 KB de tamanho e requer leitura e execução.
 * Sua seção .data tem 5 KB de tamanho e requer leitura e escrita.
 * O tamanho final do executável em disco é 13 KB.
 
-Para mapear este executável em memória e rodá-lo, o SO precisa copiar o conteúdo de suas seções em páginas de memória e _setar_ suas permissões de acordo. Analise agora a figura abaixo:
+Para mapear este executável em memória e rodá-lo, o SO precisa copiar o conteúdo de suas seções em páginas de memória e configurar suas permissões de acordo. Analise agora a figura abaixo:
 
 ![Mapeamento de seções em memória](<../.gitbook/assets/alinhamento (1).png>)
 
