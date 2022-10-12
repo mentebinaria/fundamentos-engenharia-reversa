@@ -29,17 +29,17 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [capa](https://github.com/fireeye/capa) | Livre | Detecta as capacidades de executáveis PE e shellcodes para Windows. |
+| [capa](https://github.com/mandiant/capa) | Livre | Detecta as capacidades de executáveis PE e shellcodes para Windows. |
 | [CFF Explorer](https://ntcore.com/?page_id=388) | Freeware | Sendo parte do Explorer Suite, é na real um editor de PE. Com ele é possível adicionar imports, remover seções, etc. |
-| [DIE \(Detect It Easy\)](http://ntinfo.biz/index.html) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
-| [DUMPBIN](https://docs.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
-| [Exeinfo PE](http://exeinfo.xn.pl/) | Freeware | Detecta compilador, packer, protectors e edita os arquivos, além de suportar vários plugins loucos. Tem versão VIP mediante doação. |
+| [DIE \(Detect It Easy\)](https://horsicq.github.io) | Freeware | Detecta compilador, linker, packer e protectors em binários. Também edita os arquivos. |
+| [DUMPBIN](learn.microsoft.com/en-us/cpp/build/reference/dumpbin-reference) | Freeware | Analisador de PE de linha de comando disponível no SDK do Visual Studio. |
+| [Exeinfo PE](http://www.exeinfo.o7.pl/) | Freeware | Detecta compilador, packer, protectors e edita os arquivos, além de suportar vários plugins loucos. Tem versão VIP mediante doação. |
 | [Malwoverview](https://github.com/alexandreborges/malwoverview) | Livre | Mais um nacional pra uma primeira impressão de arquivos suspeitos, URLs e domínios. Checa também APK's. |
 | [objdump](https://www.gnu.org/software/binutils/) | Livre | Parte do GNU binutils, também analisa PE, além de ELF, a.out, etc. |
 | [PE-Bear](https://hshrzd.wordpress.com/pe-bear/) | Freeware | Analisador gráfico \(Qt\) multiplataforma que também detecta packers/protectors. |
-| [PEdump](http://pedump.me/) | Livre | Analisador online muito legal! |
+| [PEdump](https://pedump.me) | Livre | Analisador online muito legal! |
 | [pestudio](https://www.winitor.com) | Freeware | Analisador de PE padrão da indústria, com foco em malware. Tem versão Pro \(paga\). |
-| [pev](http://pev.sourceforge.net) | Livre | Nosso 💚 toolkit de ferramentas de linha de comando para análise de PE. Artigo introdutório [aqui](https://www.mentebinaria.com.br/artigos/estude-bin%C3%A1rios-de-windows-com-o-novo-pev-r18/). |
+| [pev](https://pev.sourceforge.io) | Livre | Nosso 💚 toolkit de ferramentas de linha de comando para análise de PE. Artigo introdutório [aqui](https://www.mentebinaria.com.br/artigos/estude-bin%C3%A1rios-de-windows-com-o-novo-pev-r18/). |
 | [readelf](https://www.gnu.org/software/binutils/) | Livre | Também parte do binutils, analisador de ELF. |
 | [Stud\_PE](http://www.cgsoftlabs.ro/studpe.html) | Freeware | Analisador e editor com suporte a plugins, assinaturas do antigo PEiD, editor de recursos e mais. |
 
@@ -61,9 +61,9 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | :--- | :--- | :--- |
 | [flat assembler \(FASM\)](https://flatassembler.net/) | Livre | Assembler bem recente que já vem com vários exemplos de código. Windows e Linux. |
 | [GNU Assembler \(GAS\)](https://sourceware.org/binutils/docs/as/) | Livre | Também chamado simplesmente de **as**, é o assembler do projeto GNU e provavelmente já está instalado no seu Linux! |
-| [Microsoft Macro Assembler \(MASM\)](https://docs.microsoft.com/en-us/cpp/assembler/masm/microsoft-macro-assembler-reference) | Freeware | Atualmente já vem com o Visual Studio da Microsoft, mesmo na versão Community. Segue um [tutorial de como compilar um "Hello, world"](https://www.mentebinaria.com.br/forums/topic/146-hello-world-em-masm-no-windows/). |
+| [Microsoft Macro Assembler \(MASM\)](https://learn.microsoft.com/en-us/cpp/assembler/masm/microsoft-macro-assembler-reference) | Freeware | Atualmente já vem com o Visual Studio da Microsoft, mesmo na versão Community. Segue um [tutorial de como compilar um "Hello, world"](https://www.mentebinaria.com.br/forums/topic/146-hello-world-em-masm-no-windows/). |
 | [Netwide Assembler \(NASM\)](https://www.nasm.us/) | Livre | Multiplataforma, suporte à sintaxe Intel e bem popular. Veja um [tutorial de como compilar um "Hello, world" no Linux](https://www.mentebinaria.com.br/forums/topic/51-%E2%80%9Chello-world%E2%80%9D-em-nasm-no-linux-x86/). |
-| [Yasm Modular Assembler \(YASM\)](https://yasm.tortall.net/) | Livre | Multiplataforma, escrito com base no NASM pra ser um substituto mas acho que não vingou. hehe |
+| [Yasm Modular Assembler \(YASM\)](https://yasm.tortall.net) | Livre | Multiplataforma, escrito com base no NASM pra ser um substituto mas acho que não vingou. hehe |
 
 ## Disassemblers
 
@@ -72,7 +72,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | [Binary Ninja](https://binary.ninja) | Comercial | Novo disassembler que teoricamente compete com o IDA. Possui versão [online gratuita](https://cloud.binary.ninja/) mediante registro. |
 | [Ghidra](https://ghidra-sre.org) | Livre | Disassembler livre lançado pela NSA. Temos um [treinamento](https://www.mentebinaria.com.br/treinamentos/curso-de-ghidra-r9/) em vídeo sobre ele. |
 | [Hopper](https://www.hopperapp.com) | Comercial | Disassembler com foco em binários de Linux e macOS. |
-| [IDA](https://www.hex-rays.com/products/ida/) | Comercial | Disassembler **interativo** padrão de mercado. Possui versão freeware. |
+| [IDA](https://www.hex-rays.com/ida-pro/) | Comercial | Disassembler **interativo** padrão de mercado. Possui versão freeware. |
 
 ## Debuggers
 
@@ -85,7 +85,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | [HyperDbg](https://hyperdbg.com) | Livre | Debugger que roda no nível do hypervisor, também conhecido como ring -1. |
 | [OllyDbg](http://ollydbg.de) | Freeware | Poderoso debugger, apesar de não mais mantido. |
 | [PEDA](https://github.com/longld/peda) | Livre | O **P**ython **E**xploit **D**evelopment **A**ssistance também extende o GDB, assim como o GEF. A interface é um pouco diferente, no entanto. |
-| [WinDbg](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) | Freeware | Debugger ring0/3, parte integrante do SDK do Windows. |
+| [WinDbg](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) | Freeware | Debugger ring0/3, parte integrante do SDK do Windows. |
 | [x64dbg](https://x64dbg.com/) | Livre | Debugger user-mode para Windows com suporte a 32 e 64-bits. |
 
 ## Desofuscadores
@@ -137,7 +137,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [Qiling](https://github.com/qilingframework/qiling) | Livre | Framework que combina emulação com instrumentação de binários. É possível emular programas de Windows e Linux, além de outros SOs, incluindo ring0. |
-| [Speakeasy](https://github.com/fireeye/speakeasy) | Livre | Emulador feito pela FireEye, inicialmente para programas nativos de Windows \(ring0\) mas possui um crescente suporta à programas em usermode \(ring3\), emulando várias das funções da Windows API. |
+| [Speakeasy](https://github.com/mandiant/speakeasy) | Livre | Emulador feito pela FireEye, inicialmente para programas nativos de Windows \(ring0\) mas possui um crescente suporta à programas em usermode \(ring3\), emulando várias das funções da Windows API. |
 
 ## Frameworks
 
@@ -153,7 +153,7 @@ Analisam estaticamente os binários, sem carregá-los. São úteis para uma prim
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
 | [Process Hacker](https://processhacker.sourceforge.io/) | Livre | Talvez o melhor da categoria. Mostra os handles, objetos, processos, quem tá usando o que e muita mais. |
-| [Process Explorer](https://docs.microsoft.com/en-us/sysinternals/) | Freeware | Clássica ferramenta do conjunto SysInternals, que exibe muito mais que o Gerenciador de Tarefas comum. |
+| [Process Explorer](https://learn.microsoft.com/en-us/sysinternals/) | Freeware | Clássica ferramenta do conjunto SysInternals, que exibe muito mais que o Gerenciador de Tarefas comum. |
 | [System Explorer](https://github.com/zodiacon/SystemExplorer/releases) | Livre | Versão do Pavel Yosifovich que conta com algumas vantagens sobre o Process Explorer, como visualizar informações de processos protegidos \(através de um driver\), listar todas as threads abertas no Windows, todos os jobs, etc. |
 
 ## Sandboxes \(Linux\)
@@ -186,7 +186,7 @@ Esta lista não inclui serviços de sandbox puramente comerciais.
 
 | Nome | Licença | Descrição |
 | :--- | :--- | :--- |
-| [hdump](https://sourceforge.net/projects/hdump/) | Livre | Clone nosso 💚, multiplataforma \(funciona no Windows!\) do hexdump que imita a saída do **hd**. |
+| [hdump](https://github.com/merces/hdump) | Livre | Clone nosso 💚, multiplataforma \(funciona no Windows!\) do hexdump que imita a saída do **hd**. |
 | [heksa](https://github.com/raspi/heksa) | Livre | Multiplataforma, com saída colorida e recursos interessantes como seek negativo \(a partir do fim do arquivo\). |
 | [HexLasso](https://suszter.com/hexlasso-online/) | Gratuito | Visualizador web que faz análises estatísticas visuais muito úteis. |
 | [hexyl](https://github.com/sharkdp/hexyl) | Livre | Multiplataforma, também com _output_ colorido, exibição de borda, etc. |
