@@ -117,14 +117,20 @@ O tamanho dos dadoos do valor.
 O código abaixo cria uma chave `HKCU\Software\Mente Binária`, configura um valor "Habilitado" do tipo `REG_DWORD` com o dado `1` e um valor "Website" do tipo `REG_SZ` com o dado textual "https://menteb.in":
 
 ```c
-HKEY hChave;
-	
-RegCreateKeyA(HKEY_CURRENT_USER, "Software\\Mente Binária", &hChave);
-LPCSTR website = "https://menteb.in";
-size_t tamanho = lstrlenA(website);
-RegSetKeyValueA(hChave, nullptr, "Website", REG_SZ, website, tamanho);
-DWORD habilitado = 1;
-RegSetKeyValueA(hChave, nullptr, "Habilitado", REG_DWORD, &habilitado, sizeof(habilitado));
-RegCloseKey(hChave);
+#include <Windows.h>
+
+int main() {
+	HKEY hChave;
+
+	RegCreateKeyA(HKEY_CURRENT_USER, "Software\\Mente Binária", &hChave);
+	LPCSTR website = "https://menteb.in";
+	size_t tamanho = lstrlenA(website);
+	RegSetKeyValueA(hChave, nullptr, "Website", REG_SZ, website, tamanho);
+	DWORD habilitado = 1;
+	RegSetKeyValueA(hChave, nullptr, "Habilitado", REG_DWORD, &habilitado, sizeof(habilitado));
+	RegCloseKey(hChave);
+
+	return EXIT_SUCCESS;
+}
 ```
 
