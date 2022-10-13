@@ -70,7 +70,7 @@ Em algumas referências o leitor encontrará o cabeçalho COFF como parte do cab
 
 ## Exercício
 
-Baixe e descompate o arquivo CRACKME.ZIP em https://menteb.in/cruehead. Usando o comando **dumpbin** através do Visual Studio Developer Command Prompt (instalado com o Visual Studio Community), exiba o COFF/File Header do binário CRACKME.EXE. Você deve ver algo assim:
+Baixe e descompate o arquivo CRACKME.ZIP em https://www.mentebinaria.com.br/files/file/19-crackme-do-cruehead/. Usando o comando **dumpbin** através do Visual Studio Developer Command Prompt (instalado com o Visual Studio Community), exiba o COFF/File Header do binário CRACKME.EXE. Você deve ver algo assim:
 
 ```text
 D:\>dumpbin /nologo /headers CRACKME.EXE
