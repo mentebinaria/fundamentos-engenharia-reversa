@@ -1,12 +1,12 @@
-# UNICODE
+# Unicode
 
-A esta altura o leitor já pode imaginar a dificuldade que programadores enfrentam em trabalhar com diferentes codificações de texto. Mas existe um esforço chamado de UNICODE mantido pelo Unicode Consortium que compreende várias codificações, que estudaremos a seguir. Estas _strings_ também são chamadas de _**wide strings**_ (largas, numa tradução livre).
+A esta altura você já pode imaginar a dificuldade que programadores enfrentam em trabalhar com diferentes codificações de texto, mas existe um esforço chamado de Unicode mantido pelo Unicode Consortium que compreende várias codificações, que estudaremos a seguir. Essas _strings_  são comumente chamadas de _**wide strings**_ (largas, numa tradução livre).
 
 ## UTF-8
 
 O padrão UTF (_Unicode Transformation Format_) de 8 _bits_ foi desenhado originalmente por Ken Thompson (sim, o criador do Unix!) e Rob Pike para abranger todos os caracteres possíveis nos vários idiomas deste planeta.
 
-Os primeiros 128 caracteres da tabela UTF-8 são exatamente os mesmos valores da tabela ASCII padrão e somente necessitam de 1 _byte_ para serem representados. Os próximos caracteres utilizam **2** _**bytes**_ e compreendem não só o alfabeto latino (como na ASCII estendida com codificação ISO-8859-1) mas também os caracteres gregos, árabes, hebraicos, dentre outros. Já para representar os caracteres de idiomas como o chinês e japonês, **3** _**bytes**_ são necessários. Por fim, há os caracteres de antigos manuscritos, símbolos matemáticos e até _emojis_ (que lindo!) que utilizam **4** _**bytes**_.
+Os primeiros 128 caracteres da tabela UTF-8 são exatamente os mesmos valores da tabela ASCII padrão e somente necessitam de 1 _byte_ para serem representados. Os próximos caracteres utilizam **2** _**bytes**_ e compreendem não só o alfabeto latino (como na ASCII estendida com codificação ISO-8859-1) mas também os caracteres gregos, árabes, hebraicos, dentre outros. Já para representar os caracteres de idiomas como o chinês e japonês, **3** _**bytes**_ são necessários. Por fim, há os caracteres de antigos manuscritos, símbolos matemáticos e até _emojis_ (🤗) que utilizam **4** _**bytes**_.
 
 Concluímos que os caracteres UTF-8 **variam** de 1 a 4 bytes. Sendo assim, como ficaria o texto "papobinário" numa sequência de _bytes_? Podemos ver com os comandos **echo** e **hd** no Linux:
 
@@ -33,7 +33,7 @@ Como os _shells_ atuais utilizam UTF-8, ao utilizar um caractere não presente n
 
 ## UTF-16
 
-Também conhecido por UCS-2, este tipo de codificação é frequentemente encontrado em programas compilados para Windows, incluindo os escritos em .NET. É de extrema importância que o engenheiro reverso o conheça bem.
+Também conhecido por UCS-2, este tipo de codificação é frequentemente encontrado em programas compilados para Windows, incluindo os escritos em .NET. É de extrema importância que você o conheça bem.
 
 Representados em UTF-16, os caracteres equivalentes na tabela ASCII possuem **2 bytes** de tamanho onde o primeiro _byte_ é o mesmo da tabela ASCII e o segundo é um zero. Por exemplo, para se escrever "A" em UTF-16, faríamos: 0x41 0x00. Vamos entender melhor com o comando **strings** do Linux, a seguir.
 
@@ -96,7 +96,7 @@ Ainda sobre UTF-16, é importante observar que no Windows o ASCII estendido com 
 42 00 69 00 6e 00 e1 00 72 00 69 00 6f 00
 ```
 
-O "á" é o _byte_ 0xe1 ("á" na tabela ASCII estendida, vide X) seguido de um _nullbyte_ (_byte_ nulo) 0x00. Você vai entender melhor a importância destes conceitos quando buscarmos por texto em programas utilizando _debuggers_ e outras ferramentas.
+O "á" é o _byte_ 0xe1 (Tabela ISO-8859-1/Latin-1) seguido de um _nullbyte_ (_byte_ nulo) 0x00. Você vai entender melhor a importância destes conceitos quando buscarmos por texto em programas utilizando _debuggers_ e outras ferramentas.
 
 {% hint style="info" %}
 Notou que o comando **strings** tem opções de _endianess_ para caracteres de 16 e 32 _bits_? Acontece que estas codificações suportam tanto _little endian_ (padrão), no qual o _byte_ ASCII do caractere é **seguido** de um _nullbyte_ quanto o _big endian_, no qual ele é **precedido** por um _nullbyte_. Veja:
@@ -111,14 +111,14 @@ Uma boa leitura adicional é o artigo Viewing strings in executables disponível
 
 ## UTF-32
 
-Raramente utilizado no Windows porém existente em alguns programas para Linux e Unix, este padrão utiliza 4 _bytes_ para cada caractere. Vamos já analisar a _string_ "papo" em UTF-32 com a opção -L do comando **strings**:
+Raramente utilizado no Windows, porém existente em alguns programas para Linux e Unix, este padrão utiliza 4 _bytes_ para cada caractere. Vamos já analisar a _string_ "papo" em UTF-32 com a opção -L do comando **strings**:
 
 ```bash
 $ echo -ne "\x70\x00\x00\x00\x61\x00\x00\x00\x70\x00\x00\x00\x6f\x00\x00\x00" | strings -e L
 papo
 ```
 
-É importante ressaltar que simplesmente dizer que uma _string_ é UNICODE não diz exatamente qual codificação ela está utilizando, fato que normalmente depende do sistema operacional, do programador, do compilador, etc. Por exemplo, um programa feito em C no Windows e compilado com Visual Studio tem as _wide strings_ em UTF-16 normalmente. Já no Linux, o tamanho do tipo _wchar\_t_ é 32 _bits_, resultando em _strings_ UTF-32. Escreva o seguinte programa em C para entender:
+É importante ressaltar que simplesmente dizer que uma _string_ é Unicode não diz exatamente qual codificação ela está utilizando, fato que normalmente depende do sistema operacional, da pessoa que programou, do compilador, etc. Por exemplo, um programa feito em C no Windows e compilado com Visual Studio tem as _wide strings_ em UTF-16 normalmente. Já no Linux, o tamanho do tipo _wchar\_t_ é 32 _bits_, resultando em _strings_ UTF-32. Escreva o seguinte programa em C para entender:
 
 ```c
 #include <wchar.h>
@@ -146,6 +146,6 @@ $ strings -e L wide
 papo
 ```
 
-O mesmo programa compilado em Windows resultaria em _strings_ UTF-16 ao invés de UTF-32, portanto, fique esperto.
+O mesmo programa compilado em Windows resultaria em _strings_ UTF-16 ao invés de UTF-32, portanto, fique alerta.
 
 Há muito mais sobre codificação de texto para ser dito, mas isso foge ao escopo deste livro. Se o leitor desejar se aprofundar, basta consultar a documentação oficial dos grupos que especificam tais padrões. No entanto, cabe ressaltar que a prática (compilar programas e buscar como as _strings_ são codificadas) é a melhor escola.

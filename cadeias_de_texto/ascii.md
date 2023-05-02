@@ -12,7 +12,7 @@ O **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange, ou em 
 
 Na época em que foi definido, lá pela década de 60, foi logo usado em equipamentos de telecomunicações e também nos computadores. Basicamente é uma tabela que relaciona um **número** de 7 _bits_ com sinais de controle e caracteres imprimíveis. Por exemplo, o número 97 (0b1100001) representa o caractere 'a', enquanto 98 (0b1100010) é o 'b'. Perceba que tais números não excedem os 7 _bits_, mas como em computação falamos quase sempre em _bytes_, então acaba que um caractere ASCII possui 8 _bits_ mas só usa 7. A tabela ASCII vai de 0 a 127 e pode ser encontrada no apêndice Tabela ASCII, que você deve consultar agora.
 
-Há vários testes interessantes que você pode fazer para entender melhor as _strings_ ASCII. Ao saber que o caractere 'a' é o número 97, você pode usar a função _chr()_ no Python, por exemplo:
+Há vários testes interessantes que você pode fazer para entender melhor as _strings_ ASCII. Ao saber que o caractere `'a'` é o número 97, você pode usar a função `chr()` no Python, por exemplo:
 
 ```python
 >>> print chr(97)
@@ -48,18 +48,18 @@ Agora olhe novamente a tabela e perceba o seguinte:
 
 Agora, algumas relações:
 
-* Se somarmos 0x20 ao número ASCII equivalente de um caractere maiúsculo, obtemos o número equivalente do caractere minúsculo em questão.
-* Se diminuirmos 0x30 de um dígito, temos o equivalente numérico do dígito. Ex.: 0x35 - 0x30 = 5.
+* Se somarmos 0x20 ao número ASCII equivalente de um caractere maiúsculo, obtemos o número equivalente do caractere minúsculo em questão. Da mesma forma, se diminuirmos 0x20 ao valor de um caractere minúsculo, obtemos o seu maiúsculo. Perceba que basta mudar o bit 5 (da direita para a esquerda, com a contagem começando em zero) do valor para alternar entre maiúsculo e minúsculo.
+* Se diminuirmos 0x30 de um dígito, temos o equivalente numérico do dígito. Por exemplo, o dígito 5 possui o valor 0x35. Então, 0x35 - 0x30 = 5.
 
 {% hint style="info" %}
-Sabe quando no Linux você dá um cat num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns beeps? Esses sons são os bytes 0x07 encontrados no arquivo. Experimente!
+Sabe quando no Linux você dá um `cat` num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns beeps? Esses sons são, na verdade, os bytes 0x07 encontrados no arquivo. Experimente!
 {% endhint %}
 
 ## ASCII Extendida
 
-A tabela ASCII padrão de 7 _bits_ é limitada ao idioma inglês no que diz respeito ao texto. Perceba que uma simples letra 'a' com sinal indicativo de crase é impossível nesta tabela. Sendo assim, ela foi estendida e inteligentemente passou-se a utilizar o último _bit_ do _byte_ que cada caractere ocupa, tornando-se assim uma tabela de 8 _bits_, que vai de 128 a 255 (em decimal).
+A tabela ASCII padrão de 7 _bits_ é limitada ao idioma inglês no que diz respeito ao texto. Perceba que uma simples letra 'á' (com acento agudo) é impossível nesta tabela. Sendo assim, ela foi estendida e inteligentemente passou-se a utilizar o último _bit_ do _byte_ que cada caractere ocupa, tornando-se assim uma tabela de 8 _bits_, que vai de 0 a 255 (em decimal).
 
-Essa extensão da tabela ASCII varia de acordo com a **codificação** utilizada. Isso acontece porque ela foi criada para permitir texto em outros idiomas, mas somente 128 caracteres a mais não são suficientes para representar os caracteres de todos os idiomas existentes. A codificação mais conhecida é a ISO-8859-1, também chamada de Latin-1, que você vê no Apêndice B.
+Essa extensão da tabela ASCII varia de acordo com a **codificação** utilizada. Isso acontece porque ela foi criada para permitir texto em outros idiomas, mas somente 128 caracteres a mais não são suficientes para representar os caracteres de todos os idiomas existentes. A codificação mais conhecida é a ISO-8859-1, também chamada de Latin-1, que você vê no Apêndice Tabela ISO-8859-1/Latin-1.
 
 {% hint style="info" %}
 Outro nome para ASCII é US-ASCII. Alguns textos referem-se a texto em ASCII como ANSI strings também.
