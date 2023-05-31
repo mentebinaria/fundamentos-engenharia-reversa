@@ -1,8 +1,8 @@
 # 📝Registro de alterações
 
-## Versão 1.0 - Em breve 🚀
+## Versão 1.0 - Um dia 🤞
 
-* [x] Adicionada a seção Processos no capítulo Executção de programas.
+* [x] Adicionada a seção Processos no capítulo Execução de programas.
 * [x] Desenvolver um pouco mais o capítulo da Windows API. Possivelmente transformá-lo em uma seção e falar sobre _handles_, processos, etc.
   * [x] Caixas de Mensagens
   * [x] Manipulação de Arquivos
