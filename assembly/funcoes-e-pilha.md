@@ -171,4 +171,4 @@ O resultado é apresentado a seguir:
 
 É importante perceber que, após serem compreendidos, podemos controlar estes parâmetros e alterar a execução do programa conforme quisermos. Este é o assunto do próximo capítulo, sobre depuração.
 
-Assembly é, por si só, um assunto extenso e bastante atrelado à arquitetura e ao sistema operacional no qual se está trabalhando. Este capítulo apresentou uma introdução ao Assembly Intel x86 e considerou o Windows como plataforma. Dois bons recursos de Assembly, que tomam o Linux como sistema base, são os o livros gratuito Aprendendo Assembly, do Felipe Silva e Linguagem Assembly para i386 e x86-64, do Frederico Pissara.
+Assembly é, por si só, um assunto extenso e bastante atrelado à arquitetura e ao sistema operacional no qual se está trabalhando. Este capítulo apresentou uma introdução ao Assembly Intel x86 e considerou o Windows como plataforma. Dois bons recursos de Assembly, que tomam o Linux como sistema base, são os livros gratuito Aprendendo Assembly, do Felipe Silva e Linguagem Assembly para i386 e x86-64, do Frederico Pissara.
