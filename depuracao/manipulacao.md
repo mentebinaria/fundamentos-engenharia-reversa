@@ -4,7 +4,7 @@ Agora que já sabemos o básico do _debugging_ e sabemos colocar _breakpoints_ d
 
 Em geral, quando falamos de manipulação, falamos de alguma alteração no código do programa, para que este execute o que queremos, da forma como queremos.
 
-Tomemos como exemplo o AnalyseMe-00 mesmo. Supondo que não sabemos o que o mesmo faz. Um bom início para a engenharia reversa é a busca por chamdas intermodulares \(o botão com um celular e uma seta azul\). Ao clicar nele, encontrará duas chamdas à função DeleteFileA da KERNEL32.DLL. Colocaremos um breakpoint em todas as chamadas à estas funções, bastando para isso dar um clique com o botão direito do mouse em uma delas e escolher a opção "Set breakpoint on all calls to DeleteFileA", como sugere a imagem abaixo:
+Tomemos como exemplo o AnalyseMe-00 mesmo. Supondo que não sabemos o que o mesmo faz. Um bom início para a engenharia reversa é a busca por chamadas intermodulares \(o botão com um celular e uma seta azul\). Ao clicar nele, encontrará duas chamadas à função DeleteFileA da KERNEL32.DLL. Colocaremos um breakpoint em todas as chamadas à estas funções, bastando para isso dar um clique com o botão direito do mouse em uma delas e escolher a opção "Set breakpoint on all calls to DeleteFileA", como sugere a imagem abaixo:
 
 ![Chamadas intermodulares](../.gitbook/assets/manipulacao_intermodular_calls.png)
 
