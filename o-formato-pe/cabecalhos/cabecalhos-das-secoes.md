@@ -45,7 +45,7 @@ $ hd -s 0x400 -n 0x1800 arquivo.exe > secao.txt
 
 ## **Characteristics**
 
-Este é um campo define algumas _flags_ para a seção, além de as permissões em memória que ela deve ter quando for mapeada pelo _loader_. Ele possui 32-bits, onde alguns significam conforme a tabela a seguir:
+Este é um campo que define algumas _flags_ para a seção, além das permissões em memória que ela deve ter quando for mapeada pelo _loader_. Ele possui 32-bits, onde alguns significam conforme a tabela a seguir:
 
 | Bit | Nome da flag                          | Descrição                              |
 | --- | ------------------------------------- | -------------------------------------- |
