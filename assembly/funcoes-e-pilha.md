@@ -4,7 +4,7 @@ Apesar de não estudarmos todos os aspectos da linguagem Assembly, alguns assunt
 
 ## O Que É Uma Função
 
-Basicamente, uma função é um **bloco de código reutilizável** num programa. Tal bloco faz-se útil quando um determinado conjunto de instruções precisa ser invocado em vários pontos do programa. Por exemplo, suponha um programa emn Python que precise converter a temperatura de Fahrenheit para Celsius várias vezes no decorrer de seu código. Ele pode ser escrito assim:
+Basicamente, uma função é um **bloco de código reutilizável** num programa. Tal bloco faz-se útil quando um determinado conjunto de instruções precisa ser invocado em vários pontos do programa. Por exemplo, suponha um programa em Python que precise converter a temperatura de Fahrenheit para Celsius várias vezes no decorrer de seu código. Ele pode ser escrito assim:
 
 ```python
 fahrenheit = 230.4
@@ -28,7 +28,7 @@ O programa funciona e a saída é a esperada:
 32.27777777777778
 ```
 
-No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada fica maior em _bytes_. Toda esta repetição também prejudica a manutenção do código pois se o programador precisar fazer uma alteração no cálculo, vai ter que alterar em todos eles. É aí que entram as funções. Analise a seguinte versão do mesmo programa:
+No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada fica maior em _bytes_. Toda esta repetição também prejudica a manutenção do código, pois se o programador precisar fazer uma alteração no cálculo, vai ter que alterar em todos eles. É aí que entram as funções. Analise a seguinte versão do mesmo programa:
 
 ```python
 def fahrenheit2celsius(fahrenheit):
@@ -46,7 +46,7 @@ print(celsius)
 
 A saída é a mesma, mas agora o programa está utilizando uma função, onde o cálculo só foi definido uma única vez e toda vez que for necessário, o programa a chama.
 
-Uma função norlmalmente tem:
+Uma função normalmente tem:
 
 1. Argumentos, também chamados de parâmetros, que são os dados que a função recebe, necessários para cumprir seu propósito.
 2. Retorno, que é o resultado da conclusão do seu propósito, seja bem sucedida ou não.
