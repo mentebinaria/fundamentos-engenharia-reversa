@@ -38,6 +38,6 @@ O comando **Step over** sobre uma CALL faz com que o debugger execute a rotina a
 
 ## Run
 
-Um outro comando importante é o **Run** (F9). Ele simplesmente inicia a execução a partir do EIP de todas as instruções do programa. Se você emiti-lo com este binário, vai ver que a execução vai terminar, o que significa que o programa rodou até o final e saiu. Aí basta reinicar o programa (CTRL + F2) para recomeçar nossos estudos. ;)
+Um outro comando importante é o **Run** (F9). Ele simplesmente inicia a execução a partir do EIP de todas as instruções do programa. Se você emiti-lo com este binário, vai ver que a execução vai terminar, o que significa que o programa rodou até o final e saiu. Aí basta reiniciar o programa (CTRL + F2) para recomeçar nossos estudos. ;)
 
 Na próxima seção, vamos entender os pontos de paradas, mais conhecidos como _breakpoints_.
