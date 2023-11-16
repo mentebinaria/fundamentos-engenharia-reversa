@@ -9,7 +9,8 @@
 
 ## Configuração
 
-1. Vá em **Options -> Preferences** e desmarque a caixa **System breakpoint**. Isso vai fazer com que o _debugger_ pare direto no _entrypoint_ de um programa ao abrirmos. Clique em **Save**.
+1. Vá em **Options -> Preferences** e desmarque a caixa **System breakpoint**. Isso vai fazer com que o _debugger_ pare direto no _entrypoint_ de um programa ao abrirmos.
+2. Clique em **Save**.
 
 Existem muitas outras opções de configuração que você pode experimentar, mas para o momento isso basta.
 
