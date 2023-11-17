@@ -30,4 +30,4 @@ Você pode adicionar quantos _breakpoints_ de software quiser numa sessão de de
 
 ![Lista de breakpoints](../.gitbook/assets/x32dbg\_04\_breakpoints.png)
 
-Você também pode assistir a aula a seguir do CERO, que trata sobre este assunto.
+Você também pode assistir a [aula do CERO](https://youtu.be/823KK-FYV9s?si=S8VwxxvJHwoYbiEa), que trata sobre este assunto.

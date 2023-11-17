@@ -45,7 +45,7 @@ $ hd -s 0x400 -n 0x1800 arquivo.exe > secao.txt
 
 ## **Characteristics**
 
-Este é um campo define algumas _flags_ para a seção, além de as permissões em memória que ela deve ter quando for mapeada pelo _loader_. Ele possui 32-bits, onde alguns significam conforme a tabela a seguir:
+Este é um campo que define algumas _flags_ para a seção, além das permissões em memória que ela deve ter quando for mapeada pelo _loader_. Ele possui 32-bits, onde alguns significam conforme a tabela a seguir:
 
 | Bit | Nome da flag                          | Descrição                              |
 | --- | ------------------------------------- | -------------------------------------- |
@@ -60,4 +60,4 @@ Este é um campo define algumas _flags_ para a seção, além de as permissões 
 As _flags_ que contém o texto "MEM" no nome dizem respeito às permissões que a seção terá quando mapeada em memória. De acordo com elas o SO vai _setar_ as permissões nas páginas de memória nas quais a seção é carregada.
 {% endhint %}
 
-É importante notar que campos como o **Characteristics** são o que chamamos de máscaras de _bits_. Por exemplo, a tabela anterior diz que se o _bit_ 30 deste campo está _setado_ (seu valor é 1), então esta seção terá permissão de leitura quando em memória. O valor de campo **Characteristics** seria então 0**1**000000000000000000000000000000 em binário, mas você provavelmente vai encontrar este valor representado em hexadecimal (0x80000000) nos analisadores de executáveis que for utilizar. Aliás, agora é uma boa hora para abrir o **DIE** e analisar alguns arquivos executáveis, colocando em prática tudo o que foi visto até aqui.
+É importante notar que campos como o **Characteristics** são o que chamamos de máscaras de _bits_. Por exemplo, a tabela anterior diz que se o _bit_ 30 deste campo está _setado_ (seu valor é 1), então esta seção terá permissão de leitura quando em memória. O valor de campo **Characteristics** seria então 0**1**000000000000000000000000000000 em binário, mas você provavelmente vai encontrar este valor representado em hexadecimal (0x40000000) nos analisadores de executáveis que for utilizar. Aliás, agora é uma boa hora para abrir o **DIE** e analisar alguns arquivos executáveis, colocando em prática tudo o que foi visto até aqui.

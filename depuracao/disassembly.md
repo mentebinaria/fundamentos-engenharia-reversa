@@ -1,6 +1,6 @@
 # Disassembly
 
-Ao observar a região que chamamos de disassembly, você verá 5 colunas onde a primeira exibe algumas informações e relações entre endereços. A segunda mostra os endereços em si. A terceira mostra os _bytes_ do opcode e operandos das instruções. A quarta mostra as os mnemônicos onde podemos ler Assembly e por fim, a quinta mostra alguns comentários, sejam estes gerados automaticamente pelo debugger ou adicionados pelo usuário.
+Ao observar a região que chamamos de disassembly, você verá 5 colunas onde a primeira exibe algumas informações e relações entre endereços. A segunda mostra os endereços em si. A terceira mostra os _bytes_ do opcode e operandos das instruções. A quarta mostra os mnemônicos onde podemos ler Assembly e por fim, a quinta mostra alguns comentários, sejam estes gerados automaticamente pelo debugger ou adicionados pelo usuário.
 
 ![Colunas do disassembly](../.gitbook/assets/x32dbg\_02\_disasm\_columns.png)
 
@@ -34,10 +34,10 @@ Você pode seguir teclando F8 até alcançar a primeira instrução CALL em 4010
 O comando **Step over** sobre uma CALL faz com que o debugger execute a rotina apontada pela instrução e "volte" para o endereço imediatamente após a CALL. Você não verá essa execução, pois o debbugger não a instrumentará. Caso queira observar o que foi executado "dentro" da CALL, é necessário utilizar o **Step into** (F7). Vamos fazer dois testes:
 
 1. Com o EIP apontado para a CALL em 401007, tecle F8. Você verá que a execução simplesmente "passa para a linha abaixo da CALL". Isso quer dizer que ela **foi executada**, mas você "não viu no debugger".
-2. Agora reinicie o programa no debugger (F2), vá teclando F8 até chegar sobre a CALL novamente e tecle F7, que é o **Step into**. Perceba que o debugger agora "entrou" na CALL. Neste caso, você vai precisar teclar F8 mais três vezes até voltar ao fluxo de execução original, isso porque esta CALL só possui três instruções.
+2. Agora reinicie o programa no debugger (CTRL + F2), vá teclando F8 até chegar sobre a CALL novamente e tecle F7, que é o **Step into**. Perceba que o debugger agora "entrou" na CALL. Neste caso, você vai precisar teclar F8 mais três vezes até voltar ao fluxo de execução original, isso porque esta CALL só possui três instruções.
 
 ## Run
 
-Um outro comando importante é o **Run** (F9). Ele simplesmente inicia a execução a partir do EIP de todas as instruções do programa. Se você emiti-lo com este binário, vai ver que a execução vai terminar, o que significa que o programa rodou até o final e saiu. Aí basta reinicar o programa (F2) para recomeçar nossos estudos. ;)
+Um outro comando importante é o **Run** (F9). Ele simplesmente inicia a execução a partir do EIP de todas as instruções do programa. Se você emiti-lo com este binário, vai ver que a execução vai terminar, o que significa que o programa rodou até o final e saiu. Aí basta reiniciar o programa (CTRL + F2) para recomeçar nossos estudos. ;)
 
 Na próxima seção, vamos entender os pontos de paradas, mais conhecidos como _breakpoints_.
