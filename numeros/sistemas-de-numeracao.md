@@ -46,7 +46,7 @@ O sistema octal é utilizado para as permissões de arquivo pelo comando chmod n
 Na programação, normalmente um número octal é precedido de um algarismo 0 para diferenciar-se do decimal. Por exemplo, 12 é doze em decimal, mas 012 é octal, que vale dez em decimal. Logo, preste atenção antes de ignorar um zero à esquerda.
 {% endhint %}
 
-Veja um exemplo em Python (lembre-se: abra o Python e estude junto comigo agora):
+Veja um exemplo em Python (lembre-se: abra o Python e estude junto agora):
 
 ```python
 >>> 012
@@ -138,11 +138,11 @@ echo $((16#A))
 10
 ```
 
-Falaremos bastante em endereços de memória no conteúdo de engenharia reversa e todos estão em hexadecimal, por isso é importante "pensar em hexa" daqui para frente. Mas não se preocupe, se precisar calcular algo, sempre poderá recorrer à calculadora, ao Python ou ao shell. Uma alternativa no shell do Linux é o comando bc, explicado no vídeo Cálculo no shell com o bc, disponível no Canal Papo Binário no YouTube.
+Falaremos bastante em endereços de memória no conteúdo de engenharia reversa e todos estão em hexadecimal, por isso é importante "pensar em hexa" daqui para frente. Mas não se preocupe, se precisar calcular algo, sempre poderá recorrer à calculadora, ao Python ou ao shell. Uma alternativa no shell do Linux é o comando **bc**, explicado no vídeo **Cálculo no shell com o bc**, disponível em nosso canal no YouTube.
 
 {% embed url="https://www.youtube.com/watch?v=vLhABLeb11o" %}
 
-## Criando Seu Próprio Sistema de Numeração
+## Criando seu próprio Sistema de Numeração
 
 Um bom exercício para fixar este conteúdo é criar o seu sistema de numeração com símbolos à sua escolha. Por exemplo, inventarei agora um sistema ternário chamado Lulip's que possui os seguintes símbolos para representar zero, uma e duas quantidades respectivamente: @, # e $. Olha só como ficaria a comparação dele com o sistema decimal:
 

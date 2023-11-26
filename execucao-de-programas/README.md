@@ -23,7 +23,6 @@ Quando um programador cria um programa, em muitos casos ele utiliza funções de
 
 int main(void) {
     printf("Olá, mundo!\n");
-    return 0;
 }
 ```
 

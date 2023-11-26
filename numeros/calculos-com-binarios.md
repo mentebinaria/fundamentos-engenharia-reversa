@@ -1,6 +1,6 @@
 # Cálculos com Binários
 
-Nesta seção faremos alguns cálculos com números binários, considerando cada um de seus dígitos, também chamados de **bits**. Além das clássicas como adição, subtração, multiplicação e divisão, estudaremos aqui a conjunção, disjunção, negação e disjunção exclusiva. Também incluiremos outras operações bit-a-bit que fogem da álgebra tradicional, como deslocamento e rotação de bits. Todas são importantes pois existem no contexto do Assembly, que estudaremos no futuro, e são aplicadas a números de qualquer espécie, como endereços de memória.
+Nesta seção faremos alguns cálculos com números binários, considerando cada um de seus dígitos, também chamados de **bits**. Além de operações aritiméticas clássicas como adição, subtração, multiplicação e divisão, estudaremos também conjunção, disjunção, negação e disjunção exclusiva. Também incluiremos outras operações bit-a-bit que fogem da álgebra tradicional, como deslocamento e rotação de bits. Todas são importantes pois existem no contexto do Assembly, que estudaremos no futuro.
 
 {% hint style="info" %}
 Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e operações bit-a-bit (_bitwise_).
@@ -8,7 +8,7 @@ Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e
 
 ## Conjunção (AND)
 
-Dados dois bits x e y, a conjunção deles resulta em 1 se ambos forem iguais a 1. Na programação o seu símbolo é normalmente um &. Sendo assim, a chamada **tabela verdade** desta operação é:
+Dados dois bits x e y, a conjunção entre eles resulta em 1 se ambos forem iguais a 1. Na programação, o seu símbolo na programação é normalmente o "e comercial" (&). Sendo assim, a chamada **tabela verdade** desta operação é:
 
 | x | y | x & y |
 | - | - | ----- |
@@ -26,7 +26,7 @@ Então suponha que queiramos calcular a conjunção do número 0xa com 12. Sim, 
       1000
 ```
 
-O resultado é 0b1000, ou 8 em decimal. Sendo assim, as linhas abaixo farão o mesmo cálculo, mesmo utilizando sistemas de numeração (bases) diferentes:
+O resultado é 0b1000, ou 8 em decimal. Sendo assim, as linhas abaixo farão o mesmo cálculo, ainda que utilizem sistemas de numeração (bases) diferentes:
 
 ```python
 >>> 0b1010 & 12
@@ -41,7 +41,7 @@ O resultado é 0b1000, ou 8 em decimal. Sendo assim, as linhas abaixo farão o m
 8
 ```
 
-Por que utilizei tantas bases diferentes? Quero com isso por na sua cabeça que um número é só um número, independente da base na qual ele está sendo representado ou visualizado.
+Por que utilizei tantas bases diferentes? Quero com isso por na sua cabeça que um número é só um número, independente da base na qual ele está sendo representado.
 
 ## Disjunção (OR)
 
@@ -54,11 +54,11 @@ O resultado da disjunção entre dois bits x e y é 1 se pelo menos um deles for
 | 1 | 0 | 1      |
 | 1 | 1 | 1      |
 
-Na programação, o símbolo normalmente é a barra em pé: |. Por exemplo, vamos calcular a disjunção entre 8 e 5:
+Na programação, o símbolo normalmente é a barra em pé (|). Por exemplo, vamos calcular a disjunção entre 8 e 5:
 
 ```
 8 = 1000
-5 = 0101 (perceba o zero à esquerda, para facilitar)
+5 = 0101 (perceba o zero à esquerda para facilitar o cálculo)
    ------
     1101
 ```
@@ -95,13 +95,13 @@ A disjunção exclusiva entre x e y resulta em 1 se **somente** **um** deles for
 | 1 | 0 | 1     |
 | 1 | 1 | 0     |
 
-Assim como a disjunção é normalmente chamada de "OU", a disjunção exclusiva é chamada de "OU exclusivo", ou simplesmente XOR. Já virou até verbo e é comum ouvir pessoas falando que "XORearam" um dado.
+Assim como a disjunção é normalmente chamada de "OU", a disjunção exclusiva é chamada de "OU exclusivo", ou simplesmente XOR. O símbolo que representa a disjunção exclusiva em programação é o circunflexo (^).
 
 Algumas propriedades importantes desta operação são:
 
-1. Você pode aplicá-la em qualquer ordem. Então, _a ^ (b ^ c) = (a ^ b) ^ c_ por exemplo.
-2. Um número "XOReado" com ele mesmo é sempre zero.
-3. Um número "XOReado" com zero é sempre ele mesmo.
+1. Você pode aplicá-la em qualquer ordem. Então, _x ^ (y ^ z) = (x ^ y) ^ z_ por exemplo.
+2. O XOR de um número com ele mesmo é sempre zero.
+3. O XOR de um número com zero é sempre ele mesmo.
 
 A operação XOR tem vários usos em computação. Alguns exemplos:
 
@@ -121,7 +121,7 @@ A operação XOR tem vários usos em computação. Alguns exemplos:
 Fica claro que é possível zerar variáveis bastando fazer uma operação XOR do valor dela com ele mesmo, independentemente de que valor é este:
 
 ```
->>> x=90
+>>> x = 90
 >>> x = x ^ x
 >>> x
 0
@@ -129,17 +129,17 @@ Fica claro que é possível zerar variáveis bastando fazer uma operação XOR d
 
 ### Troca de Valores Entre Duas Variáveis
 
-O algoritmo conhecido por _XOR swap_ consiste em trocar os valores de duas variáveis somente com operações XOR, sem usar uma terceira variável temporária. Basta fazer:
+O algoritmo conhecido por _XOR swap_ consiste em trocar os valores de duas variáveis somente com operações XOR, sem usar uma terceira variável temporária. Basta fazer, nesta ordem:
 
-* Um XOR entre x e y e armazenar o resultado em **x**.
-* Outro XOR entre x e y e armazenar o resultado em **y**.
-* Outro XOR entre x e y e armazenar o resultado em **x**.
+* XOR entre x e y e armazenar o resultado em **x**.
+* XOR entre x e y e armazenar o resultado em **y**.
+* XOR entre x e y e armazenar o resultado em **x**.
 
 Veja:
 
 ```python
->>> x=8
->>> y=5
+>>> x = 8
+>>> y = 5
 >>> x = x ^ y
 >>> y = x ^ y
 >>> x = x ^ y
@@ -156,31 +156,31 @@ x = 0b1000  # 8 em decimal
 y = 0b0101  # 5 em decimal
 x = x ^ y   # 0b1101
 y = x ^ y   # resulta em 0b1000 (já é o valor original de x)
-x = x ^ y   # resulta em 0b0101 (o valor original de y)
+x = x ^ y   # resulta em 0b0101 (valor original de y)
 ```
 
 ### Cifragem
 
-Dado um número x, é possível calcular o resultado de uma operação XOR com um valor que chamamos de chave. Se usarmos a mesma chave num XOR com este resultado, obtemos novamente o número original:
+Dado um número x, é possível calcular o resultado de uma operação XOR com um valor qualquer que chamaremos de chave. Se usarmos a mesma chave num XOR com este resultado, obtemos o número original:
 
 ```python
->>> x = 2022
->>> x = x ^ 0x51
+>>> x = 2023
+>>> x = x ^ 0x42
 >>> x
-1975
->>> x = x ^ 0x51
+1957
+>>> x = x ^ 0x42
 >>> x
-2022
+2023
 ```
 
-Portanto, para uma cifrabem básica, se quiser esconder o valor original de um número antes de enviá-lo numa mensagem, basta _XOReá-lo_ com uma chave que só eu e o receptor da mensagem conheça (0x51 no exemplo). Assim eu uso tal chave para fazer a operação XOR com ele e instruo o receptor da mensagem (por outro canal) a usar a mesma chave e operação XOR, afim de obter o número original.
+Portanto, para uma cifrabem básica, se você quiser esconder o valor original de um número antes de enviá-lo numa mensagem, basta fazer um XOR dele com uma chave que só você e o receptor da mensagem conheça (0x42 no exemplo). Assim você usa a chave para fazer a operação XOR com ele e instrui o receptor da mensagem (por outro canal) a usar a mesma chave numa operação XOR afim de obter o número original. Claro que esta cifragem é muito simples, e consequentemente muito fraca e fácil de quebrar, mas está aqui em caráter de exemplo.
 
 {% hint style="warning" %}
-Em textos matemáticos sobre lógica, o acento circunflexo ^ representa conjunção ao invés de disjunção exclusiva. Já em softwares matemáticos, pode significar potência, por exemplo: 2^32 é dois elevado à trigésima segunda potência.
+Em textos matemáticos sobre lógica, o circunflexo ^ representa conjunção ao invés de disjunção exclusiva. Já em softwares matemáticos, pode significar potência, por exemplo: 2^32 é dois elevado à trigésima segunda potência.
 {% endhint %}
 
 {% hint style="info" %}
-Na língua Portuguesa utilizamos a palavra "OU" no sentido de "OU exclusivo". Por exemplo, quando você pede "Pizza de presunto ou pepperoni ou lombo", quer dizer que só quer um dos sabores (exclusividade). Se fosse uma disjunção tradicional "OU", o garçom poderia trazer presunto com pepperoni, ou mesmo todos os três ingredientes e você não poderia reclamar. :-D
+Na língua Portuguesa utilizamos a palavra "OU" no sentido de "OU exclusivo". Por exemplo, quando você pede "Pizza de presunto ou pepperoni ou lombo", quer dizer que só quer um dos sabores (exclusividade). Se fosse uma disjunção tradicional "OU", o garçom poderia trazer presunto com pepperoni, ou mesmo todos os três ingredientes e você não poderia reclamar. :)
 {% endhint %}
 
 ## Deslocamento (SHL e SHR)
@@ -275,4 +275,4 @@ Fazer essa inversão é o mesmo que calcular o complemento (também chamado de "
 -5
 ```
 
-Os processadores Intel x86 trabalham com muitas outras operações _bitwise_, mas que fogem do escopo deste livro. Conforme você avançar no estudo de engenharia reversa, vai se deparar com elas.
+Os processadores Intel x86 trabalham com muitas outras operações _bitwise_, mas detalhá-las foge do escopo deste livro. Conforme você avançar no estudo de engenharia reversa, vai se deparar com elas.

@@ -4,7 +4,7 @@ description: Common Object File Format Specification
 
 # COFF
 
-Imediatamente após a assinatura PE temos o cabeçalho COFF \(_Common Object File Format Specification_\) às vezes chamado simplesmente de Cabeçalho do Arquivo \(_File Header_ \) ou mesmo Cabeçalho do Arquivo PE \(_PE File Header_\). Trata-se de um cabeçalho especificado antes mesmo do formato PE para o sistema operacional VAX/VMS \(depois chamado de OpenVMS\) da DEC \(empresa comprada pela Compaq, que por sua vez, foi comprada pela HP\) na década de 70. A razão pela qual a Microsoft teria aproveitado o formato COFF é que boa parte dos engenheiros do time que desenvolveu o Windows NT trabalhavam para a DEC antes.
+Imediatamente após a assinatura PE temos o cabeçalho COFF (_Common Object File Format Specification_) às vezes chamado simplesmente de Cabeçalho do Arquivo (_File Header_ ) ou mesmo Cabeçalho do Arquivo PE (_PE File Header_). Trata-se de um cabeçalho especificado antes mesmo do formato PE para o sistema operacional VAX/VMS (depois chamado de OpenVMS) da DEC (empresa comprada pela Compaq, que por sua vez, foi comprada pela HP) na década de 70. A razão pela qual a Microsoft teria aproveitado o formato COFF é que boa parte dos engenheiros do time que desenvolveu o Windows NT trabalhavam para a DEC antes.
 
 O cabeçalho COFF possui apenas 20 _bytes_ e é representado pela seguinte estrutura:
 
@@ -24,7 +24,7 @@ Vamos à definição dos campos importantes para nós:
 
 ## Machine
 
-Campo de 2 _bytes_ que define a arquitetura da máquina para qual o programa foi construído. Valores comuns são 0x14c \(Intel i386 ou compatíveis\) e 0x8664 \(AMD64 ou compatíveis\). A tabela completa está disponível na documentação oficial.
+Campo de 2 _bytes_ que define a arquitetura da máquina para qual o programa foi construído. Valores comuns são 0x14c (Intel i386 ou compatíveis) e 0x8664 (AMD64 ou compatíveis). A tabela completa está disponível na documentação oficial.
 
 ## NumberOfSections
 
@@ -44,35 +44,35 @@ Contém o tamanho do próximo cabeçalho, conhecido como Cabeçalho Opcional, qu
 
 Campo que define alguns atributos do arquivo. Este campo é uma **máscara de bits**, ou seja, cada _bit_ desses 2 _bytes_ diz respeito à uma característica específica do binário. Não cabe aqui explicar todos os possíveis valores, mas os mais comuns são:
 
-| Bit | Nome | Comentários |
-| :--- | :--- | :--- |
-| 2 | IMAGE\_FILE\_EXECUTABLE\_IMAGE | Obrigatório para arquivos executáveis |
-| 9 | IMAGE\_FILE\_32BIT\_MACHINE | Arquivo de 32-bits |
-| 14 | IMAGE\_FILE\_DLL | O arquivo é uma DLL |
+| Bit | Nome                           | Comentários                           |
+| --- | ------------------------------ | ------------------------------------- |
+| 2   | IMAGE\_FILE\_EXECUTABLE\_IMAGE | Obrigatório para arquivos executáveis |
+| 9   | IMAGE\_FILE\_32BIT\_MACHINE    | Arquivo de 32-bits                    |
+| 14  | IMAGE\_FILE\_DLL               | O arquivo é uma DLL                   |
 
-Analise novamente o \(_dump_ hexadecimal do executável da calculadora\)\[dos.md\#exercicios\] considere que:
+Analise novamente o (_dump_ hexadecimal do executável da calculadora)\[dos.md#exercicios] considere que:
 
 * Logo após a assinatura PE na posição 0xd8 temos o primeiro campo do cabeçalho COFF que é o **Machine**. Ele é um campo de 2 _bytes_ conforme já dito, então os _bytes_ 0x4c e 0x01 definem seu valor. Considerando o _endianness_, chegamos ao valor 0x14c, que define que este executável foi criado para máquinas Intel i386 ou compatíveis.
 * Em seguida, na posição 0xde, temos o **NumberOfSections** que é 4.
-* Depois vem o campo **TimeDateStamp** com o número inteiro de 32 _bits_ \(4 _bytes_\) sem sinal 0x4ce7979d que é 1290246045 em decimal. Podemos usar o comando **date** do Linux para converter para data e hora atuais:
+* Depois vem o campo **TimeDateStamp** com o número inteiro de 32 _bits_ (4 _bytes_) sem sinal 0x4ce7979d que é 1290246045 em decimal. Podemos usar o comando **date** do Linux para converter para data e hora atuais:
 
-```text
+```
 $ date -ud @1290246045
 Sat Nov 20 09:40:45 UTC 2010
 ```
 
-* Pulamos então 8 _bytes_ referentes aos campos **PointerToSymbolTable** e **NumberOfSymbols** \(normalmente zerados mesmo\), encontrando o valor da _word_ **SizeOfOptionalHeader** em 0xec de valor 0xe0.
-* A próxima _word_ é o valor do campo **Characteristics**, que neste arquivo é 0x102. Convertendo para binário temos o valor 100000010 \(_bits_ 2 e 9 _setados_\) significando que o arquivo é um executável de 32-bits.
+* Pulamos então 8 _bytes_ referentes aos campos **PointerToSymbolTable** e **NumberOfSymbols** (normalmente zerados mesmo), encontrando o valor da _word_ **SizeOfOptionalHeader** em 0xec de valor 0xe0.
+* A próxima _word_ é o valor do campo **Characteristics**, que neste arquivo é 0x102. Convertendo para binário temos o valor 100000010 (_bits_ 2 e 9 _setados_) significando que o arquivo é um executável de 32-bits.
 
 {% hint style="warning" %}
-Em algumas referências o leitor encontrará o cabeçalho COFF como parte do cabeçalho NT \(IMAGE\_NT\_HEADER\), onde o primeiro campo é chamado de _Signature Bytes_, que é onde fica a assinatura PE para binários PE, mas também pode conter os bytes equivalentes das strings NE, LE ou MZ \(executáveis puros de MS-DOS\). Na verdade o COFF é uma especificação completa para arquivos do tipo "código-objeto", mas não exploraremos seu uso "fora" do formato PE neste livro.
+Em algumas referências o leitor encontrará o cabeçalho COFF como parte do cabeçalho NT (IMAGE\_NT\_HEADER), onde o primeiro campo é chamado de _Signature Bytes_, que é onde fica a assinatura PE para binários PE, mas também pode conter os bytes equivalentes das strings NE, LE ou MZ (executáveis puros de MS-DOS). Na verdade o COFF é uma especificação completa para arquivos do tipo "código-objeto", mas não exploraremos seu uso além do formato PE neste livro.
 {% endhint %}
 
 ## Exercício
 
 Baixe e descompate o arquivo CRACKME.ZIP em https://www.mentebinaria.com.br/files/file/19-crackme-do-cruehead/. Usando o comando **dumpbin** através do Visual Studio Developer Command Prompt (instalado com o Visual Studio Community), exiba o COFF/File Header do binário CRACKME.EXE. Você deve ver algo assim:
 
-```text
+```
 D:\>dumpbin /nologo /headers CRACKME.EXE
 
 Dump of file CRACKME.EXE
@@ -97,9 +97,8 @@ FILE HEADER VALUES
 --suprimido--
 ```
 
-Com o **DIE**, é preciso carregar o CRACKME.EXE nele, clicar no botão **PE \(Alt+P\)**, na aba **NT Headers** e por fim, na aba **File Header**. Você deve ver uma janela como a abaixo:
+Com o **DIE**, é preciso carregar o CRACKME.EXE nele, marcar a caixa de seleção **Advanced**, clicar no botão **PE (Alt+P)**, na aba **NT Headers** e por fim, na aba **File Header**. Você deve ver uma janela como a abaixo:
 
-![Cabe&#xE7;alho COFF exibido pelo DIE](../../.gitbook/assets/die_coff.png)
+![Cabeçalho COFF exibido pelo DIE](../../.gitbook/assets/die\_coff.png)
 
 Os botões com "..." localizados ao lado direito de vários valores de campos provêem informações adicionais sobre tais valores. Não deixe de experimentar.
-

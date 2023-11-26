@@ -21,16 +21,14 @@ Também chamada de CODE em programas criados com Delphi, esta seção contém da
 
 int main(void) {
     char s[] = "texto grande para o compilador utilizar a seção de dados";
-
     s[0] = 'T';
     puts(s);
-    return 0;
 }
 ```
 
 A variável local **s** é um _array_ de _char_ e pode ser alterada a qualquer momento dentro da função _main()_. De fato, o código na linha 6 a altera. Sendo assim, é bem possível que um compilador coloque seu conteúdo numa seção de dados inicializados com permissão tanto para leitura quanto para escrita. ;-)
 
-{% hint style="warning" %}
+{% hint style="info" %}
 Apesar de fazer sentido, os compiladores não precisam respeitar tal lógica. O conteúdo da variável **s** no exemplo apresentado pode ser armazenado na seção **.rdata** (ou mesmo na **.text**) e ser manipulado na pilha de memória para sofrer alterações. Não há uma imposição por parte do formato e cada compilador escolhe fazer do seu jeito.
 {% endhint %}
 
@@ -41,13 +39,11 @@ Seção que contém dados inicializados, com permissão somente para leitura. Um
 ```c
 int main(void) {
     const char s[] = "texto grande para o compilador utilizar a seção de dados";
-
     puts(s);
-    return 0;
 }
 ```
 
-Neste caso declaramos a variável **s** como **const**, o que instrui o compilador a armazená-la numa região de memória somente para leitura, casando perfeitamente com a descrição da seção **.rdata**. ;-)
+Neste caso declaramos a variável **s** como **const**, o que instrui o compilador a armazená-la numa região de memória somente para leitura, casando perfeitamente com a descrição da seção **.rdata**.
 
 ## .idata
 
@@ -64,7 +60,7 @@ O sistema operacional divide a memória RAM em páginas, normalmente de 4 _kilob
 
 Para mapear este executável em memória e rodá-lo, o SO precisa copiar o conteúdo de suas seções em páginas de memória e configurar suas permissões de acordo. Analise agora a figura abaixo:
 
-![Mapeamento de seções em memória](<../.gitbook/assets/alinhamento.png>)
+![Mapeamento de seções em memória](../.gitbook/assets/alinhamento.png)
 
 Perceba na figura que a seção .text já ocuparia duas páginas que precisariam ter permissões de leitura e execução. No que sobrou da segunda página, o SO não pode mapear a .data pois esta, apesar de compartilhar a permissão de leitura, exige escrita ao invés de execução. Logo, ele precisa mapeá-la na próxima página.
 

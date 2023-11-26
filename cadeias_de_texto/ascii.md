@@ -22,7 +22,7 @@ a
 Ou no próprio shell do Linux, o comando _echo_:
 
 ```bash
-$ echo -ne \\x61  # 0x61 em hexa é 97 em decimal!
+$ echo -ne \\x61  # 0x61 em hexa é 97 em decimal
 a
 ```
 
@@ -55,7 +55,11 @@ Agora, algumas relações:
 Sabe quando no Linux você dá um `cat` num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns beeps? Esses sons são, na verdade, os bytes 0x07 encontrados no arquivo. Experimente!
 {% endhint %}
 
-## ASCII Extendida
+Para complementar esta seção, assista ao vídeo **Entendendo a tabela ASCII** no nosso canal no YouTube.
+
+{% embed url="https://www.youtube.com/watch?v=IN9ElO90uLc" %}
+
+## ASCII Estendida
 
 A tabela ASCII padrão de 7 _bits_ é limitada ao idioma inglês no que diz respeito ao texto. Perceba que uma simples letra 'á' (com acento agudo) é impossível nesta tabela. Sendo assim, ela foi estendida e inteligentemente passou-se a utilizar o último _bit_ do _byte_ que cada caractere ocupa, tornando-se assim uma tabela de 8 _bits_, que vai de 0 a 255 (em decimal).
 

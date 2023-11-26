@@ -6,7 +6,7 @@ A esta altura você já pode imaginar a dificuldade que programadores enfrentam 
 
 O padrão UTF (_Unicode Transformation Format_) de 8 _bits_ foi desenhado originalmente por Ken Thompson (sim, o criador do Unix!) e Rob Pike para abranger todos os caracteres possíveis nos vários idiomas deste planeta.
 
-Os primeiros 128 caracteres da tabela UTF-8 são exatamente os mesmos valores da tabela ASCII padrão e somente necessitam de 1 _byte_ para serem representados. Os próximos caracteres utilizam **2** _**bytes**_ e compreendem não só o alfabeto latino (como na ASCII estendida com codificação ISO-8859-1) mas também os caracteres gregos, árabes, hebraicos, dentre outros. Já para representar os caracteres de idiomas como o chinês e japonês, **3** _**bytes**_ são necessários. Por fim, há os caracteres de antigos manuscritos, símbolos matemáticos e até _emojis_ (🤗) que utilizam **4** _**bytes**_.
+Os primeiros 128 caracteres da tabela UTF-8 são exatamente os mesmos valores da tabela ASCII padrão e somente necessitam de 1 _byte_ para serem representados. Os próximos caracteres utilizam **2** _**bytes**_ e compreendem não só o alfabeto latino (como na ASCII estendida com codificação ISO-8859-1) mas também os caracteres gregos, árabes, hebraicos, dentre outros. Já para representar os caracteres de idiomas como o chinês e japonês, **3** _**bytes**_ são necessários. Por fim, há os caracteres de antigos manuscritos, símbolos matemáticos e até _emojis,_ que utilizam **4** _**bytes**_.
 
 Concluímos que os caracteres UTF-8 **variam** de 1 a 4 bytes. Sendo assim, como ficaria o texto "papobinário" numa sequência de _bytes_? Podemos ver com os comandos **echo** e **hd** no Linux:
 
@@ -27,7 +27,7 @@ $ echo -n "papobinário" | file -
 /dev/stdin: UTF-8 Unicode text, with no line terminators
 ```
 
-Como os _shells_ atuais utilizam UTF-8, ao utilizar um caractere não presente na tabela ASCII padrão, uma _string_ UTF-8 é gerada. O traço após o nome do comando **file** o fez ler da entrada padrão (**stdin**). Para saber mais sobre como o comando **file** funciona, assista ao vídeo Identificando arquivos com o comando file, disponível no canal Papo Binário no YouTube.
+Como os _shells_ atuais utilizam UTF-8, ao utilizar um caractere não presente na tabela ASCII padrão, uma _string_ UTF-8 é gerada. O traço após o nome do comando **file** o fez ler da entrada padrão (**stdin**). Para saber mais sobre como o comando **file** funciona, assista ao vídeo Identificando arquivos com o comando file, disponível em nosso canal no YouTube.
 
 {% embed url="https://www.youtube.com/watch?v=D7_zPEt5vGs" %}
 
@@ -139,7 +139,7 @@ $ gcc -o wide wide.c
 
 Agora vamos buscar as _strings_ dentro deste binário compilado.
 
-Foi dito que o no Linux as _wide strings_ são UTF-32, então a opção correta para utilizarmos com o comando **strings** é a "-L":
+Foi dito que o no Linux as _wide strings_ são UTF-32, então a opção correta para utilizarmos com o comando **strings** é a "L":
 
 ```
 $ strings -e L wide

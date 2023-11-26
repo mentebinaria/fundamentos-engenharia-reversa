@@ -4,11 +4,11 @@
 
 ## CreateFile
 
-Vamos começar pela função `CreateFile`, que tanto cria quando abre arquivos e outros objetos no Windows. O protótipo da versão ASCII dessa função é o seguinte:
+Vamos começar pela função `CreateFile`, que tanto cria quando abre arquivos e outros objetos no Windows. O protótipo da versão Unicode dessa função é o seguinte:
 
 ```c
-HANDLE CreateFileA(
-  [in]           LPCSTR                lpFileName,
+HANDLE CreateFileW(
+  [in]           LPCWSTR               lpFileName,
   [in]           DWORD                 dwDesiredAccess,
   [in]           DWORD                 dwShareMode,
   [in, optional] LPSECURITY_ATTRIBUTES lpSecurityAttributes,
@@ -20,11 +20,11 @@ HANDLE CreateFileA(
 
 Agora vamos aos parâmetros:
 
-### lpFileName \[entrada\]
+### lpFileName \[entrada]
 
 O caminho do arquivo que será aberto para escrita ou leitura. Se somente um nome for especificado, o diretório de onde o programa é chamado será considerado. Este parâmetro é do tipo LPCSTR na versão ASCII da função e do tipo LPCSWSTR na versão UNICODE.
 
-### dwDesiredAccess \[entrada\]
+### dwDesiredAccess \[entrada]
 
 Este é um campo numérico que designa o tipo de acesso desejado ao arquivo. Os valores possíveis são:
 
@@ -37,7 +37,7 @@ Este é um campo numérico que designa o tipo de acesso desejado ao arquivo. Os 
 
 Também é possível combinar tais valores. Por exemplo, `GENERIC_READ | GENERIC_WRITE` para abrir um arquivo com acesso de leitura e escrita.
 
-### dwShareMode \[entrada\]
+### dwShareMode \[entrada]
 
 O modo de compartilhamento deste arquivo com outros processos. Os valores possíveis são:
 
@@ -49,11 +49,11 @@ O modo de compartilhamento deste arquivo com outros processos. Os valores possí
 
 No entanto, o valor `0` é bem comum e faz com que nenhum outro processo apossa abrir o arquivo simultâneamente.
 
-###  lpSecurityAttributes \[entrada, opcional\]
+### lpSecurityAttributes \[entrada, opcional]
 
 Um ponteiro para uma estrutura especial do tipo `SECURITY_ATTRIBUTES`. Em geral, usamos `NULL`.
 
-### dwCreationDisposition \[entrada\]
+### dwCreationDisposition \[entrada]
 
 Ações para tomar em relação à criação do arquivo, pode ser:
 
@@ -65,27 +65,27 @@ Ações para tomar em relação à criação do arquivo, pode ser:
 #define TRUNCATE_EXISTING   5
 ```
 
-### dwFlagsAndAttributes \[entrada\]
+### dwFlagsAndAttributes \[entrada]
 
 Atributos e flags especiais para os arquivos. O mais comum é passar somente `FILE_ATTRIBUTE_NORMAL`, mas a documentação oficial prevê muitos outros possíveis valores.
 
-### hTemplateFile \[entrada, opcional\]
+### hTemplateFile \[entrada, opcional]
 
 Um handle válido para um arquivo modelo, para ter os atributos copiados. Normalmente é `NULL`.
 
 Colocando tudo junto, podemos criar um arquivo usando a API do Windows assim:
 
 ```c
-HANDLE hFile = CreateFileA("log.txt",
+HANDLE hFile = CreateFile(L"log.txt",
 	GENERIC_WRITE,
 	0,
-	NULL,
+	nullptr,
 	CREATE_ALWAYS,
 	FILE_ATTRIBUTE_NORMAL,
-	NULL);
+	nullptr);
 ```
 
-Logo após a chamada à `CreateFileA`, é comum encontrar uma comparação para saber se o objeto foi aberto com sucesso. Como esta função retorna um handle para o arquivo ou o valor `INVALID_HANDLE_VALUE` \(0xffffffff\) em caso de falha, podemos fazer na sequência:
+Logo após a chamada à `CreateFileA`, é comum encontrar uma comparação para saber se o objeto foi aberto com sucesso. Como esta função retorna um handle para o arquivo ou o valor `INVALID_HANDLE_VALUE` (0xffffffff) em caso de falha, podemos fazer na sequência:
 
 ```c
 if (hFile == INVALID_HANDLE_VALUE) {
@@ -125,7 +125,7 @@ Com tais definições, podemos completar nosso programa para fazê-lo escrever u
 #include <Windows.h>
 
 int main() {
-	HANDLE hFile = CreateFileA("log.txt",
+	HANDLE hFile = CreateFile(L"log.txt",
 		GENERIC_WRITE,
 		0,
 		nullptr,
@@ -134,7 +134,7 @@ int main() {
 		nullptr);
 
 	if (hFile == INVALID_HANDLE_VALUE) {
-		return EXIT_FAILURE;
+		return EXIT_FAILURE; // expande para 1
 	}
 
 	LPCSTR texto = "Programando usando a API do Windows";
@@ -145,7 +145,6 @@ int main() {
 	}
 
 	CloseHandle(hFile);
-	return EXIT_SUCCESS;
 }
 ```
 

@@ -4,13 +4,13 @@ Reuni aqui alguns exemplos de códigos em Assembly, úteis para a compreensão d
 
 ## Zerar Variáveis
 
-```asm
+```
 xor eax, eax
 ```
 
 ## Contar de Um a Dez
 
-```asm
+```
 xor ecx, ecx
 loop:
   inc ecx
@@ -20,7 +20,7 @@ loop:
 
 Outra versão:
 
-```asm
+```
 mov ecx, 0
 loop:
   add ecx, 1
@@ -30,29 +30,29 @@ loop:
 
 ## Testar Se É Zero
 
-```asm
+```
 cmp eax, 0
 je destino
 ```
 
 Outra versão:
 
-```asm
+```
 test eax, eax
 je destino
 ```
 
 ## Fazer Nada
 
-Parece bobo, mas "fazer nada" corretamente significa não alterar nenhuma _flag_, nem nenhum registrador. A instrução em Assembly Intel mais famosa para tal é a NOP \(NO Operation\):
+Parece bobo, mas "fazer nada" corretamente significa não alterar nenhuma _flag_, nem nenhum registrador. A instrução em Assembly Intel mais famosa para tal é a NOP (NO Operation):
 
-```asm
+```
 nop
 ```
 
-Mas também é possível atingir o mesmo resultado com instruções como a XCHG \(eXCHanGe\). Por exemplo, se você trocar o valor do registrador EAX com ele mesmo, acaba por não fazer "nada":
+Mas também é possível atingir o mesmo resultado com instruções como a XCHG (eXCHanGe). Por exemplo, se você trocar o valor do registrador EAX com ele mesmo, acaba por não fazer "nada":
 
-```asm
+```
 xchg eax, eax
 ```
 

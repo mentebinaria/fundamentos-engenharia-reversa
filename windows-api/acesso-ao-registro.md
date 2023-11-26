@@ -25,7 +25,7 @@ As quatro primeiras chaves são as mais comuns. Dentro delas, é possível criar
 
 ## RegCreateKey
 
-Embora a Microsoft recomende utilizar a versão mais nova dessa função chamada `RegCreateKeyEx`, muitos programas ainda utilizam a versão mais antiga, que estudaremos agora. Eis o seu protótipo:
+Embora a Microsoft recomende utilizar a versão mais nova dessa função chamada `RegCreateKeyEx`, muitos programas ainda utilizam a versão mais antiga, que estudaremos agora. Eis o protótipo da versão ASCII desta função:
 
 ```c
 LSTATUS RegCreateKeyA(
@@ -37,19 +37,19 @@ LSTATUS RegCreateKeyA(
 
 Agora vamos aos parâmetros:
 
-### hKey \[entrada\]
+### hKey \[entrada]
 
-Uma das chaves raíz, por exemplo: `HKEY_CURRENT_USER` ou `HKEY_LOCAL_MACHINE` \(para essa o usuário rodando o programa precisa ter privilégios administrativos\).
+Uma das chaves raíz, por exemplo: `HKEY_CURRENT_USER` ou `HKEY_LOCAL_MACHINE` (para essa o usuário rodando o programa precisa ter privilégios administrativos).
 
-### lpSubKey \[entrada, opcional\]
+### lpSubKey \[entrada, opcional]
 
 A subchave desejada, por exemplo, se o parâmetro `hKey` `HKEY_LOCAL_MACHINE` e `lpSubKey` é `Software\Microsoft\Windows\`, o caminho completo utilizado pela função será `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\`.
 
 {% hint style="info" %}
-Alguns textos abreviam essas chaves raíz com as letras iniciais de seu nome. Por exemplo, `HKCU` para `HKEY_CURRENT_USER`, `HKCR` para `HKEY_CLASSES_ROOT` e `HKLM` para `HKEY_LOCAL_MACHINE`. Tais abreviaçõe são válidas para acesso ao registro através de programas como o Registry Editor \(regedit.exe\), mas não são válidas para código em C.
+Alguns textos abreviam essas chaves raíz com as letras iniciais de seu nome. Por exemplo, `HKCU` para `HKEY_CURRENT_USER`, `HKCR` para `HKEY_CLASSES_ROOT` e `HKLM` para `HKEY_LOCAL_MACHINE`. Tais abreviaçõe são válidas para acesso ao registro através de programas como o Registry Editor (regedit.exe), mas não são válidas para código em C.
 {% endhint %}
 
-### phkResult \[saída\]
+### phkResult \[saída]
 
 Um ponteiro para uma váriável do tipo `HKEY`, previamente alocada, pois é aqui que a função vai escrever o handle da chave criada ou aberta por ela.
 
@@ -80,11 +80,11 @@ LSTATUS RegSetKeyValueA(
 
 Já sabemos o que são os parâmetros `hKey` e `lpSubKey`. Nos restam então os seguintes:
 
-### lpValueName \[entrada, opcional\]
+### lpValueName \[entrada, opcional]
 
 Um ponteiro para uma string contendo o nome do valor. Caso seja `NULL` ou aponte para uma string vazia, o valor padrão da chave é considerado.
 
-### dwType \[entrada\]
+### dwType \[entrada]
 
 O tipo do valor. Pode ser um dos seguintes:
 
@@ -106,11 +106,11 @@ O tipo do valor. Pode ser um dos seguintes:
 #define REG_QWORD_LITTLE_ENDIAN     ( 11ul ) // Número de 64-bits (o mesmo que REG_QWORD)
 ```
 
-### lpData \[entrada, opcional\]
+### lpData \[entrada, opcional]
 
 Os dados do valor, que deve ser casar com o tipo configurado no parâmetro `dwType`.
 
-### cbData \[entrada\]
+### cbData \[entrada]
 
 O tamanho dos dadoos do valor.
 
@@ -133,4 +133,3 @@ int main() {
 	return EXIT_SUCCESS;
 }
 ```
-
