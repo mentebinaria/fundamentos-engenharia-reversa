@@ -1,151 +1,112 @@
 # Unicode
 
-A esta altura você já pode imaginar a dificuldade que programadores enfrentam em trabalhar com diferentes codificações de texto, mas existe um esforço chamado de Unicode mantido pelo Unicode Consortium que compreende várias codificações, que estudaremos a seguir. Essas _strings_  são comumente chamadas de _**wide strings**_ (largas, numa tradução livre).
+A esta altura você já pode imaginar a dificuldade que programadores enfrentam em trabalhar com diferentes codificações de texto, mas existe um esforço chamado de Unicode mantido pelo Unicode Consortium que compreende várias codificações, que estudaremos a seguir. Essas _strings_ são comumente chamadas de _**wide strings**_ (largas, numa tradução livre).
 
 ## UTF-8
 
 O padrão UTF (_Unicode Transformation Format_) de 8 _bits_ foi desenhado originalmente por Ken Thompson (sim, o criador do Unix!) e Rob Pike para abranger todos os caracteres possíveis nos vários idiomas deste planeta.
 
-Os primeiros 128 caracteres da tabela UTF-8 são exatamente os mesmos valores da tabela ASCII padrão e somente necessitam de 1 _byte_ para serem representados. Os próximos caracteres utilizam **2** _**bytes**_ e compreendem não só o alfabeto latino (como na ASCII estendida com codificação ISO-8859-1) mas também os caracteres gregos, árabes, hebraicos, dentre outros. Já para representar os caracteres de idiomas como o chinês e japonês, **3** _**bytes**_ são necessários. Por fim, há os caracteres de antigos manuscritos, símbolos matemáticos e até _emojis,_ que utilizam **4** _**bytes**_.
+Os primeiros 128 caracteres da tabela UTF-8 possuem exatamente os mesmos valores da tabela ASCII padrão e somente necessitam de 1 _byte_ para serem representados. Chamamos estes números de _codepoints_. Os próximos caracteres utilizam **2** _**bytes**_ e compreendem não só o alfabeto latino (como na ASCII estendida com codificação ISO-8859-1) mas também os caracteres gregos, árabes, hebraicos, dentre outros. Já para representar os caracteres de idiomas como o chinês e japonês, **3** _**bytes**_ são necessários. Por fim, há os caracteres de antigos manuscritos, símbolos matemáticos e até _emojis,_ que utilizam **4** _**bytes**_.
 
-Concluímos que os caracteres UTF-8 **variam** de 1 a 4 bytes. Sendo assim, como ficaria o texto "papobinário" numa sequência de _bytes_? Podemos ver com os comandos **echo** e **hd** no Linux:
+Concluímos que os caracteres UTF-8 **variam** de 1 a 4 bytes. Sendo assim, como ficaria o texto "mentebinária" numa sequência de _bytes_? Podemos ver novamente com o Python, mas dessa vez ao invés declarar um objeto do tipo `bytes` com aquele prefixo **`b`**, vamos converter um tipo `str` para `bytes` utilizando a função `encode()`. Isso é necessário porque queremos ver uma string UTF-8 e não ASCII:
 
-```
-$ echo -n "papobinário" | hd
-00000000  70 61 70 6f 62 69 6e c3  a1 72 69 6f              |papobin..rio|
-```
-
-Como dito antes, os caracteres da tabela ASCII são os mesmos, mas o caractere 'á' utiliza 2 bytes (no caso, 0xc3 e 0xa1) para ser representado. Esta é uma _string_ UTF-8 válida. Dizemos que seu tamanho é 11, já que ela contém 11 caracteres, mas em _bytes_ seu tamanho é 12.
-
-Você pode confirmar que esta é uma _string_ UTF-8 utilizado o comando **file** (presente no Linux e macOS). Veja a diferença:
-
-```
-$ echo -n "papobinario" | file -
-/dev/stdin: ASCII text, with no line terminators
-
-$ echo -n "papobinário" | file -
-/dev/stdin: UTF-8 Unicode text, with no line terminators
+```python
+>>> 'mentebinária'.encode('utf-8').hex(' ')
+'6d 65 6e 74 65 62 69 6e c3 a1 72 69 61'
 ```
 
-Como os _shells_ atuais utilizam UTF-8, ao utilizar um caractere não presente na tabela ASCII padrão, uma _string_ UTF-8 é gerada. O traço após o nome do comando **file** o fez ler da entrada padrão (**stdin**). Para saber mais sobre como o comando **file** funciona, assista ao vídeo Identificando arquivos com o comando file, disponível em nosso canal no YouTube.
-
-{% embed url="https://www.youtube.com/watch?v=D7_zPEt5vGs" %}
+Como dito antes, os codepoints da tabela ASCII são os mesmos em UTF-8, mas o caractere 'á' (que não existe em ASCII puro) utiliza 2 bytes (no caso, C3 A1) para ser representado. Esta é uma _string_ UTF-8 válida. Dizemos que seu tamanho é 11 porque ela contém 11 caracteres, mas em _bytes_ seu tamanho é 12.
 
 ## UTF-16
 
 Também conhecido por UCS-2, este tipo de codificação é frequentemente encontrado em programas compilados para Windows, incluindo os escritos em .NET. É de extrema importância que você o conheça bem.
 
-Representados em UTF-16, os caracteres equivalentes na tabela ASCII possuem **2 bytes** de tamanho onde o primeiro _byte_ é o mesmo da tabela ASCII e o segundo é um zero. Por exemplo, para se escrever "A" em UTF-16, faríamos: 0x41 0x00. Vamos entender melhor com o comando **strings** do Linux, a seguir.
+Representados em UTF-16, os caracteres da tabela ASCII possuem **2 bytes** de tamanho onde o primeiro _byte_ é o mesmo da tabela ASCII e o segundo é um zero. Por exemplo, para se escrever "A" em UTF-16, faríamos: 41 00. Vamos entender melhor com a ajuda do Python.
 
-Primeiro vamos exibir o texto em ASCII "papo" mas ao invés de imprimir na tela, vamos passar a saída para o programa **strings**:
+Primeiro, exibimos os _bytes_ em hexa equivalentes de cada caractere da string:
 
-```
-$ echo -ne "\x70\x61\x70\x6f" | strings
-papo
-```
-
-Até aí, nenhuma novidade. O **strings** busca justamente _strings_ naquilo que é passado para ele. Mas vamos agora tentar o mesmo texto escrito em UTF-16, em que cada caractere possui dois _bytes_ e seu equivalente em ASCII e um zerado em sequência:
-
-```
-$ echo -ne "\x70\x00\x61\x00\x70\x00\x6f\x00" | strings
-$
+```python
+>>> b'mente'.hex(' ')
+'6d 65 6e 74 65'
 ```
 
-Nada é retornado porque o comando **strings** só busca por padrão _strings_ ASCII e a _string_ que passamos é uma UTF-16. Por sorte este comando possui a opção **-e** em sua versão para Linux que permite especificar a codificação:
+Até aí, nenhuma novidade, mas vamos ver como essa string seria codificada em UTF-16:
 
-```
-$ echo -ne "\x70\x00\x61\x00\x70\x00\x6f\x00" | strings -e l
-papo
-```
-
-Agora sim vemos o texto. O motivo está no manual do comando **strings**. Veja:
-
-```
-$ man strings
+```python
+>>> 'mente'.encode('utf-16').hex(' ')
+'ff fe 6d 00 65 00 6e 00 74 00 65 00'
 ```
 
-```
--e encoding
---encoding=encoding
-Select the character encoding of the strings that are to be found.  Possible values for encoding are:
+Duas coisas aconteceram nesta conversão: a primeira é que uma sequência de dois _bytes_, FF FE, foi colocada no início da string. Esta sequência é chamada de _Byte Order Mark_ (BOM) ou Marca de Ordem de _Byte_, em português. A segunda coisa é que os bytes foram **sucedidos** por zeros. De fato, a BOM diz se os bytes da string serão sucedidos (FF FE) ou precedidos (FE FF) por zeros quando necessário, mas também é possível utilizar uma variação da codificação UTF-16 que é a UTF-16-LE (_Little Endian_), onde os _bytes_ são sucedidos por zeros, mas não há o uso de BOM:
 
-s = single-7-bit-byte characters (ASCII, ISO 8859, etc., default)
-S = single-8-bit-byte characters
-b = 16-bit bigendian
-l = 16-bit littleendian
-B = 32-bit bigendian
-L = 32-bit littleendian.
-
-Useful for finding wide character strings. (l and b apply to, for example,
-Unicode UTF-16/UCS-2 encodings).
+```python
+>>> 'mente'.encode('utf-16-le').hex(' ')
+'6d 00 65 00 6e 00 74 00 65 00'
 ```
 
-Perceba que há uma opção para ASCII estendido também (-S):
+A codificação UTF-16-LE (lembre-se: sem BOM) é a utilizada pelo Visual Studio no Windows quando tipos `WCHAR` são usados, como nos argumentos das funções `MessageBoxW()` e `CreateFileW()`. Também é a codificação padrão para programas em .NET. Isso é importante de saber pois se você precisar alterar uma string UTF-16-LE durante a engenharia reversa, vai ter que respeitar essas regras.
 
-```
-$ echo binário | strings
-$
+Além da UTF-16-LE, temos a UTF-16-BE (_Big Endian_), onde os _bytes_ são **precedidos** com zeros:
 
-$ echo binário | strings -e S
-binário
-```
-
-Ainda sobre UTF-16, é importante observar que no Windows o ASCII estendido com codificação ISO-8859-1 é _encodado_ em UTF-16. Por exemplo, se criarmos um programa em .NET que contenha a _string_ "Papo Binário", ela vai para o executável deste jeito:
-
-```
-42 00 69 00 6e 00 e1 00 72 00 69 00 6f 00
+```python
+>>> 'mente'.encode('utf-16-be').hex(' ')
+'00 6d 00 65 00 6e 00 74 00 65'
 ```
 
-O "á" é o _byte_ 0xe1 (Tabela ISO-8859-1/Latin-1) seguido de um _nullbyte_ (_byte_ nulo) 0x00. Você vai entender melhor a importância destes conceitos quando buscarmos por texto em programas utilizando _debuggers_ e outras ferramentas.
+Além disso, é importante ressaltar que em strings UTF-16 também há a possibilidade de caracteres de quatro _bytes_. Por exemplo, um _emoji_:
+
+```python
+>>> '💚'.encode('utf-16-le').hex(' ')
+'3d d8 9a dc'
+```
+
+### Codepoints da ISO-8859-1 na UTF-16
+
+Os números (codepoints) utilizados pela ISO-8859-1 para seus caracteres são também os números utilizados em strings UTF-16. No Windows, o padrão é o UTF-16-LE. Para entender como isso funciona, observe primeiro os _bytes_ da string "binária" na codificação ISO-8859-1:
+
+```python
+>>> 'binária'.encode('iso-8859-1').hex(' ')
+'62 69 6e e1 72 69 61'
+```
+
+Perceba que o _byte_ referente ao "á" é o E1. Até aí nenhuma novidadade. Sabemos que é uma string ASCII estendida que usa a tabela ISO-8859-1, também conhecida por Latin-1. Agora, vejamos como ela fica em UTF-16-LE:
+
+```python
+>>> 'binária'.encode('utf-16-le').hex(' ')
+'62 00 69 00 6e 00 e1 00 72 00 69 00 61 00'
+```
+
+Nesse caso, "binária" é uma string UTF-16-LE (cada caractere sucedido por zeros), sem BOM. Os _bytes_ dos caracteres em si coincidem com os da ISO-8859-1. Doido né? Mas vamos em frente!
 
 {% hint style="info" %}
-Notou que o comando **strings** tem opções de _endianess_ para caracteres de 16 e 32 _bits_? Acontece que estas codificações suportam tanto _little endian_ (padrão), no qual o _byte_ ASCII do caractere é **seguido** de um _nullbyte_ quanto o _big endian_, no qual ele é **precedido** por um _nullbyte_. Veja:
-
-```bash
-$ echo -ne "\x00\x70\x00\x61\x00\x70\x00\x6f" | strings -e b
-papo
-```
-
-Uma boa leitura adicional é o artigo Viewing strings in executables disponível em https://blog.didierstevens.com.
+Perceba que o "á" em UTF-8 é C3 A1, mas em UTF-16 é E1 (precedido ou sucedido por zero), assim como em ISO-8859-1.
 {% endhint %}
 
 ## UTF-32
 
-Raramente utilizado no Windows, porém existente em alguns programas para Linux e Unix, este padrão utiliza 4 _bytes_ para cada caractere. Vamos já analisar a _string_ "papo" em UTF-32 com a opção -L do comando **strings**:
+Sendo pouco utilizado, este padrão utiliza 4 _bytes_ para cada caractere. Vamos ver como fica a string "mb" em UTF-32 com BOM:
 
-```bash
-$ echo -ne "\x70\x00\x00\x00\x61\x00\x00\x00\x70\x00\x00\x00\x6f\x00\x00\x00" | strings -e L
-papo
+```python
+>>> 'mb'.encode('utf-32').hex(' ')
+'ff fe 00 00 6d 00 00 00 62 00 00 00'
 ```
 
-É importante ressaltar que simplesmente dizer que uma _string_ é Unicode não diz exatamente qual codificação ela está utilizando, fato que normalmente depende do sistema operacional, da pessoa que programou, do compilador, etc. Por exemplo, um programa feito em C no Windows e compilado com Visual Studio tem as _wide strings_ em UTF-16 normalmente. Já no Linux, o tamanho do tipo _wchar\_t_ é 32 _bits_, resultando em _strings_ UTF-32. Escreva o seguinte programa em C para entender:
+Perceba o BOM de quatro _bytes_ ao invés de dois.
 
-```c
-#include <wchar.h>
+Agora em UTF-32-LE:
 
-int main(void) {
-  wchar_t *s = L"papo";
-  wprintf(L"%S\n", s);
-
-  return 0;
-}
+```python
+>>> 'mb'.encode('utf-32-le').hex(' ')
+'6d 00 00 00 62 00 00 00'
 ```
 
-Salve-o no Linux como _wide.c_ e compile utilizando o gcc:
+E por fim em UTF-32-BE:
 
-```bash
-$ gcc -o wide wide.c
+```python
+>>> 'mb'.encode('utf-32-be').hex(' ')
+'00 00 00 6d 00 00 00 62'
 ```
 
-Agora vamos buscar as _strings_ dentro deste binário compilado.
+É importante ressaltar que simplesmente dizer que uma _string_ é Unicode não diz exatamente qual codificação ela está utilizando, fato que normalmente depende do sistema operacional, da pessoa que programou, do compilador, etc. Por exemplo, um programa feito em C no Windows e compilado com Visual Studio tem as _wide strings_ em UTF-16 normalmente. Já no Linux, o tamanho do tipo _wchar\_t_ é de 32 _bits_, resultando em _strings_ UTF-32.
 
-Foi dito que o no Linux as _wide strings_ são UTF-32, então a opção correta para utilizarmos com o comando **strings** é a "L":
-
-```
-$ strings -e L wide
-papo
-```
-
-O mesmo programa compilado em Windows resultaria em _strings_ UTF-16 ao invés de UTF-32, portanto, fique alerta.
-
-Há muito mais sobre codificação de texto para ser dito, mas isso foge ao escopo deste livro. Se o leitor desejar se aprofundar, basta consultar a documentação oficial dos grupos que especificam tais padrões. No entanto, cabe ressaltar que a prática (compilar programas e buscar como as _strings_ são codificadas) é a melhor escola.
+Há muito mais sobre codificação de texto para ser dito, mas isso foge ao escopo deste livro. Se o leitor desejar se aprofundar, basta consultar a documentação oficial dos grupos que especificam estes padrões. No entanto, cabe ressaltar que para a engenharia reversa, a prática de compilar programas e buscar como as _strings_ são codificadas é a melhor escola.

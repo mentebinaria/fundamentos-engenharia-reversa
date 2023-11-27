@@ -25,7 +25,7 @@ Sendo assim, vamos checar em Python:
 246
 ```
 
-O que aconteceu? Bem, realmente 0b11110110 é 246 (em decimal), se interpretado como número sem sinal. Acontece que temos que dizer explicitamente que vamos interpretar um número como número com sinal (que pode ser positivo ou negativo). Em Python, um jeito é usando a biblioteca **ctypes**:
+O que aconteceu? Bem, realmente 0b11110110 é 246 (em decimal), se interpretado como número sem sinal. Acontece que temos que dizer explicitamente que vamos interpretar um número como número com sinal (que pode ser positivo ou negativo). Em Python, um jeito é usando o pacote **ctypes**:
 
 ```python
 >>> import ctypes

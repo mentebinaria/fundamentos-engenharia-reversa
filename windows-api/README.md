@@ -14,7 +14,7 @@ int main(void) {
 }
 ```
 
-A função _MessageBox()_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da USER32.DLL (além de outras bibliotecas, dependendo de certas opções de compilação), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível no site da Microsoft. Copiamos seu protótipo abaixo para explicar seus parâmetros:
+A função _MessageBox()_ está definida em _windows.h_. Quando compilado, o código acima gera um executável dependente da `USER32.DLL` (além de outras bibliotecas, dependendo de certas opções de compilação), que provê a versão compilada de tal função. A documentação desta e de outras funções da Win32 está disponível no site da Microsoft. Copiamos seu protótipo abaixo para explicar seus parâmetros:
 
 ```c
 int MessageBox(

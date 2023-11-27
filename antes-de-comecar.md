@@ -23,21 +23,14 @@ Cada frase deste livro, a não ser que expressado diferente, considera a arquite
 Este é um guia prático. Sendo assim, é recomendável que você seja capaz de reproduzir o que é sugerido neste livro em seu próprio ambiente. Você vai precisar do seguinte:
 
 * Uma máquina (virtual ou real) com Windows 7, 10 ou 11.
-* Uma máquina virtual, física ou remota com uma distribuição Linux. Usei o Ubuntu, mas qualquer outra serve desde que você saiba instalar pacotes nela. Alternativamente, você pode instalar uma distribuição Linux via _Windows Subsystem for Linux_ (WSL).
 
-Na máquina Windows, os programas necessários são:
+Nessa máquina Windows, você deve baixar e instalar os seguintes programas:
 
 * Detect It Easy (DIE) - https://horsicq.github.io
 * HxD - https://mh-nexus.de
 * Python 3 - https://www.python.org
 * Visual Studio Community - https://aka.ms/vs
 * x64dbg - https://x64dbg.com
-
-Já na máquina Linux, é preciso instalar os seguintes programas:
-
-* bc
-* hexdump
-* nasm
 
 ## Exercícios
 
@@ -46,13 +39,7 @@ Este livro é recheado de trechos de código. É recomendável que você pratiqu
 Exemplos de código em Python como a seguir devem ser digitados no ambiente do Python.
 
 ```python
->>> print 'Execute isto no console do Python!'
-```
-
-Vários exemplos são no _shell_ do Linux, que é o Bash por padrão:
-
-```bash
-$ echo 'Este vai no Bash'
+>>> 'Execute isto na console do Python!'
 ```
 
 Você também encontrará códigos em linguagem C como este:
@@ -61,20 +48,13 @@ Você também encontrará códigos em linguagem C como este:
 #include <stdio.h>
 
 int main(void) {
-    printf("Compilar com o gcc e executar!\n");
+    printf("Compilar com o Visual Studio e executar!\n");
 }
 ```
 
-No caso do código anterior, exceto quando especificado diferente, é preciso salvá-lo num arquivo de texto para depois compilar e executar no ambiente GNU/Linux, assim:
+Este deve ser compilado em ambiente Windows utilizando o Visual Studio.
 
-```bash
-$ gcc -o exemplo exemplo.c
-$ ./exemplo
-```
+Tenha em mente que é **necessário** para o aprendizado que você escreva estes códigos, os execute e analise seus resultados, certo? É para o seu próprio bem. :)
 
-Caso o código em C inclua a _windows.h_, este deve ser compilado em ambiente Windows utilizando de preferência o Visual Studio Community.
-
-Há ainda outros tipos de blocos, mas tenha em mente que é **necessário** para o aprendizado que você os escreva, execute e analise seus resultados.
-
-Se já estiver tudo pronto, vamos seguir para a introdução ao assunto!
+Enquanto instala os programas necessários, vamos seguir para a introdução ao assunto!
 

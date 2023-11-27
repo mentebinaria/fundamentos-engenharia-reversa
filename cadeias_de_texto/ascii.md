@@ -12,36 +12,32 @@ O **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange, ou em 
 
 Na época em que foi definido, lá pela década de 60, foi logo usado em equipamentos de telecomunicações e também nos computadores. Basicamente é uma tabela que relaciona um **número** de 7 _bits_ com sinais de controle e caracteres imprimíveis. Por exemplo, o número 97 (0b1100001) representa o caractere 'a', enquanto 98 (0b1100010) é o 'b'. Perceba que tais números não excedem os 7 _bits_, mas como em computação falamos quase sempre em _bytes_, então acaba que um caractere ASCII possui 8 _bits_ mas só usa 7. A tabela ASCII vai de 0 a 127 e pode ser encontrada no apêndice Tabela ASCII, que você deve consultar agora.
 
-Há vários testes interessantes que você pode fazer para entender melhor as _strings_ ASCII. Ao saber que o caractere `'a'` é o número 97, você pode usar a função `chr()` no Python, por exemplo:
+Há vários testes interessantes que você pode fazer para entender melhor as _strings_ ASCII. Ao saber que o caractere `'a'` é o número 97, você pode usar a função `chr()` no Python para conferir:
 
 ```python
->>> print chr(97)
-a
+>>> chr(97)
+'a'
 ```
 
-Ou no próprio shell do Linux, o comando _echo_:
+Viu? Quando você digita 'a', o computador entende o _byte_ 0x61 (97 em decimal). De forma análoga, quando um programa que exibe um texto na tela encontra o _byte_ 0x61, ele exibe o caractere 'a'. Como você pode ver na tabela ASCII, todas as letras do alfabeto americano estão lá, então é razoável concluir que uma frase inteira seja na verdade uma sequência de _bytes_ onde cada um deles está dentro da faixa da tabela ASCII. Podemos usar o Python para rapidamente imprimir os valores ASCII de cada caractere de uma string:
 
-```bash
-$ echo -ne \\x61  # 0x61 em hexa é 97 em decimal
-a
+```python
+>>> b'menteb.in'.hex(' ')
+'6d 65 6e 74 65 62 2e 69 6e'
 ```
 
-Viu? Quando você digita 'a', o computador entende o _byte_ 0x61. De forma análoga, quando um programa que exibe um texto na tela encontra o _byte_ 0x61, ele exibe 'a'. Como você pode ver na tabela ASCII, todas as letras do alfabeto americano estão lá, então é razoável concluir que uma frase inteira seja na verdade uma sequência de _bytes_ onde cada um deles está dentro da faixa da tabela ASCII. Isso fica facilmente visualizável no shell do Linux com o comando _hd_ (hexdump):
-
-```
-$ echo menteb.in | hd
-00000000  6d 65 6e 74 65 62 2e 69  6e 0a                    |menteb.in.|
-0000000a
-```
+{% hint style="info" %}
+Perceba o **b** minúsculo antes das aspas do texto. Em Python, isso cria um objeto da classe `bytes` ao invés de `str`. Essa classe tem um método `hex()` para imprimir cada o valor de caractere da string em hexadecimal e aceita um argumento para ser utilizado como separador entre os _bytes._ No exemplo, usei espaço.
+{% endhint %}
 
 É exatamente assim que um texto ASCII vai parar dentro de um programa ou arquivo.
 
-Agora olhe novamente a tabela e perceba o seguinte:
+Agora vá até o Apêndice Tabela ASCII e observe o seguinte:
 
 * O primeiro sinal é o NUL, também conhecido como _null_ ou nulo. É o _byte_ 0.
 * Outro _byte_ importante é 0x0a, conhecido também por \n, _line feed_, LF ou simplesmente "caractere de nova linha".
 * O MS-DOS e o Windows utilizam na verdade **dois** caracteres para delimitar uma nova linha. Antes do 0x0a, temos um 0x0d, conhecido também por \r, _carriage return_ ou CR. Essa dupla é também conhecida por **CrLf**.
-* O caractere de "espaço em branco" é o 0x20.
+* O caractere de espaço é o 0x20.
 * Os dígitos vão de 0x30 a 0x39.
 * As letras maiúsculas vão de 0x41 a 0x5a.
 * As letras minúsculas vão de 0x61 a 0x7a.
@@ -52,10 +48,10 @@ Agora, algumas relações:
 * Se diminuirmos 0x30 de um dígito, temos o equivalente numérico do dígito. Por exemplo, o dígito 5 possui o valor 0x35. Então, 0x35 - 0x30 = 5.
 
 {% hint style="info" %}
-Sabe quando no Linux você dá um `cat` num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns beeps? Esses sons são, na verdade, os bytes 0x07 encontrados no arquivo. Experimente!
+Sabe quando no Linux você dá um `cat` num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns _beeps_? Esses sons são, na verdade, os bytes 0x07 encontrados no arquivo. Experimente!
 {% endhint %}
 
-Para complementar esta seção, assista ao vídeo **Entendendo a tabela ASCII** no nosso canal no YouTube.
+Para complementar esta seção, assista ao vídeo **Entendendo a tabela ASCII** no nosso canal no YouTube. Nele há exemplos no Linux, mas o conceito é o mesmo.
 
 {% embed url="https://www.youtube.com/watch?v=IN9ElO90uLc" %}
 

@@ -1,6 +1,6 @@
 # Formatos
 
-Os arquivos de texto, sejam eles ASCII ou UNICODE são tipos de arquivos bem simples. Começaremos agora a avaliar tipos de arquivos mais complexos. Acontece que para um programa **salvar** ou **abrir** um determinado tipo de arquivo, é essencial que este conheça seu **formato**. Tomemos por exemplo o formato GIF, mas agora ao invés de utilizar o hd para inspecionar seu conteúdo, utilizaremos, no Windows, um editor hexadecimal gráfico chamado HxD.
+Os arquivos de texto, independentemente da codificação (ASCII, ISO-8859-1, UTF-8, etc) são tipos de arquivos bem simples. Começaremos agora a avaliar tipos de arquivos mais complexos. Acontece que para um programa **salvar** ou **abrir** um determinado tipo de arquivo, é essencial que este conheça seu **formato**. Tomemos por exemplo o formato GIF. Para inspecionar seu conteúdo, utilizaremos, no Windows, um editor hexadecimal gráfico chamado HxD.
 
 Analise o seguinte arquivo GIF aberto no HxD:
 

@@ -19,13 +19,7 @@ Perceba que a lógica de organização dos símbolos no sistema binário é a me
 Por utilizar dois símbolos que são idênticos aos do sistema decimal, num contexto genérico, números binários são normalmente precedidos com 0b para não haver confusão. Então para expressar dez quantidades faríamos 0b1010. Por exemplo, a seguinte linha na console do Python imprime o valor 10:
 
 ```python
-print(0b1010)
-```
-
-O mesmo pode ser feito no shell do Linux:
-
-```bash
-echo $((2#1010))
+>>> 0b1010
 ```
 
 Ou em linguagem C:
@@ -50,18 +44,6 @@ Veja um exemplo em Python (lembre-se: abra o Python e estude junto agora):
 
 ```python
 >>> 012
-10
-```
-
-No shell do Linux, há pelo menos duas opções (vai abrir o shell né?):
-
-```bash
-# Com o comando echo
-echo $((8#012))
-10
-
-# Com o comando bc:
-echo "ibase=8; 012" | bc
 10
 ```
 
@@ -125,22 +107,7 @@ Por isso podemos dizer que 0x**B**0**B**0**C**A é 0b**1011**0000**1011**0000**1
 10
 ```
 
-Veja também no Linux:
-
-```bash
-echo $((16#a))
-10
-echo $((16#0A))
-10
-echo $((16#000000000000000000000a))
-10
-echo $((16#A))
-10
-```
-
-Falaremos bastante em endereços de memória no conteúdo de engenharia reversa e todos estão em hexadecimal, por isso é importante "pensar em hexa" daqui para frente. Mas não se preocupe, se precisar calcular algo, sempre poderá recorrer à calculadora, ao Python ou ao shell. Uma alternativa no shell do Linux é o comando **bc**, explicado no vídeo **Cálculo no shell com o bc**, disponível em nosso canal no YouTube.
-
-{% embed url="https://www.youtube.com/watch?v=vLhABLeb11o" %}
+Falaremos bastante em endereços de memória no conteúdo de engenharia reversa e todos estão em hexadecimal, por isso é importante "pensar em hexa" daqui para frente. Mas não se preocupe, se precisar calcular algo, sempre poderá recorrer à calculadora ou ao Python.
 
 ## Criando seu próprio Sistema de Numeração
 
