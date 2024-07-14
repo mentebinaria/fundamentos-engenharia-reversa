@@ -43,7 +43,7 @@ Na programação, normalmente um número octal é precedido de um algarismo 0 pa
 Veja um exemplo em Python (lembre-se: abra o Python e estude junto agora):
 
 ```python
->>> 012
+>>> 0o12
 10
 ```
 
