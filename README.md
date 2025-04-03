@@ -28,11 +28,11 @@ Se encontrou algum erro, quer fazer um comentário, sugestão ou pergunta, por f
 
 ## Sobre o Autor
 
-Fernando Mercês atua há mais de dez anos como pesquisador sênior de ameaças na Trend Micro, uma das maiores empresas dedicadas à softwares de segurança do mundo. Seu trabalho envolve o uso da engenharia reversa para analisar malwares em diversos ambientes e arquiteturas. Já ministrou diversos treinamentos de segurança, hardware, programação, engenharia reversa, análise de malware e tópicos correlatos. É autor de várias ferramentas livres e é fundador da Mente Binária.
+Fernando Mercês atua há mais de 12 anos como pesquisador sênior de ameaças na Trend Micro, uma das maiores empresas dedicadas a software de segurança do mundo. Seu trabalho envolve o uso da engenharia reversa para analisar malwares em diversos ambientes e arquiteturas. Já ministrou diversos treinamentos de segurança, hardware, programação, engenharia reversa, análise de malware e tópicos correlatos. É autor de várias ferramentas livres e é fundador e diretor executivo da Mente Binária.
 
 ## Sobre a Mente Binária
 
-A Mente Binária é uma instituição de ensino e pesquisa sem fins lucrativos que desenvolve programas de capacitação e treinamento em computação com foco em programação de baixo nível e segurança. A instituição sobrevive com doações e venda de cursos e materiais como este, mas também disponibiliza muito de seu conteúdo de forma online e irrestrita.
+A Mente Binária é uma instituição de ensino e pesquisa sem fins lucrativos que desenvolve programas de capacitação e cursos em computação com foco em programação de baixo nível e segurança. A instituição é uma ONG e sobrevive com doações e venda de cursos e materiais como este, mas também disponibiliza muito de seu conteúdo de forma online e irrestrita.
 
 ## Apoie este Livro
 
