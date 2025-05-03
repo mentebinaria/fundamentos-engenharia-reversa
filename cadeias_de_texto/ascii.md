@@ -19,7 +19,7 @@ Há vários testes interessantes que você pode fazer para entender melhor as _s
 'a'
 ```
 
-Viu? Quando você digita 'a', o computador entende o _byte_ 0x61 (97 em decimal). De forma análoga, quando um programa que exibe um texto na tela encontra o _byte_ 0x61, ele exibe o caractere 'a'. Como você pode ver na tabela ASCII, todas as letras do alfabeto americano estão lá, então é razoável concluir que uma frase inteira seja na verdade uma sequência de _bytes_ onde cada um deles está dentro da faixa da tabela ASCII. Podemos usar o Python para rapidamente imprimir os valores ASCII de cada caractere de uma string:
+Viu? Quando você digita 'a', o computador entende o _byte_ 0x61 (97 em decimal). De forma análoga, quando um programa que exibe um texto na tela encontra o _byte_ 0x61, ele exibe o caractere 'a'. Como você pode ver na tabela ASCII, todas as letras do alfabeto americano estão lá, então é razoável concluir que uma frase inteira seja na verdade uma sequência de _bytes_ onde cada um deles está na faixa da tabela ASCII. Podemos usar o Python para rapidamente imprimir os valores ASCII de cada caractere de uma string:
 
 ```python
 >>> b'menteb.in'.hex(' ')
@@ -27,7 +27,7 @@ Viu? Quando você digita 'a', o computador entende o _byte_ 0x61 (97 em decimal)
 ```
 
 {% hint style="info" %}
-Perceba o **b** minúsculo antes das aspas do texto. Em Python, isso cria um objeto da classe `bytes` ao invés de `str`. Essa classe tem um método `hex()` para imprimir cada o valor de caractere da string em hexadecimal e aceita um argumento para ser utilizado como separador entre os _bytes._ No exemplo, usei espaço.
+Perceba o **b** minúsculo antes das aspas do texto. Em Python, isso cria um objeto da classe `bytes` ao invés de `str`. Essa classe tem um método `hex()` para imprimir cada o valor de caractere da string em hexadecimal e aceita um argumento para ser utilizado como separador entre os _bytes._ No exemplo, usei um caractere de espaço.
 {% endhint %}
 
 É exatamente assim que um texto ASCII vai parar dentro de um programa ou arquivo.
@@ -35,7 +35,7 @@ Perceba o **b** minúsculo antes das aspas do texto. Em Python, isso cria um obj
 Agora vá até o Apêndice Tabela ASCII e observe o seguinte:
 
 * O primeiro sinal é o NUL, também conhecido como _null_ ou nulo. É o _byte_ 0.
-* Outro _byte_ importante é 0x0a, conhecido também por \n, _line feed_, LF ou simplesmente "caractere de nova linha".
+* Outro _byte_ importante é 0x0a, conhecido também por \n, _line feed_, LF, _newline_ ou simplesmente "caractere de nova linha".
 * O MS-DOS e o Windows utilizam na verdade **dois** caracteres para delimitar uma nova linha. Antes do 0x0a, temos um 0x0d, conhecido também por \r, _carriage return_ ou CR. Essa dupla é também conhecida por **CrLf**.
 * O caractere de espaço é o 0x20.
 * Os dígitos vão de 0x30 a 0x39.
@@ -59,7 +59,7 @@ Para complementar esta seção, assista ao vídeo **Entendendo a tabela ASCII** 
 
 A tabela ASCII padrão de 7 _bits_ é limitada ao idioma inglês no que diz respeito ao texto. Perceba que uma simples letra 'á' (com acento agudo) é impossível nesta tabela. Sendo assim, ela foi estendida e inteligentemente passou-se a utilizar o último _bit_ do _byte_ que cada caractere ocupa, tornando-se assim uma tabela de 8 _bits_, que vai de 0 a 255 (em decimal).
 
-Essa extensão da tabela ASCII varia de acordo com a **codificação** utilizada. Isso acontece porque ela foi criada para permitir texto em outros idiomas, mas somente 128 caracteres a mais não são suficientes para representar os caracteres de todos os idiomas existentes. A codificação mais conhecida é a ISO-8859-1, também chamada de Latin-1, que você vê no Apêndice Tabela ISO-8859-1/Latin-1.
+Essa extensão da tabela ASCII varia de acordo com a **codificação** utilizada. Isso acontece porque ela foi criada para permitir texto em outros idiomas, mas somente 128 caracteres a mais não são suficientes para representar os caracteres de todos os idiomas existentes. A codificação mais conhecida no Brasil é a ISO-8859-1, também chamada de Latin-1, que você vê no Apêndice Tabela ISO-8859-1/Latin-1.
 
 {% hint style="info" %}
 Outro nome para ASCII é US-ASCII. Alguns textos referem-se a texto em ASCII como ANSI strings também.

@@ -1,8 +1,8 @@
 # 💼 O formato PE
 
-Como explicado no capítulo anterior, a maioria dos tipos de arquivo que trabalhamos possuem uma especificação. Com os arquivos executáveis no Windows não é diferente: eles seguem a especificação do formato PE (_Portable Executable_) que conheceremos agora.
+Como explicado no capítulo anterior, a maioria dos tipos de arquivo que trabalhamos possui uma especificação. Com os arquivos executáveis no Windows não é diferente: eles seguem a especificação do formato PE (_Portable Executable_) que conheceremos agora.
 
-O formato PE é o formato de arquivo executável atualmente utilizado para os programas no Windows, isso inclui os famosos arquivos EXE mas também DLL, OCX, CPL e SYS. Seu nome deriva do fato de que o formato não está preso a uma arquitetura de _hardware_ específica.
+O formato PE é o formato de arquivo executável atualmente utilizado para muitos programas no Windows, isso inclui os famosos arquivos EXE mas também arquivos DLL, OCX, CPL e SYS. Seu nome deriva do fato de o formato não estar preso à uma arquitetura de _hardware_ específica.
 
 Os programas que criam estes programas, chamados compiladores precisam respeitar tal formato e o programa que os interpreta, carrega e inicia sua execução (chamado de _loader_) precisa entendê-lo também.
 

@@ -4,19 +4,19 @@ Todo escritor quer que sua mensagem seja lida e compreendida, isso não é difer
 
 ## Terminologia
 
-Utilizo do _itálico_ para neologismos, palavras em Inglês ou em outro idioma, como _crypter_ (encriptador). Em geral, prefiro não utilizar termos "aportuguesados" como baite (para _byte_) ou linkeditor (para _linker)._ Acho que isso confunde o leitor e por isso mantenho os originais em inglês, mas em itálico.
+Utilizo do _itálico_ para neologismos, palavras em Inglês ou em outro idioma, como _crypter_ (encriptador). Em geral, prefiro não utilizar termos "aportuguesados" como baite (para _byte_) ou linkeditor (para _linker_). Acho que pode confundir quem lê e por isso mantenho os originais em inglês, mas em itálico.
 
 Já o **negrito**, utilizo para dar destaque ou para me referir a um nome de ferramenta, por exemplo: o comando **ipconfig**.
 
-Algumas vezes utilizo o termo **GNU/Linux** ao invés de somente Linux. O projeto GNU é o principal projeto da FSF (_Free Software Foundation_), a fundação que criou o conceito de software livre. Suas ferramentas são parte essencial de qualquer sistema operacional baseado no kernel Linux e por isso faz bem lembrá-la.
+Algumas vezes utilizo o termo **GNU/Linux** ao invés de somente Linux. O projeto GNU é o principal projeto da FSF (_Free Software Foundation_), a fundação que criou o conceito de software livre. Suas ferramentas são parte essencial de qualquer sistema operacional baseado no kernel Linux.
 
 Após a introdução, **engenharia reversa** passa a ser utilizado como forma curta de engenharia reversa de _software_.
 
-Nas **operações bit-a-bit** (_bitwise_), utilizo os símbolos da programação para representar as operações E, OU, OU EXCLUSIVO, etc. Muitas vezes no texto adoto seus mnemônicos em inglês como em AND, OR e XOR.
+Nas **operações bit-a-bit** (_bitwise_), utilizo os símbolos da programação para representar as operações E, OU, OU EXCLUSIVO, etc. Muitas vezes no texto adoto seus mnemônicos em inglês como AND, OR e XOR.
 
 ## Arquitetura de Software
 
-Cada frase deste livro, a não ser que expressado diferente, considera a arquitetura Intel x86 (IA-32), visto que esta é documentada o suficiente para começar o estudo de engenharia reversa e moderna o suficiente para criar exemplos funcionais de código e analisar programas atuais.
+Cada frase deste livro, a não ser que expressado diferente, considera a arquitetura Intel x86, visto que esta é documentada o suficiente para começar o estudo de engenharia reversa e moderna o suficiente para criar exemplos funcionais de código e analisar programas atuais.
 
 ## Preparação do Ambiente
 
@@ -52,9 +52,8 @@ int main(void) {
 }
 ```
 
-Este deve ser compilado em ambiente Windows utilizando o Visual Studio.
+Este deve ser compilado em ambiente Windows utilizando o Visual Studio Community.
 
 Tenha em mente que é **necessário** para o aprendizado que você escreva estes códigos, os execute e analise seus resultados, certo? É para o seu próprio bem. :)
 
 Enquanto instala os programas necessários, vamos seguir para a introdução ao assunto!
-

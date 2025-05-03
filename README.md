@@ -24,7 +24,7 @@ Este livro é destinado a iniciantes em engenharia reversa, mas é esperado que 
 
 ## Erros, Comentários e Sugestões
 
-Se encontrou algum erro, quer fazer um comentário, sugestão ou pergunta, por favor utilize o Fórum em https://menteb.in/forum ou nosso servidor do Discord em https://menteb.in/discord.
+Se encontrou algum erro ou quer sugerir alguma mudança, por favor abra um _issue_ no repositório do livro no GitHub em https://github.com/mentebinaria/fundamentos-engenharia-reversa/issues ou fale conosco no Discord em https://menteb.in/discord.
 
 ## Sobre o Autor
 
@@ -36,7 +36,7 @@ A Mente Binária é uma instituição de ensino e pesquisa sem fins lucrativos q
 
 ## Apoie este Livro
 
-**Este livro está em constante desenvolvimento** e a versão online dele está disponível em https://menteb.in/livro para você e outros milhões de falantes da língua portuguesa sem nenhum custo. No entanto, para continuar, precisamos de doações. Se este conteúdo te ajudar, por favor considere nos apoiar seguindo as instruções em https://menteb.in/apoie e aproveite as vantagens e descontos para quem nos apoia. Seu apoio também vai ajudar a manter este livro atualizado e torná-lo cada vez mais melhor.
+**Este livro está em constante desenvolvimento** e a versão online dele está disponível em https://menteb.in/livro para você e outros milhões de falantes da língua portuguesa sem nenhum custo. No entanto, para continuar, precisamos de doações. Considere nos apoiar seguindo as instruções em https://menteb.in/apoie. Seu apoio também vai ajudar a manter este livro atualizado e torná-lo cada vez melhor.
 
 ## Agradecimentos
 

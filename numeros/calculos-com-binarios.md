@@ -1,6 +1,6 @@
 # Cálculos com Binários
 
-Nesta seção faremos alguns cálculos com números binários, considerando cada um de seus dígitos, também chamados de **bits**. Além de operações aritiméticas clássicas como adição, subtração, multiplicação e divisão, estudaremos também conjunção, disjunção, negação e disjunção exclusiva. Também incluiremos outras operações bit-a-bit que fogem da álgebra tradicional, como deslocamento e rotação de bits. Todas são importantes pois existem no contexto do Assembly, que estudaremos no futuro.
+Nesta seção faremos cálculos com números binários considerando cada um de seus dígitos, também chamados de **bits**. Além de operações aritiméticas clássicas como adição, subtração, multiplicação e divisão, estudaremos também conjunção, disjunção, negação e disjunção exclusiva. Também incluiremos outras operações bit-a-bit que fogem da álgebra tradicional, como deslocamento e rotação de bits. Todas são importantes pois existem no contexto do Assembly, que estudaremos no futuro.
 
 {% hint style="info" %}
 Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e operações bit-a-bit (_bitwise_).
@@ -8,7 +8,7 @@ Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e
 
 ## Conjunção (AND)
 
-Dados dois bits x e y, a conjunção entre eles resulta em 1 se ambos forem iguais a 1. Na programação, o seu símbolo na programação é normalmente o "e comercial" (&). Sendo assim, a chamada **tabela verdade** desta operação é:
+Dados dois bits x e y, a conjunção entre eles resulta em 1 se ambos forem iguais a 1. Na programação, o seu símbolo é normalmente o "e comercial" (&). Sendo assim, a chamada **tabela verdade** desta operação é:
 
 | x | y | x & y |
 | - | - | ----- |
@@ -35,7 +35,7 @@ O resultado é 0b1000, ou 8 em decimal. Sendo assim, as linhas abaixo farão o m
 8
 >>> 0xa & 0b1100
 8
->>> 012 & 0xc
+>>> 0o12 & 0xc
 8
 >>> 0xa & 0xc
 8
@@ -161,16 +161,14 @@ x = x ^ y   # resulta em 0b0101 (valor original de y)
 
 ### Cifragem
 
-Dado um número x, é possível calcular o resultado de uma operação XOR com um valor qualquer que chamaremos de chave. Se usarmos a mesma chave num XOR com este resultado, obtemos o número original:
+Dado um número x, é possível calcular o resultado de uma operação XOR com um valor qualquer que chamaremos de chave. Se usarmos a mesma chave num XOR com este resultado, obteremos o número original:
 
 ```python
->>> x = 2023
->>> x = x ^ 0x42
->>> x
-1957
->>> x = x ^ 0x42
->>> x
-2023
+>>> x = 2025
+>>> x ^ 0x42
+1963
+>>> 1963 ^ 0x42
+2025
 ```
 
 Portanto, para uma cifrabem básica, se você quiser esconder o valor original de um número antes de enviá-lo numa mensagem, basta fazer um XOR dele com uma chave que só você e o receptor da mensagem conheça (0x42 no exemplo). Assim você usa a chave para fazer a operação XOR com ele e instrui o receptor da mensagem (por outro canal) a usar a mesma chave numa operação XOR afim de obter o número original. Claro que esta cifragem é muito simples, e consequentemente muito fraca e fácil de quebrar, mas está aqui em caráter de exemplo.
@@ -241,10 +239,10 @@ O _bit_ zero, que está mais à esquerda, "deu a volta" e veio parar ao lado dir
 Analise com o número 133 agora:
 
 ```
- 10000101 # 133 em decimal
-        1 # ROL com 1
+ 10000101  # 133 em decimal
+        1  # ROL com 1
 ----------
- 00001011 # 11 em decimal
+ 00001011  # 11 em decimal
 ```
 
 Desta vez o _bit_ 1, que estava mais à esquerda, veio parar ao lado direito do _bit_ mais à direita, e todos os outros _bits_ foram "empurrados" para a esquerda.

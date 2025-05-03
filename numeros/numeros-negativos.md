@@ -7,7 +7,7 @@ Já vimos que um _byte_ pode armazenar números de 0 a 255 por conta de seus 8 _
 -2
 ```
 
-Mas não falhou! Isso acontece porque na computação dividimos as possibilidades quase que "ao meio". Por exemplo, sabendo que 1 _byte_ pode representar 256 possibilidades (sendo o 0 e mais 255 de números positivos), podemos dividir tais possibilidades, de modo a representar de -128 até +127. Continuamos com 256 possibilidades diferentes (incluindo o zero), reduzimos o máximo e aumentamos o mínimo. :-)
+Mas não falhou! Isso acontece porque na computação dividimos as possibilidades quase que "ao meio". Por exemplo, sabendo que 1 _byte_ pode representar 256 possibilidades (sendo o 0 e mais 255 de números positivos), podemos dividir tais possibilidades, de modo a representar de -128 até +127. Continuamos com 256 possibilidades diferentes (incluindo o zero), reduzimos as quantidades máxima e miníma representáveis. :\)
 
 O _bit_ mais significativo (mais à esquerda) é utilizado para representar o sinal. Se for 0, é um número positivo. Se for 1, é um número negativo.
 
@@ -33,7 +33,7 @@ O que aconteceu? Bem, realmente 0b11110110 é 246 (em decimal), se interpretado 
 -10
 ```
 
-Já em C, é preciso especificar se uma variável é _signed_ ou _unsigned_. O jeito como o processador reconhece isso foge do escopo deste livro, mas por hora entenda que não há mágica: 0b11110110 (ou 0xf6) pode ser tanto 246 quanto -10. Depende de como é interpretado, com ou sem sinal.
+Já em C, é preciso especificar se uma variável é _signed_ ou _unsigned_. O jeito como o processador reconhece isso foge do escopo deste livro, mas por hora entenda que não há mágica: 0b11110110 (ou 0xf6) pode ser tanto 246 quanto -10. Depende de como é interpretado, se com ou sem sinal.
 
 Por fim, é importante notar que a mesma regra se aplica para números de outros tamanhos (4 _bytes_ por exemplo). Analise a tabela abaixo, que considera números de 32 _bits_:
 

@@ -1,6 +1,6 @@
 # Sistemas de Numeração
 
-Conhecemos bem os dez símbolos latinos 0, 1, 2, 3, 4, 5, 6, 7, 8 e 9 utilizados no sistema de numeração decimal. Neste sistema, o símbolo 0 (zero) é utilizado para descrever uma quantidade nula, enquanto o símbolo 1 (um) descreve uma quantidade, o 2 (dois) duas quantidades e assim sucessivamente, até que atinjamos a quantidade máxima com apenas um dígito, que é 9 (nove). Para representar uma quantidade a mais que essa, a regra é: pegamos o símbolo que representa uma quantidade e colocamos à sua direita o que representa uma quantidade nula formando, assim, 10 (dez). O mesmo processo ocorre com este zero à direita, até que os dígitos "acabem" novamente e aí incrementamos o 1 da esquerda em uma unidade, até que chegamos ao 20. Estudos futuros definiram este conjunto como **números naturais** e adicionaram outros: números inteiros (que contemplam os negativos), fracionários, complexos, etc.
+Conhecemos bem os dez símbolos latinos utilizados no sistema de numeração decimal: 0, 1, 2, 3, 4, 5, 6, 7, 8 e 9. Neste sistema, o símbolo 0 (zero) é utilizado para descrever uma quantidade nula, enquanto o símbolo 1 (um) descreve uma quantidade, o 2 (dois) duas quantidades e assim sucessivamente, até que atinjamos a quantidade máxima representável com apenas um dígito, que é 9 (nove). Para representar uma quantidade a mais que essa, a regra é: pegamos o símbolo que representa uma quantidade e colocamos à sua direita o que representa uma quantidade nula formando, assim, o 10 (dez). O mesmo processo ocorre com este zero à direita, até que os dígitos "acabem" novamente e aí incrementamos o 1 da esquerda em uma unidade, até que chegamos ao 20. Estudos futuros definiram este conjunto como **números naturais** e adicionaram outros: números inteiros (que contemplam os negativos), fracionários, complexos, etc.
 
 Mas este não é o único - nem é o primeiro - sistema para representação de quantidades. Ou seja, não é o único sistema de numeração possível. Os computadores, diferente dos humanos, são máquinas elétricas. Sendo assim, a maneira mais fácil de números fluírem por eles seria com um sistema que pudesse ser **interpretado** a partir de dois estados: ligado e desligado.
 
@@ -16,7 +16,7 @@ Assim sendo, se formos contar até dez unidades, teremos: 0, 1, 10, 11, 100, 101
 
 Perceba que a lógica de organização dos símbolos no sistema binário é a mesma do sistema de numeração decimal. No entanto, em binário, como o próprio nome sugere, só temos dois símbolos disponíveis para representar todas as quantidades.
 
-Por utilizar dois símbolos que são idênticos aos do sistema decimal, num contexto genérico, números binários são normalmente precedidos com 0b para não haver confusão. Então para expressar dez quantidades faríamos 0b1010. Por exemplo, a seguinte linha na console do Python imprime o valor 10:
+Por utilizar dois símbolos que são idênticos aos do sistema decimal, num contexto genérico, números binários são normalmente precedidos com 0b para não haver confusão. Então para expressar dez quantidades faríamos 0b1010. Por exemplo, a seguinte linha na console do Python imprime o valor 10 na tela:
 
 ```python
 >>> 0b1010
@@ -28,16 +28,14 @@ Ou em linguagem C:
 printf("%d\n", 0b1010);
 ```
 
+Na prática, os códigos acima funcionam como conversores de binário para decimal.
+
 ## Octal
 
 Como o próprio nome sugere, o sistema octal possui oito símbolos: 0, 1, 2, 3, 4, 5, 6 e 7. À esta altura já dá pra sacar que para representar oito quantidades em octal o número é 10. Nove é 11, dez é 12 e assim sucessivamente.
 
 {% hint style="info" %}
-O sistema octal é utilizado para as permissões de arquivo pelo comando chmod nos sistemas baseados em Linux e BSD. Os números 1, 2 e 4 representam permissão de execução, escrita e leitura, respectivamente. Para combiná-las, basta somar seus números correspondentes. Sendo assim, uma permissão 7 significa que se pode-se tudo (rwx) enquanto uma permissão 6 somente escrita e leitura (rw-). Tais números foram escolhidos para não haver confusão. Se fossem os números 1, 2 e 3 a permissão 3 poderia significar tanto ela mesma quanto 1+2 (execução + escrita). Usando 1, 2 e 4 não há brechas para dúvida. ;)
-{% endhint %}
-
-{% hint style="danger" %}
-Na programação, normalmente um número octal é precedido de um algarismo 0 para diferenciar-se do decimal. Por exemplo, 12 é doze em decimal, mas 012 é octal, que vale dez em decimal. Logo, preste atenção antes de ignorar um zero à esquerda.
+O sistema octal é utilizado para as permissões de arquivo pelo comando chmod nos sistemas baseados em Linux e BSD. Os números 1, 2 e 4 representam permissão de execução, escrita e leitura, respectivamente. Para combiná-las, basta somar seus números correspondentes. Sendo assim, uma permissão 7 significa que se pode-se tudo \(leitura, escrita e execução\) enquanto uma permissão 6 permite somente escrita e leitura. Tais números foram escolhidos para não haver confusão. Se fossem os números 1, 2 e 3 a permissão 3 poderia significar tanto ela mesma quanto 1+2 (execução + escrita). Usando 1, 2 e 4 não há brechas para dúvidas. ;\)
 {% endhint %}
 
 Veja um exemplo em Python (lembre-se: abra o Python e estude junto agora):
@@ -80,7 +78,7 @@ Aqui cabe uma tabela comparativa, só para exercitar:
 
 Existem algumas propriedades interessantes quando relacionamos os diferentes sistemas de numeração vistos aqui. São elas:
 
-* Quanto mais símbolos existem no sistema, menos dígitos utilizamos para representar mais quantidades.
+* Quanto mais símbolos existem no sistema, menos dígitos utilizamos para representar grandes quantidades.
 * 0xF é igual a 0b1111, assim como 0xFF equivale a 0b**1111**1111 e 0xFE é o mesmo que 0b**1111**1110.
 * 0x10 é 16. Então, 0x20 é 32 e 0x40 é 64.
 * Em hexadecimal, 9 + 1 é A, então 19 + 1 é 1A.
@@ -94,7 +92,7 @@ Existem algumas propriedades interessantes quando relacionamos os diferentes sis
 
 Por isso podemos dizer que 0x**B**0**B**0**C**A é 0b**1011**0000**1011**0000**1100**1010.
 
-* Em hexadecimal, zeros à esquerda e letras maiúsculas ou minúsculas não importam. Veja no Python:
+* Em hexadecimal, zeros à esquerda depois do prefixo e letras maiúsculas ou minúsculas não importam. Veja no Python:
 
 ```python
 >>> 0xa

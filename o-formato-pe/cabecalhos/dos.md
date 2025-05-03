@@ -1,8 +1,8 @@
 # MS-DOS
 
-Não estranhe o nome deste cabeçalho. Ele é parte do que chamamos de **stub do MS-DOS:** um executável completo de MS-DOS presente no início de todo executável PE, para fins de retrocompatibilidade.
+Não estranhe o nome deste cabeçalho. Ele é parte do que chamamos de **stub do MS-DOS:** um executável completo de MS-DOS presente no início de todo executável PE para fins de retrocompatibilidade.
 
-Sendo assim, todo executável PE começa com este cabeçalho, que é definido pela seguinte estrutura:
+Sendo assim, todo executável PE começa com este cabeçalho que é definido pela seguinte estrutura:
 
 ```c
 typedef struct {
