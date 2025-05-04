@@ -4,7 +4,7 @@ Apesar de não estudarmos todos os aspectos da linguagem Assembly, alguns assunt
 
 ## O que é uma Função
 
-Basicamente, uma função é um **bloco de código reutilizável** num programa. Tal bloco faz-se útil quando um determinado conjunto de instruções precisa ser invocado em vários pontos do programa. Por exemplo, suponha um programa em Python que precise converter a temperatura de Fahrenheit para Celsius várias vezes no decorrer de seu código. Ele pode ser escrito assim:
+Basicamente, uma função é um **bloco de código reutilizável** num programa. Tal bloco faz-se útil quando um determinado conjunto de instruções precisa ser invocado em pontos diferentes no programa. Por exemplo, suponha que um programa em Python precise converter a temperatura de Fahrenheit para Celsius várias vezes no decorrer de seu código. Ele pode ser escrito assim:
 
 ```python
 fahrenheit = 230.4
@@ -28,7 +28,7 @@ O programa funciona e a saída é a esperada:
 32.27777777777778
 ```
 
-No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada fica maior em _bytes_. Toda esta repetição também prejudica a manutenção do código, pois se o programador precisar fazer uma alteração no cálculo, vai ter que alterar em todos eles. É aí que entram as funções. Analise a seguinte versão do mesmo programa:
+No entanto, é pouco prático, pois repetimos o mesmo código várias vezes. Além disso, uma versão compilada geraria o mesmo conjunto de instruções várias vezes, ocupando um espaço desnecessário no binário final. Toda esta repetição também prejudica a manutenção do código, pois se precisarmos fazer uma alteração no cálculo, teríamos que alterar em todos os pontos onde o cálculo é feito. É aí que entram as funções. Analise a seguinte versão do mesmo programa:
 
 ```python
 def fahrenheit2celsius(fahrenheit):
@@ -46,56 +46,81 @@ print(celsius)
 
 A saída é a mesma, mas agora o programa está utilizando uma função, onde o cálculo só foi definido uma única vez e toda vez que for necessário, o programa a chama.
 
-Uma função normalmente tem:
+Uma função pode ter:
 
 1. Argumentos, também chamados de parâmetros, que são os dados que a função recebe, necessários para cumprir seu propósito.
-2. Retorno, que é o resultado da conclusão do seu propósito, seja bem sucedida ou não.
-3. Um nome (na visão do programador) ou um endereço de memória (na visão do processador).
+2. Retorno, que é o resultado da conclusão do seu propósito.
+3. Um nome (na visão de quem programa) ou um endereço de memória (na visão do processador).
 
 Agora cabe a nós estudar como isso tudo funciona em baixo nível.
 
-{% hint style="info" %}
-Nos primórdios da computação as funções eram chamadas de **procedimentos** (_procedures_). Em algumas linguagens de programação, no entanto, possuem tanto funções quanto procedimentos. Estes últimos são "funções que não retornam nada". Já no paradigma da programação orientada a objetos (POO), as funções de uma classe são chamadas de **métodos**.
-{% endhint %}
+> Nos primórdios da computação as funções eram chamadas de **procedimentos** (_procedures_). Algumas linguagens mais antas de programação, no entanto, possuem tanto funções quanto procedimentos. Estes últimos são "funções que não retornam nada". É possível também que você encontre estes termos sendo usados como sinônimos.
 
 ## Funções em Assembly
 
-Em baixo nível, uma função é implementada basicamente num bloco que não será executado até ser chamado por uma instrução CALL. Ao final de uma instrução, encontramos normalmente a instrução RET. Vamos analisar uma função simples de soma para entender:
+Em baixo nível, uma função é implementada basicamente num bloco que não será executado até ser chamado por uma instrução CALL. Ao final de uma função, encontramos normalmente a instrução RET. Vamos analisar um programa cuja função principal chama uma simples função de soma:
 
 ```c
-#include <stdio.h>
-
 int soma(int x, int y) {
-  return x+y;
+	return x + y;
 }
 
 int main(void) {
-  printf("%d\n", soma(3,4));
-  return 0;
+	int res = soma(3, 4);
+	return 0;
 }
 ```
 
-Olha como ela fica compilada no Linux em 32-bits:
+Olha como este programa pode ficar ao ser compilado no Windows em 64-bits:
 
 ```
-0804840b <soma>:
- 804840b:       55                      push   ebp
- 804840c:       89 e5                   mov    ebp,esp
- 804840e:       8b 55 08                mov    edx,DWORD PTR [ebp+0x8]
- 8048411:       8b 45 0c                mov    eax,DWORD PTR [ebp+0xc]
- 8048414:       01 d0                   add    eax,edx
- 8048416:       5d                      pop    ebp
- 8048417:       c3                      ret
+<soma>:
+	140001000 | mov dword ptr ss:[rsp+10], edx
+	140001004 | mov dword ptr ss:[rsp+8], ecx
+	140001008 | mov eax, dword ptr ss:[rsp+10]
+	14000100C | mov ecx, dword ptr ss:[rsp+8]
+	140001010 | add ecx, eax
+	140001012 | mov eax, ecx
+	140001014 | ret
 
-08048418 <main>:
-...
- 8048429:       6a 04                   push   0x4
- 804842b:       6a 03                   push   0x3
- 804842d:       e8 d9 ff ff ff          call   804840b <soma>
- 8048432:       83 c4 08                add    esp,0x8
+<main>:
+    140001020 | sub rsp, 38                                  
+	140001024 | mov edx, 4
+	140001029 | mov ecx, 3
+	14000102E | call 140001000
+	140001033 | mov dword ptr ss:[rsp+20], eax
+	140001037 | xor eax, eax
+	140001039 | add rsp, 38
+	14000103D | ret
 ```
 
-Removi partes do código intencionalmente, pois o objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL (no endereço 0x804842d em nosso exemplo) chama a função _soma()_ em 0x0804840b e a instrução RET (em 0x8048417) retorna para a instrução imediatamente após a CALL (0x8048432), para que a execução continue.
+O objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL (no endereço 0x14000102E em nosso exemplo) chama a função _soma()_ em 0x140001000 e a instrução RET (em 0x140001014) retorna para a instrução imediatamente após a CALL (0x140001033), para que a execução continue.
+
+Uma vez entendido isso, vamos agora ver como os argumentos são passados para as funções.
+
+## Passagem de parâmetros
+
+A escolha das instruções que serão utilizadas para representar fielmente um código-fonte em uma linguagem de alto nível é uma decisão do compilador. No caso do exemplo com a função _soma()_, isso fica a cargo do compilador de C. Há incontáveis maneiras de se fazer a mesma coisa, o que pode envolver o uso de diferentes instruções, em diferentes contextos.
+
+Mas há uma área onde o sistema operacional coloca algumas regras. Uma delas diz respeito a como as funções serão chamadas pelos binários compilados. Essas regras são conhecidas como **convenções de chamadas**. Elas fazem parte do que chamamos de _Application Binary Interface (ABI)_, um conjunto de regras para os compiladores seguirem de modo que tudo corra bem com os binários compilados.
+
+A convenção mais utilizada no Windows em 64-bits estabelece, dentre outras coisas, que:
+
+- Os parâmetros do tipo inteiro serão passados nos registradores RCX, RDX, R8 e R9, nesta ordem.
+- Se houver mais de quatro parâmetros, os excedentes são passados pela pilha. Falaremos mais da pilha em breve.
+- O retorno é em RAX.
+
+Voltando ao nosso exemplo de código, o trecho `soma(3, 4)` gerou, em Assembly:
+
+```x86
+mov edx, 4
+mov ecx, 3
+call 140001000
+```
+
+A convenção foi de fato seguida. O segundo parâmetro, o literal 4, foi posto em EDX. Como este MOV zera a parte alta de RDX, é o mesmo que dizer que o parâmetro foi posto em RDX.
+
+O segundo parâmetro foi posto em RCX normalmente. Falta entender como a função recuperou estes parâmetros. Para isso, vamos falar de pilha.
 
 ## A Pilha de Memória
 
@@ -145,6 +170,22 @@ Por conta dessa atualização do EIP, o fluxo é desviado para o endereço da fu
 
 Isso faz com que o fluxo de execução do programa volte para a instrução imediatamente após a CALL, que chamou a função.
 
+
+
+```x86
+mov dword ptr ss:[rsp+10], edx
+mov dword ptr ss:[rsp+8], ecx
+mov eax, dword ptr ss:[rsp+10]
+mov ecx, dword ptr ss:[rsp+8]
+add ecx, eax
+mov eax, ecx
+ret
+```
+
+Parece difícil, mas não é. Vamos juntos:
+
+- A primeira instrução pega o valor de EDX (segundo parâmetro, o 4) e copia para 
+
 ## Análise da MessageBox
 
 Vamos agora analisar a pilha de memória num exemplo com a função MessageBox, da API do Windows:
@@ -167,8 +208,10 @@ O próximo parâmetro é o número 404000, um ponteiro para a _string_ "Johnny",
 
 O resultado é apresentado a seguir:
 
-![Resultado da chamada à MessageBox](../.gitbook/assets/msgbox.png)
+![Resultado da chamada à MessageBox][image-1]
 
 É importante perceber que, após serem compreendidos, podemos controlar estes parâmetros e alterar a execução do programa conforme quisermos. Este é o assunto do próximo capítulo, sobre depuração.
 
 Assembly é, por si só, um assunto extenso e bastante atrelado à arquitetura e ao sistema operacional no qual se está trabalhando. Este capítulo apresentou uma introdução ao Assembly Intel x86 e considerou o Windows como plataforma. Dois bons recursos de Assembly, que tomam o Linux como sistema base, são os livros gratuito Aprendendo Assembly, do Felipe Silva e Linguagem Assembly para i386 e x86-64, do Frederico Pissara.
+
+[image-1]:	../.gitbook/assets/msgbox.png
