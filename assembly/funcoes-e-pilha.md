@@ -120,27 +120,25 @@ call 140001000
 
 A convenção foi de fato seguida. O segundo parâmetro, o literal 4, foi posto em EDX. Como este MOV zera a parte alta de RDX, é o mesmo que dizer que o parâmetro foi posto em RDX.
 
-O segundo parâmetro foi posto em RCX normalmente. Falta entender como a função recuperou estes parâmetros. Para isso, vamos falar de pilha.
+O segundo parâmetro foi posto em RCX normalmente. Falta entender como a função recuperou estes parâmetros e também como passar parâmetros pela pilha quando a função exige mais de quatro parâmetros. Para isso, vamos falar de pilha logo porque sei que você não tá se aguentando né?
 
 ## A Pilha de Memória
 
-A memória RAM para um processo é dividida em áreas com diferentes propósitos. Uma delas é a pilha, ou _stack_.
+A memória RAM para um processo é dividida em áreas com diferentes propósitos. Uma delas é a pilha, ou _stack_ em inglês.
 
-Essa área de memória funciona de forma que o que é colocado lá fique no topo e o último dado colocado na pilha seja o primeiro a ser retirado, como uma pilha de pratos ou de cartas de baralho mesmo. Esse método é conhecido por LIFO (_Last In First Out_).
+Essa área de memória funciona de forma que o que é colocado lá fica no topo e o último dado colocado na pilha é o primeiro a ser retirado, como uma pilha de pratos ou de cartas de baralho. Esse esquema é conhecido por LIFO (_Last In First Out_), ou seja, o “o último dado a entrar é o primeiro a sair”.
 
-Seu principal uso é no uso de funções, tanto para passagem de argumentos (parâmetros da função) quanto para alocação de variáveis locais da função (que só existem enquanto a função executa).
+Existem duas operações possíveis na pilha:
 
-Na arquitetura IA-32, a pilha é alinhada em 4 _bytes_ (32-bits). Por consequência, todos os seus endereços também o são. Logo, se novos dados são colocados na pilha (empilhados), o endereço do topo é **decrementado** em 4 unidades. Se um dado for desempilhado, o endereço do topo é **incrementado** em 4 unidades. Perceba a lógica invertida, porque a pilha começa num endereço alto e cresce em direção a endereços menores.
+1. Adicionar um dado (empilhar).
+2. Remover um dado (desempilhar).
 
-Existem dois registradores diretamente associados com a pilha de memória alocada para um processo. São eles:
+Tanto para empilhar quanto para desempilhar um dado, é necessário conhecer o endereço do topo da pilha. O registrador que, por convenção, sempre tem essa informação é o RSP.
 
-* O ESP, que aponta para o topo da pilha.
-* O EBP, que aponta para a base do _stack frame_.
-
-Veremos agora as instruções de manipulação de pilha. A primeira é a instrução PUSH (do inglês "empurrar") que, como o nome sugere, empilha um dado. Na forma abaixo, essa instrução faz com que o processador copie o conteúdo do registrador EAX para o topo da pilha:
+Veremos agora as instruções de manipulação de pilha. A primeira é a instrução PUSH (do inglês "empurrar") que, como o nome sugere, empilha um dado. Na forma abaixo, essa instrução faz com que o processador copie o conteúdo do registrador RAX para o topo da pilha:
 
 ```asm
-push eax
+push rax
 ```
 
 Também é possível empilhar um valor literal. Por exemplo, supondo que o programa coloque o valor um na pilha:
@@ -149,28 +147,28 @@ Também é possível empilhar um valor literal. Por exemplo, supondo que o progr
 push 1
 ```
 
-Além de copiar o valor proposto para o topo da pilha, a instrução PUSH **decrementa** o registrador ESP em 4 unidades, conforme já explicado o motivo. Sempre.
+Além de copiar o valor para o topo da pilha, a instrução PUSH **decrementa** o registrador RSP em 8 unidades, o tamanho da palavra em 64-bits.
 
 Sua instrução antagônica é a POP, que só precisa de um registrador de destino para copiar lá o valor que está no topo da pilha. Por exemplo:
 
 ```asm
-pop edx
+pop rdx
 ```
 
-Seja lá o que estiver no topo da pilha, será copiado para o registrador EDX. Além disso, o registrador ESP será **incrementado** em 4 unidades. Sempre.
+Seja lá o que estiver no topo da pilha, será copiado para o registrador RDX. Além disso, o registrador RSP será **incrementado** em 8 unidades.
 
 Temos também a instrução CALL, que faz duas coisas:
 
-1. Coloca o endereço da próxima instrução na pilha de memória (no caso do exemplo, 0x8048432).
-2. Coloca o seu parâmetro, ou seja, o endereço da função a ser chamada, no registrador EIP (no exemplo é o endereço 0x804840b).
+1. Empilha o endereço da próxima instrução.
+2. Coloca o seu parâmetro, ou seja, o endereço da função a ser chamada, no registrador RIP.
 
-Por conta dessa atualização do EIP, o fluxo é desviado para o endereço da função chamada. A ideia de colocar o endereço da próxima instrução na pilha é para o processador saber para onde tem que voltar quando a função terminar. E, falando em terminar, a estrela do fim da festa é a instrução RET (de _RETURN_). Ela faz uma única coisa:
+Por conta dessa atualização do RIP, o fluxo é desviado para o endereço da função chamada. A ideia de colocar o endereço da próxima instrução na pilha é para o processador saber para onde tem que voltar quando a função terminar. E, falando em terminar, a estrela do fim da festa é a instrução RET (de _RETURN_). Ela faz uma única coisa:
 
-1. Retira um valor do topo da pilha e coloca no EIP.
+1. Retira um valor do topo da pilha e coloca no RIP.
 
 Isso faz com que o fluxo de execução do programa volte para a instrução imediatamente após a CALL, que chamou a função.
 
-
+Sabendo de tudo isso, vamos analisar a função soma():
 
 ```x86
 mov dword ptr ss:[rsp+10], edx
@@ -184,7 +182,7 @@ ret
 
 Parece difícil, mas não é. Vamos juntos:
 
-- A primeira instrução pega o valor de EDX (segundo parâmetro, o 4) e copia para 
+- A primeira instrução pega o valor de EDX (segundo parâmetro, o 4) e copia para RSP+10.
 
 ## Análise da MessageBox
 
