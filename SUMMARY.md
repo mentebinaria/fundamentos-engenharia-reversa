@@ -19,6 +19,7 @@
     * [MS-DOS](o-formato-pe/cabecalhos/dos.md)
     * [COFF](o-formato-pe/cabecalhos/coff.md)
     * [Opcional](o-formato-pe/cabecalhos/opcional.md)
+    * [Diretórios de Dados](o-formato-pe/cabecalhos/diretorios.md)
     * [Cabeçalhos das Seções](o-formato-pe/cabecalhos/cabecalhos-das-secoes.md)
   * [Seções](o-formato-pe/secoes.md)
   * [Import Table](o-formato-pe/import-table.md)
