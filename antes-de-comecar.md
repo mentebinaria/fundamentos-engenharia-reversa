@@ -27,6 +27,7 @@ Este é um guia prático. Sendo assim, é recomendável que você seja capaz de 
 Nessa máquina Windows, você deve baixar e instalar os seguintes programas:
 
 * Detect It Easy (DIE) - https://horsicq.github.io
+* flat assembler - https://flatassembler.net/
 * HxD - https://mh-nexus.de
 * Python 3 - https://www.python.org
 * Visual Studio Community - https://aka.ms/vs
