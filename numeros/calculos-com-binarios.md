@@ -1,6 +1,6 @@
 # Cálculos com Binários
 
-Nesta seção faremos cálculos com números binários considerando cada um de seus dígitos, também chamados de **bits**. Além de operações aritiméticas clássicas como adição, subtração, multiplicação e divisão, estudaremos também conjunção, disjunção, negação e disjunção exclusiva. Também incluiremos outras operações bit-a-bit que fogem da álgebra tradicional, como deslocamento e rotação de bits. Todas são importantes pois existem no contexto do Assembly, que estudaremos no futuro.
+Nesta seção faremos cálculos com números binários considerando cada um de seus dígitos, também chamados de **bits**. Além de operações aritméticas clássicas como adição, subtração, multiplicação e divisão, estudaremos também conjunção, disjunção, negação e disjunção exclusiva. Também incluiremos outras operações bit-a-bit que fogem da álgebra tradicional, como deslocamento e rotação de bits. Todas são importantes pois existem no contexto do Assembly, que estudaremos no futuro.
 
 {% hint style="info" %}
 Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e operações bit-a-bit (_bitwise_).
@@ -10,12 +10,12 @@ Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e
 
 Dados dois bits x e y, a conjunção entre eles resulta em 1 se ambos forem iguais a 1. Na programação, o seu símbolo é normalmente o "e comercial" (&). Sendo assim, a chamada **tabela verdade** desta operação é:
 
-| x | y | x & y |
-| - | - | ----- |
-| 0 | 0 | 0     |
-| 0 | 1 | 0     |
-| 1 | 0 | 0     |
-| 1 | 1 | 1     |
+| x   | y   | x & y |
+| --- | --- | ----- |
+| 0   | 0   | 0     |
+| 0   | 1   | 0     |
+| 1   | 0   | 0     |
+| 1   | 1   | 1     |
 
 Então suponha que queiramos calcular a conjunção do número 0xa com 12. Sim, estamos misturando dois sistemas de numeração (hexadecimal e decimal) na mesma operação. E por que não? O segredo é converter para binário e fazer o cálculo para cada bit, respeitando a tabela verdade da conjunção. Mãos à obra:
 
@@ -47,14 +47,13 @@ Por que utilizei tantas bases diferentes? Quero com isso por na sua cabeça que 
 
 O resultado da disjunção entre dois bits x e y é 1 se pelo menos um deles for 1. Sendo assim, segue a tabela verdade:
 
-| x | y | x \| y |
-| - | - | ------ |
-| 0 | 0 | 0      |
-| 0 | 1 | 1      |
-| 1 | 0 | 1      |
-| 1 | 1 | 1      |
-
-Na programação, o símbolo normalmente é a barra em pé (|). Por exemplo, vamos calcular a disjunção entre 8 e 5:
+| x                                                       | y                                                       | x \\| y |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------- |
+| 0                                                       | 0                                                       | 0       |
+| 0                                                       | 1                                                       | 1       |
+| 1                                                       | 0                                                       | 1       |
+| 1                                                       | 1                                                       | 1       |
+| Na programação, o símbolo normalmente é a barra em pé ( | ). Por exemplo, vamos calcular a disjunção entre 8 e 5: |         |
 
 ```
 8 = 1000
@@ -88,12 +87,12 @@ Isso porque numa soma entre 1 e 1 o resultado seria 10 (2 em decimal), já na op
 
 A disjunção exclusiva entre x e y resulta em 1 se **somente** **um** deles for 1. Sendo assim:
 
-| x | y | x ^ y |
-| - | - | ----- |
-| 0 | 0 | 0     |
-| 0 | 1 | 1     |
-| 1 | 0 | 1     |
-| 1 | 1 | 0     |
+| x   | y   | x ^ y |
+| --- | --- | ----- |
+| 0   | 0   | 0     |
+| 0   | 1   | 1     |
+| 1   | 0   | 1     |
+| 1   | 1   | 0     |
 
 Assim como a disjunção é normalmente chamada de "OU", a disjunção exclusiva é chamada de "OU exclusivo", ou simplesmente XOR. O símbolo que representa a disjunção exclusiva em programação é o circunflexo (^).
 
@@ -253,14 +252,14 @@ Não estamos limitados a fazer operações ROL e ROR somente com 1. O byte 133 R
 
 Para negar um bit, basta invertê-lo:
 
-| x | \~x |
-| - | --- |
-| 0 | 1   |
-| 1 | 0   |
+| x   | \\\~x |
+| --- | ----- |
+| 0   | 1     |
+| 1   | 0     |
 
 No entanto, para inverter o número maior, como por exemplo 0b100, é preciso saber seu tamanho. Analise os exemplos abaixo para tamanhos variados:
 
-| Tamanho           | 0b100                              | \~0b100                            |
+| Tamanho           | 0b100                              | \\\~0b100                          |
 | ----------------- | ---------------------------------- | ---------------------------------- |
 | 1 byte            | 0b00000100                         | 0b11111011                         |
 | 2 _bytes_ (WORD)  | 0b0000000000000100                 | 0b1111111111111011                 |

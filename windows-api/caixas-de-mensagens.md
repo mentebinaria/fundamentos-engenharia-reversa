@@ -21,7 +21,7 @@ int main() {
 }
 ```
 
-Tecle F5 para rodar o programa e você deve ver uma janela como esta:
+Tecle `F5` para rodar o programa e você deve ver uma janela como esta:
 
 ![](../.gitbook/assets/msgboxw.png)
 
@@ -58,9 +58,9 @@ int main() {
 
 Vamos analisar os conceitos novos aqui, como fizemos com o programa anterior:
 
-* Na linha 5 declaro uma variável do tipo `LPCWSTR`. A diferença de `LPCSTR`, que já estudamos, é este "W", de _wide_, para definir uma string Unicode.
-* A linha 7 declara uma variável `ret` do tipo `int` e já a inicializa com o retorno da chamada à `MessageBox`.
-* Nas linhas 12 e 15 comparo o conteúdo da variável `res`, que detém o retorno da chamada à `MessageBox`. Se for igual a `IDYES`, novamente uma macro, mostra uma determinada mensagem. Se for igual a `IDNO`, mostra outra.
+* Na **linha 5** declaro uma variável do tipo `LPCWSTR`. A diferença de `LPCSTR`, que já estudamos, é este "W", de _wide_, para definir uma string Unicode.
+* A **linha 7** declara uma variável `ret` do tipo `int` e já a inicializa com o retorno da chamada à `MessageBox`.
+* Nas **linhas 12** e **15** comparo o conteúdo da variável `res`, que detém o retorno da chamada à `MessageBox`. Se for igual a `IDYES`, novamente uma macro, mostra uma determinada mensagem. Se for igual a `IDNO`, mostra outra.
 
 {% hint style="success" %}
 Em relação às _strings_, há três maneiras de se programar com a Windows API: ASCII (`CHAR`), UNICODE (`WCHAR`) ou em compatibilidade (`TCHAR`), que expandirá para `CHAR` ou `WCHAR`, caso a macro `UNICODE` esteja definida. Atualmente, é recomendado utilizar `WCHAR` e textos `L"assim"`.

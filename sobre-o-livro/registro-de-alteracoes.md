@@ -2,7 +2,7 @@
 
 ## Primeira Edição - Um dia 🤞
 
-A primeira edição deste livro ainda está em progresso. Os capítulos de Assembly e Depuração foram finalizados. Uma seção sobre Processos foi adicionada no capítulo Execução de Programas. O capítulo sobre a Windows API foi espandido. Os exemplos em Python foram atualizados para Python 3. O apêndice de Ferramentas foi atualizado e no momento estou trabalhando nos exemplos e na revisão geral do livro para publicá-lo.
+A primeira edição deste livro ainda está em progresso. Os capítulos de Assembly e Depuração foram finalizados. Uma seção sobre Processos foi adicionada no capítulo Execução de Programas. O capítulo sobre a Windows API foi expandido. Os exemplos em Python foram atualizados para Python 3. O apêndice de Ferramentas foi atualizado e no momento estou trabalhando nos exemplos e na revisão geral do livro para publicá-lo.
 
 Coisas nas quais estou trabalhando:
 
