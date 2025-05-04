@@ -21,43 +21,43 @@ O registro tem algumas chaves especiais em sua raiz. São elas:
 #endif
 ```
 
-As quatro primeiras chaves são as mais comuns. Dentro delas, é possível criar e ler subchaves e manipular seus valores. Vamos ver como fazer isso estudando a função `RegCreateKey`.
+Os valores à direita representam códigos para acessar cada chave. As quatro primeiras chaves são as mais comuns. Dentro delas, é possível criar e ler subchaves e manipular seus valores. Vamos ver como fazer isso estudando a função `RegCreateKey`.
 
 ## RegCreateKey
 
 Embora a Microsoft recomende utilizar a versão mais nova dessa função chamada `RegCreateKeyEx`, muitos programas ainda utilizam a versão mais antiga, que estudaremos agora. Eis o protótipo da versão ASCII desta função:
 
 ```c
-LSTATUS RegCreateKeyA(
-  [in]           HKEY   hKey,
-  [in, optional] LPCSTR lpSubKey,
-  [out]          PHKEY  phkResult
+LSTATUS RegCreateKeyW(
+  [in]           HKEY    hKey,
+  [in, optional] LPCWSTR lpSubKey,
+  [out]          PHKEY   phkResult
 );
 ```
 
 Agora vamos aos parâmetros:
 
-### hKey \[entrada]
+### hKey
 
 Uma das chaves raíz, por exemplo: `HKEY_CURRENT_USER` ou `HKEY_LOCAL_MACHINE` (para essa o usuário rodando o programa precisa ter privilégios administrativos).
 
-### lpSubKey \[entrada, opcional]
+### lpSubKey
 
 A subchave desejada, por exemplo, se o parâmetro `hKey` `HKEY_LOCAL_MACHINE` e `lpSubKey` é `Software\Microsoft\Windows\`, o caminho completo utilizado pela função será `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\`.
 
 {% hint style="info" %}
-Alguns textos abreviam essas chaves raíz com as letras iniciais de seu nome. Por exemplo, `HKCU` para `HKEY_CURRENT_USER`, `HKCR` para `HKEY_CLASSES_ROOT` e `HKLM` para `HKEY_LOCAL_MACHINE`. Tais abreviaçõe são válidas para acesso ao registro através de programas como o Registry Editor (regedit.exe), mas não são válidas para código em C.
+Alguns textos abreviam essas chaves raíz com as letras iniciais de seu nome. Por exemplo, `HKCU` para `HKEY_CURRENT_USER`, `HKCR` para `HKEY_CLASSES_ROOT` e `HKLM` para `HKEY_LOCAL_MACHINE`. Tais abreviações são válidas para acesso ao registro através de programas como o Registry Editor (regedit.exe), mas não são válidas para uso com a função.
 {% endhint %}
 
-### phkResult \[saída]
+### phkResult
 
-Um ponteiro para uma váriável do tipo `HKEY`, previamente alocada, pois é aqui que a função vai escrever o handle da chave criada ou aberta por ela.
+Um ponteiro para uma váriável do tipo `HKEY`, previamente alocada, pois é aqui que a função vai escrever o handle da chave criada ou aberta por ela. Perceba que este é um parâmetro de saída, ou seja, quem chamou a função receberá algo nesta variável que pode ser útil após a chamada de função.
 
 Colocando tudo junto, se quisermos criar a sub-chave `HKCU\Software\Mente Binária`, basta fazer:
 
 ```c
 HKEY hChave;
-RegCreateKeyA(HKEY_CURRENT_USER, "Software\\Mente Binária", &hChave);
+RegCreateKey(HKEY_CURRENT_USER, L"Software\\Mente Binária", &hChave);
 RegCloseKey(hKey);
 ```
 
@@ -68,10 +68,10 @@ Perceba que, assim como um handle para arquivo, o handle para chave também prec
 Como o nome sugere, essa função configura um valor em uma chave. Seu protótipo é:
 
 ```c
-LSTATUS RegSetKeyValueA(
+LSTATUS RegSetKeyValueW(
   [in]           HKEY    hKey,
-  [in, optional] LPCSTR  lpSubKey,
-  [in, optional] LPCSTR  lpValueName,
+  [in, optional] LPCWSTR lpSubKey,
+  [in, optional] LPCWSTR lpValueName,
   [in]           DWORD   dwType,
   [in, optional] LPCVOID lpData,
   [in]           DWORD   cbData
@@ -80,56 +80,62 @@ LSTATUS RegSetKeyValueA(
 
 Já sabemos o que são os parâmetros `hKey` e `lpSubKey`. Nos restam então os seguintes:
 
-### lpValueName \[entrada, opcional]
+### lpValueName
 
 Um ponteiro para uma string contendo o nome do valor. Caso seja `NULL` ou aponte para uma string vazia, o valor padrão da chave é considerado.
 
-### dwType \[entrada]
+### dwType
 
 O tipo do valor. Pode ser um dos seguintes:
 
 ```c
-#define REG_NONE                    ( 0ul ) // Nenhum tipo
-#define REG_SZ                      ( 1ul ) // String UNICODE terminada em null
-#define REG_EXPAND_SZ               ( 2ul ) // String UNICODE terminada em null
-                                            // (com suporte à variáveis de ambiente)
-#define REG_BINARY                  ( 3ul ) // Dados binários
-#define REG_DWORD                   ( 4ul ) // Número de 32-bits em little endian
-#define REG_DWORD_LITTLE_ENDIAN     ( 4ul ) // Número de 32-bits (o mesmo que REG_DWORD)
-#define REG_DWORD_BIG_ENDIAN        ( 5ul ) // Número de 32-bits em big endian
-#define REG_LINK                    ( 6ul ) // Um link (atalho) UNICODE
-#define REG_MULTI_SZ                ( 7ul ) // Várias strings UNICODE
-#define REG_RESOURCE_LIST           ( 8ul ) // Lista de recursos num mapa de recursos
-#define REG_FULL_RESOURCE_DESCRIPTOR ( 9ul ) // Lista de recursos na descrição do hardware
+#define REG_NONE                       ( 0ul ) // Nenhum tipo
+#define REG_SZ                         ( 1ul ) // String UNICODE terminada em null
+#define REG_EXPAND_SZ                  ( 2ul ) // String UNICODE terminada em null
+                                               // (com suporte à variáveis de ambiente)
+#define REG_BINARY                     ( 3ul ) // Dados binários
+#define REG_DWORD                      ( 4ul ) // Número de 32-bits em little endian
+#define REG_DWORD_LITTLE_ENDIAN        ( 4ul ) // Número de 32-bits (o mesmo que REG_DWORD)
+#define REG_DWORD_BIG_ENDIAN           ( 5ul ) // Número de 32-bits em big endian
+#define REG_LINK                       ( 6ul ) // Um link (atalho) UNICODE
+#define REG_MULTI_SZ                   ( 7ul ) // Várias strings UNICODE
+#define REG_RESOURCE_LIST              ( 8ul ) // Lista de recursos num mapa de recursos
+#define REG_FULL_RESOURCE_DESCRIPTOR   ( 9ul ) // Lista de recursos na descrição do hardware
 #define REG_RESOURCE_REQUIREMENTS_LIST ( 10ul )
-#define REG_QWORD                   ( 11ul ) // Número de 64-bits em little endian
-#define REG_QWORD_LITTLE_ENDIAN     ( 11ul ) // Número de 64-bits (o mesmo que REG_QWORD)
+#define REG_QWORD                      ( 11ul ) // Número de 64-bits em little endian
+#define REG_QWORD_LITTLE_ENDIAN        ( 11ul ) // Número de 64-bits (o mesmo que REG_QWORD)
 ```
 
-### lpData \[entrada, opcional]
+### lpData
 
-Os dados do valor, que deve ser casar com o tipo configurado no parâmetro `dwType`.
+Os dados do valor, que deve ter seu tipo compatível com o tipo configurado no parâmetro `dwType`.
 
-### cbData \[entrada]
+### cbData
 
-O tamanho dos dadoos do valor.
+O tamanho dos dados do valor.
 
 O código abaixo cria uma chave `HKCU\Software\Mente Binária`, configura um valor "Habilitado" do tipo `REG_DWORD` com o dado `1` e um valor "Website" do tipo `REG_SZ` com o dado textual "https://menteb.in":
 
-```c
+```cpp
 #include <Windows.h>
 
 int main() {
-	HKEY hChave;
+    HKEY hChave;
 
-	RegCreateKeyA(HKEY_CURRENT_USER, "Software\\Mente Binária", &hChave);
-	LPCSTR website = "https://menteb.in";
-	size_t tamanho = lstrlenA(website);
-	RegSetKeyValueA(hChave, nullptr, "Website", REG_SZ, website, tamanho);
-	DWORD habilitado = 1;
-	RegSetKeyValueA(hChave, nullptr, "Habilitado", REG_DWORD, &habilitado, sizeof(habilitado));
-	RegCloseKey(hChave);
+    RegCreateKey(HKEY_CURRENT_USER, L"Software\\Mente Binária", &hChave);
 
-	return EXIT_SUCCESS;
+    LPCWSTR website = L"https://menteb.in";
+    DWORD tamanho = (lstrlen(website) + 1) * sizeof(WCHAR);  // +1 para incluir o terminador nulo
+
+    RegSetKeyValueW(hChave, nullptr, L"Website", REG_SZ, website, (DWORD)tamanho);
+
+    DWORD habilitado = 1;
+    RegSetKeyValueW(hChave, nullptr, L"Habilitado", REG_DWORD, &habilitado, sizeof(habilitado));
+
+    RegCloseKey(hChave);
+
+    return EXIT_SUCCESS;
 }
 ```
+
+Com este programa finalizamos esta breve introdução à Windows API. Existem, é claro, centenas de outras funções disponíveis para uso, mas é preciso saber programar em C/C++ para utilizá-las em seus programas. Vamos agora ver como os programas ficam depois que os compilamos como você fez aqui. Para isso, vamos iniciar nossos estudos de Assembly.

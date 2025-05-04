@@ -25,12 +25,12 @@ Tecle F5 para rodar o programa e você deve ver uma janela como esta:
 
 ![](../.gitbook/assets/msgboxw.png)
 
-Há vários conceitos escondidos neste código de propósito, de forma que dedeiquemos alguns minutos ao estudo deles. Acompanhe:
+Há vários conceitos neste código. Vamos dedicar um tempo a eles. Acompanhe:
 
-* Na **linha 1**, como o Windows utiliza sistemas de arquivos que não são sensíveis ao caso, ou seja, não diferenciam maiúsculas de minúsculas, tanto faz escrever `Windows.h`, `windows.h` ou mesmo `WINDOWS.H`. Vai funcionar.
-* Na **linha 4** chamei a função `MessageBox`, mas ela na verdade não existe: é uma macro, substituída pelo pré-processador pelas funções `MessageBoxW` (mais comum) ou `MessageBoxA` (caso a macro `UNICODE` não esteja definida).
+* Na **linha 1**, como o Windows utiliza sistemas de arquivos que não são sensíveis ao caso, ou seja, não diferenciam letras maiúsculas de minúsculas, tanto faz escrever `Windows.h`, `windows.h`, `WINDOWS.H` ou mesmo `WiNdOwS.H`. Vai funcionar.
+* Na **linha 4** chamei a função `MessageBox`, mas ela na verdade não existe: é uma macro que será substituída pelo pré-processador pelas funções `MessageBoxW` (mais comum) ou `MessageBoxA` (caso a macro `UNICODE` não esteja definida).
 * Ainda na **linha 4** introduzi um conceito novo, de `nullptr` ao invés de `NULL`, aproveitando que o compilador utilizado é de C++. Acho melhor de digitar.
-* Nas **linhas 5 e 6** (sim, não há o menor problema em colocar os outros parâmetros da função em outras linhas para facilitar a leitura) eu passo para a função o texto e o título, respectivamente. Impossível não notar o `L` colado com as aspas duplas que abrem uma string em C não é mesmo? Ele serve para transformar a string subsequente em uma **wide** string (Unicode), que já estudamos. Este `L` é necessário porque a função `MessageBox` vai expandir, por padrão, para a `MessageBoxW` (perceba o `W` no final) que é a versão da `MessageBox` que trabalha com strings Unicode. Também usamos o caractere de nova linha duas vezes para dividir a mensagem em três linhas, sendo a segunda vazia.
+* Nas **linhas 5 e 6** (sim, não há o menor problema em colocar os outros parâmetros da função em outras linhas para facilitar a leitura) eu passo para a função o texto e o título, respectivamente. Impossível não notar o `L` colado com as aspas duplas que abrem uma string em C não é mesmo? Ele serve para transformar a string subsequente em uma **wide** string (Unicode), que já estudamos. Este `L` é necessário porque a função `MessageBox` vai expandir, por padrão, para a `MessageBoxW` (perceba o `W` no final) que é a versão da `MessageBox` que trabalha com _strings_ Unicode. Também usamos o caractere de nova linha duas vezes para dividir a mensagem em três linhas, sendo a segunda uma linha vazia.
 * Na **linha 7** eu utilizo uma combinação de duas flags: `MB_OK` e `MB_ICONINFORMATION`. Esta última configura este ícone de um "i" numa bolinha azul.
 
 ## Lendo o Retorno da Função
@@ -59,11 +59,11 @@ int main() {
 Vamos analisar os conceitos novos aqui, como fizemos com o programa anterior:
 
 * Na linha 5 declaro uma variável do tipo `LPCWSTR`. A diferença de `LPCSTR`, que já estudamos, é este "W", de _wide_, para definir uma string Unicode.
-* A linha 7 declara uma variável `ret` do tipo `int` e já a inicializa com o retorno da chamada à `MessageBoxW`.
-* Nas linhas 12 e 15 comparo o conteúdo da variável `res`, que detém o retorno da chamada à `MessageBoxW`. Se for igual a `IDYES`, novamente uma macro, mostra uma determinada mensagem. Se for igual a `IDNO`, mostra outra.
+* A linha 7 declara uma variável `ret` do tipo `int` e já a inicializa com o retorno da chamada à `MessageBox`.
+* Nas linhas 12 e 15 comparo o conteúdo da variável `res`, que detém o retorno da chamada à `MessageBox`. Se for igual a `IDYES`, novamente uma macro, mostra uma determinada mensagem. Se for igual a `IDNO`, mostra outra.
 
 {% hint style="success" %}
-Em relação às strings, há três maneiras de se programar com a Windows API: ASCII (`CHAR)`, UNICODE (`WCHAR`) ou em compatibilidade (`TCHAR`), que expandirá para `CHAR` ou `WCHAR`, caso a macro `UNICODE` esteja definida. Atualmente, é recomendado utilizar `WCHAR` e textos `L"assim"`.
+Em relação às _strings_, há três maneiras de se programar com a Windows API: ASCII (`CHAR`), UNICODE (`WCHAR`) ou em compatibilidade (`TCHAR`), que expandirá para `CHAR` ou `WCHAR`, caso a macro `UNICODE` esteja definida. Atualmente, é recomendado utilizar `WCHAR` e textos `L"assim"`.
 {% endhint %}
 
 A tabela abaixo ajuda na compreensão:
@@ -76,3 +76,5 @@ A tabela abaixo ajuda na compreensão:
 | LPCWSTR | const wchar\_t\*                                   |
 | LPTSTR  | char or wchar\_t dependendo da UNICODE             |
 | LPCTSTR | const char or const wchar\_t dependendo da UNICODE |
+
+Vamos fazer algo um pouco mais significativo agora. Vamos pedir ao _kernel_ do Windows que crie um arquivo para nós.

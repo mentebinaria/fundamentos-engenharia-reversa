@@ -42,39 +42,31 @@ Por ser um cabeçalho ainda presente no formato PE somente por questões de comp
 
 Este campo de 2 _bytes_ sempre contém os valores 0x4d e 0x5a, que são os caracteres 'M' e 'Z' na tabela ASCII. Portanto é comum verificar que todo arquivo executável do Windows que segue o formato PE começa com tais valores, que representam as iniciais de Mark Zbikowski, um dos criadores deste formato para o MS-DOS.
 
-Podemos utilizar um visualizador hexadecimal como o **hexdump** no Linux para verificar tal informação. Vamos pedir, por exemplo, os primeiros 16 _bytes_ de um arquivo putty.exe:
+Podemos utilizar um editor hexadecimal como o **HxD** para verificar tal informação. Vamos abrir, em caráter de exemplo, o executável da calculadora no Windows, normalmente em _C:\Windows\System32\calc.exe_.
 
-```
-$ hd -n16 putty.exe
-00000000  4d 5a 90 00 03 00 00 00  04 00 00 00 ff ff 00 00  |MZ..............|
-```
+![Conteúdo do binário da calculadora do Windows no HxD](../../.gitbook/assets/hxd_calc.exe_dos.png)
 
 Perceba os _bytes_ 0x4d e 0x5a logo no início do arquivo.
 
 {% hint style="warning" %}
-O **hexdump** exibe um caractere de ponto (.) na terceira coluna quando o _byte_ não está na faixa ASCII imprimível, ao contrário do **wxHexEditor** que exibe um caractere de espaço em branco.
+O **HxD** exibe um caractere de ponto (.) na coluna **Decoded text** quando o _byte_ não está na faixa ASCII imprimível. Esta é uma decisão de quem programou o editor hexadecimal. Outras opções comum incluem exibir um caractere de espaço.
 {% endhint %}
 
 ## e\_lfanew
 
 O próximo campo importante para nós é o _e\_lfanew_, um campo de 4 _bytes_ cujo valor é a posição no arquivo do que é conhecido por **assinatura PE**, uma sequência fixa dos seguintes 4 _bytes_: 50 45 00 00.
 
-Como o cabeçalho do DOS possui um tamanho fixo, seus campos estão sempre numa **posição** fixa no arquivo. Isso se refere aos campos e não a seus valores que, naturalmente, podem variar de arquivo para arquivo. No caso do _e\_lfanew_, se fizermos as contas, veremos que **ele sempre estará na posição 0x3c** (ou 60 em decimal), já que ele é o último campo de 4 _bytes_ de um cabeçalho de 64 _bytes._
+Como o cabeçalho do DOS possui um tamanho fixo, seus campos estão sempre numa **posição** fixa no arquivo. No entanto, seus valores podem variar de arquivo para arquivo. No caso do _e\_lfanew_, se fizermos as contas, veremos que ele sempre está na **posição 0x3c** (ou 60 em decimal), já que ele é o último campo de 4 _bytes_ de um cabeçalho de 64 _bytes_.
 
-Para ver o valor deste campo rapidamente podemos pedir ao **hexdump** que pule (opção **-s** de _skip_) então 0x3c _bytes_ antes de começar a imprimir o conteúdo do arquivo em hexadecimal. No comando a seguir também limitamos a saída em 16 _bytes_ com a opção -n (_number_):
+Para ver o valor deste campo rapidamente podemos pedir ao **HxD** que vá para a posição 0x3c. Clique em **Search** -> **Go to...** ou aperte Ctrl+G. Certifique-se de que as opções "hex" e "begin" estão selecionadas e clique em **OK**.
 
-```
-$ hd -s 0x3c -n16 putty.exe
-0000003c  f8 00 00 00 0e 1f ba 0e  00 b4 09 cd 21 b8 01 4c  |............!..L|
-```
-
-O número de 32 _bits_ na posição 0x3c é então 0x000000f8 ou simplesmente 0xf8 (lembre-se do _little endian_). Este é então o endereço da assinatura PE, que consiste numa sequência dos seguintes 4 _bytes_: 0x50 0x45 0x00 0x00.
+No meu arquivo, assim como na imagem anterior, os quatro _bytes_ nesta posição são 00 01 00 00. Sabendo que números são armazenados em _little-endian_, devemos ler este número como 00 00 01 00, ou seja, 0x0000100 ou simplesmente 0x100. Este é então o endereço da assinatura PE, que consiste numa sequência dos seguintes 4 _bytes_: 0x50 0x45 0x00 0x00.
 
 {% hint style="info" %}
 Perceba que os dois primeiros _bytes_ na assinatura PE possuem representação ASCII justamente das letras 'P' e 'E' maiúsculas. Sendo assim, essa assinatura pode ser escrita como "PE\0\0", no estilo C string.
 {% endhint %}
 
-Logo após o cabeçalho há o código do programa que vai imprimir na tela uma mensagem de erro caso um usuário tente rodar este arquivo PE no MS-DOS. Normalmente o texto impresso na tela é:
+Logo após o cabeçalho do DOS, há o código do programa que vai imprimir na tela uma mensagem de erro caso um usuário tente rodar este arquivo PE no MS-DOS. Normalmente o texto impresso na tela é:
 
 ```
 This program cannot be run in DOS mode.
@@ -89,6 +81,6 @@ Para por em prática a análise desta primeira parte do arquivo PE, abra o execu
 Note que:
 
 * Logo no início do arquivo, há o número mágico "MZ".
-* Na posição 0x3c, ou seja, no campo _e\_lfanew_, há o endereço da assinatura PE (0xd8 no caso deste executável).
-* Logo após os 4 _bytes_ do campo _e\_lfanew_, começa o código do programa de MS-DOS, no offset 0x40, com uma sequência de _bytes_ que não fazem sentido para nós por enquanto (veja que o texto impresso na tela pelo DOS stub é todavia bem visível).
-* Finalmente, na posição 0xd8 encontra-se a assinatura PE\0\0. Aqui sim, começa o formato PE propriamente dito.
+* Na posição 0x3c, ou seja, no campo _e\_lfanew_, há o endereço da assinatura PE (0x100 no caso deste executável, mas pode ser diferente no seu ambiente).
+* Logo após os 4 _bytes_ do campo _e\_lfanew_, começa o código do _stub_ do DOS, sempre no _offset_ 0x40, com uma sequência de _bytes_ que não fazem sentido para nós por enquanto (veja que o texto impresso na tela pelo programa é todavia bem visível).
+* Finalmente, na posição 0x100 encontra-se a assinatura PE\0\0. Aqui sim, começa o formato PE propriamente dito.
