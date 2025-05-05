@@ -75,11 +75,7 @@ Olha como este programa pode ficar ao ser compilado no Windows em 64-bits:
 
 ```
 <soma>:
-	140001000 | mov dword ptr ss:[rsp+10], edx
-	140001004 | mov dword ptr ss:[rsp+8], ecx
-	140001008 | mov eax, dword ptr ss:[rsp+10]
-	14000100C | mov ecx, dword ptr ss:[rsp+8]
-	140001010 | add ecx, eax
+	140001010 | add ecx, edx
 	140001012 | mov eax, ecx
 	140001014 | ret
 
@@ -87,14 +83,14 @@ Olha como este programa pode ficar ao ser compilado no Windows em 64-bits:
     140001020 | sub rsp, 38                                  
 	140001024 | mov edx, 4
 	140001029 | mov ecx, 3
-	14000102E | call 140001000
+	14000102E | call 140001010
 	140001033 | mov dword ptr ss:[rsp+20], eax
 	140001037 | xor eax, eax
 	140001039 | add rsp, 38
 	14000103D | ret
 ```
 
-O objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL (no endereço 0x14000102E em nosso exemplo) chama a função _soma()_ em 0x140001000 e a instrução RET (em 0x140001014) retorna para a instrução imediatamente após a CALL (0x140001033), para que a execução continue.
+O objetivo neste momento é apresentar as instruções que implementam as chamadas de função. Por hora, você só precisa entender que a instrução CALL (no endereço 0x14000102E em nosso exemplo) chama a função _soma()_ em 0x140001010 e a instrução RET (em 0x140001014) retorna para a instrução imediatamente após a CALL (0x140001033), para que a execução continue.
 
 Uma vez entendido isso, vamos agora ver como os argumentos são passados para as funções.
 
@@ -115,12 +111,24 @@ Voltando ao nosso exemplo de código, o trecho `soma(3, 4)` gerou, em Assembly:
 ```x86
 mov edx, 4
 mov ecx, 3
-call 140001000
+call 140001010
 ```
 
 A convenção foi de fato seguida. O segundo parâmetro, o literal 4, foi posto em EDX. Como este MOV zera a parte alta de RDX, é o mesmo que dizer que o parâmetro foi posto em RDX.
 
-O segundo parâmetro foi posto em RCX normalmente. Falta entender como a função recuperou estes parâmetros e também como passar parâmetros pela pilha quando a função exige mais de quatro parâmetros. Para isso, vamos falar de pilha logo porque sei que você não tá se aguentando né?
+O segundo parâmetro foi posto em RCX normalmente.
+
+Agora vamos analisar como a função `soma()` recupera os parâmetros e retorna:
+
+```x86
+add ecx, edx
+mov eax, ecx
+ret
+```
+
+A primeira instrução soma os parâmetros recebidos e os armazenas em ECX. A segunda copia este resultado para EAX, porque o retorno precisa estar nele. Depois vem o RET, que desempilha o endereço da instrução após a CALL e põe em RIP.
+
+Estamos falando em pilha tem tempo, mas ainda não a detalhamos. Vamos agora entender como essa estrutura funciona.
 
 ## A Pilha de Memória
 
@@ -168,48 +176,90 @@ Por conta dessa atualização do RIP, o fluxo é desviado para o endereço da fu
 
 Isso faz com que o fluxo de execução do programa volte para a instrução imediatamente após a CALL, que chamou a função.
 
-Sabendo de tudo isso, vamos analisar a função soma():
+## Passagem de parâmetros pela pilha
 
-```x86
-mov dword ptr ss:[rsp+10], edx
-mov dword ptr ss:[rsp+8], ecx
-mov eax, dword ptr ss:[rsp+10]
-mov ecx, dword ptr ss:[rsp+8]
-add ecx, eax
-mov eax, ecx
+Em 32-bits, as convenções de chamadas mais usadas usavam a pilha quase que exclusivamente para a passagem de parâmetros, mas aqui em 64-bits ela só é usada para funções com mais de quatro parâmetros. Vamos ver um exemplo comentado:
+
+```asm
+; reserva 72 bytes (0x48) na pilha
+sub rsp, 48
+; copia o sexto argumento para a pilha
+mov dword ptr ss:[rsp+28], 6
+; copia o quinto argumento para a pilha
+mov dword ptr ss:[rsp+20], 5
+; quarto argumento em R9D
+mov r9d, 4
+; terceiro em R8D
+mov r8d, 3
+; segundo em EDX
+mov edx, 2
+; primeiro em ECX
+mov ecx, 1
+; empilha o endereço da MOV após a CALL
+; e desvia o fluxo para a função soma()
+call soma.140001010
+; armazena o retorno numa variável local na pilha
+mov dword ptr ss:[rsp+30], eax
+; zera EAX, que contém o retorno da main()
+xor eax,eax
+; libera os bytes pré-reservados
+add rsp, 48
+; retorna para o sistema operacional / fim da main()
 ret
 ```
 
-Parece difícil, mas não é. Vamos juntos:
+Para este exemplo eu não pus o código-fonte de propósito, afinal este é um livro de engenharia reversa e precisamos começar a nos acostumar com isso. :)
 
-- A primeira instrução pega o valor de EDX (segundo parâmetro, o 4) e copia para RSP+10.
+Este exemplo pode gerar dúvidas. Vamos lá:
+
+**Por que reservar tanto espaço na pilha?**
+Esta foi uma decisão do compilador. Acontece que a convenção de chamadas é um pouco mais complexa do que cobrimos aqui. Existe um espaço chamado de _shadow space_ que precisa ser reservado. Ele existe por vários motivos, mas o principal é que a função chamada pode salvar os parâmetros recebidos por registradores na pilha se precisar. Só ele já precisa de 32 bytes pois são quatro parâmetros passados por registrador, de 8 bytes cada.
+
+**Ok, mas e os outros 40 bytes?**
+Destes 40, 16 serão usados pelos dois argumentos copiados para a pilha (os literais 6 e 5). Outros 8 são usados para a variável local que guarda o resultado. E por fim, há um alinhamento em 16 bytes exigido pela ABI. O assunto foge do nosso escopo aqui, mas encorajo você a pesquisar sobre.
+
+**O que é dword ptr ss:[rsp+28]?**
+- “dword” significa _double word_ e isto nos diz que a instrução está trabalhando com dados de 4 _bytes_.
+- "ss" abrevia _stack segment_ e nos conta que o endereço está na _stack_.
+- Os colchetes são uma derreferência. Significa que o conteúdo sera armazenado (isto está no operado de destino de um MOV) no endereço apontado por RSP + 28 (em hexa).
+
+Sabendo disso, o código que gerou essas instruções provavelmente foi algo como:
+
+```c
+int main(void) {
+	int res = soma(1, 2, 3, 4, 5, 6);
+	return 0;
+}
+```
+
+Uma curiosidade: mesmo sem saber o tamanho de um tipo `int` em C, pelos registradores usados nas instruções, dá para saber que são de 32-bits. No final é isso: para quem lê Assembly, todo programa é _open source_. :)
+
+Com isso podemos partir para uma análise mais real. Na próxima seção vamos ver como fica um programa que usa uma função da API do Windows em Assembly.
 
 ## Análise da MessageBox
 
-Vamos agora analisar a pilha de memória num exemplo com a função MessageBox, da API do Windows:
+Veja este código:
 
 ```
-00401516 | push 31                                     |
-00401518 | push msgbox.404000                          | 404000:"Johnny"
-0040151D | push msgbox.404007                          | 404007:"Cash"
-00401522 | push 0                                      |
-00401524 | call <user32.MessageBoxA>                   |
+sub rsp, 28
+xor r9d, r9d
+lea r8, qword ptr ds:[140002020]
+lea rdx, qword ptr ds:[140002038]
+xor ecx, ecx
+call qword ptr ds:[<MessageBoxW>]
+xor ecx, ecx
+call qword ptr ds:[<ExitProcess>]
+nop
+add rsp, 28
+ret
 ```
 
-Perceba que quatro parâmetros são empilhados antes da chamada à _MessageBoxA_ (versão da função _MessageBox_ que recebe _strings_ ASCII, por isso o sufixo **A**).
+Mesmo que não conhecêssemos a função MessageBoxW, dá para ver que ela está recebendo 4 parâmetros. Considerando a convenção de chamadas, temos:
 
-Os parâmetros são empilhados na ordem inversa.
+```
+MessageBoxW(0, 0x14002038, 0x140002020, 0);
+```
 
-Já estudamos o protótipo desta função no capítulo que apresenta a Windows API e por isso sabemos que o 0x31, empilhado em 00401516, é o parâmetro `uType` e, se o decompormos, veremos que 0x31 é um OU entre 0x30 (MB\_ICONEXCLAMATION) e 0x1 (MB\_OKCANCEL).
+O primeiro zero é o NULL do C. Depois vem o endereço da string que possui o conteúdo a ser exibido na mensagem, seguido pelo endereço da string de título. Por fim, outro zero, provavelmente expandido de `MB_OK`. Sabendo que cada instrução é composta de bytes (opcodes e parâmetros), no que você acha que consiste a engenharia reversa senão em entender e poder alterar tais bytes de acordo com o que desejarmos? É este o poder que a engenharia reversa te dá, mas ela pede algo em troca: estudo. Veja o quanto você já leu até chegar aqui. Parabéns!
 
-O próximo parâmetro é o número 404000, um ponteiro para a _string_ "Johnny", que é o título da mensagem. Depois vem o ponteiro para o texto da mensagem e por fim o zero (NULL), empilhado em 00401522, que é o _handle_.
-
-O resultado é apresentado a seguir:
-
-![Resultado da chamada à MessageBox][image-1]
-
-É importante perceber que, após serem compreendidos, podemos controlar estes parâmetros e alterar a execução do programa conforme quisermos. Este é o assunto do próximo capítulo, sobre depuração.
-
-Assembly é, por si só, um assunto extenso e bastante atrelado à arquitetura e ao sistema operacional no qual se está trabalhando. Este capítulo apresentou uma introdução ao Assembly Intel x86 e considerou o Windows como plataforma. Dois bons recursos de Assembly, que tomam o Linux como sistema base, são os livros gratuito Aprendendo Assembly, do Felipe Silva e Linguagem Assembly para i386 e x86-64, do Frederico Pissara.
-
-[image-1]:	../.gitbook/assets/msgbox.png
+Assembly é, por si só, um assunto extenso e bastante atrelado à arquitetura na qual se está trabalhando. Este capítulo apresentou uma introdução ao Assembly x86-64 e considerou o Windows como plataforma. Dois bons recursos de Assembly, são os livros gratuitos **Aprendendo Assembl**y, do Felipe Silva e **Linguagem Assembly para i386 e x86-64**, do Frederico Pissara, ambos disponíveis em menteb.in.
