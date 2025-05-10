@@ -6,9 +6,7 @@ O formato PE é o formato de arquivo executável atualmente utilizado para muito
 
 Os programas que criam estes programas, chamados compiladores precisam respeitar tal formato e o programa que os interpreta, carrega e inicia sua execução (chamado de _loader_) precisa entendê-lo também.
 
-{% hint style="success" %}
-A documentação completa do formato PE é mantida pela própria Microsoft e está disponível em [https://learn.microsoft.com/en-us/windows/win32/debug/pe-format](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format).
-{% endhint %}
+> A documentação completa do formato PE é mantida pela própria Microsoft e está disponível em [https://learn.microsoft.com/en-us/windows/win32/debug/pe-format](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format).
 
 Assim como o formato GIF e outras especificações de formato de arquivo, o formato PE possui cabeçalhos, que possuem campos e valores possíveis. Outro conceito importante é o de seções.
 

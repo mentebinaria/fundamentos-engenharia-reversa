@@ -40,9 +40,7 @@ Quando um programa é executado (por exemplo, com um duplo-clique no Windows), e
 
 Quem cria esse processo em memória é um componente do sistema operacional Windows chamado de _image loader_, presente na biblioteca **ntdll.dll**.
 
-{% hint style="warning" %}
-O código do _loader_ roda **antes** do código do programa a ser carregado. É um código comum a todos os processos executados no Windows.
-{% endhint %}
+> O código do _loader_ roda **antes** do código do programa a ser carregado. É um código comum a todos os processos executados no Windows.
 
 Dentre as funções do _loader_ estão:
 

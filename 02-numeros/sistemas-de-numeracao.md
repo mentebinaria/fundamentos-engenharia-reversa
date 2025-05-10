@@ -8,9 +8,7 @@ Mas este não é o único - nem é o primeiro - sistema para representação de 
 
 O sistema binário surgiu há muito tempo e não vou arriscar precisar quando ou onde, mas em 1703 o alemão Leibniz publicou um trabalho refinado, com tradução para o inglês disponível em http://www.leibniz-translations.com/binary.htm, baseado na dualidade taoísta chinesa do _yin_ e _yan_ a qual descrevia o sistema binário moderno com dois símbolos: 0 (nulo) e 1 (uma unidade). Por ter somente dois símbolos, ficou conhecido como sistema binário, ou de base 2. A contagem segue a regra: depois de 0 e 1, pega-se o símbolo que representa uma unidade e se insere, à sua direita, o que representa nulo, formando o número que representa duas unidades neste sistema: 10.
 
-{% hint style="info" %}
-Daí vem a piada nerd que diz haver apenas 10 tipos de pessoas no mundo: as que entendem linguagem binária e as que não entendem.
-{% endhint %}
+> Daí vem a piada nerd que diz haver apenas 10 tipos de pessoas no mundo: as que entendem linguagem binária e as que não entendem.
 
 Assim sendo, se formos contar até dez unidades, teremos: 0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001 e 1010.
 
@@ -34,9 +32,7 @@ Na prática, os códigos acima funcionam como conversores de binário para decim
 
 Como o próprio nome sugere, o sistema octal possui oito símbolos: 0, 1, 2, 3, 4, 5, 6 e 7. À esta altura já dá pra sacar que para representar oito quantidades em octal o número é 10. Nove é 11, dez é 12 e assim sucessivamente.
 
-{% hint style="info" %}
-O sistema octal é utilizado para as permissões de arquivo pelo comando chmod nos sistemas baseados em Linux e BSD. Os números 1, 2 e 4 representam permissão de execução, escrita e leitura, respectivamente. Para combiná-las, basta somar seus números correspondentes. Sendo assim, uma permissão 7 significa que se pode-se tudo \(leitura, escrita e execução\) enquanto uma permissão 6 permite somente escrita e leitura. Tais números foram escolhidos para não haver confusão. Se fossem os números 1, 2 e 3 a permissão 3 poderia significar tanto ela mesma quanto 1+2 (execução + escrita). Usando 1, 2 e 4 não há brechas para dúvidas. ;\)
-{% endhint %}
+> O sistema octal é utilizado para as permissões de arquivo pelo comando chmod nos sistemas baseados em Linux e BSD. Os números 1, 2 e 4 representam permissão de execução, escrita e leitura, respectivamente. Para combiná-las, basta somar seus números correspondentes. Sendo assim, uma permissão 7 significa que se pode-se tudo \(leitura, escrita e execução\) enquanto uma permissão 6 permite somente escrita e leitura. Tais números foram escolhidos para não haver confusão. Se fossem os números 1, 2 e 3 a permissão 3 poderia significar tanto ela mesma quanto 1+2 (execução + escrita). Usando 1, 2 e 4 não há brechas para dúvidas. ;\)
 
 Veja um exemplo em Python (lembre-se: abra o Python e estude junto agora):
 

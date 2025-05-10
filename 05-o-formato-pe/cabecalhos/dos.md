@@ -48,9 +48,7 @@ Podemos utilizar um editor hexadecimal como o **HxD** para verificar tal informa
 
 Perceba os _bytes_ 0x4d e 0x5a logo no início do arquivo.
 
-{% hint style="warning" %}
-O **HxD** exibe um caractere de ponto (.) na coluna **Decoded text** quando o _byte_ não está na faixa ASCII imprimível. Esta é uma decisão de quem programou o editor hexadecimal. Outras opções comum incluem exibir um caractere de espaço.
-{% endhint %}
+> O **HxD** exibe um caractere de ponto (.) na coluna **Decoded text** quando o _byte_ não está na faixa ASCII imprimível. Esta é uma decisão de quem programou o editor hexadecimal. Outras opções comum incluem exibir um caractere de espaço.
 
 ## e\_lfanew
 
@@ -62,9 +60,7 @@ Para ver o valor deste campo rapidamente podemos pedir ao **HxD** que vá para a
 
 No meu arquivo, assim como na imagem anterior, os quatro _bytes_ nesta posição são 00 01 00 00. Sabendo que números são armazenados em _little-endian_, devemos ler este número como 00 00 01 00, ou seja, 0x0000100 ou simplesmente 0x100. Este é então o endereço da assinatura PE, que consiste numa sequência dos seguintes 4 _bytes_: 0x50 0x45 0x00 0x00.
 
-{% hint style="info" %}
-Perceba que os dois primeiros _bytes_ na assinatura PE possuem representação ASCII justamente das letras 'P' e 'E' maiúsculas. Sendo assim, essa assinatura pode ser escrita como "PE\0\0", no estilo C string.
-{% endhint %}
+> Perceba que os dois primeiros _bytes_ na assinatura PE possuem representação ASCII justamente das letras 'P' e 'E' maiúsculas. Sendo assim, essa assinatura pode ser escrita como "PE\0\0", no estilo C string.
 
 Logo após o cabeçalho do DOS, há o código do programa que vai imprimir na tela uma mensagem de erro caso um usuário tente rodar este arquivo PE no MS-DOS. Normalmente o texto impresso na tela é:
 

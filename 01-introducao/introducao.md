@@ -8,9 +8,7 @@ Não restrinjamos, portanto, a engenharia reversa à tecnologia. Qualquer um que
 
 No campo militar e em época de guerras é muito comum assegurar que inimigos não tenham acesso às armas avançadas: aviões, tanques e outros dispositivos, pois é importante que adversários não desmontem esses equipamentos, não entendam seu funcionamento e, consequentemente, que não criem versões superiores deles ou encontrem falhas que permitam inutilizá-los com mais facilidade. Na prática, é evitar a engenharia reversa.
 
-{% hint style="info" %}
-Vale a pena assistir ao filme Jogo da Imitação (_Imitation Game_) que conta a história do criptoanalista inglês Alan Turing, conhecido como o pai da ciência de computação teórica, que quebrou a criptografia da máquina nazista Enigma utilizando engenharia reversa.
-{% endhint %}
+> Vale a pena assistir ao filme Jogo da Imitação (_Imitation Game_) que conta a história do criptoanalista inglês Alan Turing, conhecido como o pai da ciência de computação teórica, que quebrou a criptografia da máquina nazista Enigma utilizando engenharia reversa.
 
 ## Engenharia Reversa de Software
 

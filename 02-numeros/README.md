@@ -4,9 +4,7 @@
 
 Costumo dizer quando ministro aulas que um computador é basicamente uma calculadora gigante. Claro que esta é uma afirmação muito simplista, mas a verdade é que a ideia pitagórica de que "tudo é número" cabe muito bem aqui. Não é à toa que em textos sobre a origem da computação você encontra a foto de um ábaco, a primeira máquina de calcular, datando-se aproximadamente de mais de 2000 anos AEC \(Antes da Era Comum\) e que é feita de pedras. De fato, _calculus_ em Latim significa pedrinha \(agora você entende a expressão "cálculo renal"!\), porque era a maneira que o povo tinha para contar na antiguidade.
 
-{% hint style="info" %}
-Um fato interessante é que a patente número US4812124 do Google descreve um ábaco hexadecimal e é datada de 1988.
-{% endhint %}
+> Um fato interessante é que a patente número US4812124 do Google descreve um ábaco hexadecimal e é datada de 1988.
 
 Neste capítulo vamos focar nos números. Em breve veremos como o processador trabalha com eles também.
 

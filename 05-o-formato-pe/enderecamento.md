@@ -58,8 +58,6 @@ No exemplo acima, o campo _entrypoint_, que é um RVA, tem o valor 0x1740. Como 
 '0x140001740'
 ```
 
-{% hint style="danger" %}
-Os RVA's podem ser relativos à outras bases que não à da imagem. É preciso consultar na documentação qual a relatividade de um determinado RVA para convertê-lo corretamente para o VA correspondente.
-{% endhint %}
+> Os RVA's podem ser relativos à outras bases que não à da imagem. É preciso consultar na documentação qual a relatividade de um determinado RVA para convertê-lo corretamente para o VA correspondente.
 
 Com isso encerramos o capítulo sobre o formato PE. Agora que você conhece a estrutura de um executável, vamos ver o que acontece depois que alguém dá um duplo-clique nele.

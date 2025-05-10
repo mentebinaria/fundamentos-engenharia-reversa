@@ -2,9 +2,7 @@
 
 Nesta seção faremos cálculos com números binários considerando cada um de seus dígitos, também chamados de **bits**. Além de operações aritméticas clássicas como adição, subtração, multiplicação e divisão, estudaremos também conjunção, disjunção, negação e disjunção exclusiva. Também incluiremos outras operações bit-a-bit que fogem da álgebra tradicional, como deslocamento e rotação de bits. Todas são importantes pois existem no contexto do Assembly, que estudaremos no futuro.
 
-{% hint style="info" %}
-Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e operações bit-a-bit (_bitwise_).
-{% endhint %}
+> Você pode encontrar mais sobre este assunto pesquisando por álgebra booleana e operações bit-a-bit (_bitwise_).
 
 ## Conjunção (AND)
 
@@ -172,13 +170,9 @@ Dado um número x, é possível calcular o resultado de uma operação XOR com u
 
 Portanto, para uma cifrabem básica, se você quiser esconder o valor original de um número antes de enviá-lo numa mensagem, basta fazer um XOR dele com uma chave que só você e o receptor da mensagem conheça (0x42 no exemplo). Assim você usa a chave para fazer a operação XOR com ele e instrui o receptor da mensagem (por outro canal) a usar a mesma chave numa operação XOR afim de obter o número original. Claro que esta cifragem é muito simples, e consequentemente muito fraca e fácil de quebrar, mas está aqui em caráter de exemplo.
 
-{% hint style="warning" %}
-Em textos matemáticos sobre lógica, o circunflexo ^ representa conjunção ao invés de disjunção exclusiva. Já em softwares matemáticos, pode significar potência, por exemplo: 2^32 é dois elevado à trigésima segunda potência.
-{% endhint %}
+> Em textos matemáticos sobre lógica, o circunflexo ^ representa conjunção ao invés de disjunção exclusiva. Já em softwares matemáticos, pode significar potência, por exemplo: 2^32 é dois elevado à trigésima segunda potência.
 
-{% hint style="info" %}
-Na língua Portuguesa utilizamos a palavra "OU" no sentido de "OU exclusivo". Por exemplo, quando você pede "Pizza de presunto ou pepperoni ou lombo", quer dizer que só quer um dos sabores (exclusividade). Se fosse uma disjunção tradicional "OU", o garçom poderia trazer presunto com pepperoni, ou mesmo todos os três ingredientes e você não poderia reclamar. :)
-{% endhint %}
+> Na língua Portuguesa utilizamos a palavra "OU" no sentido de "OU exclusivo". Por exemplo, quando você pede "Pizza de presunto ou pepperoni ou lombo", quer dizer que só quer um dos sabores (exclusividade). Se fosse uma disjunção tradicional "OU", o garçom poderia trazer presunto com pepperoni, ou mesmo todos os três ingredientes e você não poderia reclamar. :)
 
 ## Deslocamento (SHL e SHR)
 

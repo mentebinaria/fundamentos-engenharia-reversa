@@ -6,9 +6,7 @@ Na linguagem C, foi criado um padrão para saber _programaticamente_ o fim de um
 66 65 72 6e 61 6e 64 6f 00
 ```
 
-{% hint style="warning" %}
-É importante não confundir o _nullbyte_ com o caractere de nova linha. Este pode ser o _Line Feed_ (0x0a), também conhecido por _newline_. Já no DOS/Windows, a nova linha é definida por um par de caracteres: _Carriage Return_ (0x0d) seguido de _Line Feed_, sequência conhecida por **CrLf** em linguagens como Visual Basic.
-{% endhint %}
+> É importante não confundir o _nullbyte_ com o caractere de nova linha. Este pode ser o _Line Feed_ (0x0a), também conhecido por _newline_. Já no DOS/Windows, a nova linha é definida por um par de caracteres: _Carriage Return_ (0x0d) seguido de _Line Feed_, sequência conhecida por **CrLf** em linguagens como Visual Basic.
 
 Se a _string_ for UTF-16, então dois _bytes_ nulos serão adicionados ao fim. Se for UTF-32, quatro.
 

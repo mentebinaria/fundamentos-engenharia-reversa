@@ -45,9 +45,7 @@ Vamos analisar agora os campos mais importantes para o nosso estudo:
 
 O primeiro campo, de 2 bytes, é um outro número mágico que identifica o tipo de executável em questão. O valor 0x20b diz que é um PE32+ (executável PE de 64-bits), enquanto o valor 0x10b significa que o executável é um PE32 (executável PE de 32-bits).
 
-{% hint style="info" %}
-A Microsoft chama os executáveis de PE de 64-bits de PE32+ e não de PE64 como alguns programas fazem. Já os de 32-bits são chamados de PE32 mesmo.
-{% endhint %}
+> A Microsoft chama os executáveis de PE de 64-bits de PE32+ e não de PE64 como alguns programas fazem. Já os de 32-bits são chamados de PE32 mesmo.
 
 ## AddressOfEntryPoint
 

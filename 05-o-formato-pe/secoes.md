@@ -30,9 +30,7 @@ int main(void) {
 
 A variável local **s** é um _array_ de _char_ e pode ser alterada a qualquer momento dentro da função _main()_. De fato, logo após a sua declaração ela é alterada e logo depois acessada/lida pela função `puts()`. Em sua configuração padrão, o compilador coloca essa _string_ numa seção de dados inicializados com permissão tanto para leitura quanto para escrita.
 
-{% hint style="info" %}
-Apesar de fazer sentido, os compiladores não precisam respeitar tal lógica. O conteúdo da variável **s** no exemplo apresentado pode ser armazenado na seção **.rdata** (ou mesmo na **.text**) e ser manipulado na pilha de memória para sofrer alterações. Não há uma imposição por parte do formato e cada compilador escolhe como fazer.
-{% endhint %}
+> Apesar de fazer sentido, os compiladores não precisam respeitar tal lógica. O conteúdo da variável **s** no exemplo apresentado pode ser armazenado na seção **.rdata** (ou mesmo na **.text**) e ser manipulado na pilha de memória para sofrer alterações. Não há uma imposição por parte do formato e cada compilador escolhe como fazer.
 
 ## .rdata
 

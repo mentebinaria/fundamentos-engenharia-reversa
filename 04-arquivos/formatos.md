@@ -44,9 +44,7 @@ Em geral, os formatos são definidos por campos (faixas de _bytes_) de tamanho f
 
 Seguindo esta tabela fornecida por quem desenhou o formato GIF e olhando o conteúdo do arquivo de exemplo na imagem anterior, podemos verificar que o primeiro campo, de 6 _bytes_, casa exatamente com o que está definido no padrão. Os _bytes_ são a sequência 0x47, 0x49, 0x46, 0x38, 0x39 e 0x61 que representam a sequência em ASCII GIF89a. É bem comum ao definir formatos de arquivo que o primeiro campo, normalmente chamado de cabeçalho (_header_) ou número mágico (_magic number_), admita como valor uma representação ASCII que dê alguma indicação de que tipo de arquivo se trata. Por exemplo, os tipos de arquivo ZIP possuem o _magic number_ equivalente ao texto **PK**. Já o tipo de arquivo RAR começa com os _bytes_ equivalentes ao texto **Rar!**. Não é uma regra, mas é comum.
 
-{% hint style="danger" %}
-No exemplo do formato GIF o tamanho do primeiro campo é de 6 _bytes,_ mas outros formatos podem utilizar _magic numbers_ de diferentes tamanhos. Não há regra específica.
-{% endhint %}
+> No exemplo do formato GIF o tamanho do primeiro campo é de 6 _bytes,_ mas outros formatos podem utilizar _magic numbers_ de diferentes tamanhos. Não há regra específica.
 
 Logo após o primeiro campo, temos o segundo campo, que define a largura em _pixels_ da imagem GIF segundo sua documentação. Este campo possui 2 _bytes_ e, na imagem de exemplo, são os _bytes_ 0x30 e 0x00. Aqui cabe voltar num conceito importante que é o **endianness**. Acontece que na arquitetura Intel os _bytes_ de um número inteiro são armazenados de trás para frente (ordem essa chamda de _**little-endian**_). Sendo assim, a leitura correta da largura em _pixels_ deste GIF é 0x0030, ou simplesmente 0x30 (já que zero à esquerda não conta), que é 48 em decimal.
 

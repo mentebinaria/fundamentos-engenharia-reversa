@@ -60,9 +60,7 @@ Vamos analisar novamente o executável da calculadora. Considere que:
 * Pulamos então 8 _bytes_ referentes aos campos **PointerToSymbolTable** e **NumberOfSymbols** (normalmente zerados mesmo), encontrando a _word_ **SizeOfOptionalHeader** em 0x114 cujo valor é 0xf0.
 * A próxima _word_ é o valor do campo **Characteristics**, que neste arquivo é 0x22. Convertendo para binário temos o valor 00100010. Contando-se a partir de zero e da direita para a esquerda, identificamos que os _bits_ 1 e 5 estão ligados, significando que o executável pode endereçar mais de 2 GB de memória, o que é comum em executáveis de 64-bits.
 
-{% hint style="warning" %}
-Em algumas referências o leitor encontrará o cabeçalho COFF como parte do cabeçalho NT (IMAGE\_NT\_HEADER), onde o primeiro campo é chamado de _Signature Bytes_, que é onde fica a assinatura PE para binários PE, mas também pode conter os bytes equivalentes das strings NE, LE ou MZ (executáveis puros de MS-DOS). Na verdade o COFF é uma especificação completa para arquivos do tipo "código-objeto", mas não exploraremos seu uso além do formato PE neste livro.
-{% endhint %}
+> Em algumas referências o leitor encontrará o cabeçalho COFF como parte do cabeçalho NT (IMAGE\_NT\_HEADER), onde o primeiro campo é chamado de _Signature Bytes_, que é onde fica a assinatura PE para binários PE, mas também pode conter os bytes equivalentes das strings NE, LE ou MZ (executáveis puros de MS-DOS). Na verdade o COFF é uma especificação completa para arquivos do tipo "código-objeto", mas não exploraremos seu uso além do formato PE neste livro.
 
 ## Exercício
 

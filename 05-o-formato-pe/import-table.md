@@ -16,9 +16,7 @@ typedef struct {
 } IMAGE_IMPORT_DESCRIPTOR;
 ```
 
-{% hint style="danger" %}
-Não se deve confundir esta IDT \(_Import Descriptor Table_\) com outra IDT \(_Interrupt Descriptor Table_\). Esta última é uma estrutura que mapeia interrupções para seus devidos _handlers_, assunto que foge do escopo deste livro.
-{% endhint %}
+> Não se deve confundir esta IDT \(_Import Descriptor Table_\) com outra IDT \(_Interrupt Descriptor Table_\). Esta última é uma estrutura que mapeia interrupções para seus devidos _handlers_, assunto que foge do escopo deste livro.
 
 O número de elementos do _array_ de estruturas IMAGE\_IMPORT\_DESCRIPTOR é igual ao número de bibliotecas que o executável PE depende, ou seja, o número de diferentes DLLs das quais o executável importa funções. Há ainda um elemento final, completamente zerado \(preenchido com _null bytes_\) para indicar o fim do _array_.
 
@@ -66,9 +64,7 @@ No menu da esquerda, vá em **IMAGE_NT_HEADERS -> IMAGE_OPTIONAL_HEADER -> IMAGE
 
 ![Visualizando o diretório de Imports (Import Table) no DIE](../.gitbook/assets/die_calc_it.png)
 
-{% hint style="warning" %}
-Perceba que o DIE chama o campo _VirtualAddress_ dos diretórios apenas de _Address_. Inconsistências assim podem ocorrer em várias ferramentas e literaturas, mas se você souber do que se trata, vai sempre se dar bem, mesmo que nomes diferentes sejam usados para se referir à mesma coisa.
-{% endhint %}
+> Perceba que o DIE chama o campo _VirtualAddress_ dos diretórios apenas de _Address_. Inconsistências assim podem ocorrer em várias ferramentas e literaturas, mas se você souber do que se trata, vai sempre se dar bem, mesmo que nomes diferentes sejam usados para se referir à mesma coisa.
 
 Agora no **HxD**, abra o mesmo binário e vá até este _offset_ da IDT com o Ctrl+G. No binário que usei aqui o endereço é 0x38f8.
 

@@ -54,8 +54,6 @@ Este é um campo que define algumas _flags_ (características) para a seção, a
 | 30  | IMAGE\_SCN\_MEM\_READ                 | Terá permissão de leitura              |
 | 31  | IMAGE\_SCN\_MEM\_WRITE                | Terá permissão de escrita              |
 
-{% hint style="info" %}
-As _flags_ que contém o texto "MEM" no nome dizem respeito às permissões que a seção terá quando mapeada em memória. De acordo com elas o SO vai _setar_ as permissões nas páginas de memória nas quais a seção é carregada.
-{% endhint %}
+> As _flags_ que contém o texto "MEM" no nome dizem respeito às permissões que a seção terá quando mapeada em memória. De acordo com elas o SO vai _setar_ as permissões nas páginas de memória nas quais a seção é carregada.
 
 É importante notar que campos como o **Characteristics** são o que chamamos de máscaras de _bits_. Por exemplo, a tabela anterior diz que se o _bit_ 30 deste campo está _setado_ (seu valor é 1), então esta seção terá permissão de leitura quando em memória. O valor de campo **Characteristics** seria então 0**1**000000000000000000000000000000 em binário, mas você provavelmente vai encontrar este valor representado em hexadecimal (0x40000000) nos analisadores de executáveis que for utilizar. Vamos agora conhecer as seções que estes cabeçalhos definem.

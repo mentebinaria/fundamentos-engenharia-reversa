@@ -26,9 +26,7 @@ Viu? Quando você digita 'a', o computador entende o _byte_ 0x61 (97 em decimal)
 '6d 65 6e 74 65 62 2e 69 6e'
 ```
 
-{% hint style="info" %}
-Perceba o **b** minúsculo antes das aspas do texto. Em Python, isso cria um objeto da classe `bytes` ao invés de `str`. Essa classe tem um método `hex()` para imprimir cada o valor de caractere da string em hexadecimal e aceita um argumento para ser utilizado como separador entre os _bytes._ No exemplo, usei um caractere de espaço.
-{% endhint %}
+> Perceba o **b** minúsculo antes das aspas do texto. Em Python, isso cria um objeto da classe `bytes` ao invés de `str`. Essa classe tem um método `hex()` para imprimir cada o valor de caractere da string em hexadecimal e aceita um argumento para ser utilizado como separador entre os _bytes._ No exemplo, usei um caractere de espaço.
 
 É exatamente assim que um texto ASCII vai parar dentro de um programa ou arquivo.
 
@@ -47,9 +45,7 @@ Agora, algumas relações:
 * Se somarmos 0x20 ao número ASCII equivalente de um caractere maiúsculo, obtemos o número equivalente do caractere minúsculo em questão. Da mesma forma, se diminuirmos 0x20 ao valor de um caractere minúsculo, obtemos o seu maiúsculo. Perceba que basta mudar o bit 5 (da direita para a esquerda, com a contagem começando em zero) do valor para alternar entre maiúsculo e minúsculo.
 * Se diminuirmos 0x30 de um dígito, temos o equivalente numérico do dígito. Por exemplo, o dígito 5 possui o valor 0x35. Então, 0x35 - 0x30 = 5.
 
-{% hint style="info" %}
-Sabe quando no Linux você dá um `cat` num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns _beeps_? Esses sons são, na verdade, os bytes 0x07 encontrados no arquivo. Experimente!
-{% endhint %}
+> Sabe quando no Linux você dá um `cat` num arquivo que não é de texto e vários caracteres "doidos" aparecem na tela enquanto você escuta alguns _beeps_? Esses sons são, na verdade, os bytes 0x07 encontrados no arquivo. Experimente!
 
 Para complementar esta seção, assista ao vídeo **Entendendo a tabela ASCII** no nosso canal no YouTube. Nele há exemplos no Linux, mas o conceito é o mesmo.
 
@@ -61,6 +57,4 @@ A tabela ASCII padrão de 7 _bits_ é limitada ao idioma inglês no que diz resp
 
 Essa extensão da tabela ASCII varia de acordo com a **codificação** utilizada. Isso acontece porque ela foi criada para permitir texto em outros idiomas, mas somente 128 caracteres a mais não são suficientes para representar os caracteres de todos os idiomas existentes. A codificação mais conhecida no Brasil é a ISO-8859-1, também chamada de Latin-1, que você vê no Apêndice Tabela ISO-8859-1/Latin-1.
 
-{% hint style="info" %}
-Outro nome para ASCII é US-ASCII. Alguns textos referem-se a texto em ASCII como ANSI strings também.
-{% endhint %}
+> Outro nome para ASCII é US-ASCII. Alguns textos referem-se a texto em ASCII como ANSI strings também.

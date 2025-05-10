@@ -80,9 +80,7 @@ Perceba que o _byte_ referente ao "á" é o E1. Até aí nenhuma novidadade. Sab
 
 Nesse caso, "binária" é uma string UTF-16-LE sem BOM. Os _bytes_ dos caracteres em si coincidem com os da ISO-8859-1. Doido né? Mas vamos em frente!
 
-{% hint style="info" %}
-Perceba que o "á" em UTF-8 é C3 A1, mas em UTF-16 é E1 (precedido ou sucedido por zero), assim como na codificação ISO-8859-1.
-{% endhint %}
+> Perceba que o "á" em UTF-8 é C3 A1, mas em UTF-16 é E1 (precedido ou sucedido por zero), assim como na codificação ISO-8859-1.
 
 ## UTF-32
 

@@ -62,9 +62,7 @@ Vamos analisar os conceitos novos aqui, como fizemos com o programa anterior:
 * A **linha 7** declara uma variável `ret` do tipo `int` e já a inicializa com o retorno da chamada à `MessageBox`.
 * Nas **linhas 12** e **15** comparo o conteúdo da variável `res`, que detém o retorno da chamada à `MessageBox`. Se for igual a `IDYES`, novamente uma macro, mostra uma determinada mensagem. Se for igual a `IDNO`, mostra outra.
 
-{% hint style="success" %}
-Em relação às _strings_, há três maneiras de se programar com a Windows API: ASCII (`CHAR`), UNICODE (`WCHAR`) ou em compatibilidade (`TCHAR`), que expandirá para `CHAR` ou `WCHAR`, caso a macro `UNICODE` esteja definida. Atualmente, é recomendado utilizar `WCHAR` e textos `L"assim"`.
-{% endhint %}
+> Em relação às _strings_, há três maneiras de se programar com a Windows API: ASCII (`CHAR`), UNICODE (`WCHAR`) ou em compatibilidade (`TCHAR`), que expandirá para `CHAR` ou `WCHAR`, caso a macro `UNICODE` esteja definida. Atualmente, é recomendado utilizar `WCHAR` e textos `L"assim"`.
 
 A tabela abaixo ajuda na compreensão:
 

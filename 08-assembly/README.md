@@ -4,7 +4,7 @@ Agora que você já sabe como um binário PE é construído, está na hora de en
 
 Um circuito integrado (CI) bastante conhecido no mundo da eletrônica é o 7400. Seu funcionamento interno é detalhado no seguinte diagrama a seguir.
 
-![](../.gitbook/assets/7400.png)
+![][image-1]
 
 Se você já estudou portas lógicas, vai perceber que este CI tem 4 portas NAND (AND com saída negada). Cada porta possui duas entradas e uma saída, cada uma delas conectada a seu respectivo pino/perna do CI.
 
@@ -53,9 +53,7 @@ OR EAX, 18  ; Faz um OR do valor em EAX com 0x18 e salva o resultado em EAX
 
 De posse de um compilador de Assembly, muitas vezes chamado de  **assembler** (ou **montador** em Português), o resultado da compilação do código-fonte acima é justamente um arquivo objeto que contém os _opcodes_ e argumentos corretos para o processador alvo onde o programa vai rodar.
 
-{% hint style="warning" %}
-Agora você sabe o motivo pelo qual um programa compilado não é compatível entre diferentes processadores de diferentes arquiteturas. Como estes possuem instruções diferentes e _opcodes_ diferentes, não há mesmo essa compatibilidade.
-{% endhint %}
+> Agora você sabe o motivo pelo qual um programa compilado não é compatível entre diferentes processadores de diferentes arquiteturas. Como estes possuem instruções diferentes e _opcodes_ diferentes, não há mesmo essa compatibilidade.
 
 Perceba que Assembly é uma linguagem legível para seres humanos, diferente da linguagem de máquina que não passa de uma "tripa de _bytes_" onde você tem que sar seu jeito para fazer sentido.
 

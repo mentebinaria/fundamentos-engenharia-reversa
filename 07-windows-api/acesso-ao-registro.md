@@ -45,9 +45,7 @@ Uma das chaves raíz, por exemplo: `HKEY_CURRENT_USER` ou `HKEY_LOCAL_MACHINE` (
 
 A subchave desejada, por exemplo, se o parâmetro `hKey` `HKEY_LOCAL_MACHINE` e `lpSubKey` é `Software\Microsoft\Windows\`, o caminho completo utilizado pela função será `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\`.
 
-{% hint style="info" %}
-Alguns textos abreviam essas chaves raíz com as letras iniciais de seu nome. Por exemplo, `HKCU` para `HKEY_CURRENT_USER`, `HKCR` para `HKEY_CLASSES_ROOT` e `HKLM` para `HKEY_LOCAL_MACHINE`. Tais abreviações são válidas para acesso ao registro através de programas como o Registry Editor (regedit.exe), mas não são válidas para uso com a função.
-{% endhint %}
+> Alguns textos abreviam essas chaves raíz com as letras iniciais de seu nome. Por exemplo, `HKCU` para `HKEY_CURRENT_USER`, `HKCR` para `HKEY_CLASSES_ROOT` e `HKLM` para `HKEY_LOCAL_MACHINE`. Tais abreviações são válidas para acesso ao registro através de programas como o Registry Editor (regedit.exe), mas não são válidas para uso com a função.
 
 ### phkResult
 
