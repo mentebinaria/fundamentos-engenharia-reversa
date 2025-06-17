@@ -1,22 +1,22 @@
 ---
 layout:
   title:
-    visible: false
+	visible: false
   description:
-    visible: false
+	visible: false
   tableOfContents:
-    visible: true
+	visible: true
   outline:
-    visible: true
+	visible: true
   pagination:
-    visible: true
+	visible: true
 ---
 
 # 🙌 Apresentação
 
 ## Sobre este Livro
 
-Este livro detalha os assuntos necessários para dar os primeiros passos na engenharia reversa de software em ambientes Windows, com foco em programas de 32-bits compilados para a arquitetura Intel. É pensado para ser estudado interativamente: você precisa seguir os exemplos e comandos apresentados no livro logo que eles aparecem para um melhor aproveitamento. Ao terminar de ler o livro, você será capaz de fazer engenharia reversa em programas simples, mas com a confiança de quem aprendeu de verdade o básico sobre o assunto.
+Este livro detalha os assuntos necessários para dar os primeiros passos na engenharia reversa de software em ambientes Windows, com foco em programas de 32-bits compilados para a arquitetura Intel. É pensado para ser estudado interativamente: você precisa seguir os exemplos e comandos apresentados no livro logo que eles aparecem para um melhor aproveitamento. Ao terminar de ler o livro, você conseguirá fazer engenharia reversa em programas simples, mas com a confiança de quem aprendeu de verdade o básico sobre o assunto.
 
 ## Público Alvo
 
@@ -28,7 +28,7 @@ Se encontrou algum erro ou quer sugerir alguma mudança, por favor abra um _issu
 
 ## Sobre o Autor
 
-Fernando Mercês atua há mais de 12 anos como pesquisador sênior de ameaças na Trend Micro, uma das maiores empresas dedicadas a software de segurança do mundo. Seu trabalho envolve o uso da engenharia reversa para analisar malwares em diversos ambientes e arquiteturas. Já ministrou diversos treinamentos de segurança, hardware, programação, engenharia reversa, análise de malware e tópicos correlatos. É autor de várias ferramentas livres e é fundador e diretor executivo da Mente Binária.
+Fernando Mercês atua há mais de 12 anos como pesquisador sênior de ameaças na Trend Micro, uma das maiores empresas dedicadas a software de segurança do mundo. Seu trabalho envolve o uso da engenharia reversa para analisar malware em diversos ambientes e arquiteturas. Já ministrou diversos cursos na área de segurança, hardware, programação, engenharia reversa, análise de malware e tópicos correlatos. É autor de várias ferramentas livres e é fundador e diretor executivo da Mente Binária.
 
 ## Sobre a Mente Binária
 

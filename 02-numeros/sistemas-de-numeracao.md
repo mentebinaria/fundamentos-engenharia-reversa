@@ -78,7 +78,7 @@ Existem algumas propriedades interessantes quando relacionamos os diferentes sis
 * 0xF é igual a 0b1111, assim como 0xFF equivale a 0b**1111**1111 e 0xFE é o mesmo que 0b**1111**1110.
 * 0x10 é 16. Então, 0x20 é 32 e 0x40 é 64.
 * Em hexadecimal, 9 + 1 é A, então 19 + 1 é 1A.
-* Na arquitetura x86, os endereços são de 32-bits. Ao analisar a pilha de memória, é bom se acostumar com decrementos de 4 bytes. Por exemplo, 12FF**90**, 12FF**8C**, 12FF**88**, 12FF**84**, 12FF**80**, 12FF**7C** e assim sucessivamente.
+* Na arquitetura x86-64, os endereços são de 64-bits, ou seja, 8 _bytes_. Ao analisar a pilha de memória, por exemplo, você vai perceber que tais endereços sempre terminam em zero ou em oito. Isto porque, em hexa, `8 + 8 = 10`. Somando mais oito, teremos 18. Se somarmos 8 novamente, teremos 20 e assim sucessivamente.
 * Na conversão de hexadecimal para binário, cada dígito hexa pode ser compreendido como quatro dígitos binários. Para exemplificar, tomemos o número 0x**B**0**B**0**C**A. Separando cada dígito hexa e convertendo-o para binário, temos:
 
 ```
@@ -110,16 +110,16 @@ Um bom exercício para fixar este conteúdo é criar o seu sistema de numeraçã
 | Decimal | Lulip's |
 | ------- | ------- |
 | 0       | @       |
-| 1       | #       |
+| 1       | \\#     |
 | 2       | $       |
-| 3       | #@      |
-| 4       | ##      |
-| 5       | #$      |
+| 3       | \#@     |
+| 4       | \#\#    |
+| 5       | \#$     |
 | 6       | $@      |
-| 7       | $#      |
-| 8       | \$$     |
-| 9       | #@@     |
-| 10      | #@#     |
-| 11      | #@$     |
+| 7       | $\#     |
+| 8       | \\\$$   |
+| 9       | \#@@    |
+| 10      | \#@\#   |
+| 11      | \#@$    |
 
 É importante que você perceba a lógica utilizada para contar no sistema Lulip's. Apesar de não ser um sistema que exista por aí, ele serve de base para você entender como qualquer valor, em qualquer sistema, pode ser convertido para outro.

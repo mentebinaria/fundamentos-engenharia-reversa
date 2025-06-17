@@ -55,8 +55,8 @@ De posse de um compilador de Assembly, muitas vezes chamado de  **assembler** (o
 
 > Agora você sabe o motivo pelo qual um programa compilado não é compatível entre diferentes processadores de diferentes arquiteturas. Como estes possuem instruções diferentes e _opcodes_ diferentes, não há mesmo essa compatibilidade.
 
-Perceba que Assembly é uma linguagem legível para seres humanos, diferente da linguagem de máquina que não passa de uma "tripa de _bytes_" onde você tem que sar seu jeito para fazer sentido.
+Perceba que Assembly é uma linguagem legível para seres humanos, diferente da linguagem de máquina que não passa de uma "tripa de _bytes_" sem sentido em princípio.
 
-Como afirmados antes, as palavras em linguagem Assembly que você usa para sinalizar instruções são chamadas de **mnemônicos**. No exemplo de código acima, utilizamos dois: o MOV e o OR. Estudaremos mais mnemônicos em breve.
+Como afirmado antes, as palavras em linguagem Assembly que você usa para sinalizar instruções são chamadas de **mnemônicos**. No exemplo de código acima, utilizamos dois: o MOV e o OR. Estudaremos mais mnemônicos em breve.
 
 [image-1]:	../.gitbook/assets/7400.png

@@ -1,6 +1,6 @@
 # 🖼 Windows API
 
-Uma API (_Application Programming Interface_) é uma interface para uma aplicação "falar" com outra. No caso da Windows API, esta consiste num conjunto de funções expostas para serem usadas por aplicativos rodando em _user mode_.
+Uma API (_Application Programming Interface_) é uma interface para uma aplicação "falar" com outra. A Windows API consiste num conjunto de funções expostas para serem usadas por aplicativos rodando em _user mode_.
 
 Para o escopo deste livro, vamos cobrir uma pequena parte da Windows API, pois o assunto é extenso.
 
@@ -27,13 +27,13 @@ int MessageBox(
 
 A Microsoft criou definições de anotações e novos tipos na linguagem C que precisam ser explicadas para o entendimento dos protótipos das funções de sua API. Para entender o protótipo da função _MessageBox_, é preciso conhecer o significado dos seguintes termos:
 
-|              |                                                          |
-| ------------ | -------------------------------------------------------- |
-| \[in\]       | Define que o parâmetro é de entrada                      |
-| \[optional\] | O parâmetro é opcional (pode ser NULL, ou 0 normalmente) |
-| HWND         | Um _handle_ (identificador) da janela                    |
-| LPCTSTR      | **L**ong **P**ointer to a **C**onst **T**CHAR **STR**ing |
-| UINT         | _unsigned int_ ou DWORD (32-bits ou 4 _bytes_)           |
+|                |                                                          |
+| -------------- | -------------------------------------------------------- |
+| \\[in\\]       | Define que o parâmetro é de entrada                      |
+| \\[optional\\] | O parâmetro é opcional (pode ser NULL, ou 0 normalmente) |
+| HWND           | Um _handle_ (identificador) da janela                    |
+| LPCTSTR        | **L**ong **P**ointer to a **C**onst **T**CHAR **STR**ing |
+| UINT           | _unsigned int_ ou DWORD (32-bits ou 4 _bytes_)           |
 
 > Um _handle_ é um número que identifica um objeto (arquivo, chave de registro, diretório, etc) aberto usado por um processo. É um conceito similar ao _file descriptor_ em ambiente Unix/Linux. _Handles_ só são acessíveis diretamente em _kernel mode_, por isso os programas interagem com eles através de funções da API do Windows. Por exemplo, a função CreateFile() retorna um _handle_ válido em caso de execução com sucesso. A partir daí, toda leitura e escrita neste arquivo deve ser feita a partir do _handle_. Por fim, a função CloseHandle() o fecha o _handle_ quando ele não é mais necessário.
 
@@ -69,4 +69,4 @@ MessageBox(NULL, "Mundo", "Olá"), 0x31);
 
 > Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser **NULL**, ou **0**, dependendo do que a documentação da função diz. Como o Visual Studio é um compilador de C++, você também pode usar **nullptr**, que também está disponível em C a partir da C23.
 
-Veremos agora algumas funções da Windows API para funções básicas, mas você encontrará informações sobre outras rotinas no apêdice Funções da API do Windows.
+Veremos agora algumas funções da Windows API para funções básicas, mas você encontrará informações sobre outras rotinas no apêndice Funções da API do Windows.

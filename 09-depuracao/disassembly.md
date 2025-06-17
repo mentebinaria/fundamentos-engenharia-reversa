@@ -1,43 +1,43 @@
 # Disassembly
 
-Ao observar a região que chamamos de disassembly, você verá 5 colunas onde a primeira exibe algumas informações e relações entre endereços. A segunda mostra os endereços em si. A terceira mostra os _bytes_ do opcode e operandos das instruções. A quarta mostra os mnemônicos onde podemos ler Assembly e por fim, a quinta mostra alguns comentários, sejam estes gerados automaticamente pelo debugger ou adicionados pelo usuário.
+Ao observar a região que chamamos de _disassembly_, você verá cinco colunas onde a primeira exibe algumas informações e relações entre endereços. A segunda mostra os endereços em si. A terceira mostra os _bytes_ do _opcode_ e dos operandos das instruções. A quarta mostra os mnemônicos onde podemos ler Assembly e por fim, a quinta mostra alguns comentários, sejam estes gerados automaticamente pelo _debugger_ ou adicionados por você.
 
-![Colunas do disassembly](../.gitbook/assets/x32dbg\_02\_disasm\_columns.png)
+![Colunas do disassembly][image-1]
 
-## Destaque de Instruções
+## Realce de Instruções
 
-Perceba que por padrão o debugger já destaca vários aspectos das instruções, na janela de disassembly. O nome mais comum para este destaque é sua versão em inglês _highlight_.
+Perceba que por padrão o _debugger_ já realça (_highlight_ em inglês) vários aspectos das instruções na janela de _disassembly_. As instruções CALL estão com fundo azul e os destinos das chamadas com fundo amarelo quando o endereço é conhecido. Os saltos também são realçados com fundo amarelo. Dessa forma é possível identificar rapidamente as instruções que alteram o fluxo do execução do programa.
 
-O _highlight_ refere-se principalmente às cores, mas o debugger também dá altas dicas. Na instrução acima, perceba que a operação em si está em azul, enquanto o argumento está em verde.
-
-O endereço para o qual o ponteiro de instrução aponta (EIP, embora o x64dbg chame-o genericamente de CIP, já que em x86-64 seu nome é RIP) é destacado com um fundo preto (na imagem anterior, vemos que é o endereço 401000).
+O endereço para o qual o ponteiro de instrução (RIP) aponta é destacado com um fundo preto.
 
 Na coluna de comentários, temos os comentários automáticos em marrom.
 
-É importante lembrar que no arquivo há somente os _bytes_ referentes às instruções (terceira coluna). Todo o resto é interpretação do debugger para que a leitura seja mais intuitiva.
+É importante lembrar que no arquivo há somente os _bytes_ referentes às instruções (terceira coluna). Todo o resto é interpretação do _debugger_ para que a nossa experiência seja mais agradável.
 
 ## Step Into/Over
 
-Neste primeiro momento, o debugger está parado e a próxima instrução a ser executada é justamente o que chamamos de OEP _(Original EntryPoint)_.
+Neste primeiro momento, o _debugger_ está parado e a próxima instrução a ser executada é justamente o que chamamos de EP _(EntryPoint)_.
 
-O primeiro comando que aprenderemos é o **Step over**, que pode ser ativado por pelo menos três lugares:
+O primeiro comando que aprenderemos é o **Step over**, que pode ser ativado de pelo menos quatro maneiras:
 
-1. Menu **Debug -> Step over**.
+1. Menu **Debug -\> Step over**.
 2. Botão **Step over** na barra de botões (é o sétimo botão).
 3. Tecla de atalho F8.
 4. Digitando um dos comandos a seguir na barra de comandos: StepOver/step/sto/st
 
-Se você emitir este comando uma vez, verá que o debugger vai executar uma única instrução e parar. Na janela do disassembly, você vai perceber que o cursor (EIP) "pulou uma linha" e a instrução anterior foi executada. No caso de nosso binário de teste, é a instrução PUSH EBP. Após sua execução, perceba que o valor de EBP foi agora colocado no topo da pilha (observe a pilha, abaixo dos registradores).
+Se você emitir este comando uma vez, verá que o _debugger_ vai executar uma única instrução e parar. Na janela do _disassembly_, você vai perceber que o cursor (RIP) "pulou uma linha" e a instrução anterior foi executada. No caso de nosso binário de teste, é a instrução SUB RSP, 98. Após sua execução, perceba que o valor de RSP foi atualizado.
 
-Você pode seguir teclando F8 até alcançar a primeira instrução CALL em 401007, destacada por um fundo azul claro.
+Você pode seguir teclando F8 até alcançar a primeira instrução CALL, destacada por um fundo azul claro.
 
-O comando **Step over** sobre uma CALL faz com que o debugger execute a rotina apontada pela instrução e "volte" para o endereço imediatamente após a CALL. Você não verá essa execução, pois o debbugger não a instrumentará. Caso queira observar o que foi executado "dentro" da CALL, é necessário utilizar o **Step into** (F7). Vamos fazer dois testes:
+O comando **Step over** sobre uma CALL faz com que o _debugger_ execute a rotina apontada pela instrução e "volte" para o endereço imediatamente após a CALL. Você não verá essa execução, pois o _debugger_ não a instrumentará. Caso queira observar o que foi executado "dentro" da CALL, é necessário utilizar o **Step into** (F7). Vamos fazer dois testes:
 
-1. Com o EIP apontado para a CALL em 401007, tecle F8. Você verá que a execução simplesmente "passa para a linha abaixo da CALL". Isso quer dizer que ela **foi executada**, mas você "não viu no debugger".
-2. Agora reinicie o programa no debugger (CTRL + F2), vá teclando F8 até chegar sobre a CALL novamente e tecle F7, que é o **Step into**. Perceba que o debugger agora "entrou" na CALL. Neste caso, você vai precisar teclar F8 mais três vezes até voltar ao fluxo de execução original, isso porque esta CALL só possui três instruções.
+1. Com o RIP apontado para a CALL em 140001019, tecle F8. Você verá que a execução simplesmente "passa para a linha abaixo da CALL". Isso quer dizer que ela **foi executada**, mas você "não viu no _debugger_".
+2. Agora reinicie o programa no _debugger_ (Ctrl + F2), vá teclando F8 até chegar sobre a CALL novamente e tecle F7, que é o **Step into**. Perceba que o _debugger_ agora "entrou" na CALL. Não se preocupe em analisar essa função. Ela pertence à API do Windows e seu funcionamento é conhecido. Pode reiniciar o programa em **Debug -\> Restart**.
 
 ## Run
 
-Um outro comando importante é o **Run** (F9). Ele simplesmente inicia a execução a partir do EIP de todas as instruções do programa. Se você emiti-lo com este binário, vai ver que a execução vai terminar, o que significa que o programa rodou até o final e saiu. Aí basta reiniciar o programa (CTRL + F2) para recomeçar nossos estudos. ;)
+Outro comando importante é o **Run** (F9). Ele simplesmente inicia a execução a partir do RIP de todas as instruções subsequentes e só para se encontrar um _breakpoint_ (nosso próximo assunto), uma exceção ou se o programa for encerrado. Se você der este comando, verá a execução terminada em menos de um segundo, o que significa que o programa rodou até o final e saiu. Aí basta reiniciar o programa (Ctrl + F2) para recomeçar nossos estudos. ;)
 
 Na próxima seção, vamos entender os pontos de paradas, mais conhecidos como _breakpoints_.
+
+[image-1]:	../.gitbook/assets/x32dbg%5C_02%5C_disasm%5C_columns.png

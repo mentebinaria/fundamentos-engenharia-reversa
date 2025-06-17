@@ -6,9 +6,9 @@ Vamos programar um pouco. Neste momento é importante, se ainda não o fez, que 
 
 Abra o Visual Studio e crie um novo projeto do tipo Console App, conforme a imagem abaixo mostra:
 
-![Tela de criação de projeto do Visual Studio Community 2019](../.gitbook/assets/vs\_console\_cpp\_app.png)
+![Tela de criação de projeto do Visual Studio Community 2019][image-1]
 
-Nomeie o projeto como "Mensagem" (sem aspas) e após criá-lo, substitua o conteúdo do arquivo Mensagens.cpp que o Visual Studio criará automaticamente por este:
+Nomeie o projeto como "Mensagem" (sem aspas) e após criá-lo, substitua o conteúdo do arquivo Mensagem.cpp que o Visual Studio criará automaticamente por este:
 
 ```cpp
 #include <Windows.h>
@@ -23,7 +23,7 @@ int main() {
 
 Tecle `F5` para rodar o programa e você deve ver uma janela como esta:
 
-![](../.gitbook/assets/msgboxw.png)
+![][image-2]
 
 Há vários conceitos neste código. Vamos dedicar um tempo a eles. Acompanhe:
 
@@ -66,13 +66,16 @@ Vamos analisar os conceitos novos aqui, como fizemos com o programa anterior:
 
 A tabela abaixo ajuda na compreensão:
 
-| Tipo    | Expansão                                           |
-| ------- | -------------------------------------------------- |
-| LPSTR   | char\*                                             |
-| LPCSTR  | const char\*                                       |
-| LPWSTR  | wchar\_t\*                                         |
-| LPCWSTR | const wchar\_t\*                                   |
-| LPTSTR  | char or wchar\_t dependendo da UNICODE             |
-| LPCTSTR | const char or const wchar\_t dependendo da UNICODE |
+| Tipo    | Expansão                                             |
+| ------- | ---------------------------------------------------- |
+| LPSTR   | char\\\*                                             |
+| LPCSTR  | const char\\\*                                       |
+| LPWSTR  | wchar\\\_t\\\*                                       |
+| LPCWSTR | const wchar\\\_t\\\*                                 |
+| LPTSTR  | char or wchar\\\_t dependendo da UNICODE             |
+| LPCTSTR | const char or const wchar\\\_t dependendo da UNICODE |
 
 Vamos fazer algo um pouco mais significativo agora. Vamos pedir ao _kernel_ do Windows que crie um arquivo para nós.
+
+[image-1]:	../.gitbook/assets/vs%5C_console%5C_cpp%5C_app.png
+[image-2]:	../.gitbook/assets/msgboxw.png
