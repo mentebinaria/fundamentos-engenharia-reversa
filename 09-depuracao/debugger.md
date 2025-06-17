@@ -54,4 +54,4 @@ Mostra a pilha de memória, onde o endereço com fundo em preto indica o topo da
 Na próxima seção, iremos depurar o binário de exemplo e devemos nos atentar às informações exibidas em cada uma das regiões da tela do _debugger_ acima apresentadas.
 
 
-[image-1]:	../.gitbook/assets/x32dbg%5C_01.png
+[image-1]:	../.gitbook/assets/x32dbg_01.png

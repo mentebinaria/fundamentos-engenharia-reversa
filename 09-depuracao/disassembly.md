@@ -40,4 +40,4 @@ Outro comando importante é o **Run** (F9). Ele simplesmente inicia a execução
 
 Na próxima seção, vamos entender os pontos de paradas, mais conhecidos como _breakpoints_.
 
-[image-1]:	../.gitbook/assets/x32dbg%5C_02%5C_disasm%5C_columns.png
+[image-1]:	../.gitbook/assets/x32dbg_02_disasm_columns.png

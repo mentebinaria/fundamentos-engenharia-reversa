@@ -34,5 +34,5 @@ Você também pode assistir a [aula do CERO][1], que trata sobre este assunto.
 
 [1]:	https://youtu.be/823KK-FYV9s?si=S8VwxxvJHwoYbiEa
 
-[image-1]:	../.gitbook/assets/x32dbg%5C_03%5C_breakpoint.png
-[image-2]:	../.gitbook/assets/x32dbg%5C_04%5C_breakpoints.png
+[image-1]:	../.gitbook/assets/x32dbg_03_breakpoint.png
+[image-2]:	../.gitbook/assets/x32dbg_04_breakpoints.png

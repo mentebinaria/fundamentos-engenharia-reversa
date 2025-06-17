@@ -1,4 +1,4 @@
-# 📝Registro de alterações
+# 📝 Registro de alterações
 
 ## Primeira Edição - Um dia 🤞
 
