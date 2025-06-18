@@ -21,7 +21,7 @@ Existem muitas outras opções de configuração que você pode experimentar. Pa
 
 Na tela inicial do x64dbg, clique em **File -\> Open**. Localize o arquivo `analyseme00.exe` e clique em em **Open**. Você deverá ver uma tela como esta:
 
-![Tela inicial do x64dbg][../.gitbook/assets/x64dbg_analyseme00_inicial.png]
+![Tela inicial do x64dbg](../.gitbook/assets/x64dbg_analyseme00_inicial.png)
 
 A aba **CPU**, realçada em preto, é sem dúvida a mais utilizada no processo de _debugging_, por isso, fizemos questão de nomear algumas de suas áreas, que descreveremos agora.
 
