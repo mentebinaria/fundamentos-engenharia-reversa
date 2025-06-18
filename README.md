@@ -1,15 +1,15 @@
 ---
 layout:
   title:
-	visible: false
+    visible: false
   description:
-	visible: false
+    visible: false
   tableOfContents:
-	visible: true
+    visible: true
   outline:
-	visible: true
+    visible: true
   pagination:
-	visible: true
+    visible: true
 ---
 
 # 🙌 Apresentação
