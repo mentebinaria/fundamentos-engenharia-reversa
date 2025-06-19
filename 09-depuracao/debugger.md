@@ -19,7 +19,7 @@ Existem muitas outras opções de configuração que você pode experimentar. Pa
 
 ## Tela Inicial
 
-Na tela inicial do x64dbg, clique em **File -\> Open**. Localize o arquivo `analyseme00.exe` e clique em em **Open**. Você deverá ver uma tela como esta:
+Na tela inicial do x64dbg, clique em **File ► Open**. Localize o arquivo `analyseme00.exe` e clique em em **Open**. Você deverá ver uma tela como esta:
 
 ![Tela inicial do x64dbg](../.gitbook/assets/x64dbg_analyseme00_inicial.png)
 

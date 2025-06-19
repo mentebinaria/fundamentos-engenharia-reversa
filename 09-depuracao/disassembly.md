@@ -14,7 +14,7 @@ Na coluna de comentários, temos os comentários automáticos em marrom.
 
 É importante lembrar que o conteúdo do arquivo sendo depurado é composto somente pelos _bytes_ referentes às instruções (terceira coluna) e dados. Toda essa análise adicional é feita pelo _debugger_ para que a nossa experiência seja mais agradável ao depurar o programa.
 
-## Executando uma instrução
+## Executando Uma Instrução
 
 Neste primeiro momento, o _debugger_ está parado e a próxima instrução a ser executada é justamente o que chamamos de EP _(EntryPoint)_.
 
@@ -34,7 +34,7 @@ O comando **Step over** sobre uma CALL faz com que o _debugger_ execute a rotina
 1. Com o RIP apontado para a CALL em 140001019, tecle F8. Você verá que a execução simplesmente "passa para a linha abaixo da CALL". Isso quer dizer que ela **foi executada**, mas você não "viu" essa execução no _debugger_.
 2. Agora reinicie o programa no _debugger_ clicando em **Debug -\> Restart**. Depois, vá teclando F8 até chegar sobre a CALL novamente e tecle F7, que é o **Step into**. Perceba que o _debugger_ agora "entrou" na CALL. Não se preocupe em analisar essa função. Ela pertence à API do Windows e seu funcionamento é conhecido. A ideia aqui é você diferenciar o _Step over_ do _Step into_. Pode reiniciar o programa novamente.
 
-## Rodando o programa
+## Rodando o Programa
 
 Outro comando importante é o **Run** (F9). Ele simplesmente inicia a execução a partir do RIP de todas as instruções subsequentes e só para se encontrar um _breakpoint_ (nosso próximo assunto), uma exceção ou se o programa for encerrado. Se você der este comando, verá a execução terminada em menos de um segundo, o que significa que o programa rodou até o final e saiu. Aí basta reiniciar o programa (Ctrl + F2) para recomeçar nossos estudos. ;)
 
