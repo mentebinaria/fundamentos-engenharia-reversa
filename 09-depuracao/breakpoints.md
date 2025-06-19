@@ -32,6 +32,6 @@ Você pode adicionar quantos _breakpoints_ de software quiser numa sessão de _d
 
 Você também pode assistir a [aula do CERO][1], que trata sobre este assunto.
 
-> Existem ainda os de memória e de hardware, mas não trataremos deles neste livro.
+> Existem ainda os _breakpoints_ de memória e de hardware, mas não trataremos deles neste livro.
 
 [1]: https://youtu.be/823KK-FYV9s

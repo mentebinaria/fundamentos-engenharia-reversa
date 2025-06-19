@@ -119,7 +119,7 @@ Este pequeno programa em Assembly faz algum sentido para você? Vamos comentá-l
 
 - Nas **linhas 7 e 8** temos as instruções em Assembly que desejamos codificar. Em outras palavras, converter para código de máquina.
 
-Agora é só pedir para o fasm fazer o trabalho. Salve o arquivo como `ou.asm` e, para compilar, clique em **Run -\> Compile** ou pressione `Ctrl+F9`. Um arquivo `ou.exe` será gerado no mesmo diretório onde você salvou seu código-fonte.
+Agora é só pedir para o fasm fazer o trabalho. Salve o arquivo como `ou.asm` e, para compilar, clique em **Run ► Compile** ou pressione `Ctrl+F9`. Um arquivo `ou.exe` será gerado no mesmo diretório onde você salvou seu código-fonte.
 
 Abra agora o `ou.exe` no HxD. Como é um programa pequeno, mesmo no olho você consegue notar as instruções que codificou. Destaquei o campo PointerToRawData da seção .text que aponta para o início da seção .text na imagem a seguir.
 

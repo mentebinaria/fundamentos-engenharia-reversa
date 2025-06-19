@@ -20,7 +20,7 @@ Neste primeiro momento, o _debugger_ está parado e a próxima instrução a ser
 
 O primeiro comando que aprenderemos é o **Step over**, que pode ser ativado de pelo menos quatro maneiras:
 
-1. Menu **Debug -\> Step over**.
+1. Menu **Debug ► Step over**.
 2. Botão **Step over** na barra de botões (por padrão, é o sétimo botão).
 3. Tecla de atalho F8.
 4. Digitando um dos comandos a seguir na barra de comandos: `StepOver`, `step`, `sto`, ou `st`.
@@ -32,7 +32,7 @@ Você pode seguir teclando F8 até alcançar a primeira instrução CALL, destac
 O comando **Step over** sobre uma CALL faz com que o _debugger_ execute a rotina apontada pela instrução e "volte" para o endereço imediatamente após a CALL. Você não verá essa execução, pois o _debugger_ não a instrumentará, mas ela acontece. Caso queira observar o que foi executado "dentro" da CALL, é necessário utilizar o **Step into** (F7). Vamos fazer dois testes:
 
 1. Com o RIP apontado para a CALL em 140001019, tecle F8. Você verá que a execução simplesmente "passa para a linha abaixo da CALL". Isso quer dizer que ela **foi executada**, mas você não "viu" essa execução no _debugger_.
-2. Agora reinicie o programa no _debugger_ clicando em **Debug -\> Restart**. Depois, vá teclando F8 até chegar sobre a CALL novamente e tecle F7, que é o **Step into**. Perceba que o _debugger_ agora "entrou" na CALL. Não se preocupe em analisar essa função. Ela pertence à API do Windows e seu funcionamento é conhecido. A ideia aqui é você diferenciar o _Step over_ do _Step into_. Pode reiniciar o programa novamente.
+2. Agora reinicie o programa no _debugger_ clicando em **Debug ► Restart**. Depois, vá teclando F8 até chegar sobre a CALL novamente e tecle F7, que é o **Step into**. Perceba que o _debugger_ agora "entrou" na CALL. Não se preocupe em analisar essa função. Ela pertence à API do Windows e seu funcionamento é conhecido. A ideia aqui é você diferenciar o _Step over_ do _Step into_. Pode reiniciar o programa novamente.
 
 ## Rodando o Programa
 

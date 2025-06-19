@@ -9,9 +9,9 @@
 
 ## Configuração
 
-Se o x64dbg estiver em português, mude o idioma para inglês. Isso é necessário, pois vários termos em inglês não estão traduzidos e isso pode dificultar o aprendizado. Para mudar o idioma, vá em **Opções -\> Idiomas** e escolha **[en\_US] American English - United States**. Você precisará fechar o x64dbg e abri-lo novamente para que o novo idioma entre em vigor. Depois que o software estiver em inglês, siga com a configuração:
+Se o x64dbg estiver em português, mude o idioma para inglês. Isso é necessário, pois vários termos em inglês não estão traduzidos e isso pode dificultar o aprendizado. Para mudar o idioma, vá em **Opções ► Idiomas** e escolha **[en\_US] American English - United States**. Você precisará fechar o x64dbg e abri-lo novamente para que o novo idioma entre em vigor. Depois que o software estiver em inglês, siga com a configuração:
 
-1. Vá em **Options -\> Preferences** e, na aba **Events**, desmarque a caixa **System Breakpoint**. Isso vai fazer com que o _debugger_ pare direto no _entrypoint_ de um programa ao abrirmos.
+1. Vá em **Options ► Preferences** e, na aba **Events**, desmarque a caixa **System Breakpoint**. Isso vai fazer com que o _debugger_ pare direto no _entrypoint_ de um programa ao abrirmos.
 2. Clique na aba **Engine** e marque a caixa **Disable ASLR**, que desabilita a randomização de endereços de memória.
 3. Clique em **Save**.
 

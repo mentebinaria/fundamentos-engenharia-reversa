@@ -2,7 +2,7 @@
 
 Um _patch_ é qualquer alteração, seja nos dados ou no código de um programa. O que fizemos na seção anterior é justamente isto. No entanto, não salvamos nossas modificações e neste caso elas serão perdidas caso você feche o x64dbg.
 
-É possível salvar as alterações acessando o menu **View -\> Patch file**, clicando no botão com um pequeno curativo \(tipo um band-aid\) na barra de ferramentas ou pressionando Ctrl+P.
+É possível salvar as alterações acessando o menu **View ► Patch file**, clicando no botão com um pequeno curativo \(tipo um band-aid\) na barra de ferramentas ou pressionando Ctrl+P.
 
 Se você veio da seção anterior e tem ainda as modificações no AnalyseMe-00, sua tela de patches aparecerá assim:
 
