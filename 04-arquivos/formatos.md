@@ -46,7 +46,7 @@ Seguindo esta tabela fornecida por quem desenhou o formato GIF e olhando o conte
 
 > No exemplo do formato GIF o tamanho do primeiro campo é de 6 _bytes,_ mas outros formatos podem utilizar _magic numbers_ de diferentes tamanhos. Não há regra específica.
 
-Logo após o primeiro campo, temos o segundo campo, que define a largura em _pixels_ da imagem GIF segundo sua documentação. Este campo possui 2 _bytes_ e, na imagem de exemplo, são os _bytes_ 0x30 e 0x00. Aqui cabe voltar num conceito importante que é o **endianness**. Acontece que na arquitetura Intel os _bytes_ de um número inteiro são armazenados de trás para frente (ordem essa chamda de _**little-endian**_). Sendo assim, a leitura correta da largura em _pixels_ deste GIF é 0x0030, ou simplesmente 0x30 (já que zero à esquerda não conta), que é 48 em decimal.
+Logo após o primeiro campo, temos o segundo campo, que define a largura em _pixels_ da imagem GIF segundo sua documentação. Este campo possui 2 _bytes_ e, na imagem de exemplo, são os _bytes_ 0x30 e 0x00. Aqui cabe voltar num conceito importante que é o **endianness**. Acontece que na arquitetura Intel os _bytes_ de um número inteiro são armazenados de trás para frente (ordem essa chamada de _**little-endian**_). Sendo assim, a leitura correta da largura em _pixels_ deste GIF é 0x0030, ou simplesmente 0x30 (já que zero à esquerda não conta), que é 48 em decimal.
 
 O próximo campo, também de 2 _bytes_, nos diz a altura em _pixels_ da imagem GIF e também possui o valor 0x30 (já lendo os _bytes_ de trás para frente conforme explicado). É correto dizer então que esta é uma imagem de 48 x 48 _pixels_.
 
