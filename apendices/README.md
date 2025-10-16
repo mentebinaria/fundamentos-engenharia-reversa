@@ -2,12 +2,22 @@
 
 Esses apêndices servem tanto de referência como de material de apoio para estudar assuntos que não foram abordados com profundeza neste livro.
 
-{% page-ref page="tabela-ascii.md" %}
+{% content-ref url="a-tabela-ascii.md" %}
+[a-tabela-ascii.md](a-tabela-ascii.md)
+{% endcontent-ref %}
 
-{% page-ref page="exemplos-de-codigo-em-assembly.md" %}
+{% content-ref url="c-exemplos-de-codigo-em-assembly.md" %}
+[c-exemplos-de-codigo-em-assembly.md](c-exemplos-de-codigo-em-assembly.md)
+{% endcontent-ref %}
 
-{% page-ref page="funcoes-api-win.md" %}
+{% content-ref url="d-funcoes-api-win.md" %}
+[d-funcoes-api-win.md](d-funcoes-api-win.md)
+{% endcontent-ref %}
 
-{% page-ref page="ferramentas.md" %}
+{% content-ref url="e-ferramentas.md" %}
+[e-ferramentas.md](e-ferramentas.md)
+{% endcontent-ref %}
 
-{% page-ref page="referencias.md" %}
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}

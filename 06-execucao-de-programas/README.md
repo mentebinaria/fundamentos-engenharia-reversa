@@ -12,7 +12,7 @@ Programas rodando em _user mode_ tampouco possuem acesso ao hardware do computad
 
 Passa que toda a parte legal acontece em _kernel mode_, sendo assim, um processo (na verdade uma _thread_) rodando em _user mode_ pode executar tarefas em _kernel mode_ através da API do Windows, que funciona como uma interface para tal. Essa comunicação é ilustrada no diagrama a seguir:
 
-![Diagrama simplificado da execução de programas no Windows](../.gitbook/assets/windows\_api.png)
+![Diagrama simplificado da execução de programas no Windows](broken-reference)
 
 ## Dependências
 

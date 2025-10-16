@@ -1,8 +1,8 @@
 # Table of contents
 
 * [🙌 Apresentação](README.md)
-* [🥇 Introdução](01-introducao/README.md)
-  * [Antes de começar](01-introducao/antes-de-comecar.md)
+* [🥇 Introdução](introducao/README.md)
+  * [Antes de começar](introducao/antes-de-comecar.md)
 * [🔢 Números](02-numeros/README.md)
   * [Sistemas de Numeração](02-numeros/sistemas-de-numeracao.md)
   * [O Byte](02-numeros/o-byte.md)

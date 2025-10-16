@@ -102,9 +102,9 @@ Mas há uma área onde o sistema operacional coloca algumas regras. Uma delas di
 
 A convenção mais utilizada no Windows em 64-bits estabelece, dentre outras coisas, que:
 
-- Os parâmetros do tipo inteiro serão passados nos registradores RCX, RDX, R8 e R9, nesta ordem.
-- Se houver mais de quatro parâmetros, os excedentes são passados pela pilha. Falaremos mais da pilha em breve.
-- O retorno é em RAX.
+* Os parâmetros do tipo inteiro serão passados nos registradores RCX, RDX, R8 e R9, nesta ordem.
+* Se houver mais de quatro parâmetros, os excedentes são passados pela pilha. Falaremos mais da pilha em breve.
+* O retorno é em RAX.
 
 Voltando ao nosso exemplo de código, o trecho `soma(3, 4)` gerou, em Assembly:
 
@@ -212,16 +212,17 @@ Para este exemplo eu não pus o código-fonte de propósito, afinal este é um l
 
 Este exemplo pode gerar dúvidas. Vamos lá:
 
-**Por que reservar tanto espaço na pilha?**
+**Por que reservar tanto espaço na pilha?**\
 Esta foi uma decisão do compilador. Acontece que a convenção de chamadas é um pouco mais complexa do que cobrimos aqui. Existe um espaço chamado de _shadow space_ que precisa ser reservado. Ele existe por vários motivos, mas o principal é que a função chamada pode salvar os parâmetros recebidos por registradores na pilha se precisar. Só ele já precisa de 32 bytes pois são quatro parâmetros passados por registrador, de 8 bytes cada.
 
-**Ok, mas e os outros 40 bytes?**
+**Ok, mas e os outros 40 bytes?**\
 Destes 40, 16 serão usados pelos dois argumentos copiados para a pilha (os literais 6 e 5). Outros 8 são usados para a variável local que guarda o resultado. E por fim, há um alinhamento em 16 bytes exigido pela ABI. O assunto foge do nosso escopo aqui, mas encorajo você a pesquisar sobre.
 
-**O que é dword ptr ss:[rsp+28]?**
-- “dword” significa _double word_ e isto nos diz que a instrução está trabalhando com dados de 4 _bytes_.
-- "ss" abrevia _stack segment_ e nos conta que o endereço está na _stack_.
-- Os colchetes são uma derreferência. Significa que o conteúdo sera armazenado (isto está no operado de destino de um MOV) no endereço apontado por RSP + 28 (em hexa).
+**O que é dword ptr ss:\[rsp+28]?**
+
+* “dword” significa _double word_ e isto nos diz que a instrução está trabalhando com dados de 4 _bytes_.
+* "ss" abrevia _stack segment_ e nos conta que o endereço está na _stack_.
+* Os colchetes são uma derreferência. Significa que o conteúdo sera armazenado (isto está no operado de destino de um MOV) no endereço apontado por RSP + 28 (em hexa).
 
 Sabendo disso, o código que gerou essas instruções provavelmente foi algo como:
 
