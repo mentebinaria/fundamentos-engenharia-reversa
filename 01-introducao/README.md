@@ -53,8 +53,8 @@ _Software_ proprietário costuma vir protegido contra pirataria. Você já deve 
 Um bom exemplo de uso da engenharia reversa é o caso da equipe que desenvolve o LibreOffice: mesmo sem ter acesso ao código-fonte, eles precisam entender como o Microsoft Office funciona, a fim de que os documentos criados nos dois produtos sejam compatíveis. Outros bons exemplos incluem:
 
 - **Wine**, capaz de rodar programas feitos para Windows no GNU/Linux;
-- **Samba** permite que o GNU/Linux e o Windows troquem arquivos via rede;
-- **Pidgin** conecta numa série de protocolos de mensagem instantânea;
-- ** ReactOS ** um sistema operacional que lhe permite executar seus aplicativos e drivers favoritos do Windows em um ambiente de código aberto e gratuito.
+- **Samba**, que permite que o GNU/Linux e o Windows troquem arquivos via rede;
+- **Pidgin**, que conecta numa série de protocolos de mensagem instantânea;
+- **ReactOS**, um sistema operacional que lhe permite executar seus aplicativos e drivers favoritos do Windows em um ambiente de código aberto e gratuito.
 
 Estes são exemplos de implementações em software livre, que tiveram de ser criadas a partir da engenharia reversa feita em programas e/ou protocolos de rede proprietários.
