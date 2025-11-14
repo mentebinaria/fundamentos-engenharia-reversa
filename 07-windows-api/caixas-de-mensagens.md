@@ -77,5 +77,4 @@ A tabela abaixo ajuda na compreensão:
 
 Vamos fazer algo um pouco mais significativo agora. Vamos pedir ao _kernel_ do Windows que crie um arquivo para nós.
 
-[image-1]:	../.gitbook/assets/vs%5C_console%5C_cpp%5C_app.png
 [image-2]:	../.gitbook/assets/msgboxw.png
