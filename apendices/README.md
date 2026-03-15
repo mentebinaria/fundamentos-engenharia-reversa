@@ -6,6 +6,10 @@ Esses apêndices servem tanto de referência como de material de apoio para estu
 [a-tabela-ascii.md](a-tabela-ascii.md)
 {% endcontent-ref %}
 
+{% content-ref url="b-tabela-iso-8859-1.md" %}
+[b-tabela-iso-8859-1.md](b-tabela-iso-8859-1.md)
+{% endcontent-ref %}
+
 {% content-ref url="c-exemplos-de-codigo-em-assembly.md" %}
 [c-exemplos-de-codigo-em-assembly.md](c-exemplos-de-codigo-em-assembly.md)
 {% endcontent-ref %}
@@ -16,8 +20,4 @@ Esses apêndices servem tanto de referência como de material de apoio para estu
 
 {% content-ref url="e-ferramentas.md" %}
 [e-ferramentas.md](e-ferramentas.md)
-{% endcontent-ref %}
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
 {% endcontent-ref %}
