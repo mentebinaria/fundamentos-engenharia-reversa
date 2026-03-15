@@ -1,6 +1,6 @@
-# 🗂 Arquivos
+# 🗂️ Arquivos
 
-Provavelmente você já se deparou com diversos arquivos, mas será que já pensou numa definição para eles? Defino arquivo como uma sequência de _bytes_ armazenada numa mídia digital somados a uma entrada, um registro, no sistema de arquivos (_filesystem_) que os referencie. Vou tentar provar minha definição para você. Faça o seguinte teste: abra o Bloco de Notas, escreva "mentebinaria.com.br" (sem aspas) e salve num arquivo chamado`arquivo.txt`.
+Provavelmente você já se deparou com diversos arquivos, mas será que já pensou numa definição para eles? Defino arquivo como uma sequência de _bytes_ armazenada numa mídia digital somados a uma entrada, um registro, no sistema de arquivos (_filesystem_) que os referencie. Vou tentar provar minha definição para você. Faça o seguinte teste: abra o Bloco de Notas, escreva "mentebinaria.com.br" (sem aspas) e salve num arquivo chamado `arquivo.txt`.
 
 Se nosso estudo sobre _strings_ estiver correto, este arquivo deve possuir 19 _bytes_ de tamanho.
 
