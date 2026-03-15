@@ -30,8 +30,6 @@ Você pode adicionar quantos _breakpoints_ de software quiser numa sessão de _d
 
 ![Lista de breakpoints](../.gitbook/assets/x64dbg_breakpoints.png)
 
-Você também pode assistir a [aula do CERO][1], que trata sobre este assunto.
+Você também pode assistir a [aula do CERO](https://youtu.be/823KK-FYV9s), que trata sobre este assunto.
 
 > Existem ainda os _breakpoints_ de memória e de hardware, mas não trataremos deles neste livro.
-
-[1]: https://youtu.be/823KK-FYV9s

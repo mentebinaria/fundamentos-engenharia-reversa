@@ -2,9 +2,9 @@
 
 Agora que você já sabe como um binário PE é construído, está na hora de entender como o código contido em suas seções de código de fato é executado. Acontece que um processador é programado em sua fábrica para entender determinadas sequências de _bytes_ como código e executar alguma operação. Para entender isso, vamos fazer uma analogia com um componente muito mais simples que um processador, um **circuito integrado** (genericamente chamado de _chip_).
 
-Um circuito integrado (CI) bastante conhecido no mundo da eletrônica é o 7400. Seu funcionamento interno é detalhado no seguinte diagrama a seguir.
+Um circuito integrado (CI) bastante conhecido no mundo da eletrônica é o 7400. Seu funcionamento interno é detalhado na ilustração a seguir:
 
-![][image-1]
+![CI 7400](../.gitbook/assets/7400.png)
 
 Se você já estudou portas lógicas, vai perceber que este CI tem 4 portas NAND (AND com saída negada). Cada porta possui duas entradas e uma saída, cada uma delas conectada a seu respectivo pino/perna do CI.
 
@@ -58,5 +58,3 @@ De posse de um compilador de Assembly, muitas vezes chamado de  **assembler** (o
 Perceba que Assembly é uma linguagem legível para seres humanos, diferente da linguagem de máquina que não passa de uma "tripa de _bytes_" sem sentido em princípio.
 
 Como afirmado antes, as palavras em linguagem Assembly que você usa para sinalizar instruções são chamadas de **mnemônicos**. No exemplo de código acima, utilizamos dois: o MOV e o OR. Estudaremos mais mnemônicos em breve.
-
-[image-1]:	../.gitbook/assets/7400.png

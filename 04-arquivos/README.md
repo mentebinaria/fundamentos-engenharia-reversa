@@ -6,7 +6,7 @@ Se nosso estudo sobre _strings_ estiver correto, este arquivo deve possuir 19 _b
 
 Agora vamos verificar o conteúdo deste arquivo. Abra-o num editor hexadecimal. O conteúdo deve consistir apenas dos seguintes _bytes_:
 
-<figure><img src="../.gitbook/assets/hxd_arquivo_txt.png" alt=""><figcaption><p>Conteúdo do <code>arquivo.txt</code> no editor hexadecimal</p></figcaption></figure>
+[Conteúdo do `arquivo.txt` no editor hexadecimal](../.gitbook/assets/hxd_arquivo_txt.png)
 
 O conteúdo exibido é exatamente a _string_ "mentebinaria.com.br" em ASCII. Conferindo com Python, temos:
 
@@ -23,6 +23,6 @@ A pergunta mais interessante para nós é, no entanto, em relação ao **tipo** 
 
 Claro que há maneiras mais práticas de se identificar o tipo de arquivo do que inspecionando seus _bytes_ um a um. No Windows, podemos utilizar softwares como o Detect It Easy. Ele possui uma base de assinaturas para reconhecer os _bytes_ de um arquivo e inferir seu tipo. Outros exemplos incluem o TrID (Windows) e o file/libmagic (GNU/Linux).
 
-<figure><img src="../.gitbook/assets/die_arquivo_txt.png" alt=""><figcaption><p>Detect It Easy (DIE) reconhecendo um arquivo de texto puro</p></figcaption></figure>
+![Detect It Easy (DIE) reconhecendo um arquivo de texto puro](../.gitbook/assets/die_arquivo_txt.png)
 
 Veremos agora como trabalhar com arquivos mais complexos que os arquivos de texto.

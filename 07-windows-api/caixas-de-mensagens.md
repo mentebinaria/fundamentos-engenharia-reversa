@@ -23,7 +23,7 @@ int main() {
 
 Tecle `F5` para rodar o programa e você deve ver uma janela como esta:
 
-![][image-2]
+![Mensagem exibida pela chamada à função `MessageBox`][../.gitbook/assets/msgboxw.png]
 
 Há vários conceitos neste código. Vamos dedicar um tempo a eles. Acompanhe:
 
@@ -76,5 +76,3 @@ A tabela abaixo ajuda na compreensão:
 | LPCTSTR | const char or const wchar\\\_t dependendo da UNICODE |
 
 Vamos fazer algo um pouco mais significativo agora. Vamos pedir ao _kernel_ do Windows que crie um arquivo para nós.
-
-[image-2]:	../.gitbook/assets/msgboxw.png
