@@ -21,7 +21,7 @@ O registro tem algumas chaves especiais em sua raiz. São elas:
 #endif
 ```
 
-Os valores à direita representam códigos para acessar cada chave. As quatro primeiras chaves são as mais comuns. Dentro delas, é possível criar e ler subchaves e manipular seus valores. Vamos ver como fazer isso estudando a função `RegCreateKey`.
+Os valores à direita representam códigos para acessar cada chave. As quatro primeiras chaves são as mais comuns. Dentro delas, é possível criar e ler sub-chaves e manipular seus valores. Vamos ver como fazer isso estudando a função `RegCreateKey`.
 
 ## RegCreateKey
 
@@ -45,7 +45,7 @@ Uma das chaves raíz, por exemplo: `HKEY_CURRENT_USER` ou `HKEY_LOCAL_MACHINE` (
 
 A subchave desejada, por exemplo, se o parâmetro `hKey` `HKEY_LOCAL_MACHINE` e `lpSubKey` é `Software\Microsoft\Windows\`, o caminho completo utilizado pela função será `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\`.
 
-> Alguns textos abreviam essas chaves raíz com as letras iniciais de seu nome. Por exemplo, `HKCU` para `HKEY_CURRENT_USER`, `HKCR` para `HKEY_CLASSES_ROOT` e `HKLM` para `HKEY_LOCAL_MACHINE`. Tais abreviações são válidas para acesso ao registro através de programas como o Registry Editor (regedit.exe), mas não são válidas para uso com a função.
+> Alguns textos abreviam essas chaves raiz com as letras iniciais de seu nome. Por exemplo, `HKCU` para `HKEY_CURRENT_USER`, `HKCR` para `HKEY_CLASSES_ROOT` e `HKLM` para `HKEY_LOCAL_MACHINE`. Tais abreviações são válidas para acesso ao registro através de programas como o Registry Editor (regedit.exe), mas não são válidas para uso com a função.
 
 ### phkResult
 

@@ -6,7 +6,7 @@ Mas este não é o único - nem é o primeiro - sistema para representação de 
 
 ## Binário
 
-O sistema binário surgiu há muito tempo e não vou arriscar precisar quando ou onde, mas em 1703 o alemão Leibniz publicou um trabalho refinado, com tradução para o inglês disponível em http://www.leibniz-translations.com/binary.htm, baseado na dualidade taoísta chinesa do _yin_ e _yan_ a qual descrevia o sistema binário moderno com dois símbolos: 0 (nulo) e 1 (uma unidade). Por ter somente dois símbolos, ficou conhecido como sistema binário, ou de base 2. A contagem segue a regra: depois de 0 e 1, pega-se o símbolo que representa uma unidade e se insere, à sua direita, o que representa nulo, formando o número que representa duas unidades neste sistema: 10.
+O sistema binário surgiu há muito tempo e não vou arriscar precisar quando ou onde, mas em 1703 o alemão Leibniz publicou um trabalho refinado, com tradução para o inglês disponível em http://www.leibniz-translations.com/binary.htm, baseado na dualidade taoista chinesa do _yin_ e _yan_ a qual descrevia o sistema binário moderno com dois símbolos: 0 (nulo) e 1 (uma unidade). Por ter somente dois símbolos, ficou conhecido como sistema binário, ou de base 2. A contagem segue a regra: depois de 0 e 1, pega-se o símbolo que representa uma unidade e se insere, à sua direita, o que representa nulo, formando o número que representa duas unidades neste sistema: 10.
 
 > Daí vem a piada nerd que diz haver apenas 10 tipos de pessoas no mundo: as que entendem linguagem binária e as que não entendem.
 

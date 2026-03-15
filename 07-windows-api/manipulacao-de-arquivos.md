@@ -22,7 +22,7 @@ Agora vamos aos parâmetros:
 
 ### lpFileName
 
-O caminho do arquivo que será aberto para escrita ou leitura. Se somente um nome for especificado, o diretório de onde o programa é chamado será considerado. Este parâmetro é do tipo LPCSTR na versão ASCII da função e do tipo LPCSWSTR na versão UNICODE.
+O caminho do arquivo que será aberto para escrita ou leitura. Se somente um nome for especificado, o diretório de onde o programa é chamado será considerado. Este parâmetro é do tipo `LPCSTR` na versão ASCII da função e do tipo LPCSWSTR na versão UNICODE.
 
 ### dwDesiredAccess
 

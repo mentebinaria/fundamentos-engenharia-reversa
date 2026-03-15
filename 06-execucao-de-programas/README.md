@@ -30,7 +30,7 @@ Este programa utiliza a função _printf()_, que não precisou ser implementada 
 
 Quando compilado, este programa terá uma dependência da biblioteca de C (arquivo **msvcrt.dll** no Windows) pois o código da _printf()_ está nela.
 
-Esta arquitetura garante que diferetens programadores e programadoras usem tal função e que ela terá sempre o mesmo comportamento se usada da mesma forma. Mas você já parou para pensar como a função _printf()_ de fato escreve na tela? Como ela lidaria com as diferentes placas de vídeo, por exemplo?
+Esta arquitetura garante que diferentes programadores e programadoras usem tal função e que ela terá sempre o mesmo comportamento se usada da mesma forma. Mas você já parou para pensar como a função _printf()_ de fato escreve na tela? Como ela lidaria com as diferentes placas de vídeo, por exemplo?
 
 O fato é que a _printf()_ não escreve diretamente na tela. Na verdade, a biblioteca de C, que contém a implementação da _printf()_, pede ao _kernel_ através de uma função de sua API para que ele escreva na tela. O _kernel_, por sua vez, utiliza o _driver_ da placa de vídeo que conhece a placa e a escrita acontece. Sendo assim, temos, neste caso um EXE que chama uma função de uma DLL que chama o _kernel_. Estudaremos mais a frente como essas chamadas acontecem.
 

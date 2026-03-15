@@ -55,7 +55,7 @@ Um ponteiro para o texto que será o título da caixa de mensagem. Se for NULL, 
 
 ### uType
 
-Configura o tipo de caixa de mensagem. É um número inteiro que pode ser definido por macros para cada _flag_ definida na documentação da função. Se passada a macro MB\_OKCANCEL (0x00000001L), por exemplo, faz com que a caixa de mensagem tenha dois botões: OK e Cancelar. Se passada a macro MB\_ICONEXCLAMATION (0x00000030L), a janela terá um ícone de exclamação. Se quiséssemos combinar as duas características, precisaríamos passar as duas _flags_ utilizando uma operação OU entre elas, assim:
+Configura o tipo de caixa de mensagem. É um número inteiro que pode ser definido por macros para cada _flag_ definida na documentação da função. Se passada a macro `MB_OKCANCEL` (0x00000001L), por exemplo, faz com que a caixa de mensagem tenha dois botões: OK e Cancelar. Se passada a macro `MB_ICONEXCLAMATION` (0x00000030L), a janela terá um ícone de exclamação. Se quiséssemos combinar as duas características, precisaríamos passar as duas _flags_ utilizando uma operação OU entre elas, assim:
 
 ```c
 MessageBox(NULL, "Mundo", "Olá", MB_OKCANCEL | MB_ICONEXCLAMATION);
@@ -67,6 +67,6 @@ Como macros e cálculos assim são resolvidos numa etapa conhecida por pré-comp
 MessageBox(NULL, "Mundo", "Olá"), 0x31);
 ```
 
-> Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser **NULL**, ou **0**, dependendo do que a documentação da função diz. Como o Visual Studio é um compilador de C++, você também pode usar **nullptr**, que também está disponível em C a partir da C23.
+> Dizer que um parâmetro é opcional não quer dizer que você não precise passá-lo ao chamar a função, mas sim que ele pode ser `NULL`, ou `0`, dependendo do que a documentação da função diz. Como o Visual Studio é um compilador de C++, você também pode usar `nullptr`, que também está disponível em C a partir da C23.
 
 Veremos agora algumas funções da Windows API para funções básicas, mas você encontrará informações sobre outras rotinas no apêndice Funções da API do Windows.

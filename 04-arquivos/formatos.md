@@ -22,7 +22,7 @@ Identifique na imagem as afirmações a seguir:
 
 A próxima coluna exibe os _bytes_ em si. Sem segredos. Por serem editores hexadecimais, programas como o HxD exibem o conteúdo do arquivo em bytes hexadecimais separados por espaços, mas é importante lembrar que o conteúdo de um arquivo é uma sequência de bits em disco ou em outro dispositivo de armazenamento que, quando aberto num editor, tem seu conteúdo copiado para a memória. A maneira como estes bytes serão visualizados fica a cargo do programa que o abre. Por exemplo, se o editor exibisse os bytes em decimal, os primeiros dois bytes (0x47 e 0x49) seriam 71 e 73. Se fosse em binário, seria 1000111 e 1001001.
 
-A esta altura você já deve ter percebido que um número pode ser expresso de várias maneiras, no entanto, o sistema hexadecimal é bem otimizado para fins de engenheiria reversa.
+A esta altura você já deve ter percebido que um número pode ser expresso de várias maneiras, no entanto, o sistema hexadecimal é bem otimizado para fins de engenheira reversa.
 
 ## **Representação Textual**
 

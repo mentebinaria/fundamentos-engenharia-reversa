@@ -12,12 +12,12 @@ Existem 16 registradores de 64-bits de uso geral na arquitetura x86-64. Apesar d
 
 | Registrador | Significado       | Uso sugerido                          |
 | ----------- | ----------------- | ------------------------------------- |
-| RAX         | Acumulador        | Usado em operações aritiméticas       |
+| RAX         | Acumulador        | Usado em operações aritméticas        |
 | RBX         | Base              | Ponteiro para dados                   |
 | RCX         | Contador          | Contador em repetições                |
 | RDX         | Dados             | Usado em operações de E/S             |
 | RSI         | Índice de origem  | Ponteiro para uma _string_ de origem  |
-| RDI         | Índice de desitno | Ponteiro para uma _string_ de destino |
+| RDI         | Índice de destino | Ponteiro para uma _string_ de destino |
 | RBP         | Ponteiro base     | Ponteiro para a base do _stack frame_ |
 | RSP         | Ponteiro pilha    | Ponteiro para o topo da pilha         |
 | R8-15       | -                 | Registradores adicionais              |
@@ -45,16 +45,16 @@ Tomemos o registrador RAX como exemplo. Ele tem 64 bits, mas ele também pode se
                                                    +--------+--------+
 ```
 
-O esquema anterior é poderoso e requer estudo. Cada um destes subregistradores é um registrador, por mais que compartilhem sua memória interna. Analise as afirmações a seguir:
+O esquema anterior é poderoso e requer estudo. Cada um destes sub-registradores é um registrador, por mais que compartilhem sua memória interna. Analise as afirmações a seguir:
 
-* O registrador EAX tem 32 bits. Dizemos que ele é a **parte baixa da RAX**. Neste contexto, "parte" quer dizer "metade".
-* O registrador AX é a parte baixa de EAX. Ele tem 16 bits.
-* O registrador AH é a parte **alta** de AX. Ele tem, naturalmente, 8 bits.
-* O registrador AL é a parte baixa de AX. Ele tem, também, 8 bits.
+- O registrador EAX tem 32 bits. Dizemos que ele é a **parte baixa da RAX**. Neste contexto, "parte" quer dizer "metade".
+- O registrador AX é a parte baixa de EAX. Ele tem 16 bits.
+- O registrador AH é a parte **alta** de AX. Ele tem, naturalmente, 8 bits.
+- O registrador AL é a parte baixa de AX. Ele tem, também, 8 bits.
 
 Perceba que somente o registrador AX se subdivide em dois registradores: AH para a parte alta e AL para a parte baixa.
 
-Como já dito, os subregistradores compartilham a memória interna de seu registrador "pai". Então, ao fazer:
+Como já dito, os sub-registradores compartilham a memória interna de seu registrador "pai". Então, ao fazer:
 
 ```
 mov rax, 0x1122334455667788 ; copia um número de 64-bits para RAX
@@ -64,7 +64,7 @@ EAX conterá 0x55667788, AX conterá 0x7788, AH conterá 0x77 e, por fim, AL con
 
 Para facilitar nossa vida, outros registradores se subdividem de outras maneiras. Vejamos. :)
 
-### Subregistradores de RSI, RDI, RBP e RSP
+### Sub-registradores de RSI, RDI, RBP e RSP
 
 Para explicar a subdivisão destes registradores, vamos usar o RSI como exemplo. Analise:
 
@@ -81,11 +81,11 @@ Para explicar a subdivisão destes registradores, vamos usar o RSI como exemplo.
                                                             +--------+
 ```
 
-A única diferença é que não há um subregistrador para a parte alta de SI. Para a parte baixa de SI é o SIL. O mesmo se aplica a RDI, RBP e RSP.
+A única diferença é que não há um sub-registrador para a parte alta de SI. Para a parte baixa de SI é o SIL. O mesmo se aplica a RDI, RBP e RSP.
 
-### Subregistradores de R8-R15
+### Sub-registradores de R8-R15
 
-Os subregistradores de 64 bits R8, R9, R10, R11, R12, R13, R14 e R15 seguem a mesma lógica anterior: não um registradores que se relacionam com a parte alta do subregistrador de 16-bits deles. No entanto, os nomes deles mudam e por isso cabe o diagrama novamente:
+Os sub-registradores de 64 bits R8, R9, R10, R11, R12, R13, R14 e R15 seguem a mesma lógica anterior: não um registradores que se relacionam com a parte alta do sub-registrador de 16-bits deles. No entanto, os nomes deles mudam e por isso cabe o diagrama novamente:
 
 ```
   63                            32 31            16 15     8 7      0
@@ -119,11 +119,11 @@ section '.text' code readable executable
 
 Este pequeno programa em Assembly faz algum sentido para você? Vamos comentá-lo:
 
-* Na **linha 1** estamos dizendo que o arquivo de saída será um PE de 64-bits. Apesar de o nome oficial ser PE32+, muita gente "forçou" o uso do termo PE64 em alguns lugares e é assim que informamos o **fasm** para usar este formato. Ainda na linha 1, temos a palavra **GUI**. Ela pede ao fasm que coloque o valor 2 naquele campo SubSystem do cabeçalho Opcional, lembra? :)
-* A **linha 2** define o endereço do _entrypoint_ através de um rótulo (_label_ em inglês). Será explicado melhor na linha 6.
-* A **linha 4** cria uma seção chamada .text que conterá código e que precisa ser mapeada em páginas de memória com permissões de leitura e execução. Se isso soa familiar, é porque realmente o é. :)
-* A **linha 6** define onde o rótulo start começa, dentro da seção .text. Ou seja, o _entrypoint_ configurado na linha 2 será seja qual for o endereço do primeiro _byte_ da seção .text.
-* Nas **linhas 7 e 8** temos as instruções em Assembly que desejamos codificar. Em outras palavras, converter para código de máquina.
+- Na **linha 1** estamos dizendo que o arquivo de saída será um PE de 64-bits. Apesar de o nome oficial ser PE32+, muita gente "forçou" o uso do termo PE64 em alguns lugares e é assim que informamos o **fasm** para usar este formato. Ainda na linha 1, temos a palavra **GUI**. Ela pede ao fasm que coloque o valor 2 naquele campo SubSystem do cabeçalho Opcional, lembra? :)
+- A **linha 2** define o endereço do _entrypoint_ através de um rótulo (_label_ em inglês). Será explicado melhor na linha 6.
+- A **linha 4** cria uma seção chamada .text que conterá código e que precisa ser mapeada em páginas de memória com permissões de leitura e execução. Se isso soa familiar, é porque realmente o é. :)
+- A **linha 6** define onde o rótulo start começa, dentro da seção .text. Ou seja, o _entrypoint_ configurado na linha 2 será seja qual for o endereço do primeiro _byte_ da seção .text.
+- Nas **linhas 7 e 8** temos as instruções em Assembly que desejamos codificar. Em outras palavras, converter para código de máquina.
 
 Agora é só pedir para o fasm fazer o trabalho. Salve o arquivo como `ou.asm` e, para compilar, clique em **Run ► Compile** ou pressione `Ctrl+F9`. Um arquivo `ou.exe` será gerado no mesmo diretório onde você salvou seu código-fonte.
 

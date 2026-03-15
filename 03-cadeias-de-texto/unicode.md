@@ -90,7 +90,7 @@ Os números (_code points_) utilizados pela ISO-8859-1 para seus caracteres são
 '62 69 6e e1 72 69 61'
 ```
 
-Perceba que o _byte_ referente ao "á" é o E1. Até aí nenhuma novidadade. Sabemos que é uma string ASCII estendida que usa a tabela ISO-8859-1, também conhecida por Latin-1. Agora, vejamos como ela fica em UTF-16-LE:
+Perceba que o _byte_ referente ao "á" é o E1. Até aí nenhuma novidade. Sabemos que é uma string ASCII estendida que usa a tabela ISO-8859-1, também conhecida por Latin-1. Agora, vejamos como ela fica em UTF-16-LE:
 
 ```python
 >>> 'binária'.encode('utf-16-le').hex(' ')
