@@ -4,7 +4,7 @@ Agora que você já sabe como um binário PE é construído, está na hora de en
 
 Um circuito integrado (CI) bastante conhecido no mundo da eletrônica é o 7400. Seu funcionamento interno é detalhado na ilustração a seguir:
 
-![CI 7400](../.gitbook/assets/7400.png)
+![CI 7400](../.gitbook/assets/08_7400.png)
 
 Se você já estudou portas lógicas, vai perceber que este CI tem 4 portas NAND (AND com saída negada). Cada porta possui duas entradas e uma saída, cada uma delas conectada a seu respectivo pino/perna do CI.
 

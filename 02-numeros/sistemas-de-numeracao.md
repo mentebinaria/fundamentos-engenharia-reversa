@@ -74,12 +74,12 @@ Aqui cabe uma tabela comparativa, só para exercitar:
 
 Existem algumas propriedades interessantes quando relacionamos os diferentes sistemas de numeração vistos aqui. São elas:
 
-* Quanto mais símbolos existem no sistema, menos dígitos utilizamos para representar grandes quantidades.
-* 0xF é igual a 0b1111, assim como 0xFF equivale a 0b**1111**1111 e 0xFE é o mesmo que 0b**1111**1110.
-* 0x10 é 16. Então, 0x20 é 32 e 0x40 é 64.
-* Em hexadecimal, 9 + 1 é A, então 19 + 1 é 1A.
-* Na arquitetura x86-64, os endereços são de 64-bits, ou seja, 8 _bytes_. Ao analisar a pilha de memória, por exemplo, você vai perceber que tais endereços sempre terminam em zero ou em oito. Isto porque, em hexa, `8 + 8 = 10`. Somando mais oito, teremos 18. Se somarmos 8 novamente, teremos 20 e assim sucessivamente.
-* Na conversão de hexadecimal para binário, cada dígito hexa pode ser compreendido como quatro dígitos binários. Para exemplificar, tomemos o número 0x**B**0**B**0**C**A. Separando cada dígito hexa e convertendo-o para binário, temos:
+- Quanto mais símbolos existem no sistema, menos dígitos utilizamos para representar grandes quantidades.
+- 0xF é igual a 0b1111, assim como 0xFF equivale a 0b**1111**1111 e 0xFE é o mesmo que 0b**1111**1110.
+- 0x10 é 16. Então, 0x20 é 32 e 0x40 é 64.
+- Em hexadecimal, 9 + 1 é A, então 19 + 1 é 1A.
+- Na arquitetura x86-64, os endereços são de 64-bits, ou seja, 8 _bytes_. Ao analisar a pilha de memória, por exemplo, você vai perceber que tais endereços sempre terminam em zero ou em oito. Isto porque, em hexa, `8 + 8 = 10`. Somando mais oito, teremos 18. Se somarmos 8 novamente, teremos 20 e assim sucessivamente.
+- Na conversão de hexadecimal para binário, cada dígito hexa pode ser compreendido como quatro dígitos binários. Para exemplificar, tomemos o número 0x**B**0**B**0**C**A. Separando cada dígito hexa e convertendo-o para binário, temos:
 
 ```
  B    0    B    0    C    A
@@ -88,7 +88,7 @@ Existem algumas propriedades interessantes quando relacionamos os diferentes sis
 
 Por isso podemos dizer que 0x**B**0**B**0**C**A é 0b**1011**0000**1011**0000**1100**1010.
 
-* Em hexadecimal, zeros à esquerda depois do prefixo e letras maiúsculas ou minúsculas não importam. Veja no Python:
+- Em hexadecimal, zeros à esquerda depois do prefixo e letras maiúsculas ou minúsculas não importam. Veja no Python:
 
 ```python
 >>> 0xa
@@ -110,14 +110,14 @@ Um bom exercício para fixar este conteúdo é criar o seu sistema de numeraçã
 | Decimal | Lulip's |
 | ------- | ------- |
 | 0       | @       |
-| 1       | \\#     |
+| 1       | \#      |
 | 2       | $       |
 | 3       | \#@     |
 | 4       | \#\#    |
 | 5       | \#$     |
 | 6       | $@      |
 | 7       | $\#     |
-| 8       | \\\$$   |
+| 8       | $$      |
 | 9       | \#@@    |
 | 10      | \#@\#   |
 | 11      | \#@$    |

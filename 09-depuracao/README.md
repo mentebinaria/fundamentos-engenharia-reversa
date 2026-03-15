@@ -4,7 +4,4 @@ Chegamos no capítulo onde a engenharia reversa de fato começa. Aqui vamos estu
 
 Neste livro usaremos o x64dbg. Ele é um _debugger_ gratuito, de código aberto e frequentemente atualizado para Windows.
 
-Na próxima seção apresentaremos como baixar e configurar o x64dbg. Também utilizaremos um binário de exemplo durante o livro, que é um desafio disponível em [menteb.in/analyseme00][1]. Com ele estudaremos os conceitos de engenharia reversa que precisamos para criar um fundamento sólido para avançar nesta área.
-
-
-[1]:	https://menteb.in/analyseme00
+Na próxima seção apresentaremos como baixar e configurar o x64dbg. Também utilizaremos um binário de exemplo durante o livro, que é um desafio disponível em https://menteb.in/analyseme00. Com ele estudaremos os conceitos de engenharia reversa que precisamos para criar um fundamento sólido para avançar nesta área.

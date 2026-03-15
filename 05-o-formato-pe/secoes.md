@@ -6,7 +6,7 @@ Elas são necessárias porque diferentes tipos de conteúdos exigem diferentes t
 
 Podemos então dizer que um binário PE é completamente definido por cabeçalhos e seções (com seu conteúdo), como na seguinte ilustração:
 
-![Versão simplificada do arquivo PE](../.gitbook/assets/cabsec_fig3.png)
+![Versão simplificada do arquivo PE](../.gitbook/assets/05_pe.png)
 
 Como dito, a principal separação que existe entre as seções é em relação a seu conteúdo, que distinguimos entre **código** ou **dados**. Apesar de terem seus nomes ignorados pelo _loader_ do Windows, convencionam-se alguns nomes de seção normalmente encontrados em executáveis:
 
@@ -60,7 +60,7 @@ O sistema operacional divide a memória RAM em páginas, normalmente de 4 _kilob
 
 Para mapear este executável em memória e rodá-lo, o SO precisa copiar o conteúdo de suas seções em páginas de memória e configurar suas permissões de acordo. Analise agora a figura abaixo:
 
-![Mapeamento de seções em memória](<../.gitbook/assets/alinhamento.png>)
+![Mapeamento de seções em memória](../.gitbook/assets/05_alinhamento.png)
 
 Perceba na figura que a seção .text já ocuparia duas páginas que precisariam ter permissões de leitura e execução. No que sobrou da segunda página, o SO não pode mapear a .data pois esta, apesar de compartilhar a permissão de leitura, exige escrita ao invés de execução. Logo, ele precisa mapeá-la numa próxima página.
 

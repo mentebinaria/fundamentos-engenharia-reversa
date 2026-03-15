@@ -44,7 +44,7 @@ Este campo de 2 _bytes_ sempre contém os valores 0x4d e 0x5a, que são os carac
 
 Podemos utilizar um editor hexadecimal como o **HxD** para verificar tal informação. Vamos abrir, em caráter de exemplo, o executável da calculadora no Windows, normalmente em _C:\Windows\System32\calc.exe_.
 
-![Conteúdo do binário da calculadora do Windows no HxD](../../.gitbook/assets/hxd_calc.exe_dos.png)
+![Conteúdo do binário da calculadora do Windows no HxD](../../.gitbook/assets/05_hxd_calc_dos.png)
 
 Perceba os _bytes_ 0x4d e 0x5a logo no início do arquivo.
 

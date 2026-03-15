@@ -6,7 +6,7 @@ Um _breakpoint_ nada mais é que um ponto no código onde o _debugger_ vai parar
 
 Há várias maneiras de se colocar um _breakpoint_ em um endereço utilizando o x64dbg. Você pode selecionar a instrução e pressionar F2, usar um dos comandos SetBPX/bp/bpx, dar um duplo clique sobre os _bytes_ da instrução (coluna 3 no disassembly) ou simplesmente clicar na bolinha cinza à esquerda do endereço (coluna 1 do disassembly). Ao fazê-lo, este ficará com um fundo vermelho, como mostra a imagem:
 
-![Colocando um breakpoint na CALL](../.gitbook/assets/x64dbg_breakpoint.png)
+![Colocando um breakpoint na CALL](../.gitbook/assets/09_x64dbg_breakpoint.png)
 
 Um segundo clique na bolinha desabilita o _breakpoint_, mas não o exclui da aba **Breakpoints** (Alt+B). Um terceiro clique o exclui totalmente.
 
@@ -28,7 +28,7 @@ Isso poderia ser feito manualmente, mas os _debuggers_ facilitam o trabalho, bas
 
 Você pode adicionar quantos _breakpoints_ de software quiser numa sessão de _debugging_. Todos ficam acessíveis na aba **Breakpoints**, a não ser que você os exclua. Veja como eles ficam organizados:
 
-![Lista de breakpoints](../.gitbook/assets/x64dbg_breakpoints.png)
+![Lista de breakpoints](../.gitbook/assets/09_x64dbg_breakpoints.png)
 
 Você também pode assistir a [aula do CERO](https://youtu.be/823KK-FYV9s), que trata sobre este assunto.
 

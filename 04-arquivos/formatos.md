@@ -4,7 +4,7 @@ Os arquivos de texto, independentemente da codificação (ASCII, ISO-8859-1, UTF
 
 Analise o seguinte arquivo GIF aberto no HxD:
 
-![Conteúdo de um arquivo GIF visualizado em hexadecimal](../.gitbook/assets/hxdgif.png)
+![Conteúdo de um arquivo GIF visualizado em hexadecimal](../.gitbook/assets/04_hxdgif.png)
 
 O HxD é um editor hexadecimal. Para entender estes editores funcionam, vamos começar pelas colunas onde os _bytes_ estão organizados.
 

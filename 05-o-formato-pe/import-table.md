@@ -58,11 +58,11 @@ Este campo aponta finalmente para o que chamamos de _IAT \(Import Address Table\
 
 Para fixar este conteúdo, é importante validar o que foi aprendido. Abra o executável da calculadora no **DIE**, marque a caixa **Advanced** se já não estiver marcada e clique no botão **PE** como a imagem a seguir mostra:
 
-![Obtendo informações avançadas sobre o PE no DIE](../.gitbook/assets/die_calc_pe_advanced.png)
+![Obtendo informações avançadas sobre o PE no DIE](../.gitbook/assets/05_die_calc_pe_advanced.png)
 
 No menu da esquerda, vá em **IMAGE_NT_HEADERS -> IMAGE_OPTIONAL_HEADER -> IMAGE_DIRECTORY_ENTRIES** e copie o endereço (coluna **Address**) do segundo diretório, que é justamente o endereço da IDT, como a imagem a seguir ilustra:
 
-![Visualizando o diretório de Imports (Import Table) no DIE](../.gitbook/assets/die_calc_it.png)
+![Visualizando o diretório de Imports (Import Table) no DIE](../.gitbook/assets/05_die_calc_it.png)
 
 > Perceba que o DIE chama o campo _VirtualAddress_ dos diretórios apenas de _Address_. Inconsistências assim podem ocorrer em várias ferramentas e literaturas, mas se você souber do que se trata, vai sempre se dar bem, mesmo que nomes diferentes sejam usados para se referir à mesma coisa.
 
@@ -70,6 +70,6 @@ Agora no **HxD**, abra o mesmo binário e vá até este _offset_ da IDT com o Ct
 
 Lá, os primeiros quatros _bytes_ são o valor do campo _RvaImportLookupTable_ do primeiro elemento do _array_. Se você seguir este _offset_, vai chegar na ILT. O primeiro elemento da ILT é um número de 64-bits, ou seja, de 8 _bytes_ que aponta para a _Hint/Name Table_. Nesta tabela, o nome da função começa no terceiro _byte_ conforme definição, logo após o campo _Hint_.
 
-![Olhando a IDT, ILT e Hint/Name Table no HxD](../.gitbook/assets/die_calc_ilt.png)
+![Olhando a IDT, ILT e Hint/Name Table no HxD](../.gitbook/assets/05_hxd_tables.png)
 
 Como desafio adicional, descubra à qual DLL a função pertence apenas olhando para a imagem anterior. Dica: busque pelo campo _Name_ da IDT e siga o valor que ele contém neste binário.

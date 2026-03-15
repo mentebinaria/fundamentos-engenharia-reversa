@@ -4,7 +4,7 @@
 
 Como poderiam dois executáveis com o mesmo **ImageBase** rodarem ao mesmo tempo se ambos são carregados no mesmo endereço de memória? Bem, a verdade é que não são. Existe um esquema chamado de **memória virtual** que consiste num mapeamento da memória RAM real física para uma memória virtual para cada processo no sistema, o que dá aos processos a ilusão de que estão sozinhos num ambiente monotarefa como era antigamente \(vide MS-DOS e outros sistemas antigos\). Essa memória virtual também pode ser mapeada para um arquivo em disco, como o _pagefile.sys_. O desenho a seguir ilustra o mecanismo de mapeamento:
 
-![Memória Virtual](../.gitbook/assets/memoria_virtual.png)
+![Memória Virtual](../.gitbook/assets/05_memoria_virtual.png)
 
 Conforme explicado no capítulo sobre as Seções dos arquivos PE, a memória é dividida em páginas, tanto a virtual quanto a física. No desenho, os dois processos possuem páginas mapeadas pelo _kernel_ \(pelo gerenciador de memória, que é parte deste\) em memória física e em disco \(sem uso no momento\). Perceba que as páginas de memória não precisam ser contíguas \(uma imediatamente após a outra\) no _layout_ de memória física, nem no da virtual. Além disso, dois processos diferentes podem ter regiões virtuais mapeadas para a mesma região da memória física, o que chamamos de páginas compartilhadas.
 

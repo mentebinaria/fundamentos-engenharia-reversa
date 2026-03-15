@@ -20,7 +20,7 @@ C:\>rundll32 <DLL>,<Função> <Parâmetros>
 
 Como a função _ShellAboutA()_ recebe um texto ASCII para ser exibido na tela "Sobre" do Windows, podemos testá-la da seguinte forma:
 
-![](../.gitbook/assets/shellabouta.png)
+![](../.gitbook/assets/06_shellabouta.png)
 
 > Utilizar o _rundll32.exe_ para chamar funções de biblioteca não é a maneira mais adequada de fazê-lo e não funciona com todas as funções, principalmente as que precisam de parâmetros que não são do tipo _string_. Somente o utilizamos aqui para exemplificar a chamada de funções exportadas por uma DLL.
 

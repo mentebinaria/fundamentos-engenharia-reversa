@@ -2,7 +2,7 @@
 
 Ao observar a região que chamamos de _disassembly_, você verá cinco colunas. A primeira exibe algumas informações e relações entre endereços. A segunda mostra os endereços em si. A terceira mostra os _bytes_ do _opcode_ e dos operandos das instruções. A quarta mostra os mnemônicos onde podemos ler Assembly e, por fim, a quinta mostra comentários, sejam estes gerados automaticamente pelo _debugger_ ou adicionados por você.
 
-![Colunas do disassembly](../.gitbook/assets/x64dbg_analyseme00_disassembly.png)
+![Colunas do disassembly](../.gitbook/assets/09_x64dbg_analyseme00_disassembly.png)
 
 ## Realce de Instruções
 

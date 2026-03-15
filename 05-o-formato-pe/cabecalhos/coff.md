@@ -96,6 +96,6 @@ O que o **dumpbin** e outros analisadores de PE fazem é interpretar toda a estr
 
 Com o **Detect It Easy**, também é possível ver os cabeçalhos de um PE. Para ver o cabeçalho COFF, abra o executável no DIE e marque a caixa de seleção **Advanced**. Clique no botão **PE** e no menu à esquerda escolha **IMAGE_FILE_HEADER**. Você deve ver uma janela como esta:
 
-![Cabeçalho COFF exibido pelo DIE](../../.gitbook/assets/die_310_calc.exe_coff.png)
+![Cabeçalho COFF exibido pelo DIE](../../.gitbook/assets/05_die_calc_coff.png)
 
 Aproveite e nague pelo programa para descobrir mais detalhes sobre o arquivo antes de irmos para o Cabeçalho Opcional.
