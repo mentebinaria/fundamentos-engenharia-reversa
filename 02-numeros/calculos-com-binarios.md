@@ -45,13 +45,14 @@ Por que utilizei tantas bases diferentes? Quero com isso por na sua cabeça que 
 
 O resultado da disjunção entre dois bits x e y é 1 se pelo menos um deles for 1. Sendo assim, segue a tabela verdade:
 
-| x                                                       | y                                                       | x \\| y |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------- |
-| 0                                                       | 0                                                       | 0       |
-| 0                                                       | 1                                                       | 1       |
-| 1                                                       | 0                                                       | 1       |
-| 1                                                       | 1                                                       | 1       |
-| Na programação, o símbolo normalmente é a barra em pé ( | ). Por exemplo, vamos calcular a disjunção entre 8 e 5: |         |
+| x   | y   | x \| y |
+| --- | --- | ------ |
+| 0   | 0   | 0      |
+| 0   | 1   | 1      |
+| 1   | 0   | 1      |
+| 1   | 1   | 1      |
+
+> Na programação, o símbolo normalmente é a barra em pé (|). Por exemplo, vamos calcular a disjunção entre 8 e 5:
 
 ```
 8 = 1000
@@ -128,9 +129,9 @@ Fica claro que é possível zerar variáveis bastando fazer uma operação XOR d
 
 O algoritmo conhecido por _XOR swap_ consiste em trocar os valores de duas variáveis somente com operações XOR, sem usar uma terceira variável temporária. Basta fazer, nesta ordem:
 
-* XOR entre x e y e armazenar o resultado em **x**.
-* XOR entre x e y e armazenar o resultado em **y**.
-* XOR entre x e y e armazenar o resultado em **x**.
+- XOR entre x e y e armazenar o resultado em **x**.
+- XOR entre x e y e armazenar o resultado em **y**.
+- XOR entre x e y e armazenar o resultado em **x**.
 
 Veja:
 
@@ -207,7 +208,7 @@ No exemplo acima deslocamos 1 _bit_ do número 7 (0b111) para a esquerda três v
 56
 ```
 
-De forma análoga, o deslocamento para a **direita** (_shift right_), ou simplesmente SHR, consiste em deslocar todos os \_bits\_de um número para a direita e completar a posição criada à esquerda com zero. Tomando o mesmo 7 (0b111):
+De forma análoga, o deslocamento para a **direita** (_shift right_), ou simplesmente SHR, consiste em deslocar todos os \_bits_de um número para a direita e completar a posição criada à esquerda com zero. Tomando o mesmo 7 (0b111):
 
 ```python
 >>> 0b111 >> 1
@@ -253,7 +254,7 @@ Para negar um bit, basta invertê-lo:
 
 No entanto, para inverter o número maior, como por exemplo 0b100, é preciso saber seu tamanho. Analise os exemplos abaixo para tamanhos variados:
 
-| Tamanho           | 0b100                              | \\\~0b100                          |
+| Tamanho           | 0b100                              | ~0b100                             |
 | ----------------- | ---------------------------------- | ---------------------------------- |
 | 1 byte            | 0b00000100                         | 0b11111011                         |
 | 2 _bytes_ (WORD)  | 0b0000000000000100                 | 0b1111111111111011                 |

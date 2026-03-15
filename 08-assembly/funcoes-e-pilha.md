@@ -257,7 +257,7 @@ ret
 
 Mesmo que não conhecêssemos a função MessageBoxW, dá para ver que ela está recebendo 4 parâmetros. Considerando a convenção de chamadas, temos:
 
-```
+```c
 MessageBoxW(0, 0x14002038, 0x140002020, 0);
 ```
 
