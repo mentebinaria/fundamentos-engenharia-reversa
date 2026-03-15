@@ -14,7 +14,7 @@ Se encontrou algum erro ou quer sugerir alguma mudança, por favor abra um _issu
 
 ## Sobre o Autor
 
-Fernando Mercês é pesquisador de segurança na Binarly, onde utiliza engenharia reversa para análise e detecção de vulnerabilidades em software. Antes disso, atuou por quase 13 anos anos como pesquisador de ameaças na Trend Micro, trabalhando com engenharia reversa em malware e investigação de ciber crime e ataques conduzidos por Estados-nação. Já ministrou diversos cursos na área de segurança, hardware, programação, engenharia reversa, análise de malware e tópicos correlatos. É autor de várias ferramentas livres e é fundador e diretor executivo da Mente Binária.
+Fernando Mercês é pesquisador de segurança na Binarly, onde utiliza engenharia reversa para análise e detecção de vulnerabilidades em software. Antes disso, atuou por quase 13 anos anos como pesquisador de ameaças na Trend Micro, trabalhando com engenharia reversa em malware e investigação de ciber crime e ataques conduzidos por Estados-nação. Já ministrou diversos cursos na área de segurança, hardware, programação, engenharia reversa, análise de malware e tópicos correlatos. É autor de várias ferramentas livres e é fundador e diretor de pesquisa da Mente Binária.
 
 ## Sobre a Mente Binária
 
