@@ -6,7 +6,7 @@ Vamos programar um pouco. Neste momento é importante, se ainda não o fez, que 
 
 Abra o Visual Studio e crie um novo projeto do tipo Console App, conforme a imagem abaixo mostra:
 
-![Tela de criação de projeto do Visual Studio Community 2019][image-1]
+![Tela de criação de projeto do Visual Studio Community 2026](../.gitbook/assets/07_visual_studio_project.png)
 
 Nomeie o projeto como "Mensagem" (sem aspas) e após criá-lo, substitua o conteúdo do arquivo Mensagem.cpp que o Visual Studio criará automaticamente por este:
 
