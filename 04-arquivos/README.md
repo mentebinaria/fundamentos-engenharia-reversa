@@ -6,7 +6,7 @@ Se nosso estudo sobre _strings_ estiver correto, este arquivo deve possuir 19 _b
 
 Agora vamos verificar o conteúdo deste arquivo. Abra-o num editor hexadecimal. O conteúdo deve consistir apenas dos seguintes _bytes_:
 
-[Conteúdo do `arquivo.txt` no editor hexadecimal](../.gitbook/assets/hxd_arquivo_txt.png)
+![Conteúdo do `arquivo.txt` no editor hexadecimal](../.gitbook/assets/hxd_arquivo_txt.png)
 
 O conteúdo exibido é exatamente a _string_ "mentebinaria.com.br" em ASCII. Conferindo com Python, temos:
 

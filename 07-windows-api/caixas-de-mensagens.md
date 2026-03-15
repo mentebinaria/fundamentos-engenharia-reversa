@@ -23,7 +23,7 @@ int main() {
 
 Tecle `F5` para rodar o programa e você deve ver uma janela como esta:
 
-![Mensagem exibida pela chamada à função `MessageBox`][../.gitbook/assets/msgboxw.png]
+![Mensagem exibida pela chamada à função `MessageBox`](../.gitbook/assets/msgboxw.png)
 
 Há vários conceitos neste código. Vamos dedicar um tempo a eles. Acompanhe:
 
