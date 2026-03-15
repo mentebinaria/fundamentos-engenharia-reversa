@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: false
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 🙌 Apresentação
 
 ## Sobre este Livro
@@ -40,4 +26,4 @@ A Mente Binária é uma instituição de ensino e pesquisa sem fins lucrativos q
 
 ## Agradecimentos
 
-Durante a jornada de concepção deste livro, várias pessoas foram envolvidas. Gostaria de agradecer à Gabriela Vicari pelo grande esforço que ela fez para que tivéssemos uma versão impressa deste livro, ao Leandro Fróes por seu valioso retorno sobre os tópicos abordados, ao Carlos Cabral pela revisão inicial e aos usuários do GitHub que contribuíram com correções: morkin1792, tiagorlampert, eremit4, felipensp, xfgusta, pr3y, st3phano, gleysonnnnn, hudsantos e becauro.
+Durante a jornada de concepção deste livro, várias pessoas foram envolvidas. Gostaria de agradecer à Gabriela Vicari pelo grande esforço que ela fez para que tivéssemos uma versão impressa deste livro, ao Leandro Fróes por seu valioso retorno sobre os tópicos abordados, ao Carlos Cabral pela revisão inicial e às pessoas no GitHub que contribuíram com correções. Elas estão listadas [aqui](https://github.com/mentebinaria/fundamentos-engenharia-reversa/graphs/contributors).
