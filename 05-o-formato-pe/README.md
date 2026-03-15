@@ -10,8 +10,4 @@ Os programas que criam estes programas, chamados compiladores precisam respeitar
 
 Assim como o formato GIF e outras especificações de formato de arquivo, o formato PE possui cabeçalhos, que possuem campos e valores possíveis. Outro conceito importante é o de seções.
 
-A estrutura geral de um arquivo PE é apresentada na imagem abaixo:
-
-![Estrutura de um arquivo PE](broken-reference)
-
-Conheceremos agora os cabeçalhos mais importantes para este primeiro contato com a engenharia reversa e, em seguida, as seções de um arquivo PE.
+De forma geral, um arquivo PE pode ser dividido em duas partes: cabeçalhos e seções. Conheceremos agora os cabeçalhos mais importantes para este primeiro contato com a engenharia reversa e, em seguida, as seções de um arquivo PE.
