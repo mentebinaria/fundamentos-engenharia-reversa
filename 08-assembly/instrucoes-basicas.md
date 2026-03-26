@@ -74,7 +74,7 @@ Sendo uma operação indispensável ao funcionamento dos computadores, a compara
 	mov    eax, 0xb0b0
 	cmp    eax, 0xfe10
 
-A instrução CMP neste caso compara o valor de EAX (que é 0xB0B0 após a instrução MOV) com 0xFE10. Como será que tal comparação é feita matematicamente? Acertou se você pensou em diminuir de EAX o valor a ser comparado. Dependendo do resultado, podemos saber o resultado da comparação da seguinte maneira:
+A instrução CMP neste caso compara o valor do operando de destino EAX (que é 0xB0B0 após a instrução MOV) com o operando de origem 0xFE10. Como será que tal comparação é feita matematicamente? Acertou se você pensou em diminuir de EAX o valor a ser comparado. Dependendo do resultado, podemos saber o resultado da comparação da seguinte maneira:
 
 * Se o resultado for **zero**, então os operandos de destino e origem são **iguais**.
 * Se o resultado for um número **negativo**, então o operando de destino é **maior** que o de origem.
@@ -82,7 +82,7 @@ A instrução CMP neste caso compara o valor de EAX (que é 0xB0B0 após a instr
 
 O resultado da comparação é armazenado no registrador RFLAGS, o que significa dizer que a instrução CMP **altera** este registrador para que instruções futuras tomem decisões baseadas nelas. Por exemplo, para operandos iguais, como o resultado é zero, a CMP liga a _zero flag_ no registrador RFLAGS.
 
-A instrução CMP é normalmente precedida de um salto, como veremos a seguir.
+A instrução CMP é normalmente seguida de um salto, como veremos a seguir.
 
 ## Alterando o Fluxo do Programa
 
@@ -99,7 +99,7 @@ Existem vários tipos de saltos. O mais simples é o salto **incondicional** pro
 
 A instrução ADD EAX, 4 nunca será executada pois o salto faz a execução pular para o endereço 0x0A, onde temos a instrução INC EAX. Portanto, o valor final de EAX será 2.
 
-Note aqui o _opcode_ do salto incondicional JMP, que é o 0xEB. Seu argumento, é o número de _bytes_ que serão pulados, que no nosso caso, são 3. Isso faz a execução pular a instrução ADD EAX, 4 inteira, já que ela tem exatamente 3
+Note aqui o _opcode_ do salto incondicional JMP, que é o 0xEB. Seu argumento, é o número de _bytes_ que serão pulados da instrução seguinte, que no nosso caso, são 3. Isso faz a execução pular a instrução `ADD EAX, 4` inteira, já que ela tem exatamente 3 _bytes_.
 
 Você pode entender o salto incondicional JMP como um comando **goto** na linguagem de programação C.
 

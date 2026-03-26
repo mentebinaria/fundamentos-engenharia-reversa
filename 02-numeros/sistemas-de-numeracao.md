@@ -32,7 +32,7 @@ Na prática, os códigos acima funcionam como conversores de binário para decim
 
 Como o próprio nome sugere, o sistema octal possui oito símbolos: 0, 1, 2, 3, 4, 5, 6 e 7. À esta altura já dá pra sacar que para representar oito quantidades em octal o número é 10. Nove é 11, dez é 12 e assim sucessivamente.
 
-> O sistema octal é utilizado para as permissões de arquivo pelo comando chmod nos sistemas baseados em Linux e BSD. Os números 1, 2 e 4 representam permissão de execução, escrita e leitura, respectivamente. Para combiná-las, basta somar seus números correspondentes. Sendo assim, uma permissão 7 significa que se pode-se tudo \(leitura, escrita e execução\) enquanto uma permissão 6 permite somente escrita e leitura. Tais números foram escolhidos para não haver confusão. Se fossem os números 1, 2 e 3 a permissão 3 poderia significar tanto ela mesma quanto 1+2 (execução + escrita). Usando 1, 2 e 4 não há brechas para dúvidas. ;\)
+> O sistema octal é utilizado para as permissões de arquivo pelo comando chmod nos sistemas baseados em Linux e BSD. Os números 4, 2 e 1 representam permissão de leitura, escrita e execução, respectivamente. Para combiná-las, basta somar seus números correspondentes. Sendo assim, uma permissão 7 significa que se pode-se tudo \(leitura, escrita e execução\) enquanto uma permissão 6 permite somente leitura e escrita. Tais números foram escolhidos para não haver confusão. Se fossem os números 1, 2 e 3 a permissão 3 poderia significar tanto ela mesma quanto 1+2 (escrita + execução). Usando 4, 2 e 1 não deixa brechas para dúvidas.
 
 Veja um exemplo em Python (lembre-se: abra o Python e estude junto agora):
 

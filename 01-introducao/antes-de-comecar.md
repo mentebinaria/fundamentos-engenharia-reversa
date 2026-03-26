@@ -6,7 +6,7 @@ Todo escritor quer que sua mensagem seja lida e compreendida, isso não é difer
 
 Embora eu busque valorizar nosso idioma ao máximo neste livro, há casos em que palavras em inglês se fazem necessárias, principalmente quando não existe uma tradução direta. Utilizo em itálico nestes casos.
 
-Mesmo quando há ma palavra equivalente, me reservo o direito de usar o termo original e evitar termos "aportuguesados" como baite (para _byte_) ou linkeditor (para _linker_) quando a opção em inglês é mais comum.
+Mesmo quando há uma palavra equivalente, me reservo o direito de usar o termo original e evitar termos "aportuguesados" como baite (para _byte_) ou linkeditor (para _linker_) quando a opção em inglês é mais comum.
 
 Após a introdução, **engenharia reversa** passa a ser utilizado como forma curta de engenharia reversa de _software_.
 

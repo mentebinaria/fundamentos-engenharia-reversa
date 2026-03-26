@@ -98,4 +98,4 @@ Com o **Detect It Easy**, também é possível ver os cabeçalhos de um PE. Para
 
 ![Cabeçalho COFF exibido pelo DIE](../../.gitbook/assets/05_die_calc_coff.png)
 
-Aproveite e nague pelo programa para descobrir mais detalhes sobre o arquivo antes de irmos para o Cabeçalho Opcional.
+Aproveite e navegue pelo programa para descobrir mais detalhes sobre o arquivo antes de irmos para o Cabeçalho Opcional.

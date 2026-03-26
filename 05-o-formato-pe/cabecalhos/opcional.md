@@ -59,17 +59,17 @@ Imagem é como a Microsoft chama um arquivo executável (para diferenciar de um 
 
 Este campo define o tipo de subsistema necessário para rodar o programa. Valores interessantes para nós são:
 
-* 0x002 - Windows GUI (_Graphical User Interface_) - para programas gráficos no Windows (que usam janelas, etc).
-* 0x003 - Windows CUI (_Character User Interface_) - para programas de linha de comando.
+- 0x002 - Windows GUI (_Graphical User Interface_) - para programas gráficos no Windows (que usam janelas, etc).
+- 0x003 - Windows CUI (_Character User Interface_) - para programas de linha de comando.
 
 ## DllCharacteristics
 
 Ao contrário do que o nome possa sugerir, este campo não é somente para DLLs. Ele está presente e é utilizado para arquivos executáveis também. Assim como o campo _Characteristics_ do cabeçalho COFF visto anteriormente, este campo é uma máscara de _bits_ com destaque para os possíveis valores:
 
-| Bit | Nome                                        |
-| --- | ------------------------------------------- |
-| 5   | IMAGE\_DLLCHARACTERISTICS\_DYNAMIC\_BASE    |
-| 7   | IMAGE\_DLLCHARACTERISTICS\_NX\_COMPAT       |
+| Bit (começando em 0) | Nome                                  |
+| -------------------- | ------------------------------------- |
+| 5                    | IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE |
+| 7                    | IMAGE_DLLCHARACTERISTICS_NX_COMPAT    |
 
 O estado _bit_ 5 nos diz se a randomização de endereços de memória, também conhecida por ASLR (_Address Space Layout Randomization_), está ativada para este binário, enquanto o estado do _bit_ 7 diz respeito à DEP (_Data Execution Prevention_), também conhecido pela sigla NX (_No eXecute_). O estudo aprofundado destes recursos foge do escopo deste livro, mas é importante que saibamos que podemos desabilitar tais recursos para um binário específico simplesmente desligando estes _bits_ se quisermos.
 

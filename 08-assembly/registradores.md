@@ -120,9 +120,9 @@ section '.text' code readable executable
 Este pequeno programa em Assembly faz algum sentido para você? Vamos comentá-lo:
 
 - Na **linha 1** estamos dizendo que o arquivo de saída será um PE de 64-bits. Apesar de o nome oficial ser PE32+, muita gente "forçou" o uso do termo PE64 em alguns lugares e é assim que informamos o **fasm** para usar este formato. Ainda na linha 1, temos a palavra **GUI**. Ela pede ao fasm que coloque o valor 2 naquele campo SubSystem do cabeçalho Opcional, lembra? :)
-- A **linha 2** define o endereço do _entrypoint_ através de um rótulo (_label_ em inglês). Será explicado melhor na linha 6.
-- A **linha 4** cria uma seção chamada .text que conterá código e que precisa ser mapeada em páginas de memória com permissões de leitura e execução. Se isso soa familiar, é porque realmente o é. :)
-- A **linha 6** define onde o rótulo start começa, dentro da seção .text. Ou seja, o _entrypoint_ configurado na linha 2 será seja qual for o endereço do primeiro _byte_ da seção .text.
+- A **linha 2** define o rótulo (_label_, em inglês) que será usado como ponto de entrada (_entrypoint_) do programa. Será explicado melhor na linha 6.
+- A **linha 4** cria uma seção chamada `.text` que conterá código e que precisa ser mapeada em páginas de memória com permissões de leitura e execução. Se isso soa familiar, é porque realmente o é. :)
+- A **linha 6** define onde o rótulo `start` começa, dentro da seção .text. Ou seja, o _entrypoint_ configurado na linha 2 será o endereço do primeiro _byte_ da seção `.text`.
 - Nas **linhas 7 e 8** temos as instruções em Assembly que desejamos codificar. Em outras palavras, converter para código de máquina.
 
 Agora é só pedir para o fasm fazer o trabalho. Salve o arquivo como `ou.asm` e, para compilar, clique em **Run ► Compile** ou pressione `Ctrl+F9`. Um arquivo `ou.exe` será gerado no mesmo diretório onde você salvou seu código-fonte.

@@ -7,7 +7,7 @@ Já vimos que um _byte_ pode armazenar números de 0 a 255 por conta de seus 8 _
 -2
 ```
 
-Mas não falhou! Isso acontece porque na computação dividimos as possibilidades quase que "ao meio". Por exemplo, sabendo que 1 _byte_ pode representar 256 possibilidades (sendo o 0 e mais 255 de números positivos), podemos dividir tais possibilidades, de modo a representar de -128 até +127. Continuamos com 256 possibilidades diferentes (incluindo o zero), reduzimos as quantidades máxima e miníma representáveis. :\)
+Mas não falhou! Isso acontece porque na computação dividimos as possibilidades quase que "ao meio". Por exemplo, sabendo que 1 _byte_ pode representar 256 possibilidades (zero e números positivos de 1 a 255), podemos dividir tais possibilidades, de modo a representar de -128 até +127. Continuamos com 256 possibilidades diferentes (incluindo o zero), mas reduzimos tanto a quantidade máxima quanto a mínima representável.
 
 O _bit_ mais significativo (mais à esquerda) é utilizado para representar o sinal. Se for 0, é um número positivo. Se for 1, é um número negativo.
 

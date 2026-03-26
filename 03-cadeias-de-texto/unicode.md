@@ -6,7 +6,7 @@ O Unicode define mais de um milhão de _code points_ **únicos**_._ Para manter 
 
 O esforço é cobrir todos os caracteres dos idiomas e para isso, claro, não daria para se limitar a um byte por caractere. Além disso, Unicode não utiliza _code pages_ (lembre-se que os _code points_ são únicos).
 
-Na teoria é tudo muito belo, mas os problemas aparecem quando pensamos em **como** armazenar caracteres Unicode em arquvos ou na memória do computador. Por exemplo: quantos _bytes_ são necessários para cada caractere Unicode? Pois é... o padrão Unicode não especifica isso. Por isso foram inventamos **esquemas de codificação** que transforam _code points_ Unicode em _bytes_. Veremos os principais agora.
+Na teoria é tudo muito belo, mas os problemas aparecem quando pensamos em **como** armazenar caracteres Unicode em arquivos ou na memória do computador. Por exemplo: quantos _bytes_ são necessários para cada caractere Unicode? Pois é... o padrão Unicode não especifica isso. Por isso foram inventados **esquemas de codificação** que transforam _code points_ Unicode em _bytes_. Veremos os principais agora.
 
 ## UTF-8
 
