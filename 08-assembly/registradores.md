@@ -129,7 +129,7 @@ Agora é só pedir para o fasm fazer o trabalho. Salve o arquivo como `ou.asm` e
 
 Abra agora o `ou.exe` no HxD. Como é um programa pequeno, mesmo no olho você consegue notar as instruções que codificou. Destaquei o campo PointerToRawData da seção .text que aponta para o início da seção .text na imagem a seguir.
 
-!\[Instruções MOV e OR na seção .text]\[image-1]
+![Instruções MOV e OR na seção .text](../.gitbook/assets/hxd_ou_exe.png)
 
 Perceba os _opcodes_ e argumentos idênticos aos exemplificados na introdução deste capítulo.
 
