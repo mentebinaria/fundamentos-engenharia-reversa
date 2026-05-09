@@ -6,7 +6,7 @@ Um _patch_ é qualquer alteração, seja nos dados ou no código de um programa.
 
 Se você veio da seção anterior e tem ainda as modificações no AnalyseMe-00, sua tela de patches aparecerá assim:
 
-![Visualizando as modificações feitas][../.gitbook/assets/09_patches.png]
+![Visualizando as modificações feitas](../.gitbook/assets/09_patches.png)
 
 A partir desta tela, é possível exportá-los para um arquivo \(Export\), mas também criar um novo arquivo executável com as alterações salvas \(Patch File\).
 
