@@ -21,7 +21,7 @@ Concluímos que os caracteres UTF-8 **variam** de 1 a 4 bytes. Sendo assim, como
 '6d 65 6e 74 65 62 69 6e c3 a1 72 69 61'
 ```
 
-Como dito antes, os _code points_ da tabela ASCII são os mesmos em UTF-8, mas o caractere 'á' (que não existe em ASCII puro) utiliza 2 bytes (no caso, C3 A1) para ser representado. Esta é uma _string_ UTF-8 válida. Dizemos que seu tamanho é 11 porque ela contém 11 caracteres, mas em _bytes_ seu tamanho é 12.
+Como dito antes, os _code points_ da tabela ASCII são os mesmos em UTF-8, mas o caractere 'á' (que não existe em ASCII puro) utiliza 2 bytes (no caso, C3 A1) para ser representado. Esta é uma _string_ UTF-8 válida. Dizemos que seu tamanho é 12 porque ela contém 12 caracteres, mas em _bytes_ seu tamanho é 13.
 
 Vamos ver um _emoji_ agora:
 
