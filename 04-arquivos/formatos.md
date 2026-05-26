@@ -28,7 +28,7 @@ A esta altura você já deve ter percebido que um número pode ser expresso de v
 
 Na terceira coluna o HxD nos apresenta a representação textual em ASCII de cada _byte_ exibido na segunda coluna, ou seja, se o _byte_ em questão estiver dentro da faixa de caracteres ASCII imprimíveis (de 0x20 à 0x7e), sua representação é exibida. Para valores fora desta faixa, o HxD imprime um ponto.
 
-Há dezenas de outros editores hexadecimais disponíveis, inclusive alguns visualizadores de linha de comando. Vale consultar o apêndice Ferramentas e testar alguns. Se você tiver curiosidade de saber como funciona um visualizador hexadecimal, recomendo olhar o código do **hdump**, disponível em https://github.com/merces/hdump, um visualizador de linha de comando que implementei em C para funcionar em Windows, Linux e macOS.
+Há dezenas de outros editores hexadecimais disponíveis, inclusive alguns visualizadores de linha de comando. Vale consultar o apêndice Ferramentas e testar alguns. Se você tiver curiosidade de saber como funciona um visualizador hexadecimal, recomendo olhar o código do **hdump**, disponível em [https://github.com/merces/hdump](https://github.com/merces/hdump), um visualizador de linha de comando que implementei em C para funcionar em Windows, Linux e macOS.
 
 ## **Exemplo do Formato GIF**
 
