@@ -6,7 +6,7 @@ Em termos amplos, engenharia reversa é o processo de entender como algo funcion
 
 No campo militar e em contexto de guerras é comum assegurar que inimigos não tenham acesso às armas avançadas: aviões, tanques e outros dispositivos, por ser importante que adversários não desmontem esses equipamentos, entendam seu funcionamento e, consequentemente, que criem versões superiores deles ou encontrem falhas que lhes permitam inutilizá-los ou contorná-los com mais facilidade. Na prática, é evitar a engenharia reversa.
 
-> Vale a pena assistir ao filme Jogo da Imitação (_Imitation Game_) que conta a história do criptoanalisa inglês Alan Turing, conhecido como o pai da ciência de computação teórica, que quebrou a criptografia da máquina nazista Enigma utilizando engenharia reversa.
+> Vale a pena assistir ao filme Jogo da Imitação (_Imitation Game_) que conta a história do criptoanalista inglês Alan Turing, conhecido como o pai da ciência de computação teórica, que quebrou a criptografia da máquina nazista Enigma utilizando engenharia reversa.
 
 ## Engenharia Reversa de Software
 
