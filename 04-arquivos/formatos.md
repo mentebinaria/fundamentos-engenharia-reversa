@@ -6,7 +6,7 @@ Analise o seguinte arquivo GIF aberto no HxD:
 
 ![Conteúdo de um arquivo GIF visualizado em hexadecimal](../.gitbook/assets/04_hxdgif.png)
 
-O HxD é um editor hexadecimal. Para entender estes editores funcionam, vamos começar pelas colunas onde os _bytes_ estão organizados.
+O HxD é um editor hexadecimal. Para entender como estes editores funcionam, vamos começar pelas colunas onde os _bytes_ estão organizados.
 
 ## **Offset**
 
@@ -50,6 +50,6 @@ Logo após o primeiro campo, temos o segundo campo, que define a largura em _pix
 
 O próximo campo, também de 2 _bytes_, nos diz a altura em _pixels_ da imagem GIF e também possui o valor 0x30 (já lendo os _bytes_ de trás para frente conforme explicado). É correto dizer então que esta é uma imagem de 48 x 48 _pixels_.
 
-É por isso que alguns sistemas operacionais, com o GNU/Linux, não consideram a extensão de arquivo como sendo algo importante para definir seu tipo. Na verdade, o conteúdo do arquivo o define.
+É por isso que alguns sistemas operacionais, como o GNU/Linux, não consideram a extensão de arquivo como sendo algo importante para definir seu tipo. Na verdade, o conteúdo do arquivo o define.
 
 Não seguiremos com toda a interpretação do formato GIF pois isto foge do nosso escopo, mas vamos seguir a mesma lógica para entender o formato de arquivos executáveis do sistema Windows, objeto de estudo do próximo capítulo.
