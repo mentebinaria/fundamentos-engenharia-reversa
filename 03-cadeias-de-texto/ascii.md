@@ -55,7 +55,7 @@ Para complementar esta seção, assista ao vídeo **Entendendo a tabela ASCII** 
 
 A tabela ASCII padrão de 7 _bits_ é limitada ao idioma inglês no que diz respeito a texto. Perceba que uma simples letra 'á' (com acento agudo) é impossível nesta tabela. Sendo assim, ela foi estendida e inteligentemente passou-se a utilizar o último _bit_ do _byte_ que cada caractere ocupa, tornando-se assim uma tabela de 8 _bits_, que vai de 0 a 255 (em decimal).
 
-Essa extensão da tabela ASCII varia de acordo com a **página de código&#x20;**_**(code page)**_ utilizada, por vezes chamada de **codificação** ou _**encoding**_. Tal variação acontece porque ela a extensão foi criada para permitir texto em outros idiomas, mas somente 128 caracteres a mais não são suficientes para representar os caracteres de todos os idiomas existentes.
+Essa extensão da tabela ASCII varia de acordo com a **página de código&#x20;**_**(code page)**_ utilizada, por vezes chamada de **codificação** ou _**encoding**_. Tal variação acontece porque a extensão foi criada para permitir texto em outros idiomas, mas somente 128 caracteres a mais não são suficientes para representar os caracteres de todos os idiomas existentes.
 
 Uma página de código comumente utilizada em textos escritos em línguas latinas (como o português) é a ISO-8859-1, também chamada de Latin-1, que você vê no Apêndice Tabela ISO-8859-1/Latin-1. Mas existem muitas outras que não cobriremos neste livro.
 
